@@ -7,7 +7,10 @@
     <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link {% if app.request.requestUri == '/' %} active {% endif %} " href="{{ path('app_home') }}">Les éléments</a>
+                <a class="nav-link {% if app.request.attributes.get('_route') == 'app_home' %} active {% endif %} " href="{{ path('app_home') }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if app.request.attributes.get('_route') == 'app_tableau' %} active {% endif %} " href="{{ path('app_tableau') }}">Les éléments</a>
             </li>
             {% if app.user is not null %}
             <li class="nav-item">
@@ -18,10 +21,10 @@
         {% if app.user is null %}
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link  {% if app.request.requestUri == '/login' %} active {% endif %}" href="{{ path('app_login') }}">Connexion</a>
+                <a class="nav-link  {% if app.request.attributes.get('_route') == 'app_login' %} active {% endif %}" href="{{ path('app_login') }}">Connexion</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  {% if app.request.requestUri == '/register' %} active {% endif %}" href="{{ path('app_register') }}">Enregistrement</a>
+                <a class="nav-link  {% if app.request.attributes.get('_route') == 'app_register' %} active {% endif %}" href="{{ path('app_register') }}">Enregistrement</a>
             </li>
         </ul>
         {% else %}

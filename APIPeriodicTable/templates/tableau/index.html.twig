@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TableauController!{% endblock %}
+
+{% block body %}
+    <section>
+        <div class="container-fluid">
+            <h1 class="text-center mt-5">Tableau périodique des éléments</h1>
+            <div class="BlocTableauFiltre my-5">
+                <article>
+                    <div class="tableau">
+                        {% include 'tableau/tableau.html.twig' %}
+                    </div>
+                </article>
+                <article class="blocButton">
+                    <h2 class="text-center">Filtres de recherche</h2>
+                        {% include 'tableau/button.html.twig' %}
+                </article>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+

@@ -1,0 +1,1786 @@
+<div class="appli">
+    <table>
+        <tr>
+            <th></th>
+            <th>1 <br> <span>(IA)</span></th>
+            <th>2 <br><span> (IIA)</span></th>
+            <th>3 <br><span>(IIIB)</span></th>
+            <th>4 <br><span>(IVB)</span></th>
+            <th>5 <br><span>(VB)</span></th>
+            <th>6 <br><span>(VIB)</span></th>
+            <th>7 <br><span>(VIIB)</span></th>
+            <th>8 <br><span>(VIIIB)</span></th>
+            <th>9 <br><span>(VIIIB)</span></th>
+            <th>10 <br><span>(VIIIB)</span></th>
+            <th>11 <br><span>(IB)</span></th>
+            <th>12 <br><span>(IIB)</span></th>
+            <th>13 <br><span>(IIIA)</span></th>
+            <th>14 <br><span>(IVA)</span></th>
+            <th>15 <br><span>(VA)</span></th>
+            <th>16 <br><span>(VIA)</span></th>
+            <th>17 <br><span>(VIIA)</span></th>
+            <th>18 <br><span>(VIIIA)</span></th>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------- LIGNE 1 ----------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>1</th>
+
+            <td>
+                <a href="{{path('app_tableau', {'id': 1})}}" target="_blank">
+                    {% if newatomes["Hydrogène"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Hydrogène"].famille }}">
+                            <span class="nom">{{ newatomes["Hydrogène"].nom }}</span>
+                                <span class="symbole">{{ newatomes["Hydrogène"].symbole }}</span>
+                                <span class="numero">{{ newatomes["Hydrogène"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Hydrogène"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+
+            <td class="affichage">
+
+            </td>
+            <!------------------------------------------------------------------------------------------------------------->
+            <!----------------------------------- Affichage zone ecran 1--------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <td colspan="2" rowspan="2" class="affichage">
+
+            </td>
+            <!------------------------------------------------------------------------------------------------------------->
+            <!----------------------------------- Affichage zone ecran 2 --------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <td colspan="8" rowspan="3" class="affichage" id="defAffiche">
+
+            </td>
+            <!---------------------------------------------------------------------------------------------------------------->
+            <td colspan="5" class="affichage ZoneLigne8 zoneLigne2">
+
+            </td>
+            <!---------------------------------------------------------------------------------------------------------------->
+            <td>
+                <a href="{{path('app_tableau', {'id': 2})}}" target="_blank">
+                    {% if newatomes["Hélium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Hélium"].famille }}">
+                            <span class="nom">{{ newatomes["Hélium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Hélium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Hélium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Hélium"].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------- LIGNE 2 ----------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>2</th>
+            <td>
+                <a href="{{path('app_tableau', {'id': 3})}}" target="_blank">
+                    {% if newatomes["Lithium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Lithium"].famille }}">
+                            <span class="nom">{{ newatomes["Lithium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Lithium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Lithium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Lithium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 4})}}" target="_blank">
+                    {% if newatomes["Béryllium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Béryllium"].famille }}">
+                            <span class="nom">{{ newatomes["Béryllium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Béryllium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Béryllium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Béryllium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                         <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 5})}}" target="_blank">
+                    {% if newatomes["Bore"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Bore"].famille }}">
+                            <span class="nom">{{ newatomes["Bore"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Bore"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Bore"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Bore"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 6})}}" target="_blank">
+                    {% if newatomes["Carbone"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Carbone"].famille }}">
+                            <span class="nom">{{ newatomes["Carbone"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Carbone"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Carbone"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Carbone"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 7})}}" target="_blank">
+                    {% if newatomes["Azote"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Azote"].famille }}">
+                            <span class="nom">{{ newatomes["Azote"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Azote"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Azote"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Azote"].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 8})}}" target="_blank">
+                    {% if newatomes["Oxygène"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Oxygène"].famille }}">
+                            <span class="nom">{{ newatomes["Oxygène"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Oxygène"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Oxygène"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Oxygène"].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 9})}}" target="_blank">
+                    {% if newatomes["Fluor"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Fluor"].famille }}">
+                            <span class="nom">{{ newatomes["Fluor"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Fluor"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Fluor"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Fluor"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 10})}}" target="_blank">
+                    {% if newatomes["Néon"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Néon"].famille }}">
+                            <span class="nom">{{ newatomes["Néon"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Néon"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Néon"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Néon"].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------ LIGNE 3 ---------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>3</th>
+            <td>
+                <a href="{{path('app_tableau', {'id': 11})}}" target="_blank">
+                    {% if newatomes["Sodium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Sodium"].famille }}">
+                            <span class="nom">{{ newatomes["Sodium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Sodium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Sodium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Sodium"].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 12})}}" target="_blank">
+                    {% if newatomes["Magnésium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Magnésium"].famille }}">
+                            <span class="nom">{{ newatomes["Magnésium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Magnésium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Magnésium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Magnésium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <!------------------------------------------------------------------------------------------------------------->
+            <!----------------------------------- Affichage zone ecran 3--------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <td colspan="2" class="affichage Zone3">
+
+            </td>
+            <!--------------------------------------------------------------------------------------------------------------------->
+            <td>
+                <a href="{{path('app_tableau', {'id': 13})}}" target="_blank">
+                    {% if newatomes["Aluminium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Aluminium"].famille }}">
+                            <span class="nom">{{ newatomes["Aluminium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Aluminium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Aluminium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Aluminium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 14})}}" target="_blank">
+                    {% if newatomes["Silicium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Silicium"].famille }}">
+                            <span class="nom">{{ newatomes["Silicium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Silicium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Silicium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Silicium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 15})}}" target="_blank">
+                    {% if newatomes["Phosphore"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Phosphore"].famille }}">
+                            <span class="nom">{{ newatomes["Phosphore"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Phosphore"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Phosphore"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Phosphore"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 16})}}" target="_blank">
+                    {% if newatomes["Soufre"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Soufre"].famille }}">
+                            <span class="nom">{{ newatomes["Soufre"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Soufre"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Soufre"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Soufre"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 17})}}" target="_blank">
+                    {% if newatomes["Chlore"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Chlore"].famille }}">
+                            <span class="nom">{{ newatomes["Chlore"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Chlore"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Chlore"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Chlore"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 18})}}" target="_blank">
+                    {% if newatomes["Argon"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Argon"].famille }}">
+                            <span class="nom">{{ newatomes["Argon"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Argon"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Argon"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Argon"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------- LIGNE 4 ------------------------------------------------------>
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>4</th>
+            <td>
+                <a href="{{path('app_tableau', {'id': 19})}}" target="_blank">
+                    {% if newatomes["Potassium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Potassium"].famille }}">
+                            <span class="nom">{{ newatomes["Potassium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Potassium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Potassium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Potassium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 20})}}" target="_blank">
+                    {% if newatomes["Calcium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Calcium"].famille }}">
+                            <span class="nom">{{ newatomes["Calcium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Calcium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Calcium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Calcium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 21})}}" target="_blank">
+                        {% if newatomes["Scandium"] is defined %}
+                            <div class="boxAtom text-center {{ newatomes["Scandium"].famille }}">
+                                <span class="nom">{{ newatomes["Scandium"].nom }}</span>
+                                <span class="symbole">{{ newatomes["Scandium"].symbole }}</span>
+                                <span class="numero">{{ newatomes["Scandium"].numero }}</span>
+                                <span class="masseAtomique">{{ newatomes["Scandium"].masseAtomique|round(2, 'ceil') }}</span>
+                            </div>
+                            {% else %}
+                                <div class="boxAtom couleurTdVide"></div>
+                            {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 22})}}" target="_blank">
+                    {% if newatomes["Titane"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Titane"].famille }}">
+                            <span class="nom">{{ newatomes["Titane"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Titane"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Titane"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Titane"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 23})}}" target="_blank">
+                    {% if newatomes["Vanadium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Vanadium"].famille }}">
+                            <span class="nom">{{ newatomes["Vanadium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Vanadium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Vanadium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Vanadium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 24})}}" target="_blank">
+                    {% if newatomes["Chrome"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Chrome"].famille }}">
+                            <span class="nom">{{ newatomes["Chrome"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Chrome"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Chrome"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Chrome"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 25})}}" target="_blank">
+                    {% if newatomes["Manganèse"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Manganèse"].famille }}">
+                            <span class="nom">{{ newatomes["Manganèse"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Manganèse"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Manganèse"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Manganèse"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 26})}}" target="_blank">
+                    {% if newatomes["Fer"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Fer"].famille }}">
+                            <span class="nom">{{ newatomes["Fer"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Fer"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Fer"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Fer"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 27})}}" target="_blank">
+                    {% if newatomes["Cobalt"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Cobalt"].famille }}">
+                            <span class="nom">{{ newatomes["Cobalt"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Cobalt"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Cobalt"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Cobalt"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 28})}}" target="_blank">
+                    {% if newatomes["Nickel"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Nickel"].famille }}">
+                            <span class="nom">{{ newatomes["Nickel"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Nickel"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Nickel"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Nickel"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 29})}}" target="_blank">
+                    {% if newatomes["Cuivre"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Cuivre"].famille }}">
+                            <span class="nom">{{ newatomes["Cuivre"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Cuivre"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Cuivre"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Cuivre"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 30})}}" target="_blank">
+                    {% if newatomes["Zinc"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Zinc"].famille }}">
+                            <span class="nom">{{ newatomes["Zinc"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Zinc"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Zinc"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Zinc"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 31})}}" target="_blank">
+                    {% if newatomes["Gallium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Gallium"].famille }}">
+                            <span class="nom">{{ newatomes["Gallium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Gallium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Gallium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Gallium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 32})}}" target="_blank">
+                    {% if newatomes["Germanium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Germanium"].famille }}">
+                            <span class="nom">{{ newatomes["Germanium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Germanium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Germanium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Germanium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 33})}}" target="_blank">
+                    {% if newatomes["Arsenic"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Arsenic"].famille }}">
+                            <span class="nom">{{ newatomes["Arsenic"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Arsenic"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Arsenic"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Arsenic"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 34})}}" target="_blank">
+                    {% if newatomes["Sélénium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Sélénium"].famille }}">
+                            <span class="nom">{{ newatomes["Sélénium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Sélénium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Sélénium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Sélénium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 35})}}" target="_blank">
+                    {% if newatomes["Brome"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Brome"].famille }}">
+                            <span class="nom">{{ newatomes["Brome"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Brome"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Brome"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Brome"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 36})}}" target="_blank">
+                    {% if newatomes["Krypton"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Krypton"].famille }}">
+                            <span class="nom">{{ newatomes["Krypton"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Krypton"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Krypton"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Krypton"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------- LIGNE 5 --------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>5</th>
+            <td>
+                <a href="{{path('app_tableau', {'id': 37})}}" target="_blank">
+                    {% if newatomes["Rubidium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Rubidium"].famille }}">
+                            <span class="nom">{{ newatomes["Rubidium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Rubidium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Rubidium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Rubidium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 38})}}" target="_blank">
+                    {% if newatomes["Strontium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Strontium"].famille }}">
+                            <span class="nom">{{ newatomes["Strontium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Strontium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Strontium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Strontium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 39})}}" target="_blank">
+                    {% if newatomes["Yttrium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Yttrium"].famille }}">
+                            <span class="nom">{{ newatomes["Yttrium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Yttrium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Yttrium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Yttrium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 40})}}" target="_blank">
+                    {% if newatomes["Zirconium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Zirconium"].famille }}">
+                            <span class="nom">{{ newatomes["Zirconium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Zirconium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Zirconium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Zirconium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 41})}}" target="_blank">
+                    {% if newatomes["Niobium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Niobium"].famille }}">
+                            <span class="nom">{{ newatomes["Niobium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Niobium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Niobium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Niobium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 42})}}" target="_blank">
+                    {% if newatomes["Molybdène"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Molybdène"].famille }}">
+                            <span class="nom">{{ newatomes["Molybdène"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Molybdène"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Molybdène"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Molybdène"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 43})}}" target="_blank">
+                    {% if newatomes["Technétium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Technétium"].famille }}">
+                            <span class="nom">{{ newatomes["Technétium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Technétium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Technétium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Technétium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 44})}}" target="_blank">
+                    {% if newatomes["Ruthénium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Ruthénium"].famille }}">
+                            <span class="nom">{{ newatomes["Ruthénium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Ruthénium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Ruthénium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Ruthénium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 45})}}" target="_blank">
+                    {% if newatomes["Rhodium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Rhodium"].famille }}">
+                            <span class="nom">{{ newatomes["Rhodium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Rhodium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Rhodium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Rhodium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 46})}}" target="_blank">
+                    {% if newatomes["Palladium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Palladium"].famille }}">
+                            <span class="nom">{{ newatomes["Palladium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Palladium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Palladium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Palladium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 47})}}" target="_blank">
+                    {% if newatomes["Argent"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Argent"].famille }}">
+                            <span class="nom">{{ newatomes["Argent"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Argent"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Argent"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Argent"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 48})}}" target="_blank">
+                    {% if newatomes["Cadmium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Cadmium"].famille }}">
+                            <span class="nom">{{ newatomes["Cadmium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Cadmium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Cadmium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Cadmium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 49})}}" target="_blank">
+                    {% if newatomes["Indium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Indium"].famille }}">
+                            <span class="nom">{{ newatomes["Indium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Indium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Indium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Indium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 50})}}" target="_blank">
+                    {% if newatomes["Étain"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Étain"].famille }}">
+                            <span class="nom">{{ newatomes["Étain"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Étain"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Étain"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Étain"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 51})}}" target="_blank">
+                    {% if newatomes["Antimoine"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Antimoine"].famille }}">
+                            <span class="nom">{{ newatomes["Antimoine"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Antimoine"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Antimoine"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Antimoine"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 52})}}" target="_blank">
+                    {% if newatomes["Tellure"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Tellure"].famille }}">
+                            <span class="nom">{{ newatomes["Tellure"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Tellure"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Tellure"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Tellure"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 53})}}" target="_blank">
+                    {% if newatomes["Iode"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Iode"].famille }}">
+                            <span class="nom">{{ newatomes["Iode"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Iode"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Iode"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Iode"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 54})}}" target="_blank">
+                    {% if newatomes["Xénon"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Xénon"].famille }}">
+                            <span class="nom">{{ newatomes["Xénon"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Xénon"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Xénon"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Xénon"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!-------------------------------------------- LIGNE 6 -------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>6</th>
+            <td>
+                <a href="{{path('app_tableau', {'id': 55})}}" target="_blank">
+                    {% if newatomes["Césium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Césium"].famille }}">
+                            <span class="nom">{{ newatomes["Césium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Césium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Césium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Césium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 56})}}" target="_blank">
+                    {% if newatomes["Baryum"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Baryum"].famille }}">
+                            <span class="nom">{{ newatomes["Baryum"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Baryum"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Baryum"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Baryum"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                {% if Lanthanides != false %}
+                <div class="boxAtom text-center lanthanide">
+                    <span class="nom">Lanthanides</span><br>
+                    <span class='numero'>57 - 71</span>
+                </div>
+                {% else %}
+                    <div class="boxAtom couleurTdVide"></div>
+                {% endif %}
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 72})}}" target="_blank">
+                    {% if newatomes["Hafnium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Hafnium"].famille }}">
+                            <span class="nom">{{ newatomes["Hafnium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Hafnium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Hafnium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Hafnium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 73})}}" target="_blank">
+                    {% if newatomes["Tantale"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Tantale"].famille }}">
+                            <span class="nom">{{ newatomes["Tantale"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Tantale"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Tantale"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Tantale"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 74})}}" target="_blank">
+                    {% if newatomes["Tungstène"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Tungstène"].famille }}">
+                            <span class="nom">{{ newatomes["Tungstène"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Tungstène"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Tungstène"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Tungstène"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 75})}}" target="_blank">
+                    {% if newatomes["Rhénium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Rhénium"].famille }}">
+                            <span class="nom">{{ newatomes["Rhénium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Rhénium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Rhénium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Rhénium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 76})}}" target="_blank">
+                    {% if newatomes["Osmium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Osmium"].famille }}">
+                            <span class="nom">{{ newatomes["Osmium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Osmium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Osmium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Osmium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 77})}}" target="_blank">
+                    {% if newatomes["Iridium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Iridium"].famille }}">
+                            <span class="nom">{{ newatomes["Iridium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Iridium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Iridium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Iridium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 78})}}" target="_blank">
+                    {% if newatomes["Platine"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Platine"].famille }}">
+                            <span class="nom">{{ newatomes["Platine"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Platine"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Platine"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Platine"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 79})}}" target="_blank">
+                    {% if newatomes["Or"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Or"].famille }}">
+                            <span class="nom">{{ newatomes["Or"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Or"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Or"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Or"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 80})}}" target="_blank">
+                    {% if newatomes["Mercure"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Mercure"].famille }}">
+                            <span class="nom">{{ newatomes["Mercure"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Mercure"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Mercure"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Mercure"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 81})}}" target="_blank">
+                    {% if newatomes["Thallium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Thallium"].famille }}">
+                            <span class="nom">{{ newatomes["Thallium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Thallium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Thallium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Thallium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 82})}}" target="_blank">
+                    {% if newatomes["Plomb"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Plomb"].famille }}">
+                            <span class="nom">{{ newatomes["Plomb"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Plomb"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Plomb"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Plomb"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 83})}}" target="_blank">
+                    {% if newatomes["Bismuth"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Bismuth"].famille }}">
+                            <span class="nom">{{ newatomes["Bismuth"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Bismuth"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Bismuth"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Bismuth"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 84})}}" target="_blank">
+                    {% if newatomes["Polonium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Polonium"].famille }}">
+                            <span class="nom">{{ newatomes["Polonium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Polonium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Polonium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Polonium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 85})}}" target="_blank">
+                    {% if newatomes["Astate"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Astate"].famille }}">
+                            <span class="nom">{{ newatomes["Astate"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Astate"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Astate"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Astate"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 86})}}" target="_blank">
+                    {% if newatomes["Radon"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Radon"].famille }}">
+                            <span class="nom">{{ newatomes["Radon"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Radon"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Radon"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Radon"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------- LIGNE 7 --------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>7</th>
+            <td>
+                <a href="{{path('app_tableau', {'id': 87})}}" target="_blank">
+                    {% if newatomes["Francium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Francium"].famille }}">
+                            <span class="nom">{{ newatomes["Francium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Francium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Francium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Francium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 88})}}" target="_blank">
+                    {% if newatomes["Radium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Radium"].famille }}">
+                            <span class="nom">{{ newatomes["Radium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Radium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Radium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Radium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                {% if Actinides != false %}
+                    <div class="boxAtom text-center actinide">
+                        <span class="nom">Actinides</span><br>
+                        <span class='numero'>89 - 103</span>
+                    </div>
+                {% else %}
+                    <div class="boxAtom couleurTdVide"></div>
+                {% endif %}
+
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 104})}}" target="_blank">
+                    {% if newatomes["Rutherfordium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Rutherfordium"].famille }}">
+                            <span class="nom">{{ newatomes["Rutherfordium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Rutherfordium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Rutherfordium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Rutherfordium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 105})}}" target="_blank">
+                    {% if newatomes["Dubnium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Dubnium"].famille }}">
+                            <span class="nom">{{ newatomes["Dubnium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Dubnium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Dubnium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Dubnium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 106})}}" target="_blank">
+                    {% if newatomes["Seaborgium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Seaborgium"].famille }}">
+                            <span class="nom">{{ newatomes["Seaborgium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Seaborgium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Seaborgium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Seaborgium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 107})}}" target="_blank">
+                    {% if newatomes["Bohrium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Bohrium"].famille }}">
+                            <span class="nom">{{ newatomes["Bohrium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Bohrium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Bohrium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Bohrium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 108})}}" target="_blank">
+                    {% if newatomes["Hassium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Hassium"].famille }}">
+                            <span class="nom">{{ newatomes["Hassium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Hassium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Hassium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Hassium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 109})}}" target="_blank">
+                    {% if newatomes["Meitnerium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Meitnerium"].famille }}">
+                            <span class="nom">{{ newatomes["Meitnerium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Meitnerium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Meitnerium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Meitnerium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 110})}}" target="_blank">
+                    {% if newatomes["Darmstadtium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Darmstadtium"].famille }}">
+                            <span class="nom">{{ newatomes["Darmstadtium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Darmstadtium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Darmstadtium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Darmstadtium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 111})}}" target="_blank">
+                    {% if newatomes["Roentgenium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Roentgenium"].famille }}">
+                            <span class="nom">{{ newatomes["Roentgenium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Roentgenium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Roentgenium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Roentgenium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 112})}}" target="_blank">
+                    {% if newatomes["Copernicium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Copernicium"].famille }}">
+                            <span class="nom">{{ newatomes["Copernicium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Copernicium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Copernicium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Copernicium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 113})}}" target="_blank">
+                    {% if newatomes["Nihonium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Nihonium"].famille }}">
+                            <span class="nom">{{ newatomes["Nihonium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Nihonium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Nihonium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Nihonium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 114})}}" target="_blank">
+                    {% if newatomes["Flérovium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Flérovium"].famille }}">
+                            <span class="nom">{{ newatomes["Flérovium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Flérovium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Flérovium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Flérovium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 115})}}" target="_blank">
+                    {% if newatomes["Moscovium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Moscovium"].famille }}">
+                            <span class="nom">{{ newatomes["Moscovium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Moscovium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Moscovium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Moscovium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 116})}}" target="_blank">
+                    {% if newatomes["Livermorium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Livermorium"].famille }}">
+                            <span class="nom">{{ newatomes["Livermorium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Livermorium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Livermorium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Livermorium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 117})}}" target="_blank">
+                    {% if newatomes["Tennessine"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Tennessine"].famille }}">
+                            <span class="nom">{{ newatomes["Tennessine"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Tennessine"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Tennessine"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Tennessine"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 118})}}" target="_blank">
+                    {% if newatomes["Oganesson"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Oganesson"].famille }}">
+                            <span class="nom">{{ newatomes["Oganesson"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Oganesson"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Oganesson"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Oganesson"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------ LIGNE 8 ---------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th></th>
+            <td colspan="3" rowspan="2" class="affichage ZoneLigne8">
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 57})}}" target="_blank">
+                    {% if newatomes["Lanthane"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Lanthane"].famille }}">
+                            <span class="nom">{{ newatomes["Lanthane"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Lanthane"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Lanthane"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Lanthane"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 58})}}" target="_blank">
+                    {% if newatomes["Cérium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Cérium"].famille }}">
+                            <span class="nom">{{ newatomes["Cérium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Cérium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Cérium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Cérium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 59})}}" target="_blank">
+                    {% if newatomes["Praséodyme"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Praséodyme"].famille }}">
+                            <span class="nom">{{ newatomes["Praséodyme"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Praséodyme"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Praséodyme"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Praséodyme"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 60})}}" target="_blank">
+                    {% if newatomes["Néodyme"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Néodyme"].famille }}">
+                            <span class="nom">{{ newatomes["Néodyme"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Néodyme"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Néodyme"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Néodyme"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 61})}}" target="_blank">
+                    {% if newatomes["Prométhium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Prométhium"].famille }}">
+                            <span class="nom">{{ newatomes["Prométhium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Prométhium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Prométhium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Prométhium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 62})}}" target="_blank">
+                    {% if newatomes["Samarium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Samarium"].famille }}">
+                            <span class="nom">{{ newatomes["Samarium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Samarium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Samarium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Samarium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 63})}}" target="_blank">
+                    {% if newatomes["Europium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Europium"].famille }}">
+                            <span class="nom">{{ newatomes["Europium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Europium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Europium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Europium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 64})}}" target="_blank">
+                    {% if newatomes["Gadolinium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Gadolinium"].famille }}">
+                            <span class="nom">{{ newatomes["Gadolinium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Gadolinium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Gadolinium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Gadolinium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 65})}}" target="_blank">
+                    {% if newatomes["Terbium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Terbium"].famille }}">
+                            <span class="nom">{{ newatomes["Terbium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Terbium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Terbium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Terbium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 66})}}" target="_blank">
+                    {% if newatomes["Dysprosium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Dysprosium"].famille }}">
+                            <span class="nom">{{ newatomes["Dysprosium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Dysprosium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Dysprosium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Dysprosium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 67})}}" target="_blank">
+                    {% if newatomes["Holmium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Holmium"].famille }}">
+                            <span class="nom">{{ newatomes["Holmium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Holmium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Holmium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Holmium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 68})}}" target="_blank">
+                    {% if newatomes["Erbium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Erbium"].famille }}">
+                            <span class="nom">{{ newatomes["Erbium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Erbium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Erbium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Erbium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 69})}}" target="_blank">
+                    {% if newatomes["Thulium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Thulium"].famille }}">
+                            <span class="nom">{{ newatomes["Thulium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Thulium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Thulium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Thulium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 70})}}" target="_blank">
+                    {% if newatomes["Ytterbium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Ytterbium"].famille }}">
+                            <span class="nom">{{ newatomes["Ytterbium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Ytterbium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Ytterbium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Ytterbium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 71})}}" target="_blank">
+                    {% if newatomes["Lutécium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Lutécium"].famille }}">
+                            <span class="nom">{{ newatomes["Lutécium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Lutécium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Lutécium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Lutécium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------- LIGNE 9 --------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th></th>
+
+
+            <td>
+                <a href="{{path('app_tableau', {'id': 89})}}" target="_blank">
+                    {% if newatomes["Actinium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Actinium"].famille }}">
+                            <span class="nom">{{ newatomes["Actinium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Actinium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Actinium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Actinium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 90})}}" target="_blank">
+                    {% if newatomes["Thorium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Thorium"].famille }}">
+                            <span class="nom">{{ newatomes["Thorium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Thorium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Thorium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Thorium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 91})}}" target="_blank">
+                    {% if newatomes["Protactinium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Protactinium"].famille }}">
+                            <span class="nom">{{ newatomes["Protactinium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Protactinium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Protactinium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Protactinium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 92})}}" target="_blank">
+                    {% if newatomes["Uranium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Uranium"].famille }}">
+                            <span class="nom">{{ newatomes["Uranium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Uranium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Uranium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Uranium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 93})}}" target="_blank">
+                    {% if newatomes["Neptunium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Neptunium"].famille }}">
+                            <span class="nom">{{ newatomes["Neptunium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Neptunium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Neptunium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Neptunium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 94})}}" target="_blank">
+                    {% if newatomes["Plutonium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Plutonium"].famille }}">
+                            <span class="nom">{{ newatomes["Plutonium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Plutonium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Plutonium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Plutonium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 95})}}" target="_blank">
+                    {% if newatomes["Américium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Américium"].famille }}">
+                            <span class="nom">{{ newatomes["Américium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Américium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Américium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Américium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 96})}}" target="_blank">
+                    {% if newatomes["Curium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Curium"].famille }}">
+                            <span class="nom">{{ newatomes["Curium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Curium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Curium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Curium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 97})}}" target="_blank">
+                    {% if newatomes["Berkélium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Berkélium"].famille }}">
+                            <span class="nom">{{ newatomes["Berkélium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Berkélium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Berkélium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Berkélium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 98})}}" target="_blank">
+                    {% if newatomes["Californium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Californium"].famille }}">
+                            <span class="nom">{{ newatomes["Californium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Californium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Californium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Californium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 99})}}" target="_blank">
+                    {% if newatomes["Einsteinium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Einsteinium"].famille }}">
+                            <span class="nom">{{ newatomes["Einsteinium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Einsteinium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Einsteinium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Einsteinium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 100})}}" target="_blank">
+                    {% if newatomes["Fermium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Fermium"].famille }}">
+                            <span class="nom">{{ newatomes["Fermium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Fermium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Fermium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Fermium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 101})}}" target="_blank">
+                    {% if newatomes["Mendélévium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Mendélévium"].famille }}">
+                            <span class="nom">{{ newatomes["Mendélévium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Mendélévium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Mendélévium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Mendélévium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 102})}}" target="_blank">
+                    {% if newatomes["Nobélium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Nobélium"].famille }}">
+                            <span class="nom">{{ newatomes["Nobélium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Nobélium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Nobélium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Nobélium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+            <td>
+                <a href="{{path('app_tableau', {'id': 103})}}" target="_blank">
+                    {% if newatomes["Lawrencium"] is defined %}
+                        <div class="boxAtom text-center {{ newatomes["Lawrencium"].famille }}">
+                            <span class="nom">{{ newatomes["Lawrencium"].nom }}</span>
+                            <span class="symbole">{{ newatomes["Lawrencium"].symbole }}</span>
+                            <span class="numero">{{ newatomes["Lawrencium"].numero }}</span>
+                            <span class="masseAtomique">{{ newatomes["Lawrencium"].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    {% else %}
+                        <div class="boxAtom couleurTdVide"></div>
+                    {% endif %}
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>

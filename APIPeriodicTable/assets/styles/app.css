@@ -1,3 +1,261 @@
+/*-----------------------------------*/
+/*------Repère couleur--------------*/
+/*-----------------------------------*/
+.lanthanide{
+    background-color: hotpink;
+}
+/*-----------------------------------*/
+.actinide{
+    background-color: red;
+}
+/*-----------------------------------*/
+.nonDéterminé{
+    background-color: darkgray;
+}
+/*-----------------------------------*/
+.nonMetal{
+    background-color: limegreen;
+}
+/*-----------------------------------*/
+.gazNoble{
+    background-color: deepskyblue;
+}
+
+/*-----------------------------------*/
+.halogene{
+    background-color: darkviolet;
+}
+/*-----------------------------------*/
+.metalAlcalin{
+    background-color: orange;
+}
+/*-----------------------------------*/
+.metalAlcalinoTerreux{
+    background-color: rgb(188,105,18);
+}
+/*-----------------------------------*/
+.metalDeTransition{
+    background-color: rgb(175, 161, 0);
+}
+/*-----------------------------------*/
+.metalPauvre{
+    background-color: greenyellow;
+}
+/*-----------------------------------*/
+.metalloide{
+    background-color: burlywood;
+}
+/*-----------------------------------*/
+/*-----------------------------------*/
 .active{
     color: #af8503 !important;
+}
+.filter{
+    color: #af8503 !important;
+}
+
+.boxAtom{
+    width: 73px ;
+    height: 88px;
+}
+
+.blocButton{
+    padding-left: 15px;
+}
+
+
+
+
+
+
+td .nom, td .masseAtomique{
+    font-size: x-small;
+}
+td .symbole, td .numero{
+    font-weight: bold;
+}
+td .symbole{
+    font-size: 17px;
+}
+td .numero{
+    font-size: 15px;
+}
+td a{
+    text-decoration: none;
+    color: black;
+}
+.boxAtom {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+.appli{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Styles pour écrans larges (plus de 1800px) */
+@media (min-width: 1800px) {
+    .boxAtom {
+        width: 73px ;
+        height: 82px;
+    }
+    .BlocTableauFiltre{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 1800px) and (min-width: 1600px) {
+    .boxAtom {
+        width: 70px;
+        height: 80px;
+    }
+    td .nom, td .masseAtomique {
+        font-size: 10px;
+    }
+    td .symbole{
+        font-size: 17px;
+    }
+    td .numero{
+        font-size: 15px;
+    }
+    .BlocTableauFiltre{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+/* Styles pour écrans moyens (de 1200px à 1800px) */
+@media (max-width: 1600px) and (min-width: 1300px) {
+    .boxAtom {
+        width: 70px;
+        height: 80px;
+    }
+    td .nom, td .masseAtomique {
+        font-size: 10px;
+    }
+    td .symbole{
+        font-size: 17px;
+    }
+    td .numero{
+        font-size: 15px;
+    }
+    .BlocTableauFiltre{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Styles pour écrans de taille tablette (de 768px à 1200px) */
+@media (max-width: 1300px) and (min-width: 1000px){
+    .boxAtom {
+        width: 51px;
+        height: 63px;
+    }
+    td .nom{
+        font-size: 10px;
+    }
+    td .masseAtomique{
+        display: none;
+    }
+    td .symbole{
+        font-size: 17px;
+    }
+    td .numero{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 900px){
+    .boxAtom {
+        width: 46px;
+        height: 59px;
+    }
+    td .nom{
+        font-size: 6px;
+    }
+    td .masseAtomique{
+        display: none;
+    }
+    td .symbole{
+        font-size: 17px;
+    }
+    td .numero{
+        font-size: 15px;
+    }
+    table th span{
+        display: none;
+    }
+}
+@media (max-width: 900px) and (min-width: 768px){
+    .boxAtom {
+        width: 38px;
+        height: 55px;
+    }
+    td .nom{
+        font-size: 6px;
+    }
+    td .nom, td .masseAtomique {
+        display: none;
+    }
+    td .symbole{
+        font-size: 17px;
+    }
+    td .numero{
+        font-size: 13px;
+    }
+    table th span{
+        display: none;
+    }
+}
+
+/* Styles pour petits écrans (moins de 768px) */
+@media (max-width: 768px) and (min-width: 600px){
+    .boxAtom {
+        width: 38px;
+        height: 53px;
+        display: flex;
+        justify-content: center;
+    }
+    td .nom, td .masseAtomique {
+        display: none;
+    }
+    td .symbole{
+        font-size: 15px;
+    }
+    td .numero{
+        font-size: 13px;
+    }
+    table th span{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .boxAtom {
+        width: 27px;
+        height: 43px;
+        display: flex;
+        justify-content: center;
+    }
+    td .nom, td .masseAtomique {
+        display: none;
+    }
+    td .symbole{
+        font-size: 12px;
+    }
+    td .numero{
+        font-size: 11px;
+    }
+    table th span{
+        display: none;
+    }
 }
