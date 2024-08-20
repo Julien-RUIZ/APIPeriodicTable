@@ -1,6 +1,6 @@
 <?php
 
-namespace Repository;
+namespace App\Tests\Repository;
 
 use App\Entity\Atome;
 use App\Repository\AtomeRepository;

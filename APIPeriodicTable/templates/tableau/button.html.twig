@@ -47,8 +47,9 @@
 
     <div class="my-2">
         <form action="{{ path('app_tableau') }}" method="GET">
-            <label for="groupe">Valeur atomique</label>
-            <input type="number" name="groupe" required min="1" max="18">
+            <label for="groupe">
+                <input type="number" name="groupe" required min="1" max="18">
+            </label>
             <button type="submit" class="btn btn-secondary">Submit</button>
         </form>
     </div>

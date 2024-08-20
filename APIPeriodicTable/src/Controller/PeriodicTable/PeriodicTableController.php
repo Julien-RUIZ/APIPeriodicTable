@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class PeriodicTableController extends AbstractController
 {
+    private $result="";
     public function __construct(private array $atomes= [] )
     {
     }
@@ -39,12 +40,13 @@ class PeriodicTableController extends AbstractController
     }
 
     private function LanthanidesActinides($id){
+
         if ($id >= 57 && $id <=71){
-            return 'Lanthanides';
+            $this->result= 'Lanthanides';
         }
         if ($id >= 89 && $id <=103){
-            return 'Actinides';
+            $this->result= 'Actinides';
         }
-
+        return $this->result;
     }
 }
