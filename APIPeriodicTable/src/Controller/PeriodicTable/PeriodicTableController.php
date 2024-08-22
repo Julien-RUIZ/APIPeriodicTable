@@ -2,6 +2,7 @@
 
 namespace App\Controller\PeriodicTable;
 
+use App\Interface\ElementHelperInterface;
 use App\Repository\AtomeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,43 +11,38 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class PeriodicTableController extends AbstractController
 {
-    private $result="";
-    public function __construct(private array $atomes= [] )
+
+    public function __construct(private array $ListeAtomes=[], private array $Atomes=[], private array $listefamily=[], private int $Lanthanides=1,  private int $Actinides=1  )
     {
     }
 
     #[Route('/tableau/{param}/{value}', name: 'app_tableau', requirements: ['param' => '\w+', 'value' => '\d+'], defaults: ['param' => null, 'value' => null])]
-    public function index(Request $request, AtomeRepository $atomeRepository): Response
+    public function index(Request $request, AtomeRepository $atomeRepository, ElementHelperInterface $elementHelper): Response
     {
-//dd($request);
+        $param = $request->attributes->get('param');
+        $value = $request->attributes->get('value');
 
-        if ($request->attributes->get('param') === null && $request->attributes->get('value') === null)
-        $this->atomes = $atomeRepository->findAll();
-        foreach ($this->atomes as $value){
-            $newatome[$value->getNom()] = $value;
-        }
-        if ($request->attributes->get('param') !== null && $request->attributes->get('value') !== null)
-            $this->atomes = $atomeRepository->findBy([$request->attributes->get('param')=>$request->attributes->get('value')]);
-        foreach ($this->atomes as $value){
-            $var[] = $this->LanthanidesActinides($value->getId());
-            $newatome[$value->getNom()] = $value;
-        }
-        $Lanthanides = array_search('Lanthanides', $var);
-        $Actinides = array_search('Actinides', $var);
+        if ($param === null && $value === null){
+            $this->ListeAtomes = $atomeRepository->findAll();
+            foreach ($this->ListeAtomes as $value){
+                $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
+                $this->Atomes[$value->getNom()] = $value;
+            }
 
-        return $this->render('tableau/index.html.twig', [
-            'newatomes' => $newatome, 'Lanthanides'=>$Lanthanides, 'Actinides'=>$Actinides
+        }
+        if ($param !== null && $value !== null){
+            $this->ListeAtomes = $atomeRepository->findBy([$param=>$value]);
+            foreach ($this->ListeAtomes as $value){
+                $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
+                $this->Atomes[$value->getNom()] = $value;
+            }
+        }
+
+        $this->Lanthanides = array_search('Lanthanides', $this->listefamily);
+        $this->Actinides = array_search('Actinides', $this->listefamily);
+
+        return $this->render('table/index.html.twig', [
+            'Atomes' => $this->Atomes, 'Lanthanides'=>$this->Lanthanides, 'Actinides'=>$this->Actinides
         ]);
-    }
-
-    private function LanthanidesActinides($id){
-
-        if ($id >= 57 && $id <=71){
-            $this->result= 'Lanthanides';
-        }
-        if ($id >= 89 && $id <=103){
-            $this->result= 'Actinides';
-        }
-        return $this->result;
     }
 }

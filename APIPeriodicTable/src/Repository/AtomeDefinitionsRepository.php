@@ -2,30 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Atome;
+use App\Entity\AtomeDefinitions;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Atome>
+ * @extends ServiceEntityRepository<AtomeDefinitions>
  */
-class AtomeRepository extends ServiceEntityRepository
+class AtomeDefinitionsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Atome::class);
-    }
-
-    public function nameIdAtome(){
-        return $this->createQueryBuilder('a')
-            ->select('a.id', 'a.nom')
-            ->getQuery()
-            ->getResult()
-            ;
+        parent::__construct($registry, AtomeDefinitions::class);
     }
 
     //    /**
-    //     * @return Atome[] Returns an array of Atome objects
+    //     * @return AtomeDefinitions[] Returns an array of AtomeDefinitions objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -39,7 +31,7 @@ class AtomeRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Atome
+    //    public function findOneBySomeField($value): ?AtomeDefinitions
     //    {
     //        return $this->createQueryBuilder('a')
     //            ->andWhere('a.exampleField = :val')

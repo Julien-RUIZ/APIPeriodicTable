@@ -1,0 +1,153 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<section class="readAtom">
+    <article>
+        <div class="container">
+            <h1 class="text-center my-5">{{ atome.nom}} </h1>
+            {% if is_granted('ROLE_ADMIN') %}
+                <button type="button" class="btn btn-secondary"><a href="{{ path('app_update_atom', {id: atome.id}) }}">Modifier élément</a></button>
+            {% endif %}
+            <p class="my-5">{{ atome.infoAtome }}</p>
+
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th class="col-8" scope="row">L'année de découverte</th>
+                    <td>{{ atome.decouverteAnnee }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Localisation de la découverte</th>
+                    {% if atome.decouvertePays is empty%}
+                        <td>NC</td>
+                    {% else %}
+                        <td>{{ atome.decouvertePays }}</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th scope="row">Découverte par</th>
+                    {% if atome.decouverteNoms is empty%}
+                        <td>NC</td>
+                    {% else %}
+                        <td>{{ atome.decouverteNoms }}</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th scope="row">Symbole chimique</th>
+                    <td>{{ atome.symbole }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Numéro atomique</th>
+                    <td>{{ atome.numero }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Masse atomique</th>
+                    <td>{{ atome.masseAtomique }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Famille</th>
+                    <td>{{ atome.famille|capitalize }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Masse volumique <span class="infosup">?</span> </th>
+                    <td>{{ atome.MasseVolumique }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition['Masse volumique'].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">CAS <span class="infosup">?</span> </th>
+                    <td>{{ atome.cas}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition['CAS'].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">EINECS <span class="infosup">?</span> </th>
+                    <td>{{ atome.einecs}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition['EINECS'].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Rayon atomique <span class="infosup">?</span> </th>
+                    <td>{{ atome.RayonAtomique}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition['Rayon atomique'].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Rayon de covalence <span class="infosup">?</span> </th>
+                    <td>{{ atome.RayonDeCovalence}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition['Rayon de covalence'].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Rayon de Van Der Waals <span class="infosup">?</span> </th>
+                    <td>{{ atome.RayonDeVanDerWaals}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition['Rayon de Van der Waals'].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Electron <span class="infosup">?</span> </th>
+                    <td>{{ atome.electron}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition['Électron'].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Configuration électronique <span class="infosup">?</span> </th>
+                    <td>{{ atome.configurationElectronique}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition['Configuration Électronique'].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Etat d'oxydation <span class="infosup">?</span> </th>
+                    <td>{{ atome.etatOxydation}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition["État d'oxydation"].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Électronégativité<span class="infosup">?</span> </th>
+                    <td>{{ atome.electronegativite}}</td>
+                </tr>L
+                <tr>
+                    <td colspan="2">{{ listeDefinition["Électronégativité"].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Point de Fusion<span class="infosup">?</span> </th>
+                    <td>{{ atome.pointDeFusion}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition["Point de Fusion"].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Point d'ébullition<span class="infosup">?</span> </th>
+                    <td>{{ atome.pointDEbullition}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition["Point d'Ébullition"].getDefinition() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Radioactivité<span class="infosup">?</span> </th>
+                    {% if atome.radioactif == true %}
+                        <td>Oui</td>
+                    {% else %}
+                        <td>Non</td>
+                    {% endif %}
+
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </article>
+</section>
+
+
+{% endblock %}

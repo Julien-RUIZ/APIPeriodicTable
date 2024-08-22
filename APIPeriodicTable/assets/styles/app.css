@@ -63,11 +63,6 @@
     padding-left: 15px;
 }
 
-
-
-
-
-
 td .nom, td .masseAtomique{
     font-size: x-small;
 }
@@ -98,6 +93,16 @@ button a{
 .appli{
     display: flex;
     justify-content: center;
+}
+
+.update{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+.infosup{
+    border: 1px solid black;
+    padding: 0px 2px 0px 2px;
 }
 
 
