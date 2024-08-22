@@ -9,8 +9,7 @@
             {% if is_granted('ROLE_ADMIN') %}
                 <button type="button" class="btn btn-secondary"><a href="{{ path('app_update_atom', {id: atome.id}) }}">Modifier élément</a></button>
             {% endif %}
-            <p class="my-5">{{ atome.infoAtome }}</p>
-
+            <p class="my-5">{{ atome.infoAtome}}</p>
             <table class="table">
                 <tbody>
                 <tr>
@@ -115,7 +114,7 @@
                 <tr>
                     <th scope="row">Électronégativité<span class="infosup">?</span> </th>
                     <td>{{ atome.electronegativite}}</td>
-                </tr>L
+                </tr>
                 <tr>
                     <td colspan="2">{{ listeDefinition["Électronégativité"].getDefinition() }}</td>
                 </tr>

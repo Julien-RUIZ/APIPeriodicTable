@@ -32,12 +32,12 @@
 
             <td>
                 <a href="{{path('app_read_atom', {'id': 1})}}">
-                    {% if Atomes["Hydrogène"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Hydrogène"].famille }}">
-                            <span class="nom">{{ Atomes["Hydrogène"].nom }}</span>
-                                <span class="symbole">{{ Atomes["Hydrogène"].symbole }}</span>
-                                <span class="numero">{{ Atomes["Hydrogène"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Hydrogène"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[1] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[1].famille }}">
+                            <span class="nom">{{ Atomes[1].nom }}</span>
+                                <span class="symbole">{{ Atomes[1].symbole }}</span>
+                                <span class="numero">{{ Atomes[1].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[1].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -67,12 +67,12 @@
             <!---------------------------------------------------------------------------------------------------------------->
             <td>
                 <a href="{{path('app_read_atom', {'id': 2})}}">
-                    {% if Atomes["Hélium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Hélium"].famille }}">
-                            <span class="nom">{{ Atomes["Hélium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Hélium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Hélium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Hélium"].masseAtomique |round(2, 'ceil')}}</span>
+                    {% if Atomes[2] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[2].famille }}">
+                            <span class="nom">{{ Atomes[2].nom }}</span>
+                            <span class="symbole">{{ Atomes[2].symbole }}</span>
+                            <span class="numero">{{ Atomes[2].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[2].masseAtomique |round(2, 'ceil')}}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -88,12 +88,12 @@
             <th>2</th>
             <td>
                 <a href="{{path('app_read_atom', {'id': 3})}}">
-                    {% if Atomes["Lithium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Lithium"].famille }}">
-                            <span class="nom">{{ Atomes["Lithium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Lithium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Lithium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Lithium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[3] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[3].famille }}">
+                            <span class="nom">{{ Atomes[3].nom }}</span>
+                            <span class="symbole">{{ Atomes[3].symbole }}</span>
+                            <span class="numero">{{ Atomes[3].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[3].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -102,12 +102,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 4})}}">
-                    {% if Atomes["Béryllium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Béryllium"].famille }}">
-                            <span class="nom">{{ Atomes["Béryllium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Béryllium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Béryllium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Béryllium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[4] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[4].famille }}">
+                            <span class="nom">{{ Atomes[4].nom }}</span>
+                            <span class="symbole">{{ Atomes[4].symbole }}</span>
+                            <span class="numero">{{ Atomes[4].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[4].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                          <div class="boxAtom couleurTdVide"></div>
@@ -116,12 +116,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 5})}}">
-                    {% if Atomes["Bore"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Bore"].famille }}">
-                            <span class="nom">{{ Atomes["Bore"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Bore"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Bore"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Bore"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[5] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[5].famille }}">
+                            <span class="nom">{{ Atomes[5].nom }}</span>
+                            <span class="symbole">{{ Atomes[5].symbole }}</span>
+                            <span class="numero">{{ Atomes[5].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[5].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -130,12 +130,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 6})}}">
-                    {% if Atomes["Carbone"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Carbone"].famille }}">
-                            <span class="nom">{{ Atomes["Carbone"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Carbone"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Carbone"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Carbone"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[6] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[6].famille }}">
+                            <span class="nom">{{ Atomes[6].nom }}</span>
+                            <span class="symbole">{{ Atomes[6].symbole }}</span>
+                            <span class="numero">{{ Atomes[6].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[6].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -144,12 +144,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 7})}}">
-                    {% if Atomes["Azote"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Azote"].famille }}">
-                            <span class="nom">{{ Atomes["Azote"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Azote"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Azote"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Azote"].masseAtomique |round(2, 'ceil')}}</span>
+                    {% if Atomes[7] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[7].famille }}">
+                            <span class="nom">{{ Atomes[7].nom }}</span>
+                            <span class="symbole">{{ Atomes[7].symbole }}</span>
+                            <span class="numero">{{ Atomes[7].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[7].masseAtomique |round(2, 'ceil')}}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -158,12 +158,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 8})}}">
-                    {% if Atomes["Oxygène"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Oxygène"].famille }}">
-                            <span class="nom">{{ Atomes["Oxygène"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Oxygène"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Oxygène"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Oxygène"].masseAtomique |round(2, 'ceil')}}</span>
+                    {% if Atomes[8] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[8].famille }}">
+                            <span class="nom">{{ Atomes[8].nom }}</span>
+                            <span class="symbole">{{ Atomes[8].symbole }}</span>
+                            <span class="numero">{{ Atomes[8].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[8].masseAtomique |round(2, 'ceil')}}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -172,12 +172,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 9})}}">
-                    {% if Atomes["Fluor"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Fluor"].famille }}">
-                            <span class="nom">{{ Atomes["Fluor"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Fluor"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Fluor"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Fluor"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[9] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[9].famille }}">
+                            <span class="nom">{{ Atomes[9].nom }}</span>
+                            <span class="symbole">{{ Atomes[9].symbole }}</span>
+                            <span class="numero">{{ Atomes[9].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[9].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -186,12 +186,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 10})}}">
-                    {% if Atomes["Néon"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Néon"].famille }}">
-                            <span class="nom">{{ Atomes["Néon"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Néon"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Néon"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Néon"].masseAtomique |round(2, 'ceil')}}</span>
+                    {% if Atomes[10] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[10].famille }}">
+                            <span class="nom">{{ Atomes[10].nom }}</span>
+                            <span class="symbole">{{ Atomes[10].symbole }}</span>
+                            <span class="numero">{{ Atomes[10].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[10].masseAtomique |round(2, 'ceil')}}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -206,12 +206,12 @@
             <th>3</th>
             <td>
                 <a href="{{path('app_read_atom', {'id': 11})}}">
-                    {% if Atomes["Sodium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Sodium"].famille }}">
-                            <span class="nom">{{ Atomes["Sodium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Sodium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Sodium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Sodium"].masseAtomique |round(2, 'ceil')}}</span>
+                    {% if Atomes[11] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[11].famille }}">
+                            <span class="nom">{{ Atomes[11].nom }}</span>
+                            <span class="symbole">{{ Atomes[11].symbole }}</span>
+                            <span class="numero">{{ Atomes[11].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[11].masseAtomique |round(2, 'ceil')}}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -220,12 +220,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 12})}}">
-                    {% if Atomes["Magnésium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Magnésium"].famille }}">
-                            <span class="nom">{{ Atomes["Magnésium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Magnésium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Magnésium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Magnésium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[12] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[12].famille }}">
+                            <span class="nom">{{ Atomes[12].nom }}</span>
+                            <span class="symbole">{{ Atomes[12].symbole }}</span>
+                            <span class="numero">{{ Atomes[12].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[12].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -241,12 +241,12 @@
             <!--------------------------------------------------------------------------------------------------------------------->
             <td>
                 <a href="{{path('app_read_atom', {'id': 13})}}">
-                    {% if Atomes["Aluminium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Aluminium"].famille }}">
-                            <span class="nom">{{ Atomes["Aluminium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Aluminium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Aluminium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Aluminium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[13] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[13].famille }}">
+                            <span class="nom">{{ Atomes[13].nom }}</span>
+                            <span class="symbole">{{ Atomes[13].symbole }}</span>
+                            <span class="numero">{{ Atomes[13].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[13].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -255,12 +255,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 14})}}">
-                    {% if Atomes["Silicium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Silicium"].famille }}">
-                            <span class="nom">{{ Atomes["Silicium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Silicium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Silicium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Silicium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[14] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[14].famille }}">
+                            <span class="nom">{{ Atomes[14].nom }}</span>
+                            <span class="symbole">{{ Atomes[14].symbole }}</span>
+                            <span class="numero">{{ Atomes[14].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[14].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -269,12 +269,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 15})}}">
-                    {% if Atomes["Phosphore"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Phosphore"].famille }}">
-                            <span class="nom">{{ Atomes["Phosphore"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Phosphore"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Phosphore"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Phosphore"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[15] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[15].famille }}">
+                            <span class="nom">{{ Atomes[15].nom }}</span>
+                            <span class="symbole">{{ Atomes[15].symbole }}</span>
+                            <span class="numero">{{ Atomes[15].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[15].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -283,12 +283,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 16})}}">
-                    {% if Atomes["Soufre"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Soufre"].famille }}">
-                            <span class="nom">{{ Atomes["Soufre"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Soufre"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Soufre"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Soufre"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[16] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[16].famille }}">
+                            <span class="nom">{{ Atomes[16].nom }}</span>
+                            <span class="symbole">{{ Atomes[16].symbole }}</span>
+                            <span class="numero">{{ Atomes[16].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[16].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -297,12 +297,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 17})}}">
-                    {% if Atomes["Chlore"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Chlore"].famille }}">
-                            <span class="nom">{{ Atomes["Chlore"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Chlore"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Chlore"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Chlore"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[17] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[17].famille }}">
+                            <span class="nom">{{ Atomes[17].nom }}</span>
+                            <span class="symbole">{{ Atomes[17].symbole }}</span>
+                            <span class="numero">{{ Atomes[17].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[17].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -311,12 +311,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 18})}}">
-                    {% if Atomes["Argon"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Argon"].famille }}">
-                            <span class="nom">{{ Atomes["Argon"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Argon"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Argon"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Argon"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[18] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[18].famille }}">
+                            <span class="nom">{{ Atomes[18].nom }}</span>
+                            <span class="symbole">{{ Atomes[18].symbole }}</span>
+                            <span class="numero">{{ Atomes[18].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[18].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -331,12 +331,12 @@
             <th>4</th>
             <td>
                 <a href="{{path('app_read_atom', {'id': 19})}}">
-                    {% if Atomes["Potassium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Potassium"].famille }}">
-                            <span class="nom">{{ Atomes["Potassium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Potassium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Potassium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Potassium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[19] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[19].famille }}">
+                            <span class="nom">{{ Atomes[19].nom }}</span>
+                            <span class="symbole">{{ Atomes[19].symbole }}</span>
+                            <span class="numero">{{ Atomes[19].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[19].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -345,12 +345,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 20})}}">
-                    {% if Atomes["Calcium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Calcium"].famille }}">
-                            <span class="nom">{{ Atomes["Calcium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Calcium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Calcium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Calcium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[20] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[20].famille }}">
+                            <span class="nom">{{ Atomes[20].nom }}</span>
+                            <span class="symbole">{{ Atomes[20].symbole }}</span>
+                            <span class="numero">{{ Atomes[20].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[20].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -359,12 +359,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 21})}}">
-                        {% if Atomes["Scandium"] is defined %}
-                            <div class="boxAtom text-center {{ Atomes["Scandium"].famille }}">
-                                <span class="nom">{{ Atomes["Scandium"].nom }}</span>
-                                <span class="symbole">{{ Atomes["Scandium"].symbole }}</span>
-                                <span class="numero">{{ Atomes["Scandium"].numero }}</span>
-                                <span class="masseAtomique">{{ Atomes["Scandium"].masseAtomique|round(2, 'ceil') }}</span>
+                        {% if Atomes[21] is defined %}
+                            <div class="boxAtom text-center {{ Atomes[21].famille }}">
+                                <span class="nom">{{ Atomes[21].nom }}</span>
+                                <span class="symbole">{{ Atomes[21].symbole }}</span>
+                                <span class="numero">{{ Atomes[21].numero }}</span>
+                                <span class="masseAtomique">{{ Atomes[21].masseAtomique|round(2, 'ceil') }}</span>
                             </div>
                             {% else %}
                                 <div class="boxAtom couleurTdVide"></div>
@@ -373,12 +373,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 22})}}">
-                    {% if Atomes["Titane"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Titane"].famille }}">
-                            <span class="nom">{{ Atomes["Titane"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Titane"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Titane"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Titane"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[22] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[22].famille }}">
+                            <span class="nom">{{ Atomes[22].nom }}</span>
+                            <span class="symbole">{{ Atomes[22].symbole }}</span>
+                            <span class="numero">{{ Atomes[22].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[22].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -387,12 +387,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 23})}}">
-                    {% if Atomes["Vanadium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Vanadium"].famille }}">
-                            <span class="nom">{{ Atomes["Vanadium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Vanadium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Vanadium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Vanadium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[23] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[23].famille }}">
+                            <span class="nom">{{ Atomes[23].nom }}</span>
+                            <span class="symbole">{{ Atomes[23].symbole }}</span>
+                            <span class="numero">{{ Atomes[23].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[23].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -401,12 +401,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 24})}}">
-                    {% if Atomes["Chrome"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Chrome"].famille }}">
-                            <span class="nom">{{ Atomes["Chrome"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Chrome"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Chrome"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Chrome"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[24] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[24].famille }}">
+                            <span class="nom">{{ Atomes[24].nom }}</span>
+                            <span class="symbole">{{ Atomes[24].symbole }}</span>
+                            <span class="numero">{{ Atomes[24].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[24].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -415,12 +415,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 25})}}">
-                    {% if Atomes["Manganèse"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Manganèse"].famille }}">
-                            <span class="nom">{{ Atomes["Manganèse"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Manganèse"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Manganèse"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Manganèse"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[25] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[25].famille }}">
+                            <span class="nom">{{ Atomes[25].nom }}</span>
+                            <span class="symbole">{{ Atomes[25].symbole }}</span>
+                            <span class="numero">{{ Atomes[25].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[25].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -429,12 +429,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 26})}}">
-                    {% if Atomes["Fer"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Fer"].famille }}">
-                            <span class="nom">{{ Atomes["Fer"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Fer"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Fer"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Fer"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[26] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[26].famille }}">
+                            <span class="nom">{{ Atomes[26].nom }}</span>
+                            <span class="symbole">{{ Atomes[26].symbole }}</span>
+                            <span class="numero">{{ Atomes[26].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[26].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -443,12 +443,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 27})}}">
-                    {% if Atomes["Cobalt"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Cobalt"].famille }}">
-                            <span class="nom">{{ Atomes["Cobalt"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Cobalt"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Cobalt"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Cobalt"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[27] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[27].famille }}">
+                            <span class="nom">{{ Atomes[27].nom }}</span>
+                            <span class="symbole">{{ Atomes[27].symbole }}</span>
+                            <span class="numero">{{ Atomes[27].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[27].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -457,12 +457,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 28})}}">
-                    {% if Atomes["Nickel"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Nickel"].famille }}">
-                            <span class="nom">{{ Atomes["Nickel"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Nickel"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Nickel"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Nickel"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[28] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[28].famille }}">
+                            <span class="nom">{{ Atomes[28].nom }}</span>
+                            <span class="symbole">{{ Atomes[28].symbole }}</span>
+                            <span class="numero">{{ Atomes[28].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[28].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -471,12 +471,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 29})}}">
-                    {% if Atomes["Cuivre"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Cuivre"].famille }}">
-                            <span class="nom">{{ Atomes["Cuivre"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Cuivre"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Cuivre"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Cuivre"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[29] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[29].famille }}">
+                            <span class="nom">{{ Atomes[29].nom }}</span>
+                            <span class="symbole">{{ Atomes[29].symbole }}</span>
+                            <span class="numero">{{ Atomes[29].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[29].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -485,12 +485,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 30})}}">
-                    {% if Atomes["Zinc"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Zinc"].famille }}">
-                            <span class="nom">{{ Atomes["Zinc"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Zinc"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Zinc"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Zinc"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[30] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[30].famille }}">
+                            <span class="nom">{{ Atomes[30].nom }}</span>
+                            <span class="symbole">{{ Atomes[30].symbole }}</span>
+                            <span class="numero">{{ Atomes[30].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[30].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -499,12 +499,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 31})}}">
-                    {% if Atomes["Gallium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Gallium"].famille }}">
-                            <span class="nom">{{ Atomes["Gallium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Gallium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Gallium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Gallium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[31] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[31].famille }}">
+                            <span class="nom">{{ Atomes[31].nom }}</span>
+                            <span class="symbole">{{ Atomes[31].symbole }}</span>
+                            <span class="numero">{{ Atomes[31].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[31].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -513,12 +513,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 32})}}">
-                    {% if Atomes["Germanium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Germanium"].famille }}">
-                            <span class="nom">{{ Atomes["Germanium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Germanium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Germanium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Germanium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[32] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[32].famille }}">
+                            <span class="nom">{{ Atomes[32].nom }}</span>
+                            <span class="symbole">{{ Atomes[32].symbole }}</span>
+                            <span class="numero">{{ Atomes[32].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[32].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -527,12 +527,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 33})}}">
-                    {% if Atomes["Arsenic"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Arsenic"].famille }}">
-                            <span class="nom">{{ Atomes["Arsenic"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Arsenic"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Arsenic"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Arsenic"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[33] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[33].famille }}">
+                            <span class="nom">{{ Atomes[33].nom }}</span>
+                            <span class="symbole">{{ Atomes[33].symbole }}</span>
+                            <span class="numero">{{ Atomes[33].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[33].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -541,12 +541,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 34})}}">
-                    {% if Atomes["Sélénium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Sélénium"].famille }}">
-                            <span class="nom">{{ Atomes["Sélénium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Sélénium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Sélénium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Sélénium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[34] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[34].famille }}">
+                            <span class="nom">{{ Atomes[34].nom }}</span>
+                            <span class="symbole">{{ Atomes[34].symbole }}</span>
+                            <span class="numero">{{ Atomes[34].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[34].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -555,12 +555,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 35})}}">
-                    {% if Atomes["Brome"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Brome"].famille }}">
-                            <span class="nom">{{ Atomes["Brome"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Brome"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Brome"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Brome"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[35] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[35].famille }}">
+                            <span class="nom">{{ Atomes[35].nom }}</span>
+                            <span class="symbole">{{ Atomes[35].symbole }}</span>
+                            <span class="numero">{{ Atomes[35].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[35].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -569,12 +569,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 36})}}">
-                    {% if Atomes["Krypton"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Krypton"].famille }}">
-                            <span class="nom">{{ Atomes["Krypton"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Krypton"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Krypton"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Krypton"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[36] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[36].famille }}">
+                            <span class="nom">{{ Atomes[36].nom }}</span>
+                            <span class="symbole">{{ Atomes[36].symbole }}</span>
+                            <span class="numero">{{ Atomes[36].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[36].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -589,12 +589,12 @@
             <th>5</th>
             <td>
                 <a href="{{path('app_read_atom', {'id': 37})}}">
-                    {% if Atomes["Rubidium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Rubidium"].famille }}">
-                            <span class="nom">{{ Atomes["Rubidium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Rubidium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Rubidium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Rubidium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[37] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[37].famille }}">
+                            <span class="nom">{{ Atomes[37].nom }}</span>
+                            <span class="symbole">{{ Atomes[37].symbole }}</span>
+                            <span class="numero">{{ Atomes[37].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[37].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -603,12 +603,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 38})}}">
-                    {% if Atomes["Strontium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Strontium"].famille }}">
-                            <span class="nom">{{ Atomes["Strontium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Strontium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Strontium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Strontium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[38] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[38].famille }}">
+                            <span class="nom">{{ Atomes[38].nom }}</span>
+                            <span class="symbole">{{ Atomes[38].symbole }}</span>
+                            <span class="numero">{{ Atomes[38].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[38].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -617,12 +617,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 39})}}">
-                    {% if Atomes["Yttrium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Yttrium"].famille }}">
-                            <span class="nom">{{ Atomes["Yttrium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Yttrium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Yttrium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Yttrium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[39] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[39].famille }}">
+                            <span class="nom">{{ Atomes[39].nom }}</span>
+                            <span class="symbole">{{ Atomes[39].symbole }}</span>
+                            <span class="numero">{{ Atomes[39].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[39].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -631,12 +631,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 40})}}">
-                    {% if Atomes["Zirconium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Zirconium"].famille }}">
-                            <span class="nom">{{ Atomes["Zirconium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Zirconium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Zirconium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Zirconium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[40] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[40].famille }}">
+                            <span class="nom">{{ Atomes[40].nom }}</span>
+                            <span class="symbole">{{ Atomes[40].symbole }}</span>
+                            <span class="numero">{{ Atomes[40].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[40].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -645,12 +645,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 41})}}">
-                    {% if Atomes["Niobium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Niobium"].famille }}">
-                            <span class="nom">{{ Atomes["Niobium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Niobium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Niobium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Niobium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[41] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[41].famille }}">
+                            <span class="nom">{{ Atomes[41].nom }}</span>
+                            <span class="symbole">{{ Atomes[41].symbole }}</span>
+                            <span class="numero">{{ Atomes[41].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[41].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -659,12 +659,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 42})}}">
-                    {% if Atomes["Molybdène"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Molybdène"].famille }}">
-                            <span class="nom">{{ Atomes["Molybdène"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Molybdène"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Molybdène"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Molybdène"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[42] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[42].famille }}">
+                            <span class="nom">{{ Atomes[42].nom }}</span>
+                            <span class="symbole">{{ Atomes[42].symbole }}</span>
+                            <span class="numero">{{ Atomes[42].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[42].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -673,12 +673,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 43})}}">
-                    {% if Atomes["Technétium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Technétium"].famille }}">
-                            <span class="nom">{{ Atomes["Technétium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Technétium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Technétium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Technétium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[43] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[43].famille }}">
+                            <span class="nom">{{ Atomes[43].nom }}</span>
+                            <span class="symbole">{{ Atomes[43].symbole }}</span>
+                            <span class="numero">{{ Atomes[43].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[43].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -687,12 +687,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 44})}}">
-                    {% if Atomes["Ruthénium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Ruthénium"].famille }}">
-                            <span class="nom">{{ Atomes["Ruthénium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Ruthénium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Ruthénium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Ruthénium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[44] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[44].famille }}">
+                            <span class="nom">{{ Atomes[44].nom }}</span>
+                            <span class="symbole">{{ Atomes[44].symbole }}</span>
+                            <span class="numero">{{ Atomes[44].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[44].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -701,12 +701,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 45})}}">
-                    {% if Atomes["Rhodium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Rhodium"].famille }}">
-                            <span class="nom">{{ Atomes["Rhodium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Rhodium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Rhodium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Rhodium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[45] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[45].famille }}">
+                            <span class="nom">{{ Atomes[45].nom }}</span>
+                            <span class="symbole">{{ Atomes[45].symbole }}</span>
+                            <span class="numero">{{ Atomes[45].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[45].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -715,12 +715,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 46})}}">
-                    {% if Atomes["Palladium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Palladium"].famille }}">
-                            <span class="nom">{{ Atomes["Palladium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Palladium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Palladium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Palladium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[46] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[46].famille }}">
+                            <span class="nom">{{ Atomes[46].nom }}</span>
+                            <span class="symbole">{{ Atomes[46].symbole }}</span>
+                            <span class="numero">{{ Atomes[46].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[46].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -729,12 +729,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 47})}}">
-                    {% if Atomes["Argent"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Argent"].famille }}">
-                            <span class="nom">{{ Atomes["Argent"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Argent"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Argent"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Argent"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[47] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[47].famille }}">
+                            <span class="nom">{{ Atomes[47].nom }}</span>
+                            <span class="symbole">{{ Atomes[47].symbole }}</span>
+                            <span class="numero">{{ Atomes[47].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[47].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -743,12 +743,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 48})}}">
-                    {% if Atomes["Cadmium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Cadmium"].famille }}">
-                            <span class="nom">{{ Atomes["Cadmium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Cadmium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Cadmium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Cadmium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[48] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[48].famille }}">
+                            <span class="nom">{{ Atomes[48].nom }}</span>
+                            <span class="symbole">{{ Atomes[48].symbole }}</span>
+                            <span class="numero">{{ Atomes[48].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[48].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -757,12 +757,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 49})}}">
-                    {% if Atomes["Indium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Indium"].famille }}">
-                            <span class="nom">{{ Atomes["Indium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Indium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Indium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Indium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[49] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[49].famille }}">
+                            <span class="nom">{{ Atomes[49].nom }}</span>
+                            <span class="symbole">{{ Atomes[49].symbole }}</span>
+                            <span class="numero">{{ Atomes[49].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[49].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -771,12 +771,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 50})}}">
-                    {% if Atomes["Étain"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Étain"].famille }}">
-                            <span class="nom">{{ Atomes["Étain"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Étain"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Étain"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Étain"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[50] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[50].famille }}">
+                            <span class="nom">{{ Atomes[50].nom }}</span>
+                            <span class="symbole">{{ Atomes[50].symbole }}</span>
+                            <span class="numero">{{ Atomes[50].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[50].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -785,12 +785,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 51})}}">
-                    {% if Atomes["Antimoine"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Antimoine"].famille }}">
-                            <span class="nom">{{ Atomes["Antimoine"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Antimoine"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Antimoine"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Antimoine"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[51] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[51].famille }}">
+                            <span class="nom">{{ Atomes[51].nom }}</span>
+                            <span class="symbole">{{ Atomes[51].symbole }}</span>
+                            <span class="numero">{{ Atomes[51].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[51].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -799,12 +799,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 52})}}">
-                    {% if Atomes["Tellure"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Tellure"].famille }}">
-                            <span class="nom">{{ Atomes["Tellure"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Tellure"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Tellure"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Tellure"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[52] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[52].famille }}">
+                            <span class="nom">{{ Atomes[52].nom }}</span>
+                            <span class="symbole">{{ Atomes[52].symbole }}</span>
+                            <span class="numero">{{ Atomes[52].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[52].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -813,12 +813,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 53})}}">
-                    {% if Atomes["Iode"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Iode"].famille }}">
-                            <span class="nom">{{ Atomes["Iode"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Iode"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Iode"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Iode"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[53] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[53].famille }}">
+                            <span class="nom">{{ Atomes[53].nom }}</span>
+                            <span class="symbole">{{ Atomes[53].symbole }}</span>
+                            <span class="numero">{{ Atomes[53].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[53].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -829,12 +829,12 @@
             <td>
 
                 <a href="{{path('app_read_atom', {'id': 54})}}">
-                    {% if Atomes["Xénon"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Xénon"].famille }}">
-                            <span class="nom">{{ Atomes["Xénon"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Xénon"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Xénon"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Xénon"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[54] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[54].famille }}">
+                            <span class="nom">{{ Atomes[54].nom }}</span>
+                            <span class="symbole">{{ Atomes[54].symbole }}</span>
+                            <span class="numero">{{ Atomes[54].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[54].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -849,12 +849,12 @@
             <th>6</th>
             <td>
                 <a href="{{path('app_read_atom', {'id': 55})}}">
-                    {% if Atomes["Césium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Césium"].famille }}">
-                            <span class="nom">{{ Atomes["Césium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Césium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Césium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Césium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[55] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[55].famille }}">
+                            <span class="nom">{{ Atomes[55].nom }}</span>
+                            <span class="symbole">{{ Atomes[55].symbole }}</span>
+                            <span class="numero">{{ Atomes[55].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[55].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -863,12 +863,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 56})}}">
-                    {% if Atomes["Baryum"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Baryum"].famille }}">
-                            <span class="nom">{{ Atomes["Baryum"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Baryum"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Baryum"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Baryum"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[56] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[56].famille }}">
+                            <span class="nom">{{ Atomes[56].nom }}</span>
+                            <span class="symbole">{{ Atomes[56].symbole }}</span>
+                            <span class="numero">{{ Atomes[56].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[56].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -887,12 +887,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 72})}}">
-                    {% if Atomes["Hafnium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Hafnium"].famille }}">
-                            <span class="nom">{{ Atomes["Hafnium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Hafnium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Hafnium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Hafnium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[72] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[72].famille }}">
+                            <span class="nom">{{ Atomes[72].nom }}</span>
+                            <span class="symbole">{{ Atomes[72].symbole }}</span>
+                            <span class="numero">{{ Atomes[72].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[72].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -901,12 +901,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 73})}}">
-                    {% if Atomes["Tantale"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Tantale"].famille }}">
-                            <span class="nom">{{ Atomes["Tantale"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Tantale"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Tantale"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Tantale"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[73] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[73].famille }}">
+                            <span class="nom">{{ Atomes[73].nom }}</span>
+                            <span class="symbole">{{ Atomes[73].symbole }}</span>
+                            <span class="numero">{{ Atomes[73].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[73].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -915,12 +915,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 74})}}">
-                    {% if Atomes["Tungstène"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Tungstène"].famille }}">
-                            <span class="nom">{{ Atomes["Tungstène"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Tungstène"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Tungstène"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Tungstène"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[74] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[74].famille }}">
+                            <span class="nom">{{ Atomes[74].nom }}</span>
+                            <span class="symbole">{{ Atomes[74].symbole }}</span>
+                            <span class="numero">{{ Atomes[74].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[74].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -929,12 +929,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 75})}}">
-                    {% if Atomes["Rhénium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Rhénium"].famille }}">
-                            <span class="nom">{{ Atomes["Rhénium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Rhénium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Rhénium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Rhénium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[75] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[75].famille }}">
+                            <span class="nom">{{ Atomes[75].nom }}</span>
+                            <span class="symbole">{{ Atomes[75].symbole }}</span>
+                            <span class="numero">{{ Atomes[75].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[75].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -943,12 +943,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 76})}}">
-                    {% if Atomes["Osmium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Osmium"].famille }}">
-                            <span class="nom">{{ Atomes["Osmium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Osmium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Osmium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Osmium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[76] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[76].famille }}">
+                            <span class="nom">{{ Atomes[76].nom }}</span>
+                            <span class="symbole">{{ Atomes[76].symbole }}</span>
+                            <span class="numero">{{ Atomes[76].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[76].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -957,12 +957,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 77})}}">
-                    {% if Atomes["Iridium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Iridium"].famille }}">
-                            <span class="nom">{{ Atomes["Iridium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Iridium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Iridium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Iridium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[77] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[77].famille }}">
+                            <span class="nom">{{ Atomes[77].nom }}</span>
+                            <span class="symbole">{{ Atomes[77].symbole }}</span>
+                            <span class="numero">{{ Atomes[77].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[77].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -971,12 +971,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 78})}}">
-                    {% if Atomes["Platine"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Platine"].famille }}">
-                            <span class="nom">{{ Atomes["Platine"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Platine"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Platine"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Platine"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[78] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[78].famille }}">
+                            <span class="nom">{{ Atomes[78].nom }}</span>
+                            <span class="symbole">{{ Atomes[78].symbole }}</span>
+                            <span class="numero">{{ Atomes[78].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[78].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -985,12 +985,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 79})}}">
-                    {% if Atomes["Or"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Or"].famille }}">
-                            <span class="nom">{{ Atomes["Or"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Or"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Or"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Or"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[79] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[79].famille }}">
+                            <span class="nom">{{ Atomes[79].nom }}</span>
+                            <span class="symbole">{{ Atomes[79].symbole }}</span>
+                            <span class="numero">{{ Atomes[79].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[79].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -999,12 +999,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 80})}}">
-                    {% if Atomes["Mercure"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Mercure"].famille }}">
-                            <span class="nom">{{ Atomes["Mercure"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Mercure"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Mercure"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Mercure"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[80] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[80].famille }}">
+                            <span class="nom">{{ Atomes[80].nom }}</span>
+                            <span class="symbole">{{ Atomes[80].symbole }}</span>
+                            <span class="numero">{{ Atomes[80].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[80].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1013,12 +1013,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 81})}}">
-                    {% if Atomes["Thallium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Thallium"].famille }}">
-                            <span class="nom">{{ Atomes["Thallium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Thallium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Thallium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Thallium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[81] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[81].famille }}">
+                            <span class="nom">{{ Atomes[81].nom }}</span>
+                            <span class="symbole">{{ Atomes[81].symbole }}</span>
+                            <span class="numero">{{ Atomes[81].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[81].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1027,12 +1027,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 82})}}">
-                    {% if Atomes["Plomb"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Plomb"].famille }}">
-                            <span class="nom">{{ Atomes["Plomb"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Plomb"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Plomb"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Plomb"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[82] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[82].famille }}">
+                            <span class="nom">{{ Atomes[82].nom }}</span>
+                            <span class="symbole">{{ Atomes[82].symbole }}</span>
+                            <span class="numero">{{ Atomes[82].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[82].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1041,12 +1041,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 83})}}">
-                    {% if Atomes["Bismuth"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Bismuth"].famille }}">
-                            <span class="nom">{{ Atomes["Bismuth"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Bismuth"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Bismuth"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Bismuth"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[83] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[83].famille }}">
+                            <span class="nom">{{ Atomes[83].nom }}</span>
+                            <span class="symbole">{{ Atomes[83].symbole }}</span>
+                            <span class="numero">{{ Atomes[83].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[83].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1055,12 +1055,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 84})}}">
-                    {% if Atomes["Polonium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Polonium"].famille }}">
-                            <span class="nom">{{ Atomes["Polonium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Polonium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Polonium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Polonium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[84] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[84].famille }}">
+                            <span class="nom">{{ Atomes[84].nom }}</span>
+                            <span class="symbole">{{ Atomes[84].symbole }}</span>
+                            <span class="numero">{{ Atomes[84].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[84].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1069,12 +1069,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 85})}}">
-                    {% if Atomes["Astate"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Astate"].famille }}">
-                            <span class="nom">{{ Atomes["Astate"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Astate"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Astate"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Astate"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[85] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[85].famille }}">
+                            <span class="nom">{{ Atomes[85].nom }}</span>
+                            <span class="symbole">{{ Atomes[85].symbole }}</span>
+                            <span class="numero">{{ Atomes[85].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[85].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1083,12 +1083,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 86})}}">
-                    {% if Atomes["Radon"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Radon"].famille }}">
-                            <span class="nom">{{ Atomes["Radon"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Radon"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Radon"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Radon"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[86] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[86].famille }}">
+                            <span class="nom">{{ Atomes[86].nom }}</span>
+                            <span class="symbole">{{ Atomes[86].symbole }}</span>
+                            <span class="numero">{{ Atomes[86].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[86].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1103,12 +1103,12 @@
             <th>7</th>
             <td>
                 <a href="{{path('app_read_atom', {'id': 87})}}">
-                    {% if Atomes["Francium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Francium"].famille }}">
-                            <span class="nom">{{ Atomes["Francium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Francium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Francium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Francium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[87] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[87].famille }}">
+                            <span class="nom">{{ Atomes[87].nom }}</span>
+                            <span class="symbole">{{ Atomes[87].symbole }}</span>
+                            <span class="numero">{{ Atomes[87].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[87].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1117,12 +1117,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 88})}}">
-                    {% if Atomes["Radium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Radium"].famille }}">
-                            <span class="nom">{{ Atomes["Radium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Radium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Radium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Radium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[88] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[88].famille }}">
+                            <span class="nom">{{ Atomes[88].nom }}</span>
+                            <span class="symbole">{{ Atomes[88].symbole }}</span>
+                            <span class="numero">{{ Atomes[88].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[88].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1142,12 +1142,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 104})}}">
-                    {% if Atomes["Rutherfordium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Rutherfordium"].famille }}">
-                            <span class="nom">{{ Atomes["Rutherfordium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Rutherfordium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Rutherfordium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Rutherfordium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[104] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[104].famille }}">
+                            <span class="nom">{{ Atomes[104].nom }}</span>
+                            <span class="symbole">{{ Atomes[104].symbole }}</span>
+                            <span class="numero">{{ Atomes[104].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[104].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1156,12 +1156,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 105})}}">
-                    {% if Atomes["Dubnium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Dubnium"].famille }}">
-                            <span class="nom">{{ Atomes["Dubnium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Dubnium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Dubnium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Dubnium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[105] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[105].famille }}">
+                            <span class="nom">{{ Atomes[105].nom }}</span>
+                            <span class="symbole">{{ Atomes[105].symbole }}</span>
+                            <span class="numero">{{ Atomes[105].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[105].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1170,12 +1170,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 106})}}">
-                    {% if Atomes["Seaborgium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Seaborgium"].famille }}">
-                            <span class="nom">{{ Atomes["Seaborgium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Seaborgium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Seaborgium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Seaborgium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[106] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[106].famille }}">
+                            <span class="nom">{{ Atomes[106].nom }}</span>
+                            <span class="symbole">{{ Atomes[106].symbole }}</span>
+                            <span class="numero">{{ Atomes[106].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[106].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1184,12 +1184,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 107})}}">
-                    {% if Atomes["Bohrium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Bohrium"].famille }}">
-                            <span class="nom">{{ Atomes["Bohrium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Bohrium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Bohrium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Bohrium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[107] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[107].famille }}">
+                            <span class="nom">{{ Atomes[107].nom }}</span>
+                            <span class="symbole">{{ Atomes[107].symbole }}</span>
+                            <span class="numero">{{ Atomes[107].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[107].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1198,12 +1198,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 108})}}">
-                    {% if Atomes["Hassium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Hassium"].famille }}">
-                            <span class="nom">{{ Atomes["Hassium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Hassium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Hassium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Hassium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[108] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[108].famille }}">
+                            <span class="nom">{{ Atomes[108].nom }}</span>
+                            <span class="symbole">{{ Atomes[108].symbole }}</span>
+                            <span class="numero">{{ Atomes[108].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[108].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1212,12 +1212,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 109})}}">
-                    {% if Atomes["Meitnerium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Meitnerium"].famille }}">
-                            <span class="nom">{{ Atomes["Meitnerium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Meitnerium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Meitnerium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Meitnerium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[109] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[109].famille }}">
+                            <span class="nom">{{ Atomes[109].nom }}</span>
+                            <span class="symbole">{{ Atomes[109].symbole }}</span>
+                            <span class="numero">{{ Atomes[109].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[109].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1226,12 +1226,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 110})}}">
-                    {% if Atomes["Darmstadtium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Darmstadtium"].famille }}">
-                            <span class="nom">{{ Atomes["Darmstadtium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Darmstadtium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Darmstadtium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Darmstadtium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[110] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[110].famille }}">
+                            <span class="nom">{{ Atomes[110].nom }}</span>
+                            <span class="symbole">{{ Atomes[110].symbole }}</span>
+                            <span class="numero">{{ Atomes[110].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[110].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1240,12 +1240,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 111})}}">
-                    {% if Atomes["Roentgenium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Roentgenium"].famille }}">
-                            <span class="nom">{{ Atomes["Roentgenium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Roentgenium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Roentgenium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Roentgenium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[111] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[111].famille }}">
+                            <span class="nom">{{ Atomes[111].nom }}</span>
+                            <span class="symbole">{{ Atomes[111].symbole }}</span>
+                            <span class="numero">{{ Atomes[111].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[111].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1254,12 +1254,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 112})}}">
-                    {% if Atomes["Copernicium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Copernicium"].famille }}">
-                            <span class="nom">{{ Atomes["Copernicium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Copernicium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Copernicium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Copernicium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[112] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[112].famille }}">
+                            <span class="nom">{{ Atomes[112].nom }}</span>
+                            <span class="symbole">{{ Atomes[112].symbole }}</span>
+                            <span class="numero">{{ Atomes[112].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[112].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1268,12 +1268,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 113})}}">
-                    {% if Atomes["Nihonium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Nihonium"].famille }}">
-                            <span class="nom">{{ Atomes["Nihonium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Nihonium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Nihonium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Nihonium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[113] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[113].famille }}">
+                            <span class="nom">{{ Atomes[113].nom }}</span>
+                            <span class="symbole">{{ Atomes[113].symbole }}</span>
+                            <span class="numero">{{ Atomes[113].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[113].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1282,12 +1282,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 114})}}">
-                    {% if Atomes["Flérovium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Flérovium"].famille }}">
-                            <span class="nom">{{ Atomes["Flérovium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Flérovium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Flérovium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Flérovium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[114] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[114].famille }}">
+                            <span class="nom">{{ Atomes[114].nom }}</span>
+                            <span class="symbole">{{ Atomes[114].symbole }}</span>
+                            <span class="numero">{{ Atomes[114].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[114].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1296,12 +1296,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 115})}}">
-                    {% if Atomes["Moscovium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Moscovium"].famille }}">
-                            <span class="nom">{{ Atomes["Moscovium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Moscovium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Moscovium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Moscovium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[115] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[115].famille }}">
+                            <span class="nom">{{ Atomes[115].nom }}</span>
+                            <span class="symbole">{{ Atomes[115].symbole }}</span>
+                            <span class="numero">{{ Atomes[115].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[115].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1310,12 +1310,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 116})}}">
-                    {% if Atomes["Livermorium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Livermorium"].famille }}">
-                            <span class="nom">{{ Atomes["Livermorium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Livermorium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Livermorium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Livermorium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[116] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[116].famille }}">
+                            <span class="nom">{{ Atomes[116].nom }}</span>
+                            <span class="symbole">{{ Atomes[116].symbole }}</span>
+                            <span class="numero">{{ Atomes[116].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[116].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1324,12 +1324,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 117})}}">
-                    {% if Atomes["Tennessine"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Tennessine"].famille }}">
-                            <span class="nom">{{ Atomes["Tennessine"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Tennessine"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Tennessine"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Tennessine"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[117] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[117].famille }}">
+                            <span class="nom">{{ Atomes[117].nom }}</span>
+                            <span class="symbole">{{ Atomes[117].symbole }}</span>
+                            <span class="numero">{{ Atomes[117].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[117].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1338,12 +1338,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 118})}}">
-                    {% if Atomes["Oganesson"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Oganesson"].famille }}">
-                            <span class="nom">{{ Atomes["Oganesson"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Oganesson"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Oganesson"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Oganesson"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[118] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[118].famille }}">
+                            <span class="nom">{{ Atomes[118].nom }}</span>
+                            <span class="symbole">{{ Atomes[118].symbole }}</span>
+                            <span class="numero">{{ Atomes[118].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[118].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1360,12 +1360,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 57})}}">
-                    {% if Atomes["Lanthane"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Lanthane"].famille }}">
-                            <span class="nom">{{ Atomes["Lanthane"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Lanthane"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Lanthane"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Lanthane"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[57] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[57].famille }}">
+                            <span class="nom">{{ Atomes[57].nom }}</span>
+                            <span class="symbole">{{ Atomes[57].symbole }}</span>
+                            <span class="numero">{{ Atomes[57].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[57].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1374,12 +1374,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 58})}}">
-                    {% if Atomes["Cérium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Cérium"].famille }}">
-                            <span class="nom">{{ Atomes["Cérium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Cérium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Cérium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Cérium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[58] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[58].famille }}">
+                            <span class="nom">{{ Atomes[58].nom }}</span>
+                            <span class="symbole">{{ Atomes[58].symbole }}</span>
+                            <span class="numero">{{ Atomes[58].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[58].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1388,12 +1388,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 59})}}">
-                    {% if Atomes["Praséodyme"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Praséodyme"].famille }}">
-                            <span class="nom">{{ Atomes["Praséodyme"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Praséodyme"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Praséodyme"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Praséodyme"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[59] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[59].famille }}">
+                            <span class="nom">{{ Atomes[59].nom }}</span>
+                            <span class="symbole">{{ Atomes[59].symbole }}</span>
+                            <span class="numero">{{ Atomes[59].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[59].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1402,12 +1402,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 60})}}">
-                    {% if Atomes["Néodyme"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Néodyme"].famille }}">
-                            <span class="nom">{{ Atomes["Néodyme"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Néodyme"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Néodyme"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Néodyme"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[60] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[60].famille }}">
+                            <span class="nom">{{ Atomes[60].nom }}</span>
+                            <span class="symbole">{{ Atomes[60].symbole }}</span>
+                            <span class="numero">{{ Atomes[60].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[60].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1416,12 +1416,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 61})}}">
-                    {% if Atomes["Prométhium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Prométhium"].famille }}">
-                            <span class="nom">{{ Atomes["Prométhium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Prométhium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Prométhium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Prométhium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[61] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[61].famille }}">
+                            <span class="nom">{{ Atomes[61].nom }}</span>
+                            <span class="symbole">{{ Atomes[61].symbole }}</span>
+                            <span class="numero">{{ Atomes[61].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[61].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1430,12 +1430,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 62})}}">
-                    {% if Atomes["Samarium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Samarium"].famille }}">
-                            <span class="nom">{{ Atomes["Samarium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Samarium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Samarium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Samarium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[62] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[62].famille }}">
+                            <span class="nom">{{ Atomes[62].nom }}</span>
+                            <span class="symbole">{{ Atomes[62].symbole }}</span>
+                            <span class="numero">{{ Atomes[62].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[62].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1444,12 +1444,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 63})}}">
-                    {% if Atomes["Europium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Europium"].famille }}">
-                            <span class="nom">{{ Atomes["Europium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Europium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Europium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Europium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[63] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[63].famille }}">
+                            <span class="nom">{{ Atomes[63].nom }}</span>
+                            <span class="symbole">{{ Atomes[63].symbole }}</span>
+                            <span class="numero">{{ Atomes[63].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[63].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1458,12 +1458,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 64})}}">
-                    {% if Atomes["Gadolinium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Gadolinium"].famille }}">
-                            <span class="nom">{{ Atomes["Gadolinium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Gadolinium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Gadolinium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Gadolinium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[64] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[64].famille }}">
+                            <span class="nom">{{ Atomes[64].nom }}</span>
+                            <span class="symbole">{{ Atomes[64].symbole }}</span>
+                            <span class="numero">{{ Atomes[64].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[64].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1472,12 +1472,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 65})}}">
-                    {% if Atomes["Terbium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Terbium"].famille }}">
-                            <span class="nom">{{ Atomes["Terbium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Terbium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Terbium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Terbium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[65] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[65].famille }}">
+                            <span class="nom">{{ Atomes[65].nom }}</span>
+                            <span class="symbole">{{ Atomes[65].symbole }}</span>
+                            <span class="numero">{{ Atomes[65].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[65].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1486,12 +1486,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 66})}}">
-                    {% if Atomes["Dysprosium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Dysprosium"].famille }}">
-                            <span class="nom">{{ Atomes["Dysprosium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Dysprosium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Dysprosium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Dysprosium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[66] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[66].famille }}">
+                            <span class="nom">{{ Atomes[66].nom }}</span>
+                            <span class="symbole">{{ Atomes[66].symbole }}</span>
+                            <span class="numero">{{ Atomes[66].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[66].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1500,12 +1500,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 67})}}">
-                    {% if Atomes["Holmium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Holmium"].famille }}">
-                            <span class="nom">{{ Atomes["Holmium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Holmium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Holmium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Holmium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[67] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[67].famille }}">
+                            <span class="nom">{{ Atomes[67].nom }}</span>
+                            <span class="symbole">{{ Atomes[67].symbole }}</span>
+                            <span class="numero">{{ Atomes[67].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[67].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1514,12 +1514,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 68})}}">
-                    {% if Atomes["Erbium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Erbium"].famille }}">
-                            <span class="nom">{{ Atomes["Erbium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Erbium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Erbium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Erbium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[68] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[68].famille }}">
+                            <span class="nom">{{ Atomes[68].nom }}</span>
+                            <span class="symbole">{{ Atomes[68].symbole }}</span>
+                            <span class="numero">{{ Atomes[68].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[68].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1528,12 +1528,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 69})}}">
-                    {% if Atomes["Thulium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Thulium"].famille }}">
-                            <span class="nom">{{ Atomes["Thulium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Thulium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Thulium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Thulium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[69] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[69].famille }}">
+                            <span class="nom">{{ Atomes[69].nom }}</span>
+                            <span class="symbole">{{ Atomes[69].symbole }}</span>
+                            <span class="numero">{{ Atomes[69].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[69].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1542,12 +1542,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 70})}}">
-                    {% if Atomes["Ytterbium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Ytterbium"].famille }}">
-                            <span class="nom">{{ Atomes["Ytterbium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Ytterbium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Ytterbium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Ytterbium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[70] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[70].famille }}">
+                            <span class="nom">{{ Atomes[70].nom }}</span>
+                            <span class="symbole">{{ Atomes[70].symbole }}</span>
+                            <span class="numero">{{ Atomes[70].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[70].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1556,12 +1556,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 71})}}">
-                    {% if Atomes["Lutécium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Lutécium"].famille }}">
-                            <span class="nom">{{ Atomes["Lutécium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Lutécium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Lutécium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Lutécium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[71] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[71].famille }}">
+                            <span class="nom">{{ Atomes[71].nom }}</span>
+                            <span class="symbole">{{ Atomes[71].symbole }}</span>
+                            <span class="numero">{{ Atomes[71].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[71].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1574,16 +1574,15 @@
         <!------------------------------------------------------------------------------------------------------------->
         <tr>
             <th></th>
-
-
+            
             <td>
                 <a href="{{path('app_read_atom', {'id': 89})}}">
-                    {% if Atomes["Actinium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Actinium"].famille }}">
-                            <span class="nom">{{ Atomes["Actinium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Actinium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Actinium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Actinium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[89] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[89].famille }}">
+                            <span class="nom">{{ Atomes[89].nom }}</span>
+                            <span class="symbole">{{ Atomes[89].symbole }}</span>
+                            <span class="numero">{{ Atomes[89].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[89].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1592,12 +1591,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 90})}}">
-                    {% if Atomes["Thorium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Thorium"].famille }}">
-                            <span class="nom">{{ Atomes["Thorium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Thorium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Thorium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Thorium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[90] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[90].famille }}">
+                            <span class="nom">{{ Atomes[90].nom }}</span>
+                            <span class="symbole">{{ Atomes[90].symbole }}</span>
+                            <span class="numero">{{ Atomes[90].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[90].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1606,12 +1605,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 91})}}">
-                    {% if Atomes["Protactinium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Protactinium"].famille }}">
-                            <span class="nom">{{ Atomes["Protactinium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Protactinium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Protactinium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Protactinium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[91] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[91].famille }}">
+                            <span class="nom">{{ Atomes[91].nom }}</span>
+                            <span class="symbole">{{ Atomes[91].symbole }}</span>
+                            <span class="numero">{{ Atomes[91].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[91].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1620,12 +1619,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 92})}}">
-                    {% if Atomes["Uranium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Uranium"].famille }}">
-                            <span class="nom">{{ Atomes["Uranium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Uranium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Uranium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Uranium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[92] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[92].famille }}">
+                            <span class="nom">{{ Atomes[92].nom }}</span>
+                            <span class="symbole">{{ Atomes[92].symbole }}</span>
+                            <span class="numero">{{ Atomes[92].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[92].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1634,12 +1633,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 93})}}">
-                    {% if Atomes["Neptunium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Neptunium"].famille }}">
-                            <span class="nom">{{ Atomes["Neptunium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Neptunium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Neptunium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Neptunium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[93] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[93].famille }}">
+                            <span class="nom">{{ Atomes[93].nom }}</span>
+                            <span class="symbole">{{ Atomes[93].symbole }}</span>
+                            <span class="numero">{{ Atomes[93].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[93].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1648,12 +1647,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 94})}}">
-                    {% if Atomes["Plutonium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Plutonium"].famille }}">
-                            <span class="nom">{{ Atomes["Plutonium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Plutonium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Plutonium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Plutonium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[94] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[94].famille }}">
+                            <span class="nom">{{ Atomes[94].nom }}</span>
+                            <span class="symbole">{{ Atomes[94].symbole }}</span>
+                            <span class="numero">{{ Atomes[94].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[94].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1662,12 +1661,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 95})}}">
-                    {% if Atomes["Américium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Américium"].famille }}">
-                            <span class="nom">{{ Atomes["Américium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Américium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Américium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Américium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[95] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[95].famille }}">
+                            <span class="nom">{{ Atomes[95].nom }}</span>
+                            <span class="symbole">{{ Atomes[95].symbole }}</span>
+                            <span class="numero">{{ Atomes[95].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[95].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1676,12 +1675,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 96})}}">
-                    {% if Atomes["Curium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Curium"].famille }}">
-                            <span class="nom">{{ Atomes["Curium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Curium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Curium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Curium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[96] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[96].famille }}">
+                            <span class="nom">{{ Atomes[96].nom }}</span>
+                            <span class="symbole">{{ Atomes[96].symbole }}</span>
+                            <span class="numero">{{ Atomes[96].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[96].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1690,12 +1689,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 97})}}">
-                    {% if Atomes["Berkélium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Berkélium"].famille }}">
-                            <span class="nom">{{ Atomes["Berkélium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Berkélium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Berkélium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Berkélium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[97] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[97].famille }}">
+                            <span class="nom">{{ Atomes[97].nom }}</span>
+                            <span class="symbole">{{ Atomes[97].symbole }}</span>
+                            <span class="numero">{{ Atomes[97].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[97].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1704,12 +1703,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 98})}}">
-                    {% if Atomes["Californium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Californium"].famille }}">
-                            <span class="nom">{{ Atomes["Californium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Californium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Californium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Californium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[98] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[98].famille }}">
+                            <span class="nom">{{ Atomes[98].nom }}</span>
+                            <span class="symbole">{{ Atomes[98].symbole }}</span>
+                            <span class="numero">{{ Atomes[98].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[98].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1718,12 +1717,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 99})}}">
-                    {% if Atomes["Einsteinium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Einsteinium"].famille }}">
-                            <span class="nom">{{ Atomes["Einsteinium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Einsteinium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Einsteinium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Einsteinium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[99] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[99].famille }}">
+                            <span class="nom">{{ Atomes[99].nom }}</span>
+                            <span class="symbole">{{ Atomes[99].symbole }}</span>
+                            <span class="numero">{{ Atomes[99].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[99].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1732,12 +1731,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 100})}}">
-                    {% if Atomes["Fermium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Fermium"].famille }}">
-                            <span class="nom">{{ Atomes["Fermium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Fermium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Fermium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Fermium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[100] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[100].famille }}">
+                            <span class="nom">{{ Atomes[100].nom }}</span>
+                            <span class="symbole">{{ Atomes[100].symbole }}</span>
+                            <span class="numero">{{ Atomes[100].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[100].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1746,12 +1745,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 101})}}">
-                    {% if Atomes["Mendélévium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Mendélévium"].famille }}">
-                            <span class="nom">{{ Atomes["Mendélévium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Mendélévium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Mendélévium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Mendélévium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[101] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[101].famille }}">
+                            <span class="nom">{{ Atomes[101].nom }}</span>
+                            <span class="symbole">{{ Atomes[101].symbole }}</span>
+                            <span class="numero">{{ Atomes[101].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[101].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1760,12 +1759,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 102})}}">
-                    {% if Atomes["Nobélium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Nobélium"].famille }}">
-                            <span class="nom">{{ Atomes["Nobélium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Nobélium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Nobélium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Nobélium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[102] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[102].famille }}">
+                            <span class="nom">{{ Atomes[102].nom }}</span>
+                            <span class="symbole">{{ Atomes[102].symbole }}</span>
+                            <span class="numero">{{ Atomes[102].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[102].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>
@@ -1774,12 +1773,12 @@
             </td>
             <td>
                 <a href="{{path('app_read_atom', {'id': 103})}}">
-                    {% if Atomes["Lawrencium"] is defined %}
-                        <div class="boxAtom text-center {{ Atomes["Lawrencium"].famille }}">
-                            <span class="nom">{{ Atomes["Lawrencium"].nom }}</span>
-                            <span class="symbole">{{ Atomes["Lawrencium"].symbole }}</span>
-                            <span class="numero">{{ Atomes["Lawrencium"].numero }}</span>
-                            <span class="masseAtomique">{{ Atomes["Lawrencium"].masseAtomique|round(2, 'ceil') }}</span>
+                    {% if Atomes[103] is defined %}
+                        <div class="boxAtom text-center {{ Atomes[103].famille }}">
+                            <span class="nom">{{ Atomes[103].nom }}</span>
+                            <span class="symbole">{{ Atomes[103].symbole }}</span>
+                            <span class="numero">{{ Atomes[103].numero }}</span>
+                            <span class="masseAtomique">{{ Atomes[103].masseAtomique|round(2, 'ceil') }}</span>
                         </div>
                     {% else %}
                         <div class="boxAtom couleurTdVide"></div>

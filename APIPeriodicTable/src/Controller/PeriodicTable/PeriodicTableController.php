@@ -26,7 +26,7 @@ class PeriodicTableController extends AbstractController
             $this->ListeAtomes = $atomeRepository->findAll();
             foreach ($this->ListeAtomes as $value){
                 $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
-                $this->Atomes[$value->getNom()] = $value;
+                $this->Atomes[$value->getId()] = $value;
             }
 
         }
@@ -34,10 +34,10 @@ class PeriodicTableController extends AbstractController
             $this->ListeAtomes = $atomeRepository->findBy([$param=>$value]);
             foreach ($this->ListeAtomes as $value){
                 $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
-                $this->Atomes[$value->getNom()] = $value;
+                $this->Atomes[$value->getId()] = $value;
             }
         }
-
+//dd($this->Atomes);
         $this->Lanthanides = array_search('Lanthanides', $this->listefamily);
         $this->Actinides = array_search('Actinides', $this->listefamily);
 
