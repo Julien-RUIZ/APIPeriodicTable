@@ -2,6 +2,7 @@
 
 
 {% block body %}
+
 <section class="readAtom">
     <article>
         <div class="container">
@@ -41,8 +42,11 @@
                     <td>{{ atome.numero }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">Masse atomique</th>
+                    <th scope="row">Masse atomique <span class="infosup">?</span> </th>
                     <td>{{ atome.masseAtomique }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ listeDefinition[4].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Famille</th>
@@ -53,84 +57,84 @@
                     <td>{{ atome.MasseVolumique }}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition['Masse volumique'].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[1].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">CAS <span class="infosup">?</span> </th>
                     <td>{{ atome.cas}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition['CAS'].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[2].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">EINECS <span class="infosup">?</span> </th>
                     <td>{{ atome.einecs}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition['EINECS'].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[3].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Rayon atomique <span class="infosup">?</span> </th>
                     <td>{{ atome.RayonAtomique}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition['Rayon atomique'].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[5].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Rayon de covalence <span class="infosup">?</span> </th>
                     <td>{{ atome.RayonDeCovalence}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition['Rayon de covalence'].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[6].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Rayon de Van Der Waals <span class="infosup">?</span> </th>
                     <td>{{ atome.RayonDeVanDerWaals}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition['Rayon de Van der Waals'].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[7].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Electron <span class="infosup">?</span> </th>
                     <td>{{ atome.electron}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition['Électron'].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[8].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Configuration électronique <span class="infosup">?</span> </th>
                     <td>{{ atome.configurationElectronique}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition['Configuration Électronique'].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[9].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Etat d'oxydation <span class="infosup">?</span> </th>
                     <td>{{ atome.etatOxydation}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition["État d'oxydation"].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[10].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Électronégativité<span class="infosup">?</span> </th>
                     <td>{{ atome.electronegativite}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition["Électronégativité"].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[11].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Point de Fusion<span class="infosup">?</span> </th>
                     <td>{{ atome.pointDeFusion}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition["Point de Fusion"].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[12].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Point d'ébullition<span class="infosup">?</span> </th>
                     <td>{{ atome.pointDEbullition}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{ listeDefinition["Point d'Ébullition"].getDefinition() }}</td>
+                    <td colspan="2">{{ listeDefinition[13].getDefinition() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Radioactivité<span class="infosup">?</span> </th>

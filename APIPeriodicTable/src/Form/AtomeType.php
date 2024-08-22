@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Atome;
+
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,11 +18,16 @@ class AtomeType extends AbstractType
             ->add('nom')
             ->add('slug')
             ->add('electron')
-            ->add('numero')
+            ->add('numero', IntegerType::class, [
+                'disabled'=>true
+            ])
             ->add('symbole')
-            ->add('infoGroupe')
-            ->add('infoPeriode')
-            ->add('infoBloc')
+            ->add('infoGroupe', IntegerType::class, [
+                'disabled'=>true
+            ])
+            ->add('infoPeriode', IntegerType::class, [
+                'disabled'=>true
+            ])
             ->add('masseVolumique')
             ->add('cas')
             ->add('einecs')
