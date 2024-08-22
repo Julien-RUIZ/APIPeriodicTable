@@ -4,9 +4,12 @@ namespace App\Form;
 
 use App\Entity\Atome;
 
+use App\Enum\AtomFamily;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -44,7 +47,14 @@ class AtomeType extends AbstractType
             ->add('pointDeFusion')
             ->add('pointDEbullition')
             ->add('is_radioactif')
-            ->add('famille')
+            ->add('famille', ChoiceType::class, [
+                'choices' => array_combine(
+                    array_map(fn(AtomFamily $family) => $family->value, AtomFamily::cases()),  // Labels
+                    array_map(fn(AtomFamily $family) => $family->name, AtomFamily::cases())   // Valeurs
+                ),
+                'expanded' => false,  // Liste déroulante (dropdown)
+                'multiple' => false,  // Choix unique
+            ])
             ->add('infoAtome')
             ->add('submit', SubmitType::class)
         ;
