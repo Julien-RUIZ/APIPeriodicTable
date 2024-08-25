@@ -1,7 +1,6 @@
 
 
 <div class="appli">
-
     <table>
         <tr>
             <th></th>
@@ -33,7 +32,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 1})}}">
                     {% if Atomes[1] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[1].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[1].atomCategory.color }});">
                             <span class="nom">{{ Atomes[1].nom }}</span>
                                 <span class="symbole">{{ Atomes[1].symbole }}</span>
                                 <span class="numero">{{ Atomes[1].numero }}</span>
@@ -68,7 +67,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 2})}}">
                     {% if Atomes[2] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[2].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[2].atomCategory.color }});">
                             <span class="nom">{{ Atomes[2].nom }}</span>
                             <span class="symbole">{{ Atomes[2].symbole }}</span>
                             <span class="numero">{{ Atomes[2].numero }}</span>
@@ -89,7 +88,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 3})}}">
                     {% if Atomes[3] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[3].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[3].atomCategory.color }});">
                             <span class="nom">{{ Atomes[3].nom }}</span>
                             <span class="symbole">{{ Atomes[3].symbole }}</span>
                             <span class="numero">{{ Atomes[3].numero }}</span>
@@ -103,7 +102,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 4})}}">
                     {% if Atomes[4] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[4].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[4].atomCategory.color }});">
                             <span class="nom">{{ Atomes[4].nom }}</span>
                             <span class="symbole">{{ Atomes[4].symbole }}</span>
                             <span class="numero">{{ Atomes[4].numero }}</span>
@@ -117,7 +116,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 5})}}">
                     {% if Atomes[5] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[5].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[5].atomCategory.color }});">
                             <span class="nom">{{ Atomes[5].nom }}</span>
                             <span class="symbole">{{ Atomes[5].symbole }}</span>
                             <span class="numero">{{ Atomes[5].numero }}</span>
@@ -131,7 +130,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 6})}}">
                     {% if Atomes[6] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[6].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[6].atomCategory.color }});">
                             <span class="nom">{{ Atomes[6].nom }}</span>
                             <span class="symbole">{{ Atomes[6].symbole }}</span>
                             <span class="numero">{{ Atomes[6].numero }}</span>
@@ -145,7 +144,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 7})}}">
                     {% if Atomes[7] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[7].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[7].atomCategory.color }});">
                             <span class="nom">{{ Atomes[7].nom }}</span>
                             <span class="symbole">{{ Atomes[7].symbole }}</span>
                             <span class="numero">{{ Atomes[7].numero }}</span>
@@ -159,7 +158,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 8})}}">
                     {% if Atomes[8] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[8].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[8].atomCategory.color }});">
                             <span class="nom">{{ Atomes[8].nom }}</span>
                             <span class="symbole">{{ Atomes[8].symbole }}</span>
                             <span class="numero">{{ Atomes[8].numero }}</span>
@@ -173,7 +172,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 9})}}">
                     {% if Atomes[9] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[9].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[9].atomCategory.color }});">
                             <span class="nom">{{ Atomes[9].nom }}</span>
                             <span class="symbole">{{ Atomes[9].symbole }}</span>
                             <span class="numero">{{ Atomes[9].numero }}</span>
@@ -187,7 +186,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 10})}}">
                     {% if Atomes[10] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[10].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[10].atomCategory.color }});">
                             <span class="nom">{{ Atomes[10].nom }}</span>
                             <span class="symbole">{{ Atomes[10].symbole }}</span>
                             <span class="numero">{{ Atomes[10].numero }}</span>
@@ -207,7 +206,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 11})}}">
                     {% if Atomes[11] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[11].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[11].atomCategory.color }});">
                             <span class="nom">{{ Atomes[11].nom }}</span>
                             <span class="symbole">{{ Atomes[11].symbole }}</span>
                             <span class="numero">{{ Atomes[11].numero }}</span>
@@ -221,7 +220,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 12})}}">
                     {% if Atomes[12] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[12].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[12].atomCategory.color }});">
                             <span class="nom">{{ Atomes[12].nom }}</span>
                             <span class="symbole">{{ Atomes[12].symbole }}</span>
                             <span class="numero">{{ Atomes[12].numero }}</span>
@@ -242,7 +241,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 13})}}">
                     {% if Atomes[13] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[13].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[13].atomCategory.color }});">
                             <span class="nom">{{ Atomes[13].nom }}</span>
                             <span class="symbole">{{ Atomes[13].symbole }}</span>
                             <span class="numero">{{ Atomes[13].numero }}</span>
@@ -256,7 +255,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 14})}}">
                     {% if Atomes[14] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[14].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[14].atomCategory.color }});">
                             <span class="nom">{{ Atomes[14].nom }}</span>
                             <span class="symbole">{{ Atomes[14].symbole }}</span>
                             <span class="numero">{{ Atomes[14].numero }}</span>
@@ -270,7 +269,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 15})}}">
                     {% if Atomes[15] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[15].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[15].atomCategory.color }});">
                             <span class="nom">{{ Atomes[15].nom }}</span>
                             <span class="symbole">{{ Atomes[15].symbole }}</span>
                             <span class="numero">{{ Atomes[15].numero }}</span>
@@ -284,7 +283,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 16})}}">
                     {% if Atomes[16] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[16].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[16].atomCategory.color }});">
                             <span class="nom">{{ Atomes[16].nom }}</span>
                             <span class="symbole">{{ Atomes[16].symbole }}</span>
                             <span class="numero">{{ Atomes[16].numero }}</span>
@@ -298,7 +297,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 17})}}">
                     {% if Atomes[17] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[17].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[17].atomCategory.color }});">
                             <span class="nom">{{ Atomes[17].nom }}</span>
                             <span class="symbole">{{ Atomes[17].symbole }}</span>
                             <span class="numero">{{ Atomes[17].numero }}</span>
@@ -312,7 +311,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 18})}}">
                     {% if Atomes[18] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[18].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[18].atomCategory.color }});">
                             <span class="nom">{{ Atomes[18].nom }}</span>
                             <span class="symbole">{{ Atomes[18].symbole }}</span>
                             <span class="numero">{{ Atomes[18].numero }}</span>
@@ -332,7 +331,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 19})}}">
                     {% if Atomes[19] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[19].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[19].atomCategory.color }});">
                             <span class="nom">{{ Atomes[19].nom }}</span>
                             <span class="symbole">{{ Atomes[19].symbole }}</span>
                             <span class="numero">{{ Atomes[19].numero }}</span>
@@ -346,7 +345,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 20})}}">
                     {% if Atomes[20] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[20].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[20].atomCategory.color }});">
                             <span class="nom">{{ Atomes[20].nom }}</span>
                             <span class="symbole">{{ Atomes[20].symbole }}</span>
                             <span class="numero">{{ Atomes[20].numero }}</span>
@@ -360,7 +359,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 21})}}">
                         {% if Atomes[21] is defined %}
-                            <div class="boxAtom text-center {{ Atomes[21].famille }}">
+                            <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[21].atomCategory.color }});">
                                 <span class="nom">{{ Atomes[21].nom }}</span>
                                 <span class="symbole">{{ Atomes[21].symbole }}</span>
                                 <span class="numero">{{ Atomes[21].numero }}</span>
@@ -374,7 +373,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 22})}}">
                     {% if Atomes[22] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[22].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[22].atomCategory.color }});">
                             <span class="nom">{{ Atomes[22].nom }}</span>
                             <span class="symbole">{{ Atomes[22].symbole }}</span>
                             <span class="numero">{{ Atomes[22].numero }}</span>
@@ -388,7 +387,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 23})}}">
                     {% if Atomes[23] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[23].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[23].atomCategory.color }});">
                             <span class="nom">{{ Atomes[23].nom }}</span>
                             <span class="symbole">{{ Atomes[23].symbole }}</span>
                             <span class="numero">{{ Atomes[23].numero }}</span>
@@ -402,7 +401,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 24})}}">
                     {% if Atomes[24] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[24].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[24].atomCategory.color }});">
                             <span class="nom">{{ Atomes[24].nom }}</span>
                             <span class="symbole">{{ Atomes[24].symbole }}</span>
                             <span class="numero">{{ Atomes[24].numero }}</span>
@@ -416,7 +415,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 25})}}">
                     {% if Atomes[25] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[25].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[25].atomCategory.color }});">
                             <span class="nom">{{ Atomes[25].nom }}</span>
                             <span class="symbole">{{ Atomes[25].symbole }}</span>
                             <span class="numero">{{ Atomes[25].numero }}</span>
@@ -430,7 +429,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 26})}}">
                     {% if Atomes[26] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[26].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[26].atomCategory.color }});">
                             <span class="nom">{{ Atomes[26].nom }}</span>
                             <span class="symbole">{{ Atomes[26].symbole }}</span>
                             <span class="numero">{{ Atomes[26].numero }}</span>
@@ -444,7 +443,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 27})}}">
                     {% if Atomes[27] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[27].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[27].atomCategory.color }});">
                             <span class="nom">{{ Atomes[27].nom }}</span>
                             <span class="symbole">{{ Atomes[27].symbole }}</span>
                             <span class="numero">{{ Atomes[27].numero }}</span>
@@ -458,7 +457,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 28})}}">
                     {% if Atomes[28] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[28].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[28].atomCategory.color }});">
                             <span class="nom">{{ Atomes[28].nom }}</span>
                             <span class="symbole">{{ Atomes[28].symbole }}</span>
                             <span class="numero">{{ Atomes[28].numero }}</span>
@@ -472,7 +471,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 29})}}">
                     {% if Atomes[29] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[29].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[29].atomCategory.color }});">
                             <span class="nom">{{ Atomes[29].nom }}</span>
                             <span class="symbole">{{ Atomes[29].symbole }}</span>
                             <span class="numero">{{ Atomes[29].numero }}</span>
@@ -486,7 +485,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 30})}}">
                     {% if Atomes[30] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[30].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[30].atomCategory.color }});">
                             <span class="nom">{{ Atomes[30].nom }}</span>
                             <span class="symbole">{{ Atomes[30].symbole }}</span>
                             <span class="numero">{{ Atomes[30].numero }}</span>
@@ -500,7 +499,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 31})}}">
                     {% if Atomes[31] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[31].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[31].atomCategory.color }});">
                             <span class="nom">{{ Atomes[31].nom }}</span>
                             <span class="symbole">{{ Atomes[31].symbole }}</span>
                             <span class="numero">{{ Atomes[31].numero }}</span>
@@ -514,7 +513,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 32})}}">
                     {% if Atomes[32] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[32].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[32].atomCategory.color }});">
                             <span class="nom">{{ Atomes[32].nom }}</span>
                             <span class="symbole">{{ Atomes[32].symbole }}</span>
                             <span class="numero">{{ Atomes[32].numero }}</span>
@@ -528,7 +527,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 33})}}">
                     {% if Atomes[33] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[33].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[33].atomCategory.color }});">
                             <span class="nom">{{ Atomes[33].nom }}</span>
                             <span class="symbole">{{ Atomes[33].symbole }}</span>
                             <span class="numero">{{ Atomes[33].numero }}</span>
@@ -542,7 +541,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 34})}}">
                     {% if Atomes[34] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[34].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[34].atomCategory.color }});">
                             <span class="nom">{{ Atomes[34].nom }}</span>
                             <span class="symbole">{{ Atomes[34].symbole }}</span>
                             <span class="numero">{{ Atomes[34].numero }}</span>
@@ -556,7 +555,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 35})}}">
                     {% if Atomes[35] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[35].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[35].atomCategory.color }});">
                             <span class="nom">{{ Atomes[35].nom }}</span>
                             <span class="symbole">{{ Atomes[35].symbole }}</span>
                             <span class="numero">{{ Atomes[35].numero }}</span>
@@ -570,7 +569,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 36})}}">
                     {% if Atomes[36] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[36].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[36].atomCategory.color }});">
                             <span class="nom">{{ Atomes[36].nom }}</span>
                             <span class="symbole">{{ Atomes[36].symbole }}</span>
                             <span class="numero">{{ Atomes[36].numero }}</span>
@@ -590,7 +589,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 37})}}">
                     {% if Atomes[37] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[37].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[37].atomCategory.color }});">
                             <span class="nom">{{ Atomes[37].nom }}</span>
                             <span class="symbole">{{ Atomes[37].symbole }}</span>
                             <span class="numero">{{ Atomes[37].numero }}</span>
@@ -604,7 +603,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 38})}}">
                     {% if Atomes[38] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[38].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[38].atomCategory.color }});">
                             <span class="nom">{{ Atomes[38].nom }}</span>
                             <span class="symbole">{{ Atomes[38].symbole }}</span>
                             <span class="numero">{{ Atomes[38].numero }}</span>
@@ -618,7 +617,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 39})}}">
                     {% if Atomes[39] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[39].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[39].atomCategory.color }});">
                             <span class="nom">{{ Atomes[39].nom }}</span>
                             <span class="symbole">{{ Atomes[39].symbole }}</span>
                             <span class="numero">{{ Atomes[39].numero }}</span>
@@ -632,7 +631,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 40})}}">
                     {% if Atomes[40] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[40].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[40].atomCategory.color }});">
                             <span class="nom">{{ Atomes[40].nom }}</span>
                             <span class="symbole">{{ Atomes[40].symbole }}</span>
                             <span class="numero">{{ Atomes[40].numero }}</span>
@@ -646,7 +645,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 41})}}">
                     {% if Atomes[41] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[41].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[41].atomCategory.color }});">
                             <span class="nom">{{ Atomes[41].nom }}</span>
                             <span class="symbole">{{ Atomes[41].symbole }}</span>
                             <span class="numero">{{ Atomes[41].numero }}</span>
@@ -660,7 +659,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 42})}}">
                     {% if Atomes[42] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[42].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[42].atomCategory.color }});">
                             <span class="nom">{{ Atomes[42].nom }}</span>
                             <span class="symbole">{{ Atomes[42].symbole }}</span>
                             <span class="numero">{{ Atomes[42].numero }}</span>
@@ -674,7 +673,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 43})}}">
                     {% if Atomes[43] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[43].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[43].atomCategory.color }});">
                             <span class="nom">{{ Atomes[43].nom }}</span>
                             <span class="symbole">{{ Atomes[43].symbole }}</span>
                             <span class="numero">{{ Atomes[43].numero }}</span>
@@ -688,7 +687,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 44})}}">
                     {% if Atomes[44] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[44].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[44].atomCategory.color }});">
                             <span class="nom">{{ Atomes[44].nom }}</span>
                             <span class="symbole">{{ Atomes[44].symbole }}</span>
                             <span class="numero">{{ Atomes[44].numero }}</span>
@@ -702,7 +701,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 45})}}">
                     {% if Atomes[45] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[45].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[45].atomCategory.color }});">
                             <span class="nom">{{ Atomes[45].nom }}</span>
                             <span class="symbole">{{ Atomes[45].symbole }}</span>
                             <span class="numero">{{ Atomes[45].numero }}</span>
@@ -716,7 +715,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 46})}}">
                     {% if Atomes[46] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[46].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[46].atomCategory.color }});">
                             <span class="nom">{{ Atomes[46].nom }}</span>
                             <span class="symbole">{{ Atomes[46].symbole }}</span>
                             <span class="numero">{{ Atomes[46].numero }}</span>
@@ -730,7 +729,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 47})}}">
                     {% if Atomes[47] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[47].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[47].atomCategory.color }});">
                             <span class="nom">{{ Atomes[47].nom }}</span>
                             <span class="symbole">{{ Atomes[47].symbole }}</span>
                             <span class="numero">{{ Atomes[47].numero }}</span>
@@ -744,7 +743,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 48})}}">
                     {% if Atomes[48] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[48].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[48].atomCategory.color }});">
                             <span class="nom">{{ Atomes[48].nom }}</span>
                             <span class="symbole">{{ Atomes[48].symbole }}</span>
                             <span class="numero">{{ Atomes[48].numero }}</span>
@@ -758,7 +757,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 49})}}">
                     {% if Atomes[49] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[49].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[49].atomCategory.color }});">
                             <span class="nom">{{ Atomes[49].nom }}</span>
                             <span class="symbole">{{ Atomes[49].symbole }}</span>
                             <span class="numero">{{ Atomes[49].numero }}</span>
@@ -772,7 +771,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 50})}}">
                     {% if Atomes[50] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[50].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[50].atomCategory.color }});">
                             <span class="nom">{{ Atomes[50].nom }}</span>
                             <span class="symbole">{{ Atomes[50].symbole }}</span>
                             <span class="numero">{{ Atomes[50].numero }}</span>
@@ -786,7 +785,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 51})}}">
                     {% if Atomes[51] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[51].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[51].atomCategory.color }});">
                             <span class="nom">{{ Atomes[51].nom }}</span>
                             <span class="symbole">{{ Atomes[51].symbole }}</span>
                             <span class="numero">{{ Atomes[51].numero }}</span>
@@ -800,7 +799,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 52})}}">
                     {% if Atomes[52] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[52].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[52].atomCategory.color }});">
                             <span class="nom">{{ Atomes[52].nom }}</span>
                             <span class="symbole">{{ Atomes[52].symbole }}</span>
                             <span class="numero">{{ Atomes[52].numero }}</span>
@@ -814,7 +813,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 53})}}">
                     {% if Atomes[53] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[53].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[53].atomCategory.color }});">
                             <span class="nom">{{ Atomes[53].nom }}</span>
                             <span class="symbole">{{ Atomes[53].symbole }}</span>
                             <span class="numero">{{ Atomes[53].numero }}</span>
@@ -830,7 +829,7 @@
 
                 <a href="{{path('app_read_atom', {'id': 54})}}">
                     {% if Atomes[54] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[54].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[54].atomCategory.color }});">
                             <span class="nom">{{ Atomes[54].nom }}</span>
                             <span class="symbole">{{ Atomes[54].symbole }}</span>
                             <span class="numero">{{ Atomes[54].numero }}</span>
@@ -850,7 +849,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 55})}}">
                     {% if Atomes[55] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[55].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[55].atomCategory.color }});">
                             <span class="nom">{{ Atomes[55].nom }}</span>
                             <span class="symbole">{{ Atomes[55].symbole }}</span>
                             <span class="numero">{{ Atomes[55].numero }}</span>
@@ -864,7 +863,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 56})}}">
                     {% if Atomes[56] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[56].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[56].atomCategory.color }});">
                             <span class="nom">{{ Atomes[56].nom }}</span>
                             <span class="symbole">{{ Atomes[56].symbole }}</span>
                             <span class="numero">{{ Atomes[56].numero }}</span>
@@ -888,7 +887,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 72})}}">
                     {% if Atomes[72] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[72].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[72].atomCategory.color }});">
                             <span class="nom">{{ Atomes[72].nom }}</span>
                             <span class="symbole">{{ Atomes[72].symbole }}</span>
                             <span class="numero">{{ Atomes[72].numero }}</span>
@@ -902,7 +901,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 73})}}">
                     {% if Atomes[73] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[73].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[73].atomCategory.color }});">
                             <span class="nom">{{ Atomes[73].nom }}</span>
                             <span class="symbole">{{ Atomes[73].symbole }}</span>
                             <span class="numero">{{ Atomes[73].numero }}</span>
@@ -916,7 +915,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 74})}}">
                     {% if Atomes[74] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[74].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[74].atomCategory.color }});">
                             <span class="nom">{{ Atomes[74].nom }}</span>
                             <span class="symbole">{{ Atomes[74].symbole }}</span>
                             <span class="numero">{{ Atomes[74].numero }}</span>
@@ -930,7 +929,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 75})}}">
                     {% if Atomes[75] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[75].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[75].atomCategory.color }});">
                             <span class="nom">{{ Atomes[75].nom }}</span>
                             <span class="symbole">{{ Atomes[75].symbole }}</span>
                             <span class="numero">{{ Atomes[75].numero }}</span>
@@ -944,7 +943,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 76})}}">
                     {% if Atomes[76] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[76].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[76].atomCategory.color }});">
                             <span class="nom">{{ Atomes[76].nom }}</span>
                             <span class="symbole">{{ Atomes[76].symbole }}</span>
                             <span class="numero">{{ Atomes[76].numero }}</span>
@@ -958,7 +957,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 77})}}">
                     {% if Atomes[77] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[77].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[77].atomCategory.color }});">
                             <span class="nom">{{ Atomes[77].nom }}</span>
                             <span class="symbole">{{ Atomes[77].symbole }}</span>
                             <span class="numero">{{ Atomes[77].numero }}</span>
@@ -972,7 +971,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 78})}}">
                     {% if Atomes[78] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[78].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[78].atomCategory.color }});">
                             <span class="nom">{{ Atomes[78].nom }}</span>
                             <span class="symbole">{{ Atomes[78].symbole }}</span>
                             <span class="numero">{{ Atomes[78].numero }}</span>
@@ -986,7 +985,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 79})}}">
                     {% if Atomes[79] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[79].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[79].atomCategory.color }});">
                             <span class="nom">{{ Atomes[79].nom }}</span>
                             <span class="symbole">{{ Atomes[79].symbole }}</span>
                             <span class="numero">{{ Atomes[79].numero }}</span>
@@ -1000,7 +999,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 80})}}">
                     {% if Atomes[80] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[80].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[80].atomCategory.color }});">
                             <span class="nom">{{ Atomes[80].nom }}</span>
                             <span class="symbole">{{ Atomes[80].symbole }}</span>
                             <span class="numero">{{ Atomes[80].numero }}</span>
@@ -1014,7 +1013,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 81})}}">
                     {% if Atomes[81] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[81].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[81].atomCategory.color }});">
                             <span class="nom">{{ Atomes[81].nom }}</span>
                             <span class="symbole">{{ Atomes[81].symbole }}</span>
                             <span class="numero">{{ Atomes[81].numero }}</span>
@@ -1028,7 +1027,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 82})}}">
                     {% if Atomes[82] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[82].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[82].atomCategory.color }});">
                             <span class="nom">{{ Atomes[82].nom }}</span>
                             <span class="symbole">{{ Atomes[82].symbole }}</span>
                             <span class="numero">{{ Atomes[82].numero }}</span>
@@ -1042,7 +1041,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 83})}}">
                     {% if Atomes[83] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[83].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[83].atomCategory.color }});">
                             <span class="nom">{{ Atomes[83].nom }}</span>
                             <span class="symbole">{{ Atomes[83].symbole }}</span>
                             <span class="numero">{{ Atomes[83].numero }}</span>
@@ -1056,7 +1055,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 84})}}">
                     {% if Atomes[84] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[84].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[84].atomCategory.color }});">
                             <span class="nom">{{ Atomes[84].nom }}</span>
                             <span class="symbole">{{ Atomes[84].symbole }}</span>
                             <span class="numero">{{ Atomes[84].numero }}</span>
@@ -1070,7 +1069,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 85})}}">
                     {% if Atomes[85] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[85].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[85].atomCategory.color }});">
                             <span class="nom">{{ Atomes[85].nom }}</span>
                             <span class="symbole">{{ Atomes[85].symbole }}</span>
                             <span class="numero">{{ Atomes[85].numero }}</span>
@@ -1084,7 +1083,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 86})}}">
                     {% if Atomes[86] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[86].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[86].atomCategory.color }});">
                             <span class="nom">{{ Atomes[86].nom }}</span>
                             <span class="symbole">{{ Atomes[86].symbole }}</span>
                             <span class="numero">{{ Atomes[86].numero }}</span>
@@ -1104,7 +1103,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 87})}}">
                     {% if Atomes[87] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[87].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[87].atomCategory.color }});">
                             <span class="nom">{{ Atomes[87].nom }}</span>
                             <span class="symbole">{{ Atomes[87].symbole }}</span>
                             <span class="numero">{{ Atomes[87].numero }}</span>
@@ -1118,7 +1117,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 88})}}">
                     {% if Atomes[88] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[88].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[88].atomCategory.color }});">
                             <span class="nom">{{ Atomes[88].nom }}</span>
                             <span class="symbole">{{ Atomes[88].symbole }}</span>
                             <span class="numero">{{ Atomes[88].numero }}</span>
@@ -1143,7 +1142,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 104})}}">
                     {% if Atomes[104] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[104].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[104].atomCategory.color }});">
                             <span class="nom">{{ Atomes[104].nom }}</span>
                             <span class="symbole">{{ Atomes[104].symbole }}</span>
                             <span class="numero">{{ Atomes[104].numero }}</span>
@@ -1157,7 +1156,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 105})}}">
                     {% if Atomes[105] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[105].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[105].atomCategory.color }});">
                             <span class="nom">{{ Atomes[105].nom }}</span>
                             <span class="symbole">{{ Atomes[105].symbole }}</span>
                             <span class="numero">{{ Atomes[105].numero }}</span>
@@ -1171,7 +1170,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 106})}}">
                     {% if Atomes[106] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[106].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[106].atomCategory.color }});">
                             <span class="nom">{{ Atomes[106].nom }}</span>
                             <span class="symbole">{{ Atomes[106].symbole }}</span>
                             <span class="numero">{{ Atomes[106].numero }}</span>
@@ -1185,7 +1184,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 107})}}">
                     {% if Atomes[107] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[107].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[107].atomCategory.color }});">
                             <span class="nom">{{ Atomes[107].nom }}</span>
                             <span class="symbole">{{ Atomes[107].symbole }}</span>
                             <span class="numero">{{ Atomes[107].numero }}</span>
@@ -1199,7 +1198,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 108})}}">
                     {% if Atomes[108] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[108].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[108].atomCategory.color }});">
                             <span class="nom">{{ Atomes[108].nom }}</span>
                             <span class="symbole">{{ Atomes[108].symbole }}</span>
                             <span class="numero">{{ Atomes[108].numero }}</span>
@@ -1213,7 +1212,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 109})}}">
                     {% if Atomes[109] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[109].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[109].atomCategory.color }});">
                             <span class="nom">{{ Atomes[109].nom }}</span>
                             <span class="symbole">{{ Atomes[109].symbole }}</span>
                             <span class="numero">{{ Atomes[109].numero }}</span>
@@ -1227,7 +1226,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 110})}}">
                     {% if Atomes[110] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[110].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[110].atomCategory.color }});">
                             <span class="nom">{{ Atomes[110].nom }}</span>
                             <span class="symbole">{{ Atomes[110].symbole }}</span>
                             <span class="numero">{{ Atomes[110].numero }}</span>
@@ -1241,7 +1240,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 111})}}">
                     {% if Atomes[111] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[111].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[111].atomCategory.color }});">
                             <span class="nom">{{ Atomes[111].nom }}</span>
                             <span class="symbole">{{ Atomes[111].symbole }}</span>
                             <span class="numero">{{ Atomes[111].numero }}</span>
@@ -1255,7 +1254,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 112})}}">
                     {% if Atomes[112] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[112].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[112].atomCategory.color }});">
                             <span class="nom">{{ Atomes[112].nom }}</span>
                             <span class="symbole">{{ Atomes[112].symbole }}</span>
                             <span class="numero">{{ Atomes[112].numero }}</span>
@@ -1269,7 +1268,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 113})}}">
                     {% if Atomes[113] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[113].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[113].atomCategory.color }});">
                             <span class="nom">{{ Atomes[113].nom }}</span>
                             <span class="symbole">{{ Atomes[113].symbole }}</span>
                             <span class="numero">{{ Atomes[113].numero }}</span>
@@ -1283,7 +1282,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 114})}}">
                     {% if Atomes[114] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[114].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[114].atomCategory.color }});">
                             <span class="nom">{{ Atomes[114].nom }}</span>
                             <span class="symbole">{{ Atomes[114].symbole }}</span>
                             <span class="numero">{{ Atomes[114].numero }}</span>
@@ -1297,7 +1296,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 115})}}">
                     {% if Atomes[115] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[115].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[115].atomCategory.color }});">
                             <span class="nom">{{ Atomes[115].nom }}</span>
                             <span class="symbole">{{ Atomes[115].symbole }}</span>
                             <span class="numero">{{ Atomes[115].numero }}</span>
@@ -1311,7 +1310,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 116})}}">
                     {% if Atomes[116] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[116].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[116].atomCategory.color }});">
                             <span class="nom">{{ Atomes[116].nom }}</span>
                             <span class="symbole">{{ Atomes[116].symbole }}</span>
                             <span class="numero">{{ Atomes[116].numero }}</span>
@@ -1325,7 +1324,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 117})}}">
                     {% if Atomes[117] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[117].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[117].atomCategory.color }});">
                             <span class="nom">{{ Atomes[117].nom }}</span>
                             <span class="symbole">{{ Atomes[117].symbole }}</span>
                             <span class="numero">{{ Atomes[117].numero }}</span>
@@ -1339,7 +1338,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 118})}}">
                     {% if Atomes[118] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[118].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[118].atomCategory.color }});">
                             <span class="nom">{{ Atomes[118].nom }}</span>
                             <span class="symbole">{{ Atomes[118].symbole }}</span>
                             <span class="numero">{{ Atomes[118].numero }}</span>
@@ -1361,7 +1360,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 57})}}">
                     {% if Atomes[57] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[57].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[57].atomCategory.color }});">
                             <span class="nom">{{ Atomes[57].nom }}</span>
                             <span class="symbole">{{ Atomes[57].symbole }}</span>
                             <span class="numero">{{ Atomes[57].numero }}</span>
@@ -1375,7 +1374,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 58})}}">
                     {% if Atomes[58] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[58].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[58].atomCategory.color }});">
                             <span class="nom">{{ Atomes[58].nom }}</span>
                             <span class="symbole">{{ Atomes[58].symbole }}</span>
                             <span class="numero">{{ Atomes[58].numero }}</span>
@@ -1389,7 +1388,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 59})}}">
                     {% if Atomes[59] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[59].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[59].atomCategory.color }});">
                             <span class="nom">{{ Atomes[59].nom }}</span>
                             <span class="symbole">{{ Atomes[59].symbole }}</span>
                             <span class="numero">{{ Atomes[59].numero }}</span>
@@ -1403,7 +1402,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 60})}}">
                     {% if Atomes[60] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[60].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[60].atomCategory.color }});">
                             <span class="nom">{{ Atomes[60].nom }}</span>
                             <span class="symbole">{{ Atomes[60].symbole }}</span>
                             <span class="numero">{{ Atomes[60].numero }}</span>
@@ -1417,7 +1416,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 61})}}">
                     {% if Atomes[61] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[61].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[61].atomCategory.color }});">
                             <span class="nom">{{ Atomes[61].nom }}</span>
                             <span class="symbole">{{ Atomes[61].symbole }}</span>
                             <span class="numero">{{ Atomes[61].numero }}</span>
@@ -1431,7 +1430,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 62})}}">
                     {% if Atomes[62] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[62].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[62].atomCategory.color }});">
                             <span class="nom">{{ Atomes[62].nom }}</span>
                             <span class="symbole">{{ Atomes[62].symbole }}</span>
                             <span class="numero">{{ Atomes[62].numero }}</span>
@@ -1445,7 +1444,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 63})}}">
                     {% if Atomes[63] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[63].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[63].atomCategory.color }});">
                             <span class="nom">{{ Atomes[63].nom }}</span>
                             <span class="symbole">{{ Atomes[63].symbole }}</span>
                             <span class="numero">{{ Atomes[63].numero }}</span>
@@ -1459,7 +1458,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 64})}}">
                     {% if Atomes[64] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[64].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[64].atomCategory.color }});">
                             <span class="nom">{{ Atomes[64].nom }}</span>
                             <span class="symbole">{{ Atomes[64].symbole }}</span>
                             <span class="numero">{{ Atomes[64].numero }}</span>
@@ -1473,7 +1472,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 65})}}">
                     {% if Atomes[65] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[65].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[65].atomCategory.color }});">
                             <span class="nom">{{ Atomes[65].nom }}</span>
                             <span class="symbole">{{ Atomes[65].symbole }}</span>
                             <span class="numero">{{ Atomes[65].numero }}</span>
@@ -1487,7 +1486,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 66})}}">
                     {% if Atomes[66] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[66].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[66].atomCategory.color }});">
                             <span class="nom">{{ Atomes[66].nom }}</span>
                             <span class="symbole">{{ Atomes[66].symbole }}</span>
                             <span class="numero">{{ Atomes[66].numero }}</span>
@@ -1501,7 +1500,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 67})}}">
                     {% if Atomes[67] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[67].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[67].atomCategory.color }});">
                             <span class="nom">{{ Atomes[67].nom }}</span>
                             <span class="symbole">{{ Atomes[67].symbole }}</span>
                             <span class="numero">{{ Atomes[67].numero }}</span>
@@ -1515,7 +1514,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 68})}}">
                     {% if Atomes[68] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[68].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[68].atomCategory.color }});">
                             <span class="nom">{{ Atomes[68].nom }}</span>
                             <span class="symbole">{{ Atomes[68].symbole }}</span>
                             <span class="numero">{{ Atomes[68].numero }}</span>
@@ -1529,7 +1528,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 69})}}">
                     {% if Atomes[69] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[69].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[69].atomCategory.color }});">
                             <span class="nom">{{ Atomes[69].nom }}</span>
                             <span class="symbole">{{ Atomes[69].symbole }}</span>
                             <span class="numero">{{ Atomes[69].numero }}</span>
@@ -1543,7 +1542,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 70})}}">
                     {% if Atomes[70] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[70].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[70].atomCategory.color }});">
                             <span class="nom">{{ Atomes[70].nom }}</span>
                             <span class="symbole">{{ Atomes[70].symbole }}</span>
                             <span class="numero">{{ Atomes[70].numero }}</span>
@@ -1557,7 +1556,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 71})}}">
                     {% if Atomes[71] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[71].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[71].atomCategory.color }});">
                             <span class="nom">{{ Atomes[71].nom }}</span>
                             <span class="symbole">{{ Atomes[71].symbole }}</span>
                             <span class="numero">{{ Atomes[71].numero }}</span>
@@ -1574,11 +1573,11 @@
         <!------------------------------------------------------------------------------------------------------------->
         <tr>
             <th></th>
-            
+
             <td>
                 <a href="{{path('app_read_atom', {'id': 89})}}">
                     {% if Atomes[89] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[89].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[89].atomCategory.color }});">
                             <span class="nom">{{ Atomes[89].nom }}</span>
                             <span class="symbole">{{ Atomes[89].symbole }}</span>
                             <span class="numero">{{ Atomes[89].numero }}</span>
@@ -1592,7 +1591,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 90})}}">
                     {% if Atomes[90] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[90].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[90].atomCategory.color }});">
                             <span class="nom">{{ Atomes[90].nom }}</span>
                             <span class="symbole">{{ Atomes[90].symbole }}</span>
                             <span class="numero">{{ Atomes[90].numero }}</span>
@@ -1606,7 +1605,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 91})}}">
                     {% if Atomes[91] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[91].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[91].atomCategory.color }});">
                             <span class="nom">{{ Atomes[91].nom }}</span>
                             <span class="symbole">{{ Atomes[91].symbole }}</span>
                             <span class="numero">{{ Atomes[91].numero }}</span>
@@ -1620,7 +1619,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 92})}}">
                     {% if Atomes[92] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[92].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[92].atomCategory.color }});">
                             <span class="nom">{{ Atomes[92].nom }}</span>
                             <span class="symbole">{{ Atomes[92].symbole }}</span>
                             <span class="numero">{{ Atomes[92].numero }}</span>
@@ -1634,7 +1633,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 93})}}">
                     {% if Atomes[93] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[93].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[93].atomCategory.color }});">
                             <span class="nom">{{ Atomes[93].nom }}</span>
                             <span class="symbole">{{ Atomes[93].symbole }}</span>
                             <span class="numero">{{ Atomes[93].numero }}</span>
@@ -1648,7 +1647,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 94})}}">
                     {% if Atomes[94] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[94].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[94].atomCategory.color }});">
                             <span class="nom">{{ Atomes[94].nom }}</span>
                             <span class="symbole">{{ Atomes[94].symbole }}</span>
                             <span class="numero">{{ Atomes[94].numero }}</span>
@@ -1662,7 +1661,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 95})}}">
                     {% if Atomes[95] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[95].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[95].atomCategory.color }});">
                             <span class="nom">{{ Atomes[95].nom }}</span>
                             <span class="symbole">{{ Atomes[95].symbole }}</span>
                             <span class="numero">{{ Atomes[95].numero }}</span>
@@ -1676,7 +1675,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 96})}}">
                     {% if Atomes[96] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[96].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[96].atomCategory.color }});">
                             <span class="nom">{{ Atomes[96].nom }}</span>
                             <span class="symbole">{{ Atomes[96].symbole }}</span>
                             <span class="numero">{{ Atomes[96].numero }}</span>
@@ -1690,7 +1689,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 97})}}">
                     {% if Atomes[97] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[97].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[97].atomCategory.color }});">
                             <span class="nom">{{ Atomes[97].nom }}</span>
                             <span class="symbole">{{ Atomes[97].symbole }}</span>
                             <span class="numero">{{ Atomes[97].numero }}</span>
@@ -1704,7 +1703,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 98})}}">
                     {% if Atomes[98] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[98].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[98].atomCategory.color }});">
                             <span class="nom">{{ Atomes[98].nom }}</span>
                             <span class="symbole">{{ Atomes[98].symbole }}</span>
                             <span class="numero">{{ Atomes[98].numero }}</span>
@@ -1718,7 +1717,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 99})}}">
                     {% if Atomes[99] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[99].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[99].atomCategory.color }});">
                             <span class="nom">{{ Atomes[99].nom }}</span>
                             <span class="symbole">{{ Atomes[99].symbole }}</span>
                             <span class="numero">{{ Atomes[99].numero }}</span>
@@ -1732,7 +1731,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 100})}}">
                     {% if Atomes[100] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[100].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[100].atomCategory.color }});">
                             <span class="nom">{{ Atomes[100].nom }}</span>
                             <span class="symbole">{{ Atomes[100].symbole }}</span>
                             <span class="numero">{{ Atomes[100].numero }}</span>
@@ -1746,7 +1745,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 101})}}">
                     {% if Atomes[101] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[101].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[101].atomCategory.color }});">
                             <span class="nom">{{ Atomes[101].nom }}</span>
                             <span class="symbole">{{ Atomes[101].symbole }}</span>
                             <span class="numero">{{ Atomes[101].numero }}</span>
@@ -1760,7 +1759,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 102})}}">
                     {% if Atomes[102] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[102].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[102].atomCategory.color }});">
                             <span class="nom">{{ Atomes[102].nom }}</span>
                             <span class="symbole">{{ Atomes[102].symbole }}</span>
                             <span class="numero">{{ Atomes[102].numero }}</span>
@@ -1774,7 +1773,7 @@
             <td>
                 <a href="{{path('app_read_atom', {'id': 103})}}">
                     {% if Atomes[103] is defined %}
-                        <div class="boxAtom text-center {{ Atomes[103].famille }}">
+                        <div class="boxAtom text-center" style="background-color: rgb({{ Atomes[103].atomCategory.color }});">
                             <span class="nom">{{ Atomes[103].nom }}</span>
                             <span class="symbole">{{ Atomes[103].symbole }}</span>
                             <span class="numero">{{ Atomes[103].numero }}</span>

@@ -2,13 +2,15 @@
 
 namespace App\Form;
 
+use App\Entity\AtomCategory;
 use App\Entity\Atome;
-
-use App\Enum\AtomFamily;
+use App\Enum\AtomGroup;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,17 +21,29 @@ class AtomeType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('slug')
-            ->add('electron')
+            ->add('slug', TextType::class, [
+                'help'=>'Sans Majuscule et accent'
+            ])
+            ->add('infoAtome', TextareaType::class)
             ->add('numero', IntegerType::class, [
-                'disabled'=>true
+                'label'=>'Numéro atomique'
             ])
             ->add('symbole')
+            ->add('atomCategory', EntityType::class, [
+                'class' => AtomCategory::class,
+                'choice_label' => 'name',
+                'label' => 'Catégorie d\'atome',
+            ])
             ->add('infoGroupe', IntegerType::class, [
-                'disabled'=>true
+                'label'=>'Numéro du groupe'
+            ])
+            ->add('groupe', ChoiceType::class, [
+                'choices'=> array_combine(
+                    array_map(fn(AtomGroup $group) => $group->value, AtomGroup::cases()),  // Labels
+                    array_map(fn(AtomGroup $group) => $group->name, AtomGroup::cases())   // Valeurs
+                ),
             ])
             ->add('infoPeriode', IntegerType::class, [
-                'disabled'=>true
             ])
             ->add('masseVolumique')
             ->add('cas')
@@ -38,6 +52,7 @@ class AtomeType extends AbstractType
             ->add('rayonAtomique')
             ->add('rayonDeCovalence')
             ->add('rayonDeVanDerWaals')
+            ->add('electron')
             ->add('configurationElectronique')
             ->add('etatOxydation')
             ->add('decouverteAnnee')
@@ -47,15 +62,7 @@ class AtomeType extends AbstractType
             ->add('pointDeFusion')
             ->add('pointDEbullition')
             ->add('is_radioactif')
-            ->add('famille', ChoiceType::class, [
-                'choices' => array_combine(
-                    array_map(fn(AtomFamily $family) => $family->value, AtomFamily::cases()),  // Labels
-                    array_map(fn(AtomFamily $family) => $family->name, AtomFamily::cases())   // Valeurs
-                ),
-                'expanded' => false,  // Liste déroulante (dropdown)
-                'multiple' => false,  // Choix unique
-            ])
-            ->add('infoAtome')
+
             ->add('submit', SubmitType::class)
         ;
     }

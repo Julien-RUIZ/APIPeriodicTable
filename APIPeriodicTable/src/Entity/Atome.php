@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AtomeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: AtomeRepository::class)]
 class Atome
@@ -14,12 +15,16 @@ class Atome
     private ?int $id = null;
 
     #[ORM\Column(length: 13, nullable: true)]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 13, nullable: true)]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $slug = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 40)]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Length(max: 40, maxMessage: 'Max length of {{ limit }} characters')]
     private ?string $electron = null;
 
     #[ORM\Column(nullable: true)]
@@ -34,62 +39,93 @@ class Atome
     #[ORM\Column(length: 10)]
     private ?string $infoPeriode = null;
 
-    #[ORM\Column(length: 10)]
-    private ?string $infoBloc = null;
+    #[ORM\Column(length: 15)]
+    private ?string $groupe = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 200)]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Length(max: 200, maxMessage: 'Max length of {{ limit }} characters')]
     private ?string $masseVolumique = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
+    #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $cas = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 100)]
+    #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $einecs = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 20)]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
     private ?string $masseAtomique = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 100)]
+    #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $rayonAtomique = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
+    #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $rayonDeCovalence = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 20)]
+    #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $rayonDeVanDerWaals = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
+    #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $configurationElectronique = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 20)]
+    #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $etatOxydation = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Regex(pattern: '/^\d+$/')]
+    #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
     private ?string $decouverteAnnee = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $decouverteNoms = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 255, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $decouvertePays = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 10)]
+    #[Assert\Length(max: 10, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $electronegativite = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 20)]
+    #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $pointDeFusion = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $pointDEbullition = null;
 
     #[ORM\Column]
     private ?bool $is_radioactif = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $famille = null;
-
-    #[ORM\Column(length: 255)]
+    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $infoAtome = null;
+
+    #[ORM\ManyToOne(inversedBy: 'atomes')]
+    private ?AtomCategory $atomCategory = null;
 
     public function getId(): ?int
     {
@@ -180,14 +216,14 @@ class Atome
         return $this;
     }
 
-    public function getInfoBloc(): ?string
+    public function getgroupe(): ?string
     {
-        return $this->infoBloc;
+        return $this->groupe;
     }
 
-    public function setInfoBloc(string $infoBloc): static
+    public function setgroupe(string $groupe): static
     {
-        $this->infoBloc = $infoBloc;
+        $this->groupe = $groupe;
 
         return $this;
     }
@@ -384,18 +420,6 @@ class Atome
         return $this;
     }
 
-    public function getFamille(): ?string
-    {
-        return $this->famille;
-    }
-
-    public function setFamille(string $famille): static
-    {
-        $this->famille = $famille;
-
-        return $this;
-    }
-
     public function getInfoAtome(): ?string
     {
         return $this->infoAtome;
@@ -407,4 +431,17 @@ class Atome
 
         return $this;
     }
+
+    public function getAtomCategory(): ?AtomCategory
+    {
+        return $this->atomCategory;
+    }
+
+    public function setAtomCategory(?AtomCategory $atomCategory): static
+    {
+        $this->atomCategory = $atomCategory;
+
+        return $this;
+    }
+
 }

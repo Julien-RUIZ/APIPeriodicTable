@@ -37,7 +37,7 @@ class PeriodicTableController extends AbstractController
                 $this->Atomes[$value->getId()] = $value;
             }
         }
-//dd($this->Atomes);
+//dd($this->Atomes[1]->getAtomCategory()->getName());
         $this->Lanthanides = array_search('Lanthanides', $this->listefamily);
         $this->Actinides = array_search('Actinides', $this->listefamily);
 

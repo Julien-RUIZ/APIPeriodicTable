@@ -1,11 +1,11 @@
 <?php
 
-namespace Controller;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
-class HomeController extends WebTestCase
+class HomeTestController extends WebTestCase
 {
     public function testReponseHome(){
         $client = static::createClient();

@@ -1,29 +1,20 @@
 /*-----------------------------------*/
 /*------Repère couleur--------------*/
 /*-----------------------------------*/
-.lanthanide{
-    background-color: hotpink;
-}
-/*-----------------------------------*/
 .actinide{
     background-color: red;
-}
-/*-----------------------------------*/
-.nonDéterminé{
-    background-color: darkgray;
-}
-/*-----------------------------------*/
-.nonMetal{
-    background-color: limegreen;
 }
 /*-----------------------------------*/
 .gazNoble{
     background-color: deepskyblue;
 }
-
 /*-----------------------------------*/
 .halogene{
     background-color: darkviolet;
+}
+/*-----------------------------------*/
+.lanthanide{
+    background-color: hotpink;
 }
 /*-----------------------------------*/
 .metalAlcalin{
@@ -38,12 +29,16 @@
     background-color: rgb(175, 161, 0);
 }
 /*-----------------------------------*/
+.metalloide{
+    background-color: burlywood;
+}
+/*-----------------------------------*/
 .metalPauvre{
     background-color: greenyellow;
 }
 /*-----------------------------------*/
-.metalloide{
-    background-color: burlywood;
+.nonMetal{
+    background-color: limegreen;
 }
 /*-----------------------------------*/
 /*-----------------------------------*/

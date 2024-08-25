@@ -17,6 +17,7 @@ class ReadAtomController extends AbstractController
         foreach ($definition as $value){
             $listeDefinition[$value->getId()] = $value;
         }
+
         return $this->render('Atom/read_atom/index.html.twig', [
             'atome' => $atome, 'listeDefinition'=> $listeDefinition
         ]);

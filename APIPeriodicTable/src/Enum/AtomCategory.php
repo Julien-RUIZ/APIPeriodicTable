@@ -2,7 +2,7 @@
 
 namespace App\Enum;
 
-enum AtomFamily: string
+enum AtomCategory: string
 {
     case actinide = 'Actinide';
     case gazNoble = 'Gaze noble';
