@@ -1,5 +1,3 @@
-
-
 <div class="appli">
     <table>
         <tr>
@@ -876,7 +874,7 @@
             </td>
             <td>
                 {% if Lanthanides != false %}
-                <div class="boxAtom text-center lanthanide">
+                <div class="boxAtom text-center lanthanide"  style="background-color: rgb({{ category[3].getColor() }});">
                     <span class="nom">Lanthanides</span><br>
                     <span class='numero'>57 - 71</span>
                 </div>
@@ -1128,9 +1126,10 @@
                     {% endif %}
                 </a>
             </td>
+
             <td>
                 {% if Actinides != false %}
-                    <div class="boxAtom text-center actinide">
+                    <div class="boxAtom text-center actinide" style="background-color: rgb({{ category[0].getColor() }});">
                         <span class="nom">Actinides</span><br>
                         <span class='numero'>89 - 103</span>
                     </div>

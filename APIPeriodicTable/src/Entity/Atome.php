@@ -127,6 +127,9 @@ class Atome
     #[ORM\ManyToOne(inversedBy: 'atomes')]
     private ?AtomCategory $atomCategory = null;
 
+    #[ORM\ManyToOne(inversedBy: 'atomes')]
+    private ?AtomGroupe $atomGroupe = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -440,6 +443,18 @@ class Atome
     public function setAtomCategory(?AtomCategory $atomCategory): static
     {
         $this->atomCategory = $atomCategory;
+
+        return $this;
+    }
+
+    public function getAtomGroupe(): ?AtomGroupe
+    {
+        return $this->atomGroupe;
+    }
+
+    public function setAtomGroupe(?AtomGroupe $atomGroupe): static
+    {
+        $this->atomGroupe = $atomGroupe;
 
         return $this;
     }

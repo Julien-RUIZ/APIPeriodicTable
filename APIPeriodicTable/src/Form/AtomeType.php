@@ -4,10 +4,9 @@ namespace App\Form;
 
 use App\Entity\AtomCategory;
 use App\Entity\Atome;
-use App\Enum\AtomGroup;
+use App\Entity\AtomGroupe;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -37,11 +36,10 @@ class AtomeType extends AbstractType
             ->add('infoGroupe', IntegerType::class, [
                 'label'=>'Numéro du groupe'
             ])
-            ->add('groupe', ChoiceType::class, [
-                'choices'=> array_combine(
-                    array_map(fn(AtomGroup $group) => $group->value, AtomGroup::cases()),  // Labels
-                    array_map(fn(AtomGroup $group) => $group->name, AtomGroup::cases())   // Valeurs
-                ),
+            ->add('atomGroupe', EntityType::class, [
+                'class' => AtomGroupe::class,
+                'choice_label' => 'name',
+                'label' => 'Groupe d\'atome',
             ])
             ->add('infoPeriode', IntegerType::class, [
             ])

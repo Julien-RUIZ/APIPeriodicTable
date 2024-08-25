@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AtomGroupeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AtomGroupeRepository::class)]
@@ -21,6 +23,17 @@ class AtomGroupe
 
     #[ORM\Column(length: 1000)]
     private ?string $definition = null;
+
+    /**
+     * @var Collection<int, Atome>
+     */
+    #[ORM\OneToMany(targetEntity: Atome::class, mappedBy: 'atomGroupe')]
+    private Collection $atomes;
+
+    public function __construct()
+    {
+        $this->atomes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +72,36 @@ class AtomGroupe
     public function setDefinition(string $definition): static
     {
         $this->definition = $definition;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Atome>
+     */
+    public function getAtomes(): Collection
+    {
+        return $this->atomes;
+    }
+
+    public function addAtome(Atome $atome): static
+    {
+        if (!$this->atomes->contains($atome)) {
+            $this->atomes->add($atome);
+            $atome->setAtomGroupe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAtome(Atome $atome): static
+    {
+        if ($this->atomes->removeElement($atome)) {
+            // set the owning side to null (unless already changed)
+            if ($atome->getAtomGroupe() === $this) {
+                $atome->setAtomGroupe(null);
+            }
+        }
 
         return $this;
     }
