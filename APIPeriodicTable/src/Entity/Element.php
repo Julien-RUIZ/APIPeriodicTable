@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\AtomeRepository;
+use App\Repository\ElementRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: AtomeRepository::class)]
-class Atome
+#[ORM\Entity(repositoryClass: ElementRepository::class)]
+class Element
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -122,13 +122,13 @@ class Atome
 
     #[ORM\Column(length: 255)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
-    private ?string $infoAtome = null;
+    private ?string $infoElement = null;
 
     #[ORM\ManyToOne(inversedBy: 'atomes')]
-    private ?AtomCategory $atomCategory = null;
+    private ?ElementCategory $atomCategory = null;
 
     #[ORM\ManyToOne(inversedBy: 'atomes')]
-    private ?AtomGroupe $atomGroupe = null;
+    private ?ElementGroupe $atomGroupe = null;
 
     public function getId(): ?int
     {
@@ -423,36 +423,36 @@ class Atome
         return $this;
     }
 
-    public function getInfoAtome(): ?string
+    public function getinfoElement(): ?string
     {
-        return $this->infoAtome;
+        return $this->infoElement;
     }
 
-    public function setInfoAtome(string $infoAtome): static
+    public function setinfoElement(string $infoElement): static
     {
-        $this->infoAtome = $infoAtome;
+        $this->infoElement = $infoElement;
 
         return $this;
     }
 
-    public function getAtomCategory(): ?AtomCategory
+    public function getAtomCategory(): ?ElementCategory
     {
         return $this->atomCategory;
     }
 
-    public function setAtomCategory(?AtomCategory $atomCategory): static
+    public function setAtomCategory(?ElementCategory $atomCategory): static
     {
         $this->atomCategory = $atomCategory;
 
         return $this;
     }
 
-    public function getAtomGroupe(): ?AtomGroupe
+    public function getAtomGroupe(): ?ElementGroupe
     {
         return $this->atomGroupe;
     }
 
-    public function setAtomGroupe(?AtomGroupe $atomGroupe): static
+    public function setAtomGroupe(?ElementGroupe $atomGroupe): static
     {
         $this->atomGroupe = $atomGroupe;
 

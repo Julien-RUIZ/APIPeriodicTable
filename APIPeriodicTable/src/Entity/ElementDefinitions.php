@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\AtomeDefinitionsRepository;
+use App\Repository\ElementDefinitionsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: AtomeDefinitionsRepository::class)]
-class AtomeDefinitions
+#[ORM\Entity(repositoryClass: ElementDefinitionsRepository::class)]
+class ElementDefinitions
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

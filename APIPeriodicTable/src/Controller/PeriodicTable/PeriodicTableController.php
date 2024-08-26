@@ -3,8 +3,8 @@
 namespace App\Controller\PeriodicTable;
 
 use App\Interface\ElementHelperInterface;
-use App\Repository\AtomCategoryRepository;
-use App\Repository\AtomeRepository;
+use App\Repository\ElementCategoryRepository;
+use App\Repository\ElementRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +18,7 @@ class PeriodicTableController extends AbstractController
     }
 
     #[Route('/tableau/{param}/{value}', name: 'app_tableau', requirements: ['param' => '\w+', 'value' => '\d+'], defaults: ['param' => null, 'value' => null])]
-    public function index(Request $request, AtomeRepository $atomeRepository, ElementHelperInterface $elementHelper, AtomCategoryRepository $categoryRepository): Response
+    public function index(Request $request, ElementRepository $atomeRepository, ElementHelperInterface $elementHelper, ElementCategoryRepository $categoryRepository): Response
     {
         $category = $categoryRepository->findAll();
         $param = $request->attributes->get('param');

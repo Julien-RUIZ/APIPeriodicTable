@@ -2,9 +2,9 @@
 
 namespace App\Tests\Repository;
 
-use App\Entity\Atome;
-use App\Repository\AtomeDefinitionsRepository;
-use App\Repository\AtomeRepository;
+use App\Entity\Element;
+use App\Repository\ElementDefinitionsRepository;
+use App\Repository\ElementRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -23,8 +23,8 @@ class RepositoryTest extends KernelTestCase
     public function dataRepository(){
         return [
           [UserRepository::class, 5, 'Erreur du UserRepository'],
-            [AtomeRepository::class, 118, 'Erreur du AtomeRepository'],
-            [AtomeDefinitionsRepository::class, 13, 'Erreur du AtomeRepository']
+            [ElementRepository::class, 118, 'Erreur du ElementRepository'],
+            [ElementDefinitionsRepository::class, 13, 'Erreur du ElementRepository']
         ];
     }
 }

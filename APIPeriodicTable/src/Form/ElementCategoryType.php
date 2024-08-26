@@ -2,25 +2,29 @@
 
 namespace App\Form;
 
-use App\Entity\AtomeDefinitions;
+use App\Entity\ElementCategory;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AtomeDefinitionType extends AbstractType
+class ElementCategoryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('name')
+            ->add('slug')
             ->add('definition')
+            ->add('color')
+            ->add('submit', SubmitType::class)
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => AtomeDefinitions::class,
+            'data_class' => ElementCategory::class,
         ]);
     }
 }

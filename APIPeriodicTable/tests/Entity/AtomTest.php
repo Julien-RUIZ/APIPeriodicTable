@@ -2,7 +2,7 @@
 
 namespace App\Tests\Entity;
 
-use App\Entity\Atome;
+use App\Entity\Element;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class AtomTest extends KernelTestCase
@@ -10,7 +10,7 @@ class AtomTest extends KernelTestCase
     private $atome;
     public function setUp(): void
     {
-        $this->atome = new Atome();
+        $this->atome = new Element();
     }
 
     public function TestAtom($propriete, $nberror){

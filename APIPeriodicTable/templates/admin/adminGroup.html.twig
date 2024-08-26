@@ -1,0 +1,14 @@
+<article class="adminGroup">
+    <h5>Merci de sélectionner le groupe que vous souhaitez modifier.</h5>
+    <div class="my-2 groupCard">
+        {% for Group in Groups %}
+            <div class="card cardCat my-1 mx-1">
+                <a href="" >
+                    <div class="card-body">
+                        <div class="CardSymbole text-center">{{ Group.name }}</div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</article>

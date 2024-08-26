@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\AtomGroupe;
+use App\Entity\ElementGroupe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<AtomGroupe>
+ * @extends ServiceEntityRepository<ElementGroupe>
  */
-class AtomGroupeRepository extends ServiceEntityRepository
+class ElementGroupeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, AtomGroupe::class);
+        parent::__construct($registry, ElementGroupe::class);
     }
 
     //    /**
-    //     * @return AtomGroupe[] Returns an array of AtomGroupe objects
+    //     * @return ElementGroupe[] Returns an array of ElementGroupe objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class AtomGroupeRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?AtomGroupe
+    //    public function findOneBySomeField($value): ?ElementGroupe
     //    {
     //        return $this->createQueryBuilder('a')
     //            ->andWhere('a.exampleField = :val')

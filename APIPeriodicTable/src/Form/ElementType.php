@@ -2,9 +2,9 @@
 
 namespace App\Form;
 
-use App\Entity\AtomCategory;
-use App\Entity\Atome;
-use App\Entity\AtomGroupe;
+use App\Entity\ElementCategory;
+use App\Entity\Element;
+use App\Entity\ElementGroupe;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AtomeType extends AbstractType
+class ElementType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -23,13 +23,13 @@ class AtomeType extends AbstractType
             ->add('slug', TextType::class, [
                 'help'=>'Sans Majuscule et accent'
             ])
-            ->add('infoAtome', TextareaType::class)
+            ->add('infoElement', TextareaType::class)
             ->add('numero', IntegerType::class, [
                 'label'=>'Numéro atomique'
             ])
             ->add('symbole')
             ->add('atomCategory', EntityType::class, [
-                'class' => AtomCategory::class,
+                'class' => ElementCategory::class,
                 'choice_label' => 'name',
                 'label' => 'Catégorie d\'atome',
             ])
@@ -37,7 +37,7 @@ class AtomeType extends AbstractType
                 'label'=>'Numéro du groupe'
             ])
             ->add('atomGroupe', EntityType::class, [
-                'class' => AtomGroupe::class,
+                'class' => ElementGroupe::class,
                 'choice_label' => 'name',
                 'label' => 'Groupe d\'atome',
             ])
@@ -68,7 +68,7 @@ class AtomeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Atome::class,
+            'data_class' => Element::class,
         ]);
     }
 }

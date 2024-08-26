@@ -1,0 +1,14 @@
+<article class="adminCategory">
+    <h5>Merci de sélectionner la catégorie que vous souhaitez modifier.</h5>
+    <div class="my-2 groupCard">
+        {% for Cat in Category %}
+            <div class="card cardCat my-1 mx-1">
+                <a href="{{ path('app_update_category', {'id':Cat.id}) }}" class="LinkAdminAtom">
+                    <div class="card-body">
+                        <div class="CardSymbole text-center">{{ Cat.name }}</div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</article>

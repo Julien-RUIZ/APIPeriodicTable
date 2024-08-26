@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\AtomGroupeRepository;
+use App\Repository\ElementCategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: AtomGroupeRepository::class)]
-class AtomGroupe
+#[ORM\Entity(repositoryClass: ElementCategoryRepository::class)]
+class ElementCategory
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -19,21 +19,28 @@ class AtomGroupe
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $groupN = null;
+    private ?string $slug = null;
 
-    #[ORM\Column(length: 1000)]
+    #[ORM\Column(length: 255)]
     private ?string $definition = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $color = null;
+
     /**
-     * @var Collection<int, Atome>
+     * @var Collection<int, Element>
      */
-    #[ORM\OneToMany(targetEntity: Atome::class, mappedBy: 'atomGroupe')]
+    #[ORM\OneToMany(targetEntity: Element::class, mappedBy: 'atomCategory')]
     private Collection $atomes;
 
     public function __construct()
     {
         $this->atomes = new ArrayCollection();
     }
+
+    /**
+     * @var Collection<int, Element>
+     */
 
     public function getId(): ?int
     {
@@ -52,14 +59,14 @@ class AtomGroupe
         return $this;
     }
 
-    public function getGroupN(): ?string
+    public function getSlug(): ?string
     {
-        return $this->groupN;
+        return $this->slug;
     }
 
-    public function setGroupN(string $groupN): static
+    public function setSlug(string $slug): static
     {
-        $this->groupN = $groupN;
+        $this->slug = $slug;
 
         return $this;
     }
@@ -76,33 +83,47 @@ class AtomGroupe
         return $this;
     }
 
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(string $color): static
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
     /**
-     * @return Collection<int, Atome>
+     * @return Collection<int, Element>
      */
     public function getAtomes(): Collection
     {
         return $this->atomes;
     }
 
-    public function addAtome(Atome $atome): static
+    public function addAtome(Element $atome): static
     {
         if (!$this->atomes->contains($atome)) {
             $this->atomes->add($atome);
-            $atome->setAtomGroupe($this);
+            $atome->setAtomCategory($this);
         }
 
         return $this;
     }
 
-    public function removeAtome(Atome $atome): static
+    public function removeAtome(Element $atome): static
     {
         if ($this->atomes->removeElement($atome)) {
             // set the owning side to null (unless already changed)
-            if ($atome->getAtomGroupe() === $this) {
-                $atome->setAtomGroupe(null);
+            if ($atome->getAtomCategory() === $this) {
+                $atome->setAtomCategory(null);
             }
         }
 
         return $this;
     }
+
+
 }

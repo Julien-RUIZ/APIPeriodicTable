@@ -7,10 +7,7 @@
     <article>
         <div class="container">
             <h1 class="text-center my-5">{{ atome.nom}} </h1>
-            {% if is_granted('ROLE_ADMIN') %}
-                <button type="button" class="btn btn-secondary"><a href="{{ path('app_update_atom', {id: atome.id}) }}">Modifier élément</a></button>
-            {% endif %}
-            <p class="my-5">{{ atome.infoAtome}}</p>
+            <p class="my-5">{{ atome.infoElement}}</p>
             <table class="table">
                 <tbody>
                 <tr>
