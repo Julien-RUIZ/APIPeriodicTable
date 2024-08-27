@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Element;
+namespace App\Controller\Admin\Element;
 
 use App\Entity\Element;
 use App\Form\ElementType;
@@ -13,7 +13,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class UpdateElementController extends AbstractController
 {
-    #[Route('/update/atom/{id}', name: 'app_update_atom' ,requirements: ['id'=>'\d+'])]
+    #[Route('admin/update/atom/{id}', name: 'app_update_atom' ,requirements: ['id'=>'\d+'])]
     #[IsGranted('ROLE_ADMIN')]
     public function index(Request $request, Element $atome, EntityManagerInterface $entityManager): Response
     {
@@ -25,7 +25,7 @@ class UpdateElementController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
 
-        return $this->render('Element/update_element/index.html.twig', [
+        return $this->render('admin/Element/update_element/index.html.twig', [
             'form' => $form,
         ]);
     }

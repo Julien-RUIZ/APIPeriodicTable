@@ -59,6 +59,8 @@
     text-align: center;
 }
 .boxAtom {
+    width: 73px ;
+    height: 88px;
     display: flex;
     flex-direction: column;
 }
@@ -66,8 +68,6 @@
     border-width: 1px 3px 3px 1px;
     border-style: solid;
     border-color: black;
-    width: 73px ;
-    height: 88px;
     text-align: center;
 }
 td .nom, td .masseAtomique{

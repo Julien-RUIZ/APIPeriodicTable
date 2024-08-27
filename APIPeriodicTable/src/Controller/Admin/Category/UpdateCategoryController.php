@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Controller\Category;
+namespace App\Controller\Admin\Category;
 
 use App\Entity\ElementCategory;
 use App\Form\ElementCategoryType;
-
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +13,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class UpdateCategoryController extends AbstractController
 {
-    #[Route('/update/category/{id}', name: 'app_update_category', requirements:  ['id'=>'\d+'])]
+    #[Route('admin/update/category/{id}', name: 'app_update_category', requirements:  ['id'=>'\d+'])]
     #[IsGranted('ROLE_ADMIN')]
     public function index(ElementCategory $category, Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -26,7 +25,7 @@ class UpdateCategoryController extends AbstractController
             return $this->redirectToRoute('app_admin');
         }
 
-        return $this->render('Category/update_category/index.html.twig', [
+        return $this->render('admin/Category/update_category/index.html.twig', [
             'form' => $form,
         ]);
     }

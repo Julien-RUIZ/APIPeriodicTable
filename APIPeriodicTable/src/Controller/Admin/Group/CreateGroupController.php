@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Controller\Admin\Group;
+
+use App\Entity\ElementGroupe;
+use App\Form\ElementGroupType;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+
+class CreateGroupController extends AbstractController
+{
+    #[Route('admin/create/group', name: 'app_create_group')]
+    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $group = new ElementGroupe();
+        $form = $this->createForm(ElementGroupType::class, $group);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $entityManager->persist($group);
+            $entityManager->flush();
+            $this->addFlash('success', "La création du groupe est réalisée avec succès.");
+            return $this->redirectToRoute('app_admin');
+        }
+
+        return $this->render('admin/Group/create_group/index.html.twig', [
+            'form' => $form,
+        ]);
+    }
+}
