@@ -39,8 +39,6 @@ class Element
     #[ORM\Column(length: 10)]
     private ?string $infoPeriode = null;
 
-    #[ORM\Column(length: 15)]
-    private ?string $groupe = null;
 
     #[ORM\Column(length: 200)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
@@ -118,7 +116,7 @@ class Element
     private ?string $pointDEbullition = null;
 
     #[ORM\Column]
-    private ?bool $is_radioactif = null;
+    private ?bool $Radioactif = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
@@ -215,18 +213,6 @@ class Element
     public function setInfoPeriode(string $infoPeriode): static
     {
         $this->infoPeriode = $infoPeriode;
-
-        return $this;
-    }
-
-    public function getgroupe(): ?string
-    {
-        return $this->groupe;
-    }
-
-    public function setgroupe(string $groupe): static
-    {
-        $this->groupe = $groupe;
 
         return $this;
     }
@@ -413,12 +399,12 @@ class Element
 
     public function isRadioactif(): ?bool
     {
-        return $this->is_radioactif;
+        return $this->Radioactif;
     }
 
-    public function setRadioactif(bool $is_radioactif): static
+    public function setRadioactif(bool $Radioactif): static
     {
-        $this->is_radioactif = $is_radioactif;
+        $this->Radioactif = $Radioactif;
 
         return $this;
     }

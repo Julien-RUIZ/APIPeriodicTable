@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\ElementCategory;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,7 +16,7 @@ class ElementCategoryType extends AbstractType
         $builder
             ->add('name')
             ->add('slug')
-            ->add('definition')
+            ->add('definition', TextareaType::class)
             ->add('color')
             ->add('submit', SubmitType::class)
         ;

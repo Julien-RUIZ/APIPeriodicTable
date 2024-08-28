@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UpdateDefinitionController!{% endblock %}
+
+{% block body %}
+
+    <section>
+        <article>
+            <div class="container">
+                <h1 class="text-center my-5">Mise à jour de la définition</h1>
+                {{ form(form) }}
+            </div>
+            <hr class="my-5">
+            <article>
+                <div class="container">
+                    <h1 class="text-center my-5">Suppression de la définition</h1>
+                    <div class="supprCata ">
+                        <div>
+                            <p>Attention, la suppression de la définition sera définitive et il ne pourra y avoir de retour en arrière possible.</p>
+                        </div>
+                        <div>
+                            <a href="{{ path('app_delete_definition', {id:app.request.attributes.get('id')}) }}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </article>
+    </section>
+{% endblock %}

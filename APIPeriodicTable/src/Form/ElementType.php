@@ -5,8 +5,11 @@ namespace App\Form;
 use App\Entity\ElementCategory;
 use App\Entity\Element;
 use App\Entity\ElementGroupe;
+
+
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -33,15 +36,16 @@ class ElementType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Catégorie d\'atome',
             ])
-            ->add('infoGroupe', IntegerType::class, [
-                'label'=>'Numéro du groupe'
-            ])
             ->add('atomGroupe', EntityType::class, [
                 'class' => ElementGroupe::class,
                 'choice_label' => 'name',
                 'label' => 'Groupe d\'atome',
             ])
+            ->add('infoGroupe', IntegerType::class, [
+                'label'=>'Numéro du groupe (Ligne verticale)'
+            ])
             ->add('infoPeriode', IntegerType::class, [
+                'label'=>'Numéro de la période (Ligne horizontale)'
             ])
             ->add('masseVolumique')
             ->add('cas')
@@ -59,7 +63,12 @@ class ElementType extends AbstractType
             ->add('electronegativite')
             ->add('pointDeFusion')
             ->add('pointDEbullition')
-            ->add('is_radioactif')
+            ->add('radioactif', ChoiceType::class, [
+                'choices'  => [
+                    'Oui' => 1,
+                    'Non' => 0,
+                ],
+            ])
 
             ->add('submit', SubmitType::class)
         ;

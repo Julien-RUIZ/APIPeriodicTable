@@ -1,0 +1,21 @@
+<article class="adminCategory">
+    <h5>Merci de sélectionner la définition que vous souhaitez modifier.</h5>
+    <div class="my-2 groupCard">
+        {% for Definition in Definitions %}
+            <div class="card cardCat my-1 mx-1">
+                <a href="{{ path('app_update_definition', {id: Definition.id}) }}" class="LinkAdminAtom">
+                    <div class="card-body">
+                        <div class="CardSymbole text-center">{{ Definition.name }}</div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+        <div class="card cardCat my-1 mx-1">
+            <a href="{{ path('app_create_definition') }}">
+                <div class="card-body">
+                    <div class="CardSymbole text-center">+</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</article>
