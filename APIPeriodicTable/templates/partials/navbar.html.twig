@@ -15,7 +15,7 @@
             </li>
             {% if app.user is not null %}
             <li class="nav-item">
-                <a class="nav-link" href="#">Documentation API</a>
+                <a class="nav-link" href="{{ path('app_read_api_documentation') }}">Documentation API</a>
             </li>
             {% endif %}
         </ul>
