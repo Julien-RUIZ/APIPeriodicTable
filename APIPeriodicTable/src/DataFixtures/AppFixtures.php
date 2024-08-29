@@ -20,10 +20,12 @@ class AppFixtures extends Fixture
      */
     public function load(ObjectManager $manager): void
     {
-        for ($i=0; $i<5; $i++){
+        for ($i=0; $i<3; $i++){
             $user = new User();
             $user->setUsername('user'.$i);
             if($i===0){
+                $user->setRoles(['ROLE_SUPER_ADMIN']);
+            }elseif ($i===1){
                 $user->setRoles(['ROLE_ADMIN']);
             }else{
                 $user->setRoles(['ROLE_USER']);

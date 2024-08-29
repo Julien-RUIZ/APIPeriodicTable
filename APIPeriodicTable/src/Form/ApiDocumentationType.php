@@ -19,6 +19,11 @@ class ApiDocumentationType extends AbstractType
             ->add('Title', TextType::class,[
                 'label'=>'Titre'
             ])
+            ->add('anchor', TextType::class, [
+                'required'=>true,
+                'label'=>'Ancre',
+                'help'=>'Vous pouvez récupérer le titre en supprimant les espaces'
+            ])
             ->add('Description', TextareaType::class)
             ->add('Endpoint1', TextType::class, [
                 'required'=>false,
