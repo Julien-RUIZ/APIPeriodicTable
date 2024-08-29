@@ -51,9 +51,7 @@
                 </tr>
                 <tr>
                     <th scope="row">Groupe</th>
-                    {% set groupe =  atome.groupe%}
-                    {% set mapping={'Groupe1': 'Groupe1 : Alcalins', 'Groupe2': 'Groupe2 : Alcalino-terreux', 'Groupe3_12Mt': 'Groupe3_12Mt : Métaux de transition', 'Groupe3_12TP':'Groupe3_12TP : Éléments de Transition Postérieurs', 'Groupe13':'Groupe du Bore', 'Groupe14': 'Groupe du Carbone','Groupe15':'Pnictogènes', 'Groupe16': 'Chalcogènes', 'Groupe17': 'Halogènes', 'Groupe18': 'Gaz Nobles' } %}
-                    <td>{{ mapping[groupe] }}</td>
+                    <td>{{ atome.atomGroupe.getName() }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Masse volumique <span class="infosup">?</span> </th>

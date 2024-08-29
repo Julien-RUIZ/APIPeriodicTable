@@ -22,7 +22,7 @@ class UpdateElementController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $entityManager->flush();
             $this->addFlash('success', "La mise à jour de l'atome est réalisée avec succès.");
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_admin');
         }
 
         return $this->render('admin/Element/update_element/index.html.twig', [
