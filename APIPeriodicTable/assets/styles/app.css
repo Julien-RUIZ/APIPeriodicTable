@@ -136,6 +136,18 @@ button a{
     justify-content: space-around;
 }
 
+.blocChapitre{
+    position: sticky;
+    top: 20px;
+}
+
+.infoDocApi{
+    background-color: ghostwhite;
+    border: 1px solid black;
+    margin: 5px 0 5px 0;
+    padding: 15px;
+
+}
 /* Styles pour écrans larges (plus de 1800px) */
 @media (min-width: 1800px) {
     .boxAtom {

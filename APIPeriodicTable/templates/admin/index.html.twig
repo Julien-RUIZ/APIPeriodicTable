@@ -13,6 +13,10 @@
             {% include 'admin/Group/adminGroup.html.twig' %}
             <hr class="my-5">
             {% include 'admin/Definition/adminDef.html.twig' %}
+            {% if is_granted('ROLE_SUPER_ADMIN')%}
+                <hr class="my-5">
+                {% include 'admin/ApiDocumentation/adminApiDoc.html.twig' %}
+            {% endif %}
         </div>
     </section>
 {% endblock %}

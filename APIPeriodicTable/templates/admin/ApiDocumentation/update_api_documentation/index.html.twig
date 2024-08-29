@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UpdateApiDocumentationController!{% endblock %}
+
+{% block body %}
+    <section>
+        <article>
+            <div class="container">
+                <h1 class="text-center my-5">Mise à jour de la documentation de l'API</h1>
+                {{ form(form) }}
+            </div>
+        </article>
+        <hr class="my-5">
+        <article>
+            <div class="container">
+                <h1 class="text-center my-5">Suppression de la documentation</h1>
+                <div class="supprCata ">
+                    <div>
+                        <p>Attention, la suppression de la documentation sera définitive et il ne pourra y avoir de retour en arrière possible.</p>
+                    </div>
+                    <div>
+                        <a href="{{ path('app_delete_api_documentation', {id: app.request.attributes.get('id')}) }}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+{% endblock %}

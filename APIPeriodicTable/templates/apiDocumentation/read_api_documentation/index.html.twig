@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReadApiDocumentationController!{% endblock %}
+
+{% block body %}
+<section>
+    <article>
+        <div class="container-fluid">
+            <h1 class="text-center my-5">Documentation de l'API du tableau périodique des éléments</h1>
+            <div class="row">
+                <div class="col-12 col-lg-4 ">
+                    <table class="table table-bordered blocChapitre">
+                        <thead>
+                        <tr>
+                            <th scope="col">Chapitres</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for apiDoc in apiDocs %}
+                            <tr>
+                                <td><a href="#{{ apiDoc.Anchor }}">{{ apiDoc.Title }}</a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <table class="table">
+                        <tbody>
+                        {% for apiDoc in apiDocs %}
+                            <tr>
+                                <td>
+                                    <h3 class="text-center" id="{{ apiDoc.Anchor }}">{{ apiDoc.Title }}</h3>
+                                    <div class="infoDocApi">
+                                        <p>{{ apiDoc.Description }}</p>
+                                    </div>
+
+
+                                    {% if apiDoc.Endpoint1 is not empty  %}
+                                        <div class="infoDocApi">
+                                            <ul>
+                                                <h5>Endpoints :</h5>
+                                                <li>{{ apiDoc.Endpoint1 }}</li>
+
+                                                {% if apiDoc.Endpoint2 is not empty  %}
+                                                    <li>{{ apiDoc.Endpoint2 }}</li>
+                                                {% endif %}
+                                                {% if apiDoc.Endpoint3 is not empty  %}
+                                                    <li>{{ apiDoc.Endpoint3 }}</li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    {% endif %}
+
+                                    {% if apiDoc.ExampleRequest1 is not empty %}
+                                        <div class="infoDocApi">
+                                            <h5>Exemple de requête :</h5>
+                                            <p>{{ apiDoc.ExampleRequest1 }}</p>
+                                            {% if apiDoc.ExampleRequest2 is not empty  %}
+                                                <p>{{ apiDoc.ExampleRequest2 }}</p>
+                                            {% endif %}
+                                            {% if apiDoc.ExampleRequest3 is not empty  %}
+                                                <p>{{ apiDoc.ExampleRequest3 }}</p>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if apiDoc.ExampleResponse is not empty  %}
+                                        <div class="infoDocApi">
+                                            <h5>Exemple de réponse : </h5>
+                                            <p style="white-space: pre-wrap;">{{ apiDoc.ExampleResponse }}</p>
+                                        </div>
+                                    {% endif %}
+
+                                    {% if apiDoc.Attributes is not empty  %}
+                                        <div class="infoDocApi">
+                                            <h5>Définition des attributs : </h5>
+                                            <p>{{ apiDoc.Attributes | nl2br }}</p>
+                                        </div>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </article>
+</section>
+{% endblock %}

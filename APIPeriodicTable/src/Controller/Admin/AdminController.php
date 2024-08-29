@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\ElementDefinitions;
+use App\Repository\ApiDocumentationRepository;
 use App\Repository\ElementCategoryRepository;
 use App\Repository\ElementDefinitionsRepository;
 use App\Repository\ElementRepository;
@@ -16,15 +17,16 @@ class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'app_admin')]
     #[IsGranted('ROLE_ADMIN')]
-    public function index(ElementRepository $atomeRepository, ElementCategoryRepository $categoryRepository, ElementGroupeRepository $groupeRepository, ElementDefinitionsRepository $definitionsRepository): Response
+    public function index(ElementRepository $atomeRepository, ElementCategoryRepository $categoryRepository, ElementGroupeRepository $groupeRepository, ElementDefinitionsRepository $definitionsRepository, ApiDocumentationRepository $documentationRepository): Response
     {
         $Atoms = $atomeRepository->findAll();
         $Category = $categoryRepository->findAll();
         $Groups = $groupeRepository->findAll();
         $Definitions = $definitionsRepository->findAll();
+        $ApiDoc = $documentationRepository->findAll();
 
         return $this->render('admin/index.html.twig', [
-            'Atoms' => $Atoms, 'Category'=>$Category, 'Groups'=>$Groups, 'Definitions'=>$Definitions
+            'Atoms' => $Atoms, 'Category'=>$Category, 'Groups'=>$Groups, 'Definitions'=>$Definitions, 'ApiDocs'=>$ApiDoc
         ]);
     }
 }
