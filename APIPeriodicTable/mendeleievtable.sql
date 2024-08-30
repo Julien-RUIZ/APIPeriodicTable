@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 29 août 2024 à 08:52
+-- Généré le : ven. 30 août 2024 à 12:45
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -42,7 +42,15 @@ CREATE TABLE IF NOT EXISTS `api_documentation` (
   `endpoint3` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `anchor` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Déchargement des données de la table `api_documentation`
+--
+
+INSERT INTO `api_documentation` (`id`, `title`, `description`, `example_request1`, `example_request2`, `example_request3`, `example_response`, `attributes`, `endpoint1`, `endpoint2`, `endpoint3`, `anchor`) VALUES
+(3, 'Introduction', 'L\'API des Éléments Périodiques est une interface conçue pour fournir des informations complètes et à jour sur les éléments chimiques du tableau périodique. Cette API permet aux développeurs d\'accéder facilement à des données précises concernant les éléments chimiques, telles que le numéro atomique, le symbole, la masse atomique, les propriétés physiques et chimiques, ainsi que d\'autres caractéristiques essentielles.\n\nQue vous travailliez sur une application éducative, scientifique, ou que vous ayez besoin d\'intégrer des informations sur les éléments chimiques dans vos projets, notre API simplifie l\'accès à ces données tout en garantissant leur exactitude et leur fiabilité.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Introduction'),
+(4, 'Toutes les informations par élément', 'Nous allons pouvoir récupérer toutes les informations importantes pour chaque élément. Il ne vous suffit que d\'utiliser la requête et le verbe.', 'GET - http://127.0.0.1:8000/api/elements', NULL, NULL, '{\n		\"nom\": \"Hydrogène\",\n		\"slug\": \"hydrogene\",\n		\"electron\": \"1\",\n		\"numero\": 1,\n		\"symbole\": \"H\",\n		\"infoGroupe\": \"1\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.00008988 g\\/cm³\",\n		\"cas\": \"12385-13-6\",\n		\"einecs\": \"231-595-7\",\n		\"masseAtomique\": \"1.008\",\n		\"rayonAtomique\": \"53 pm\",\n		\"rayonDeCovalence\": \"31 pm\",\n		\"rayonDeVanDerWaals\": \"120 pm\",\n		\"configurationElectronique\": \"1s¹\",\n		\"etatOxydation\": \"-1, +1\",\n		\"decouverteAnnee\": \"1766\",\n		\"decouverteNoms\": \"Henry Cavendish\",\n		\"decouvertePays\": \"Grande-Bretagne\",\n		\"electronegativite\": \"2.20\",\n		\"pointDeFusion\": \"-259.16\",\n		\"pointDEbullition\": \"-252.87\",\n		\"Radioactif\": false,\n		\"elementCategory\": {\n			\"name\": \"Non métal\"\n		},\n		\"elementGroupe\": {\n			\"name\": \"Alcalins\",\n			\"groupN\": \"Groupe1\"\n		}\n	}', NULL, 'api/elements', NULL, NULL, 'InformationsParElément');
 
 -- --------------------------------------------------------
 
@@ -68,13 +76,13 @@ DROP TABLE IF EXISTS `element`;
 CREATE TABLE IF NOT EXISTS `element` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(13) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `info_element` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `info_element` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `slug` varchar(13) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `numero` int DEFAULT NULL,
   `symbole` varchar(6) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `info_groupe` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `atom_category_id` int DEFAULT NULL,
-  `atom_groupe_id` int DEFAULT NULL,
+  `element_category_id` int DEFAULT NULL,
+  `element_groupe_id` int DEFAULT NULL,
   `info_periode` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `masse_volumique` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `cas` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -94,15 +102,15 @@ CREATE TABLE IF NOT EXISTS `element` (
   `point_debullition` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `radioactif` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDX_41405E39530A8000` (`atom_category_id`),
-  KEY `IDX_41405E39AFF1D52B` (`atom_groupe_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  KEY `IDX_41405E39530A8000` (`element_category_id`),
+  KEY `IDX_41405E39AFF1D52B` (`element_groupe_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Déchargement des données de la table `element`
 --
 
-INSERT INTO `element` (`id`, `nom`, `info_element`, `slug`, `numero`, `symbole`, `info_groupe`, `atom_category_id`, `atom_groupe_id`, `info_periode`, `masse_volumique`, `cas`, `einecs`, `masse_atomique`, `rayon_atomique`, `rayon_de_covalence`, `rayon_de_van_der_waals`, `electron`, `configuration_electronique`, `etat_oxydation`, `decouverte_annee`, `decouverte_noms`, `decouverte_pays`, `electronegativite`, `point_de_fusion`, `point_debullition`, `radioactif`) VALUES
+INSERT INTO `element` (`id`, `nom`, `info_element`, `slug`, `numero`, `symbole`, `info_groupe`, `element_category_id`, `element_groupe_id`, `info_periode`, `masse_volumique`, `cas`, `einecs`, `masse_atomique`, `rayon_atomique`, `rayon_de_covalence`, `rayon_de_van_der_waals`, `electron`, `configuration_electronique`, `etat_oxydation`, `decouverte_annee`, `decouverte_noms`, `decouverte_pays`, `electronegativite`, `point_de_fusion`, `point_debullition`, `radioactif`) VALUES
 (1, 'Hydrogène', 'L’hydrogène est l’élément le plus abondant dans l’univers, constituant environ 75 % de sa masse. Il est également la source principale d’énergie dans les étoiles, y compris notre Soleil.', 'hydrogene', 1, 'H', '1', 10, 1, '1', '0.00008988 g/cm³', '12385-13-6', '231-595-7', '1.008', '53 pm', '31 pm', '120 pm', '1', '1s¹', '-1, +1', '1766', 'Henry Cavendish', 'Grande-Bretagne', '2.20', '-259.16', '-252.87', 0),
 (2, 'Hélium', 'L’hélium est le deuxième élément le plus léger, principalement utilisé dans les ballons et les dirigeables en raison de sa flottabilité. Il est également utilisé dans les environnements à très basse température, comme les réacteurs nucléaires.', 'helium', 2, 'He', '18', 2, 10, '1', '0.0001786 g/cm³', '7440-59-7', '231-168-5', '4.0026', '31 pm', 'N/A', '140 pm', '2', '1s²', '0', '1895', 'Sir William Ramsay', 'Royaume-Uni', 'N/A', '-272.20', '-268.93', 0),
 (3, 'Lithium', 'Le lithium est un métal léger utilisé principalement dans les batteries rechargeables pour les téléphones portables, les ordinateurs portables et les voitures électriques.', 'lithium', 3, 'Li', '1', 5, 1, '2', '0.534 g/cm³', '7439-93-2', '231-102-5', '6.94', '134 pm', '152 pm', '182 pm', '2|1', '[He] 2s¹', '+1', '1817', 'Johan August Arfvedson', 'Suède', '0.98', '180.54', '1342.0', 0),
@@ -219,7 +227,7 @@ INSERT INTO `element` (`id`, `nom`, `info_element`, `slug`, `numero`, `symbole`,
 (114, 'Flérovium', 'Le flerovium est un élément synthétique, découvert en 1998, principalement étudié dans le cadre de recherches en physique nucléaire en raison de sa courte demi-vie.', 'flerovium', 114, 'Fl', '14', 9, 6, '7', 'N/A', '54038-43-5', 'N/A', '289', 'N/A', 'N/A', 'N/A', '2|8|18|32|18|8|18|12|2', '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²', '+2, +4', '1999', 'Institut de recherche nucléaire de Dubna', 'Russie', '1.6', 'N/A', 'N/A', 1),
 (115, 'Moscovium', 'Le moscovium est un élément superlourd, découvert en 2003, dont les propriétés sont encore en grande partie théoriques, principalement étudié en laboratoire pour des recherches en chimie et physique.', 'moscovium', 115, 'Mc', '15', 9, 7, '7', 'N/A', '54038-43-6', 'N/A', '290', 'N/A', 'N/A', 'N/A', '2|8|18|32|18|8|18|13|2', '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³', '+1, +3, +5', '2003', 'Institut de recherche nucléaire de Dubna et Joint Institute for Nuclear Research', 'Russie', '1.6', 'N/A', 'N/A', 1),
 (116, 'Livermorium', 'Le livermorium est un élément superlourd, découvert en 2000, dont les propriétés sont encore en cours d’étude, utilisé principalement pour la recherche scientifique dans le domaine de la chimie des éléments lourds.', 'livermorium', 116, 'Lv', '16', 9, 8, '7', 'N/A', '54038-43-7', 'N/A', '293', 'N/A', 'N/A', 'N/A', '2|8|18|32|18|8|18|14|2', '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴', '+2, +4, +6', '2012', 'Institut de recherche nucléaire de Dubna et Lawrence Livermore National Laboratory', 'Russie, États-Unis', '1.6', 'N/A', 'N/A', 1);
-INSERT INTO `element` (`id`, `nom`, `info_element`, `slug`, `numero`, `symbole`, `info_groupe`, `atom_category_id`, `atom_groupe_id`, `info_periode`, `masse_volumique`, `cas`, `einecs`, `masse_atomique`, `rayon_atomique`, `rayon_de_covalence`, `rayon_de_van_der_waals`, `electron`, `configuration_electronique`, `etat_oxydation`, `decouverte_annee`, `decouverte_noms`, `decouverte_pays`, `electronegativite`, `point_de_fusion`, `point_debullition`, `radioactif`) VALUES
+INSERT INTO `element` (`id`, `nom`, `info_element`, `slug`, `numero`, `symbole`, `info_groupe`, `element_category_id`, `element_groupe_id`, `info_periode`, `masse_volumique`, `cas`, `einecs`, `masse_atomique`, `rayon_atomique`, `rayon_de_covalence`, `rayon_de_van_der_waals`, `electron`, `configuration_electronique`, `etat_oxydation`, `decouverte_annee`, `decouverte_noms`, `decouverte_pays`, `electronegativite`, `point_de_fusion`, `point_debullition`, `radioactif`) VALUES
 (117, 'Tennessine', 'Le tennessine est un élément synthétique extrêmement rare, dont les propriétés sont encore largement théoriques et qui est principalement étudié dans des contextes de recherche avancée.', 'tennessine', 117, 'Ts', '17', 3, 9, '7', 'N/A', '54038-43-8', 'N/A', '294', 'N/A', 'N/A', 'N/A', '2|8|18|32|18|8|18|15|2', '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵', '-1, +1, +3, +5, +7', '2010', 'Institut de recherche nucléaire de Dubna et Lawrence Livermore National Laboratory', 'Russie, États-Unis', '2.2', 'N/A', 'N/A', 1),
 (118, 'Oganesson', 'L’oganesson est un élément superlourd et radioactif, synthétisé en laboratoire. Ses propriétés sont encore largement hypothétiques, et il est principalement étudié pour la recherche en physique nucléaire.', 'oganesson', 118, 'Og', '18', 2, 10, '7', 'N/A', '54038-43-9', 'N/A', '294', 'N/A', 'N/A', 'N/A', '2|8|18|32|18|8|18|16|2', '[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶', '+1, +2, +4, +6', '2002', 'Institut de recherche nucléaire de Dubna et Lawrence Livermore National Laboratory', 'Russie, États-Unis', '2.8', 'N/A', 'N/A', 1);
 
@@ -356,7 +364,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_IDENTIFIER_EMAIL` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `roles`, `password`, `username`) VALUES
+(23, 'user0@mail.fr', '[\"ROLE_SUPER_ADMIN\"]', '$2y$13$XWiPiCSMqd1SuAgJ.u43X.pfrJucVd.dKVOe7iz0ivPN2A3vSpa66', 'user0'),
+(24, 'user1@mail.fr', '[\"ROLE_ADMIN\"]', '$2y$13$FabLQO4X4c.FeGZ3119HHuv9UeQP0pq3AJc.0hg4OEL5fkFrxjv/m', 'user1'),
+(25, 'user2@mail.fr', '[\"ROLE_USER\"]', '$2y$13$vvDIfzVv4H7gqe8Affw9Y.Nlwf1pCXnv9cB4z16aMrn4Dn2UEmD0W', 'user2');
 
 --
 -- Contraintes pour les tables déchargées
@@ -366,8 +383,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Contraintes pour la table `element`
 --
 ALTER TABLE `element`
-  ADD CONSTRAINT `FK_282D920B530A8000` FOREIGN KEY (`atom_category_id`) REFERENCES `element_category` (`id`),
-  ADD CONSTRAINT `FK_282D920BAFF1D52B` FOREIGN KEY (`atom_groupe_id`) REFERENCES `element_groupe` (`id`);
+  ADD CONSTRAINT `FK_282D920B530A8000` FOREIGN KEY (`element_category_id`) REFERENCES `element_category` (`id`),
+  ADD CONSTRAINT `FK_282D920BAFF1D52B` FOREIGN KEY (`element_groupe_id`) REFERENCES `element_groupe` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
