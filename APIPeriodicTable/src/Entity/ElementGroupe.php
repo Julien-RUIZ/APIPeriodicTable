@@ -91,7 +91,7 @@ class ElementGroupe
     {
         if (!$this->Elements->contains($Elements)) {
             $this->Elements->add($Elements);
-            $Elements->setAtomGroupe($this);
+            $Elements->setElementGroupe($this);
         }
 
         return $this;
@@ -101,8 +101,8 @@ class ElementGroupe
     {
         if ($this->Elements->removeElement($Elements)) {
             // set the owning side to null (unless already changed)
-            if ($Elements->getAtomGroupe() === $this) {
-                $Elements->setAtomGroupe(null);
+            if ($Elements->getElementGroupe() === $this) {
+                $Elements->setElementGroupe(null);
             }
         }
 
