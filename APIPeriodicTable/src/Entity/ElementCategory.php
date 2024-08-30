@@ -6,6 +6,7 @@ use App\Repository\ElementCategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ElementCategoryRepository::class)]
 class ElementCategory
@@ -16,6 +17,7 @@ class ElementCategory
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['ApiElementTotal'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
@@ -30,12 +32,12 @@ class ElementCategory
     /**
      * @var Collection<int, Element>
      */
-    #[ORM\OneToMany(targetEntity: Element::class, mappedBy: 'atomCategory')]
-    private Collection $atomes;
+    #[ORM\OneToMany(targetEntity: Element::class, mappedBy: 'ElementCategory')]
+    private Collection $Elements;
 
     public function __construct()
     {
-        $this->atomes = new ArrayCollection();
+        $this->Elements = new ArrayCollection();
     }
 
     /**
@@ -98,27 +100,27 @@ class ElementCategory
     /**
      * @return Collection<int, Element>
      */
-    public function getAtomes(): Collection
+    public function getElements(): Collection
     {
-        return $this->atomes;
+        return $this->Elements;
     }
 
-    public function addAtome(Element $atome): static
+    public function addElements(Element $Elements): static
     {
-        if (!$this->atomes->contains($atome)) {
-            $this->atomes->add($atome);
-            $atome->setAtomCategory($this);
+        if (!$this->Elements->contains($Elements)) {
+            $this->Elements->add($Elements);
+            $Elements->setELementCategory($this);
         }
 
         return $this;
     }
 
-    public function removeAtome(Element $atome): static
+    public function removeElements(Element $Elements): static
     {
-        if ($this->atomes->removeElement($atome)) {
+        if ($this->Elements->removeElement($Elements)) {
             // set the owning side to null (unless already changed)
-            if ($atome->getAtomCategory() === $this) {
-                $atome->setAtomCategory(null);
+            if ($Elements->getElementCategory() === $this) {
+                $Elements->setElementCategory(null);
             }
         }
 

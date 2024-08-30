@@ -5,9 +5,9 @@
         </div>
 
         <div class="btn-group my-2" role="group" aria-label="Basic example">
-            <div class="btn btn-secondary {% if app.request.attributes.get('param') == 'is_radioactif' %} filter {% endif %}">Radioactif</div>
-            <a class=" {% if app.request.attributes.get('param') == 'is_radioactif' and app.request.attributes.get('value') == '1' %} filter {% endif %}" href="{{ path('app_tableau', {'param': 'is_radioactif', 'value': '1'}) }}"><button type="button" class="btn btn-secondary">Oui</button></a>
-            <a class=" {% if app.request.attributes.get('param') == 'is_radioactif' and app.request.attributes.get('value') == '0' %} filter {% endif %}" href="{{ path('app_tableau', {'param': 'is_radioactif', 'value': '0'}) }}"><button type="button" class="btn btn-secondary">Non</button></a>
+            <div class="btn btn-secondary {% if app.request.attributes.get('param') == 'Radioactif' %} filter {% endif %}">Radioactif</div>
+            <a class=" {% if app.request.attributes.get('param') == 'Radioactif' and app.request.attributes.get('value') == '1' %} filter {% endif %}" href="{{ path('app_tableau', {'param': 'Radioactif', 'value': '1'}) }}"><button type="button" class="btn btn-secondary">Oui</button></a>
+            <a class=" {% if app.request.attributes.get('param') == 'Radioactif' and app.request.attributes.get('value') == '0' %} filter {% endif %}" href="{{ path('app_tableau', {'param': 'Radioactif', 'value': '0'}) }}"><button type="button" class="btn btn-secondary">Non</button></a>
         </div>
         <div class="btn-group my-2 BlocInfoPeriode" role="group" aria-label="Basic example">
             <div class="btn btn-secondary  {% if app.request.attributes.get('param') == 'infoPeriode' %} active {% endif %}">Pèriode</div>

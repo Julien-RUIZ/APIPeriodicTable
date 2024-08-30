@@ -13,11 +13,12 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class UpdateElementController extends AbstractController
 {
-    #[Route('admin/update/atom/{id}', name: 'app_update_atom' ,requirements: ['id'=>'\d+'])]
+    #[Route('admin/update/element/{id}', name: 'app_update_element' ,requirements: ['id'=>'\d+'])]
     #[IsGranted('ROLE_ADMIN')]
-    public function index(Request $request, Element $atome, EntityManagerInterface $entityManager): Response
+    public function index(Request $request, Element $element, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(ElementType::class, $atome);
+
+        $form = $this->createForm(ElementType::class, $element);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
             $entityManager->flush();

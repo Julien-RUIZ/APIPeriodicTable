@@ -17,16 +17,16 @@ class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'app_admin')]
     #[IsGranted('ROLE_ADMIN')]
-    public function index(ElementRepository $atomeRepository, ElementCategoryRepository $categoryRepository, ElementGroupeRepository $groupeRepository, ElementDefinitionsRepository $definitionsRepository, ApiDocumentationRepository $documentationRepository): Response
+    public function index(ElementRepository $elementRepository, ElementCategoryRepository $categoryRepository, ElementGroupeRepository $groupeRepository, ElementDefinitionsRepository $definitionsRepository, ApiDocumentationRepository $documentationRepository): Response
     {
-        $Atoms = $atomeRepository->findAll();
+        $Elements = $elementRepository->findAll();
         $Category = $categoryRepository->findAll();
         $Groups = $groupeRepository->findAll();
         $Definitions = $definitionsRepository->findAll();
         $ApiDoc = $documentationRepository->findAll();
 
         return $this->render('admin/index.html.twig', [
-            'Atoms' => $Atoms, 'Category'=>$Category, 'Groups'=>$Groups, 'Definitions'=>$Definitions, 'ApiDocs'=>$ApiDoc
+            'Elements' => $Elements, 'Category'=>$Category, 'Groups'=>$Groups, 'Definitions'=>$Definitions, 'ApiDocs'=>$ApiDoc
         ]);
     }
 }

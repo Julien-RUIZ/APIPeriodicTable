@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class PeriodicTableController extends AbstractController
 {
 
-    public function __construct(private array $ListeAtomes=[], private array $Atomes=[], private array $listefamily=[], private int $Lanthanides=1,  private int $Actinides=1)
+    public function __construct(private array $ListeElements=[], private array $Elements=[], private array $listefamily=[], private int $Lanthanides=1,  private int $Actinides=1)
     {
     }
 
@@ -25,23 +25,23 @@ class PeriodicTableController extends AbstractController
         $value = $request->attributes->get('value');
 
         if ($param === null && $value === null){
-            $this->ListeAtomes = $atomeRepository->findAll();
-            foreach ($this->ListeAtomes as $value){
+            $this->ListeElements = $atomeRepository->findAll();
+            foreach ($this->ListeElements as $value){
                 $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
-                $this->Atomes[$value->getId()] = $value;
+                $this->Elements[$value->getId()] = $value;
             }
         }
         if ($param !== null && $value !== null){
-            $this->ListeAtomes = $atomeRepository->findBy([$param=>$value]);
-            foreach ($this->ListeAtomes as $value){
+            $this->ListeElements = $atomeRepository->findBy([$param=>$value]);
+            foreach ($this->ListeElements as $value){
                 $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
-                $this->Atomes[$value->getId()] = $value;
+                $this->Elements[$value->getId()] = $value;
             }
         }
         $this->Lanthanides = array_search('Lanthanides', $this->listefamily);
         $this->Actinides = array_search('Actinides', $this->listefamily);
         return $this->render('table/index.html.twig', [
-            'Atomes' => $this->Atomes, 'Lanthanides'=>$this->Lanthanides, 'Actinides'=>$this->Actinides, 'category'=>$category
+            'Elements' => $this->Elements, 'Lanthanides'=>$this->Lanthanides, 'Actinides'=>$this->Actinides, 'category'=>$category
         ]);
     }
 }

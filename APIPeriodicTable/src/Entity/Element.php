@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ElementRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ElementRepository::class)]
@@ -16,117 +17,141 @@ class Element
 
     #[ORM\Column(length: 13, nullable: true)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $nom = null;
 
     #[ORM\Column(length: 13, nullable: true)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $slug = null;
 
     #[ORM\Column(length: 40)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
     #[Assert\Length(max: 40, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $electron = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['ApiElementTotal'])]
     private ?int $numero = null;
 
     #[ORM\Column(length: 6)]
+    #[Groups(['ApiElementTotal'])]
     private ?string $symbole = null;
 
     #[ORM\Column(length: 10)]
+    #[Groups(['ApiElementTotal'])]
     private ?string $infoGroupe = null;
 
     #[ORM\Column(length: 10)]
+    #[Groups(['ApiElementTotal'])]
     private ?string $infoPeriode = null;
-
 
     #[ORM\Column(length: 200)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
     #[Assert\Length(max: 200, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $masseVolumique = null;
 
     #[ORM\Column(length: 50)]
     #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $cas = null;
 
     #[ORM\Column(length: 100)]
     #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $einecs = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $masseAtomique = null;
 
     #[ORM\Column(length: 100)]
     #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $rayonAtomique = null;
 
     #[ORM\Column(length: 50)]
     #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $rayonDeCovalence = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $rayonDeVanDerWaals = null;
 
     #[ORM\Column(length: 50)]
     #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $configurationElectronique = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $etatOxydation = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Regex(pattern: '/^\d+$/')]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $decouverteAnnee = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(max: 255, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $decouverteNoms = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(max: 255, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $decouvertePays = null;
 
     #[ORM\Column(length: 10)]
     #[Assert\Length(max: 10, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $electronegativite = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $pointDeFusion = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $pointDEbullition = null;
 
     #[ORM\Column]
+    #[Groups(['ApiElementTotal'])]
     private ?bool $Radioactif = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $infoElement = null;
 
-    #[ORM\ManyToOne(inversedBy: 'atomes')]
-    private ?ElementCategory $atomCategory = null;
+    #[ORM\ManyToOne(inversedBy: 'Elements')]
+    #[Groups(['ApiElementTotal'])]
+    private ?ElementCategory $elementCategory = null;
 
-    #[ORM\ManyToOne(inversedBy: 'atomes')]
-    private ?ElementGroupe $atomGroupe = null;
+    #[ORM\ManyToOne(inversedBy: 'Elements')]
+    #[Groups(['ApiElementTotal'])]
+    private ?ElementGroupe $elementGroupe = null;
 
     public function getId(): ?int
     {
@@ -421,26 +446,26 @@ class Element
         return $this;
     }
 
-    public function getAtomCategory(): ?ElementCategory
+    public function getElementCategory(): ?ElementCategory
     {
-        return $this->atomCategory;
+        return $this->elementCategory;
     }
 
-    public function setAtomCategory(?ElementCategory $atomCategory): static
+    public function setElementCategory(?ElementCategory $elementCategory): static
     {
-        $this->atomCategory = $atomCategory;
+        $this->elementCategory = $elementCategory;
 
         return $this;
     }
 
-    public function getAtomGroupe(): ?ElementGroupe
+    public function getElementGroupe(): ?ElementGroupe
     {
-        return $this->atomGroupe;
+        return $this->elementGroupe;
     }
 
-    public function setAtomGroupe(?ElementGroupe $atomGroupe): static
+    public function setElementGroupe(?ElementGroupe $elementGroupe): static
     {
-        $this->atomGroupe = $atomGroupe;
+        $this->elementGroupe = $elementGroupe;
 
         return $this;
     }

@@ -31,12 +31,12 @@ class ElementType extends AbstractType
                 'label'=>'Numéro atomique'
             ])
             ->add('symbole')
-            ->add('atomCategory', EntityType::class, [
+            ->add('elementCategory', EntityType::class, [
                 'class' => ElementCategory::class,
                 'choice_label' => 'name',
                 'label' => 'Catégorie d\'atome',
             ])
-            ->add('atomGroupe', EntityType::class, [
+            ->add('elementGroupe', EntityType::class, [
                 'class' => ElementGroupe::class,
                 'choice_label' => 'name',
                 'label' => 'Groupe d\'atome',
