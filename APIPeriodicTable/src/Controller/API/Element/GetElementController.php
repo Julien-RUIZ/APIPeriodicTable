@@ -21,7 +21,7 @@ class GetElementController extends AbstractController
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
 
-    #[Route('api/elements/{id}', name: 'api_element', requirements: ['id'=>'\d+'], methods: ['GET'])]
+    #[Route('api/element/{id}', name: 'api_element', requirements: ['id'=>'\d+'], methods: ['GET'])]
     public function getElement(int $id,ElementRepository $elementRepository, SerializerInterface $serializer): Response
     {
         $donnees = $elementRepository->findBy(['id'=>$id]);

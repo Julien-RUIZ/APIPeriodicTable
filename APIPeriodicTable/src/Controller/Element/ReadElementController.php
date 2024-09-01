@@ -17,7 +17,6 @@ class ReadElementController extends AbstractController
         foreach ($definition as $value){
             $listeDefinition[$value->getId()] = $value;
         }
-
         return $this->render('Element/read_element/index.html.twig', [
             'elements' => $element, 'listeDefinition'=> $listeDefinition
         ]);
