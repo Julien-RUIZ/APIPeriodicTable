@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ElementGroupeRepository::class)]
 class ElementGroupe
@@ -16,11 +17,12 @@ class ElementGroupe
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 25)]
+    #[Assert\Regex(pattern: '/^[A-Za-zÀ-ÿ\s]+$/u')]
     #[Groups(['ApiElementTotal'])]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 25)]
     #[Groups(['ApiElementTotal'])]
     private ?string $groupN = null;
 

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ElementDefinitionsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ElementDefinitionsRepository::class)]
 class ElementDefinitions
@@ -14,9 +15,10 @@ class ElementDefinitions
     private ?int $id = null;
 
     #[ORM\Column(length: 25)]
+    #[Assert\Regex(pattern: '/^[A-Za-zÀ-ÿ\s]+$/u')]
     private ?string $name = null;
 
-    #[ORM\Column(length: 500)]
+    #[ORM\Column(length: 1000)]
     private ?string $definition = null;
 
     public function getId(): ?int

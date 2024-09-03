@@ -12,7 +12,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class DeleteCategoryController extends AbstractController
 {
     #[Route('/delete/category{id}', name: 'app_delete_category', requirements:  ['id'=>'\d+'])]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     public function index(ElementCategory $category, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($category);

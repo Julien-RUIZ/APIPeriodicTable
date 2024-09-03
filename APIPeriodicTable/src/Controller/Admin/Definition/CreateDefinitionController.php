@@ -14,7 +14,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class CreateDefinitionController extends AbstractController
 {
     #[Route('admin/create/definition', name: 'app_create_definition')]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $definition = new ElementDefinitions();

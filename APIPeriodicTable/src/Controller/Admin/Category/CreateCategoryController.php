@@ -14,7 +14,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class CreateCategoryController extends AbstractController
 {
     #[Route('admin/create/category', name: 'app_create_category')]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $category = new ElementCategory();

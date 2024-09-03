@@ -12,7 +12,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class DeleteDefinitionController extends AbstractController
 {
     #[Route('/delete/definition/{id}', name: 'app_delete_definition', requirements:  ['id'=>'\d+'])]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     public function index(ElementDefinitions $elementDefinitions, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($elementDefinitions);

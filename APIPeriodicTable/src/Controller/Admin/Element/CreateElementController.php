@@ -14,7 +14,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class CreateElementController extends AbstractController
 {
     #[Route('admin/create/element', name: 'app_create_element')]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $element = new Element();

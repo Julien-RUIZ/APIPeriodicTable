@@ -10,6 +10,7 @@
                 {{ form(form) }}
             </div>
         </article>
+        {% if is_granted('ROLE_SUPER_ADMIN')%}
         <hr class="my-5">
         <article>
             <div class="container">
@@ -24,5 +25,6 @@
                 </div>
             </div>
         </article>
+        {% endif %}
     </section>
 {% endblock %}

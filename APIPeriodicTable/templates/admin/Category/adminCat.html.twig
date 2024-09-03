@@ -10,6 +10,7 @@
                 </a>
             </div>
         {% endfor %}
+        {% if is_granted('ROLE_SUPER_ADMIN')%}
         <div class="card cardCat my-1 mx-1">
             <a href="{{ path('app_create_category')}}">
                 <div class="card-body">
@@ -17,5 +18,6 @@
                 </div>
             </a>
         </div>
+        {% endif %}
     </div>
 </article>

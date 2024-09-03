@@ -3,8 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ApiDocumentationRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ApiDocumentationRepository::class)]
 class ApiDocumentation
@@ -15,6 +15,7 @@ class ApiDocumentation
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Regex(pattern: '/^[A-Za-zÀ-ÿ0-9\s\'-]+$/u')]
     private ?string $Title = null;
 
     #[ORM\Column(length: 1000)]

@@ -16,17 +16,17 @@ class Element
     private ?int $id = null;
 
     #[ORM\Column(length: 13, nullable: true)]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[a-zA-Zàâçéèêëîïôûùüÿñæœ\s\'-]+$/', message: 'Le champ doit contenir uniquement des lettres avec espaces, apostrophes et des tirets.' )]
     #[Groups(['ApiElementTotal'])]
     private ?string $nom = null;
 
     #[ORM\Column(length: 13, nullable: true)]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[a-zA-Zàâçéèêëîïôûùüÿñæœ\s\'-]+$/', message: 'Le champ doit contenir uniquement des lettres avec espaces, apostrophes et des tirets.' )]
     #[Groups(['ApiElementTotal'])]
     private ?string $slug = null;
 
     #[ORM\Column(length: 40)]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[0-9|]+$/')]
     #[Assert\Length(max: 40, maxMessage: 'Max length of {{ limit }} characters')]
     #[Groups(['ApiElementTotal'])]
     private ?string $electron = null;
@@ -35,105 +35,115 @@ class Element
     #[Groups(['ApiElementTotal'])]
     private ?int $numero = null;
 
-    #[ORM\Column(length: 6)]
+    #[ORM\Column(length: 4)]
     #[Groups(['ApiElementTotal'])]
+    #[Assert\Length(
+        max: 10,
+        maxMessage: '{{ limit }} characters max',
+    )]
+    #[Assert\Regex(pattern: '/^[A-Z]+$/')]
     private ?string $symbole = null;
 
     #[ORM\Column(length: 10)]
     #[Groups(['ApiElementTotal'])]
+    #[Assert\Length(
+        max: 10,
+        maxMessage: '{{ limit }} characters max',
+    )]
+    #[Assert\Regex(pattern: '/^\d+$/', message: 'Le champ doit contenir uniquement des chiffres.')]
     private ?string $infoGroupe = null;
 
     #[ORM\Column(length: 10)]
     #[Groups(['ApiElementTotal'])]
+    #[Assert\Length(
+        max: 10,
+        maxMessage: '{{ limit }} characters max',
+    )]
+   #[Assert\Regex(pattern: '/^\d+$/', message: 'Le champ doit contenir uniquement des chiffres.')]
     private ?string $infoPeriode = null;
 
-    #[ORM\Column(length: 200)]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
-    #[Assert\Length(max: 200, maxMessage: 'Max length of {{ limit }} characters')]
+    #[ORM\Column(length: 100)]
+    #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
     #[Groups(['ApiElementTotal'])]
     private ?string $masseVolumique = null;
 
     #[ORM\Column(length: 50)]
     #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[a-zA-Z0-9À-ÿ\s,()-]+$/', message: 'Le champ doit contenir uniquement des lettres, des chiffres, des espaces, des virgules, des parenthèses et des tirets.')]
     #[Groups(['ApiElementTotal'])]
     private ?string $cas = null;
 
     #[ORM\Column(length: 100)]
     #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[a-zA-Z0-9-()]+$/', message: 'Le champ doit contenir uniquement des lettres, des chiffres, des tirets et des parenthèses.')]
     #[Groups(['ApiElementTotal'])]
     private ?string $einecs = null;
 
     #[ORM\Column(length: 20)]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[0-9().]+$/', message: 'Le champ doit contenir uniquement des lettres, des chiffres, des tirets et des parenthèses.')]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
     #[Groups(['ApiElementTotal'])]
     private ?string $masseAtomique = null;
 
     #[ORM\Column(length: 100)]
     #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[a-zA-Z0-9\s()]+$/', message: 'Le champ doit contenir uniquement des lettres, des chiffres, des espaces et des parenthèses.')]
     #[Groups(['ApiElementTotal'])]
     private ?string $rayonAtomique = null;
 
-    #[ORM\Column(length: 50)]
-    #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[ORM\Column(length: 20)]
+    #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
+    #[Assert\Regex(pattern: '/^[a-zA-Z0-9\s-()±]+$/', message: 'Le champ doit contenir uniquement des lettres, des chiffres, des espaces, des tirets, des parenthèses et le caractère ±.')]
     #[Groups(['ApiElementTotal'])]
     private ?string $rayonDeCovalence = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     #[Groups(['ApiElementTotal'])]
     private ?string $rayonDeVanDerWaals = null;
 
     #[ORM\Column(length: 50)]
     #[Assert\Length(max: 50, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     #[Groups(['ApiElementTotal'])]
     private ?string $configurationElectronique = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[\d\s\+\-±,]+$/', message: 'Le champ doit contenir uniquement des chiffres, des espaces, des signes plus, moins, ± et des virgules.'
+    )]
     #[Groups(['ApiElementTotal'])]
     private ?string $etatOxydation = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Regex(pattern: '/^\d+$/')]
+   #[Assert\Regex(pattern: '/^\d+$/', message: 'Le champ doit contenir uniquement des chiffres.')]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
     #[Groups(['ApiElementTotal'])]
     private ?string $decouverteAnnee = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(max: 255, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     #[Groups(['ApiElementTotal'])]
     private ?string $decouverteNoms = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\Length(max: 255, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     #[Groups(['ApiElementTotal'])]
     private ?string $decouvertePays = null;
 
     #[ORM\Column(length: 10)]
     #[Assert\Length(max: 10, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     #[Groups(['ApiElementTotal'])]
     private ?string $electronegativite = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[+-]?\d{1,3}(?: \d{3})*(?:,\d+)?\s*°\s*C$/')]
     #[Groups(['ApiElementTotal'])]
     private ?string $pointDeFusion = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
+    #[Assert\Regex(pattern: '/^[+-]?\d{1,3}(?: \d{3})*(?:,\d+)?\s*°\s*C$/', message: 'Le champ doit contenir un nombre entier ou décimal, avec des espaces pour les milliers, suivi de "° C".')]
     #[Groups(['ApiElementTotal'])]
     private ?string $pointDEbullition = null;
 
@@ -142,7 +152,6 @@ class Element
     private ?bool $Radioactif = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Regex(pattern: '/^[^<>]*$/')]
     private ?string $infoElement = null;
 
     #[ORM\ManyToOne(inversedBy: 'Elements')]

@@ -13,7 +13,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class DeleteElementController extends AbstractController
 {
     #[Route('/delete/element/{id}', name: 'app_delete_element', requirements:  ['id'=>'\d+'])]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     public function index(Element $element, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($element);

@@ -43,7 +43,7 @@ class AllControllerTest extends WebTestCase
             [ null  , '/admin/update/element/1', null, null,  Response::HTTP_FOUND, 'Form error /admin/update/element without Role'],
 
             ['user0', '/admin/create/element', 'h1', "Ajout d'un élément", Response::HTTP_OK, 'Form error /admin/create/element with ROLE_SUPER_ADMIN'],
-            ['user1', '/admin/create/element', 'h1', "Ajout d'un élément", Response::HTTP_OK, 'Form error /admin/create/element with ROLE_ADMIN'],
+            ['user1', '/admin/create/element', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/element with ROLE_ADMIN'],
             ['user2', '/admin/create/element', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/element with ROLE_USER'],
             [ null  , '/admin/create/element', null, null,  Response::HTTP_FOUND, 'Form error /admin/create/element without Role'],
 
@@ -53,9 +53,19 @@ class AllControllerTest extends WebTestCase
             [ null  , '/admin/update/category/1', null, null,  Response::HTTP_FOUND, 'Form error /admin/update/category without Role'],
 
             ['user0', '/admin/create/category', 'h1', "Ajout d'une catégorie", Response::HTTP_OK, 'Form error /admin/create/category with ROLE_SUPER_ADMIN'],
-            ['user1', '/admin/create/category', 'h1', "Ajout d'une catégorie", Response::HTTP_OK, 'Form error /admin/create/category with ROLE_ADMIN'],
+            ['user1', '/admin/create/category', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/category with ROLE_ADMIN'],
             ['user2', '/admin/create/category', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/category with ROLE_USER'],
             [ null  , '/admin/create/category', null, null,  Response::HTTP_FOUND, 'Form error /admin/create/category without Role'],
+
+            ['user0', '/admin/update/group/1', 'h1', "Mise à jour d'un groupe", Response::HTTP_OK, 'Form error /admin/update/group with ROLE_SUPER_ADMIN'],
+            ['user1', '/admin/update/group/1', 'h1', "Mise à jour d'un groupe", Response::HTTP_OK, 'Form error /admin/update/group with ROLE_ADMIN'],
+            ['user2', '/admin/update/group/1', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/update/group with ROLE_USER'],
+            [ null  , '/admin/update/group/1', null, null,  Response::HTTP_FOUND, 'Form error /admin/update/group without Role'],
+
+            ['user0', '/admin/create/group', 'h1', "Ajout d'un groupe", Response::HTTP_OK, 'Form error /admin/create/group with ROLE_SUPER_ADMIN'],
+            ['user1', '/admin/create/group', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/group with ROLE_ADMIN'],
+            ['user2', '/admin/create/group', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/group with ROLE_USER'],
+            [ null  , '/admin/create/group', null, null,  Response::HTTP_FOUND, 'Form error /admin/create/group without Role'],
 
             ['user0', '/admin/update/definition/1', 'h1', "Mise à jour de la définition", Response::HTTP_OK, 'Form error /admin/update/definition with ROLE_SUPER_ADMIN'],
             ['user1', '/admin/update/definition/1', 'h1', "Mise à jour de la définition", Response::HTTP_OK, 'Form error /admin/update/definition with ROLE_ADMIN'],
@@ -63,7 +73,7 @@ class AllControllerTest extends WebTestCase
             [ null  , '/admin/update/definition/1', null, null,  Response::HTTP_FOUND, 'Form error /admin/update/definition without Role'],
 
             ['user0', '/admin/create/definition', 'h1', "Ajout d'une définition", Response::HTTP_OK, 'Form error /admin/create/definition with ROLE_SUPER_ADMIN'],
-            ['user1', '/admin/create/definition', 'h1', "Ajout d'une définition", Response::HTTP_OK, 'Form error /admin/create/definition with ROLE_ADMIN'],
+            ['user1', '/admin/create/definition', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/definition with ROLE_ADMIN'],
             ['user2', '/admin/create/definition', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/definition with ROLE_USER'],
             [ null  , '/admin/create/definition', null, null,  Response::HTTP_FOUND, 'Form error /admin/create/definition without Role'],
 

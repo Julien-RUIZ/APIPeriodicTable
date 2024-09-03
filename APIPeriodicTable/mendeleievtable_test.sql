@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 03 sep. 2024 à 08:38
+-- Généré le : mar. 03 sep. 2024 à 08:40
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `mendeleievtable`
+-- Base de données : `mendeleievtable_test`
 --
 
 -- --------------------------------------------------------
@@ -30,17 +30,17 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `api_documentation`;
 CREATE TABLE IF NOT EXISTS `api_documentation` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `description` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `example_request1` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `example_request2` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `example_request3` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `example_response` varchar(1000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `attributes` varchar(1000) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `endpoint1` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `endpoint2` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `endpoint3` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `anchor` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `description` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `example_request1` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `example_request2` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `example_request3` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `example_response` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `attributes` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `endpoint1` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `endpoint2` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `endpoint3` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `anchor` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
@@ -88,17 +88,17 @@ CREATE TABLE IF NOT EXISTS `element` (
   `info_element` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `slug` varchar(13) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `numero` int DEFAULT NULL,
-  `symbole` varchar(4) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `symbole` varchar(4) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `info_groupe` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `element_category_id` int DEFAULT NULL,
   `element_groupe_id` int DEFAULT NULL,
   `info_periode` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `masse_volumique` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `masse_volumique` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `cas` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `einecs` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `masse_atomique` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `rayon_atomique` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `rayon_de_covalence` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `rayon_de_covalence` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `rayon_de_van_der_waals` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `electron` varchar(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `configuration_electronique` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `element` (
   `decouverte_pays` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `electronegativite` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `point_de_fusion` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `point_debullition` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `point_debullition` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `radioactif` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_41405E39B8E0C54F` (`element_category_id`),
@@ -249,7 +249,7 @@ INSERT INTO `element` (`id`, `nom`, `info_element`, `slug`, `numero`, `symbole`,
 DROP TABLE IF EXISTS `element_category`;
 CREATE TABLE IF NOT EXISTS `element_category` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `slug` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `definition` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `color` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
@@ -282,7 +282,7 @@ DROP TABLE IF EXISTS `element_definitions`;
 CREATE TABLE IF NOT EXISTS `element_definitions` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `definition` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `definition` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
@@ -316,8 +316,8 @@ INSERT INTO `element_definitions` (`id`, `name`, `definition`) VALUES
 DROP TABLE IF EXISTS `element_groupe`;
 CREATE TABLE IF NOT EXISTS `element_groupe` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(25) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `group_n` varchar(25) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `group_n` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `definition` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
