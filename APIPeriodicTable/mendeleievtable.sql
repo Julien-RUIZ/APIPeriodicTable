@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 03 sep. 2024 à 08:38
+-- Généré le : mar. 03 sep. 2024 à 14:30
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -40,17 +40,17 @@ CREATE TABLE IF NOT EXISTS `api_documentation` (
   `endpoint1` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `endpoint2` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `endpoint3` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `anchor` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Déchargement des données de la table `api_documentation`
 --
 
-INSERT INTO `api_documentation` (`id`, `title`, `description`, `example_request1`, `example_request2`, `example_request3`, `example_response`, `attributes`, `endpoint1`, `endpoint2`, `endpoint3`, `anchor`) VALUES
-(3, 'Introduction', 'L\'API des Éléments Périodiques est une interface conçue pour fournir des informations complètes et à jour sur les éléments chimiques du tableau périodique. Cette API permet aux développeurs d\'accéder facilement à des données précises concernant les éléments chimiques, telles que le numéro atomique, le symbole, la masse atomique, les propriétés physiques et chimiques, ainsi que d\'autres caractéristiques essentielles.\n\nQue vous travailliez sur une application éducative, scientifique, ou que vous ayez besoin d\'intégrer des informations sur les éléments chimiques dans vos projets, notre API simplifie l\'accès à ces données tout en garantissant leur exactitude et leur fiabilité.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Introduction'),
-(4, 'Toutes les informations par élément', 'Nous allons pouvoir récupérer toutes les informations importantes pour chaque élément. Il ne vous suffit que d\'utiliser la requête et le verbe.', 'GET - http://127.0.0.1:8000/api/elements', NULL, NULL, '[\n	{\n		\"nom\": \"Hydrogène\",\n		\"slug\": \"hydrogene\",\n		\"electron\": \"1\",\n		\"numero\": 1,\n		\"symbole\": \"H\",\n		\"infoGroupe\": \"1\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.00008988 g\\/cm³\",\n		\"cas\": \"12385-13-6\",\n		\"einecs\": \"231-595-7\",\n		\"masseAtomique\": \"1.008\",\n		\"rayonAtomique\": \"53 pm\",\n		\"rayonDeCovalence\": \"31 pm\",\n		\"rayonDeVanDerWaals\": \"120 pm\",\n		\"configurationElectronique\": \"1s¹\",\n		\"etatOxydation\": \"-1, +1\",\n		\"decouverteAnnee\": \"1766\",\n		\"decouverteNoms\": \"Henry Cavendish\",\n		\"decouvertePays\": \"Grande-Bretagne\",\n		\"electronegativite\": \"2.20\",\n		\"pointDeFusion\": \"-259.16\",\n		\"pointDEbullition\": \"-252.87\",\n		\"Radioactif\": false,\n		\"elementCategory\": {\n			\"name\": \"Non métal\"\n		},\n		\"elementGroupe\": {\n			\"name\": \"Alcalins\",\n			\"groupN\": \"Groupe1\"\n		}\n	},\n	{\n		\"nom\": \"Hélium\",\n		\"slug\": \"helium\",\n		\"electron\": \"2\",\n		\"numero\": 2,\n		\"symbole\": \"He\",\n		\"infoGroupe\": \"18\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.0001786 g\\/cm³\",\n		\"cas\": \"7440-59-7\",', NULL, 'api/elements', NULL, NULL, 'AllInfos');
+INSERT INTO `api_documentation` (`id`, `title`, `description`, `example_request1`, `example_request2`, `example_request3`, `example_response`, `attributes`, `endpoint1`, `endpoint2`, `endpoint3`) VALUES
+(3, 'Introduction', 'L\'API des Éléments Périodiques est une interface conçue pour fournir des informations complètes et à jour sur les éléments chimiques du tableau périodique. Cette API permet aux développeurs d\'accéder facilement à des données précises concernant les éléments chimiques, telles que le numéro atomique, le symbole, la masse atomique, les propriétés physiques et chimiques, ainsi que d\'autres caractéristiques essentielles.\n\nQue vous travailliez sur une application éducative, scientifique, ou que vous ayez besoin d\'intégrer des informations sur les éléments chimiques dans vos projets, notre API simplifie l\'accès à ces données tout en garantissant leur exactitude et leur fiabilité.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'Toutes les informations par élément', 'Nous allons pouvoir récupérer toutes les informations importantes pour chaque élément. Il ne vous suffit que d\'utiliser la requête et le verbe.', 'GET - http://127.0.0.1:8000/api/elements', NULL, NULL, '[\n	{\n		\"nom\": \"Hydrogène\",\n		\"slug\": \"hydrogene\",\n		\"electron\": \"1\",\n		\"numero\": 1,\n		\"symbole\": \"H\",\n		\"infoGroupe\": \"1\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.00008988 g\\/cm³\",\n		\"cas\": \"12385-13-6\",\n		\"einecs\": \"231-595-7\",\n		\"masseAtomique\": \"1.008\",\n		\"rayonAtomique\": \"53 pm\",\n		\"rayonDeCovalence\": \"31 pm\",\n		\"rayonDeVanDerWaals\": \"120 pm\",\n		\"configurationElectronique\": \"1s¹\",\n		\"etatOxydation\": \"-1, +1\",\n		\"decouverteAnnee\": \"1766\",\n		\"decouverteNoms\": \"Henry Cavendish\",\n		\"decouvertePays\": \"Grande-Bretagne\",\n		\"electronegativite\": \"2.20\",\n		\"pointDeFusion\": \"-259.16\",\n		\"pointDEbullition\": \"-252.87\",\n		\"Radioactif\": false,\n		\"elementCategory\": {\n			\"name\": \"Non métal\"\n		},\n		\"elementGroupe\": {\n			\"name\": \"Alcalins\",\n			\"groupN\": \"Groupe1\"\n		}\n	},\n	{\n		\"nom\": \"Hélium\",\n		\"slug\": \"helium\",\n		\"electron\": \"2\",\n		\"numero\": 2,\n		\"symbole\": \"He\",\n		\"infoGroupe\": \"18\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.0001786 g\\/cm³\",\n		\"cas\": \"7440-59-7\",', NULL, 'api/elements', NULL, NULL),
+(6, 'Recherche d\'éléments par paramètres', 'Avec cette recherche vous allez pouvoir retirer les éléments que vous souhaitez en fonction de paramètres passés.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -71,9 +71,7 @@ CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20240902124605', '2024-09-02 12:46:14', 137),
-('DoctrineMigrations\\Version20240902132403', '2024-09-02 13:24:09', 50),
-('DoctrineMigrations\\Version20240903080747', '2024-09-03 08:07:50', 65);
+('DoctrineMigrations\\Version20240903142954', '2024-09-03 14:29:59', 35);
 
 -- --------------------------------------------------------
 

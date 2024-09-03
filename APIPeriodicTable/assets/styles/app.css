@@ -146,8 +146,16 @@ button a{
     border: 1px solid black;
     margin: 5px 0 5px 0;
     padding: 15px;
-
 }
+
+.ExempleResponseAPIDOC{
+    font-size: xx-small;
+}
+.ExempleResponseAPIDOC:hover{
+    font-size: inherit;
+}
+
+
 /* Styles pour écrans larges (plus de 1800px) */
 @media (min-width: 1800px) {
     .boxAtom {

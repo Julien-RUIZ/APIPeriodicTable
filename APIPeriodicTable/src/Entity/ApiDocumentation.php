@@ -45,8 +45,6 @@ class ApiDocumentation
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Endpoint3 = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $Anchor = null;
 
     public function getId(): ?int
     {
@@ -173,15 +171,4 @@ class ApiDocumentation
         return $this;
     }
 
-    public function getAnchor(): ?string
-    {
-        return $this->Anchor;
-    }
-
-    public function setAnchor(string $Anchor): static
-    {
-        $this->Anchor = $Anchor;
-
-        return $this;
-    }
 }

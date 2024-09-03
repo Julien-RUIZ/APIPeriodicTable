@@ -18,7 +18,7 @@
                         <tbody>
                         {% for apiDoc in apiDocs %}
                             <tr>
-                                <td><a href="#{{ apiDoc.Anchor }}">{{ apiDoc.Title }}</a></td>
+                                <td><a href="#Doc{{ apiDoc.Id }}">{{ apiDoc.Title }}</a></td>
                             </tr>
                         {% endfor %}
                         </tbody>
@@ -30,7 +30,7 @@
                         {% for apiDoc in apiDocs %}
                             <tr>
                                 <td>
-                                    <h3 class="text-center" id="{{ apiDoc.Anchor }}">{{ apiDoc.Title }}</h3>
+                                    <h3 class="text-center" id="Doc{{ apiDoc.Id }}">{{ apiDoc.Title }}</h3>
                                     <div class="infoDocApi">
                                         <p>{{ apiDoc.Description }}</p>
                                     </div>
@@ -54,21 +54,23 @@
 
                                     {% if apiDoc.ExampleRequest1 is not empty %}
                                         <div class="infoDocApi">
-                                            <h5>Exemple de requête :</h5>
-                                            <p>{{ apiDoc.ExampleRequest1 }}</p>
-                                            {% if apiDoc.ExampleRequest2 is not empty  %}
-                                                <p>{{ apiDoc.ExampleRequest2 }}</p>
-                                            {% endif %}
-                                            {% if apiDoc.ExampleRequest3 is not empty  %}
-                                                <p>{{ apiDoc.ExampleRequest3 }}</p>
-                                            {% endif %}
+                                            <ul>
+                                                    <h5>Exemple de requête :</h5>
+                                                    <li>{{ apiDoc.ExampleRequest1 }}</li>
+                                                {% if apiDoc.ExampleRequest2 is not empty  %}
+                                                    <li>{{ apiDoc.ExampleRequest2 }}</li>
+                                                {% endif %}
+                                                {% if apiDoc.ExampleRequest3 is not empty  %}
+                                                    <li>{{ apiDoc.ExampleRequest3 }}</li>
+                                                {% endif %}
+                                            </ul>
                                         </div>
                                     {% endif %}
 
                                     {% if apiDoc.ExampleResponse is not empty  %}
                                         <div class="infoDocApi">
                                             <h5>Exemple de réponse : </h5>
-                                            <p style="white-space: pre-wrap;">{{ apiDoc.ExampleResponse }}</p>
+                                            <p class="ExempleResponseAPIDOC" style="white-space: pre-wrap;">{{ apiDoc.ExampleResponse }}</p>
                                         </div>
                                     {% endif %}
 

@@ -30,10 +30,19 @@ class GetElementController extends AbstractController
     }
 
     #[Route('/api/elements/search', name: 'api_element_search', requirements: ['nom'=>'/^[^<>]*$/'], methods: ['GET'])]
-    public function getElementByName(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer): Response
+    public function getElementByParamAndValue(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer): Response
     {
-        $nom = $request->query->get('nom');
-        $donnees = $elementRepository->findBy(['nom'=>$nom]);
+        $param=[];
+        $valeur=[];
+        foreach ($request->query as $key=>$value){
+            $param[] = $key;
+            $valeur[] = $value;
+        }
+        $params = array_combine($param,$valeur);
+        $donnees = $elementRepository->findBy($params);
+
+        //$donnees = $elementRepository->findBy(["infoGroupe"=>1, "Radioactif"=>true]);
+        //dd($donnees, $params);
 
         if (empty($donnees)) {
             return new JsonResponse(['error' => 'Missing parameter: nom'], Response::HTTP_BAD_REQUEST);
@@ -42,4 +51,8 @@ class GetElementController extends AbstractController
         $elements = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
+
+
+
+
 }
