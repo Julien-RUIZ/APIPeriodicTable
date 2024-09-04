@@ -41,13 +41,6 @@ class GetElementController extends AbstractController
         $params = array_combine($param,$valeur);
         $donnees = $elementRepository->findBy($params);
 
-        //$donnees = $elementRepository->findBy(["infoGroupe"=>1, "Radioactif"=>true]);
-        //dd($donnees, $params);
-
-        if (empty($donnees)) {
-            return new JsonResponse(['error' => 'Missing parameter: nom'], Response::HTTP_BAD_REQUEST);
-        }
-
         $elements = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
