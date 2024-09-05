@@ -6,7 +6,7 @@ use App\Entity\Element;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
- * vendor/bin/phpunit tests/Entity/ElementTest.php
+ * vendor/bin/phpunit tests/Entity/ElementAdminTest.php
  */
 class ElementTest extends KernelTestCase
 {

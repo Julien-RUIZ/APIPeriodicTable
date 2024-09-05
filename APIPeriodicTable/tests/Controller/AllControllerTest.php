@@ -10,6 +10,9 @@ class AllControllerTest extends WebTestCase
 {
     private $client;
     private $userRepository;
+
+    private $IdDoc = 3;// Attention, change the API document id number for testing
+
     protected function setUp(): void
     {
         $this->client= static::createClient();
@@ -77,10 +80,10 @@ class AllControllerTest extends WebTestCase
             ['user2', '/admin/create/definition', null, null, Response::HTTP_FORBIDDEN, 'Form error /admin/create/definition with ROLE_USER'],
             [ null  , '/admin/create/definition', null, null,  Response::HTTP_FOUND, 'Form error /admin/create/definition without Role'],
 
-            ['user0', '/update/api/documentation/1', 'h1', "Mise à jour de la documentation de l'API", Response::HTTP_OK, 'Form error /update/api/documentation with ROLE_SUPER_ADMIN'],
-            ['user1', '/update/api/documentation/1', null, null, Response::HTTP_FORBIDDEN, 'Form error /update/api/documentation with ROLE_ADMIN'],
-            ['user2', '/update/api/documentation/1', null, null, Response::HTTP_FORBIDDEN, 'Form error /update/api/documentation with ROLE_USER'],
-            [ null  , '/update/api/documentation/1', null, null,  Response::HTTP_FOUND, 'Form error /update/api/documentation without Role'],
+            ['user0', '/update/api/documentation/'.$this->IdDoc, 'h1', "Mise à jour de la documentation de l'API", Response::HTTP_OK, 'Form error /update/api/documentation with ROLE_SUPER_ADMIN'],
+            ['user1', '/update/api/documentation/'.$this->IdDoc, null, null, Response::HTTP_FORBIDDEN, 'Form error /update/api/documentation with ROLE_ADMIN'],
+            ['user2', '/update/api/documentation/'.$this->IdDoc, null, null, Response::HTTP_FORBIDDEN, 'Form error /update/api/documentation with ROLE_USER'],
+            [ null  , '/update/api/documentation/'.$this->IdDoc, null, null,  Response::HTTP_FOUND, 'Form error /update/api/documentation without Role'],
 
             ['user0', '/create/api/documentation', 'h1', "Ajout d'une documentation", Response::HTTP_OK, 'Form error /create/api/documentation with ROLE_SUPER_ADMIN'],
             ['user1', '/create/api/documentation', null, null, Response::HTTP_FORBIDDEN, 'Form error /create/api/documentation with ROLE_ADMIN'],

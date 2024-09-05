@@ -1,0 +1,2023 @@
+
+<div class="appli">
+    <table class="Element">
+        <tr>
+            <th></th>
+            <th>1 <br> <span>(IA)</span></th>
+            <th>2 <br><span> (IIA)</span></th>
+            <th>3 <br><span>(IIIB)</span></th>
+            <th>4 <br><span>(IVB)</span></th>
+            <th>5 <br><span>(VB)</span></th>
+            <th>6 <br><span>(VIB)</span></th>
+            <th>7 <br><span>(VIIB)</span></th>
+            <th>8 <br><span>(VIIIB)</span></th>
+            <th>9 <br><span>(VIIIB)</span></th>
+            <th>10 <br><span>(VIIIB)</span></th>
+            <th>11 <br><span>(IB)</span></th>
+            <th>12 <br><span>(IIB)</span></th>
+            <th>13 <br><span>(IIIA)</span></th>
+            <th>14 <br><span>(IVA)</span></th>
+            <th>15 <br><span>(VA)</span></th>
+            <th>16 <br><span>(VIA)</span></th>
+            <th>17 <br><span>(VIIA)</span></th>
+            <th>18 <br><span>(VIIIA)</span></th>
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------- LIGNE 1 ----------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>1</th>
+            {% if Elements[1] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[1].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 1})}}">
+                        <div class="boxAtom text-center">
+                            <span class="nom">{{ Elements[1].nom }}</span>
+                            <span class="symbole">{{ Elements[1].symbole }}</span>
+                            <span class="numero">{{ Elements[1].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[1].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+
+            <td class="affichage">
+
+            </td>
+            <!------------------------------------------------------------------------------------------------------------->
+            <!----------------------------------- Affichage zone ecran 1--------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <td colspan="2" rowspan="2" class="affichage">
+
+            </td>
+            <!------------------------------------------------------------------------------------------------------------->
+            <!----------------------------------- Affichage zone ecran 2 --------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <td colspan="8" rowspan="3" class="affichage" id="defAffiche">
+
+            </td>
+            <!---------------------------------------------------------------------------------------------------------------->
+            <td colspan="5" class="affichage ZoneLigne8 zoneLigne2">
+
+            </td>
+            <!---------------------------------------------------------------------------------------------------------------->
+            {% if Elements[2] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[2].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 2})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[2].nom }}</span>
+                            <span class="symbole">{{ Elements[2].symbole }}</span>
+                            <span class="numero">{{ Elements[2].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[2].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------- LIGNE 2 ----------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>2</th>
+            {% if Elements[3] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[3].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 3})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[3].nom }}</span>
+                            <span class="symbole">{{ Elements[3].symbole }}</span>
+                            <span class="numero">{{ Elements[3].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[3].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[4] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[4].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 4})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[4].nom }}</span>
+                            <span class="symbole">{{ Elements[4].symbole }}</span>
+                            <span class="numero">{{ Elements[4].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[4].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[5] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[5].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 5})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[5].nom }}</span>
+                            <span class="symbole">{{ Elements[5].symbole }}</span>
+                            <span class="numero">{{ Elements[5].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[5].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[6] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[6].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 6})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[6].nom }}</span>
+                            <span class="symbole">{{ Elements[6].symbole }}</span>
+                            <span class="numero">{{ Elements[6].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[6].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[7] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[7].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 7})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[7].nom }}</span>
+                            <span class="symbole">{{ Elements[7].symbole }}</span>
+                            <span class="numero">{{ Elements[7].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[7].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[8] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[8].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 8})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[8].nom }}</span>
+                            <span class="symbole">{{ Elements[8].symbole }}</span>
+                            <span class="numero">{{ Elements[8].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[8].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[9] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[9].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 9})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[9].nom }}</span>
+                            <span class="symbole">{{ Elements[9].symbole }}</span>
+                            <span class="numero">{{ Elements[9].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[9].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[10] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[10].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 10})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[10].nom }}</span>
+                            <span class="symbole">{{ Elements[10].symbole }}</span>
+                            <span class="numero">{{ Elements[10].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[10].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------ LIGNE 3 ---------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>3</th>
+            {% if Elements[11] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[11].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 11})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[11].nom }}</span>
+                            <span class="symbole">{{ Elements[11].symbole }}</span>
+                            <span class="numero">{{ Elements[11].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[11].masseAtomique |round(2, 'ceil')}}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[12] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[12].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 12})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[12].nom }}</span>
+                            <span class="symbole">{{ Elements[12].symbole }}</span>
+                            <span class="numero">{{ Elements[12].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[12].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            <!------------------------------------------------------------------------------------------------------------->
+            <!----------------------------------- Affichage zone ecran 3--------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <td colspan="2" class="affichage Zone3">
+
+            </td>
+            <!--------------------------------------------------------------------------------------------------------------------->
+            {% if Elements[13] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[13].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 13})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[13].nom }}</span>
+                            <span class="symbole">{{ Elements[13].symbole }}</span>
+                            <span class="numero">{{ Elements[13].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[13].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[14] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[14].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 14})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[14].nom }}</span>
+                            <span class="symbole">{{ Elements[14].symbole }}</span>
+                            <span class="numero">{{ Elements[14].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[14].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[15] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[15].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 15})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[15].nom }}</span>
+                            <span class="symbole">{{ Elements[15].symbole }}</span>
+                            <span class="numero">{{ Elements[15].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[15].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[16] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[16].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 16})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[16].nom }}</span>
+                            <span class="symbole">{{ Elements[16].symbole }}</span>
+                            <span class="numero">{{ Elements[16].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[16].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[17] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[17].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 17})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[17].nom }}</span>
+                            <span class="symbole">{{ Elements[17].symbole }}</span>
+                            <span class="numero">{{ Elements[17].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[17].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[18] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[18].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 18})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[18].nom }}</span>
+                            <span class="symbole">{{ Elements[18].symbole }}</span>
+                            <span class="numero">{{ Elements[18].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[18].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------- LIGNE 4 ------------------------------------------------------>
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>4</th>
+            {% if Elements[19] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[19].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 19})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[19].nom }}</span>
+                            <span class="symbole">{{ Elements[19].symbole }}</span>
+                            <span class="numero">{{ Elements[19].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[19].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[20] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[20].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 20})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[20].nom }}</span>
+                            <span class="symbole">{{ Elements[20].symbole }}</span>
+                            <span class="numero">{{ Elements[20].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[20].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[21] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[21].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 21})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[21].nom }}</span>
+                            <span class="symbole">{{ Elements[21].symbole }}</span>
+                            <span class="numero">{{ Elements[21].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[21].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[22] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[22].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 22})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[22].nom }}</span>
+                            <span class="symbole">{{ Elements[22].symbole }}</span>
+                            <span class="numero">{{ Elements[22].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[22].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[23] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[23].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 23})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[23].nom }}</span>
+                            <span class="symbole">{{ Elements[23].symbole }}</span>
+                            <span class="numero">{{ Elements[23].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[23].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[24] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[24].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 24})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[24].nom }}</span>
+                            <span class="symbole">{{ Elements[24].symbole }}</span>
+                            <span class="numero">{{ Elements[24].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[24].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[25] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[25].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 25})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[25].nom }}</span>
+                            <span class="symbole">{{ Elements[25].symbole }}</span>
+                            <span class="numero">{{ Elements[25].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[25].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[26] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[26].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 26})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[26].nom }}</span>
+                            <span class="symbole">{{ Elements[26].symbole }}</span>
+                            <span class="numero">{{ Elements[26].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[26].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[27] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[27].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 27})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[27].nom }}</span>
+                            <span class="symbole">{{ Elements[27].symbole }}</span>
+                            <span class="numero">{{ Elements[27].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[27].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[28] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[28].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 28})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[28].nom }}</span>
+                            <span class="symbole">{{ Elements[28].symbole }}</span>
+                            <span class="numero">{{ Elements[28].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[28].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[29] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[29].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 29})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[29].nom }}</span>
+                            <span class="symbole">{{ Elements[29].symbole }}</span>
+                            <span class="numero">{{ Elements[29].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[29].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[30] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[30].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 30})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[30].nom }}</span>
+                            <span class="symbole">{{ Elements[30].symbole }}</span>
+                            <span class="numero">{{ Elements[30].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[30].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[31] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[31].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 31})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[31].nom }}</span>
+                            <span class="symbole">{{ Elements[31].symbole }}</span>
+                            <span class="numero">{{ Elements[31].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[31].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[32] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[32].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 32})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[32].nom }}</span>
+                            <span class="symbole">{{ Elements[32].symbole }}</span>
+                            <span class="numero">{{ Elements[32].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[32].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[33] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[33].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 33})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[33].nom }}</span>
+                            <span class="symbole">{{ Elements[33].symbole }}</span>
+                            <span class="numero">{{ Elements[33].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[33].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[34] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[34].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 34})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[34].nom }}</span>
+                            <span class="symbole">{{ Elements[34].symbole }}</span>
+                            <span class="numero">{{ Elements[34].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[34].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[35] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[35].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 35})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[35].nom }}</span>
+                            <span class="symbole">{{ Elements[35].symbole }}</span>
+                            <span class="numero">{{ Elements[35].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[35].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[36] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[36].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 36})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[36].nom }}</span>
+                            <span class="symbole">{{ Elements[36].symbole }}</span>
+                            <span class="numero">{{ Elements[36].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[36].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------- LIGNE 5 --------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>5</th>
+            {% if Elements[37] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[37].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 37})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[37].nom }}</span>
+                            <span class="symbole">{{ Elements[37].symbole }}</span>
+                            <span class="numero">{{ Elements[37].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[37].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[38] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[38].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 38})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[38].nom }}</span>
+                            <span class="symbole">{{ Elements[38].symbole }}</span>
+                            <span class="numero">{{ Elements[38].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[38].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[39] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[39].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 39})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[39].nom }}</span>
+                            <span class="symbole">{{ Elements[39].symbole }}</span>
+                            <span class="numero">{{ Elements[39].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[39].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[40] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[40].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 40})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[40].nom }}</span>
+                            <span class="symbole">{{ Elements[40].symbole }}</span>
+                            <span class="numero">{{ Elements[40].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[40].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[41] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[41].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 41})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[41].nom }}</span>
+                            <span class="symbole">{{ Elements[41].symbole }}</span>
+                            <span class="numero">{{ Elements[41].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[41].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[42] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[42].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 42})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[42].nom }}</span>
+                            <span class="symbole">{{ Elements[42].symbole }}</span>
+                            <span class="numero">{{ Elements[42].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[42].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[43] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[43].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 43})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[43].nom }}</span>
+                            <span class="symbole">{{ Elements[43].symbole }}</span>
+                            <span class="numero">{{ Elements[43].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[43].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[44] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[44].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 44})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[44].nom }}</span>
+                            <span class="symbole">{{ Elements[44].symbole }}</span>
+                            <span class="numero">{{ Elements[44].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[44].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[45] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[45].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 45})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[45].nom }}</span>
+                            <span class="symbole">{{ Elements[45].symbole }}</span>
+                            <span class="numero">{{ Elements[45].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[45].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[46] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[46].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 46})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[46].nom }}</span>
+                            <span class="symbole">{{ Elements[46].symbole }}</span>
+                            <span class="numero">{{ Elements[46].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[46].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[47] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[47].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 47})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[47].nom }}</span>
+                            <span class="symbole">{{ Elements[47].symbole }}</span>
+                            <span class="numero">{{ Elements[47].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[47].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[48] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[48].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 48})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[48].nom }}</span>
+                            <span class="symbole">{{ Elements[48].symbole }}</span>
+                            <span class="numero">{{ Elements[48].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[48].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[49] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[49].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 49})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[49].nom }}</span>
+                            <span class="symbole">{{ Elements[49].symbole }}</span>
+                            <span class="numero">{{ Elements[49].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[49].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[50] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[50].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 50})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[50].nom }}</span>
+                            <span class="symbole">{{ Elements[50].symbole }}</span>
+                            <span class="numero">{{ Elements[50].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[50].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[51] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[51].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 51})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[51].nom }}</span>
+                            <span class="symbole">{{ Elements[51].symbole }}</span>
+                            <span class="numero">{{ Elements[51].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[51].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[52] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[52].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 52})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[52].nom }}</span>
+                            <span class="symbole">{{ Elements[52].symbole }}</span>
+                            <span class="numero">{{ Elements[52].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[52].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[53] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[53].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 53})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[53].nom }}</span>
+                            <span class="symbole">{{ Elements[53].symbole }}</span>
+                            <span class="numero">{{ Elements[53].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[53].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[54] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[54].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 54})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[54].nom }}</span>
+                            <span class="symbole">{{ Elements[54].symbole }}</span>
+                            <span class="numero">{{ Elements[54].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[54].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!-------------------------------------------- LIGNE 6 -------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>6</th>
+            {% if Elements[55] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[55].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 55})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[55].nom }}</span>
+                            <span class="symbole">{{ Elements[55].symbole }}</span>
+                            <span class="numero">{{ Elements[55].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[55].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[56] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[56].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 56})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[56].nom }}</span>
+                            <span class="symbole">{{ Elements[56].symbole }}</span>
+                            <span class="numero">{{ Elements[56].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[56].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+
+            {% if Lanthanides != false %}
+                <td class="tdTable"  style="background-color: {{ category[3].getColor() }};">
+                    <div class="boxAtom text-center"  >
+                        <span class="nom">Lanthanides</span><br>
+                        <span class='numero numeroLanthanides'>57 - 71</span>
+                    </div>
+                </td>
+            {% else %}
+                <td class="couleurTdVide"></td>
+            {% endif %}
+            {% if Elements[72] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[72].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 72})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[72].nom }}</span>
+                            <span class="symbole">{{ Elements[72].symbole }}</span>
+                            <span class="numero">{{ Elements[72].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[72].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[73] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[73].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 73})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[73].nom }}</span>
+                            <span class="symbole">{{ Elements[73].symbole }}</span>
+                            <span class="numero">{{ Elements[73].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[73].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[74] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[74].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 74})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[74].nom }}</span>
+                            <span class="symbole">{{ Elements[74].symbole }}</span>
+                            <span class="numero">{{ Elements[74].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[74].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[75] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[75].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 75})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[75].nom }}</span>
+                            <span class="symbole">{{ Elements[75].symbole }}</span>
+                            <span class="numero">{{ Elements[75].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[75].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[76] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[76].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 76})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[76].nom }}</span>
+                            <span class="symbole">{{ Elements[76].symbole }}</span>
+                            <span class="numero">{{ Elements[76].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[76].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[77] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[77].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 77})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[77].nom }}</span>
+                            <span class="symbole">{{ Elements[77].symbole }}</span>
+                            <span class="numero">{{ Elements[77].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[77].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[78] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[78].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 78})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[78].nom }}</span>
+                            <span class="symbole">{{ Elements[78].symbole }}</span>
+                            <span class="numero">{{ Elements[78].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[78].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[79] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[79].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 79})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[79].nom }}</span>
+                            <span class="symbole">{{ Elements[79].symbole }}</span>
+                            <span class="numero">{{ Elements[79].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[79].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[80] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[80].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 80})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[80].nom }}</span>
+                            <span class="symbole">{{ Elements[80].symbole }}</span>
+                            <span class="numero">{{ Elements[80].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[80].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[81] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[81].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 81})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[81].nom }}</span>
+                            <span class="symbole">{{ Elements[81].symbole }}</span>
+                            <span class="numero">{{ Elements[81].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[81].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[82] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[82].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 82})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[82].nom }}</span>
+                            <span class="symbole">{{ Elements[82].symbole }}</span>
+                            <span class="numero">{{ Elements[82].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[82].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[83] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[83].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 83})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[83].nom }}</span>
+                            <span class="symbole">{{ Elements[83].symbole }}</span>
+                            <span class="numero">{{ Elements[83].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[83].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[84] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[84].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 84})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[84].nom }}</span>
+                            <span class="symbole">{{ Elements[84].symbole }}</span>
+                            <span class="numero">{{ Elements[84].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[84].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[85] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[85].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 85})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[85].nom }}</span>
+                            <span class="symbole">{{ Elements[85].symbole }}</span>
+                            <span class="numero">{{ Elements[85].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[85].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[86] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[86].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 86})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[86].nom }}</span>
+                            <span class="symbole">{{ Elements[86].symbole }}</span>
+                            <span class="numero">{{ Elements[86].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[86].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------- LIGNE 7 --------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th>7</th>
+            {% if Elements[87] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[87].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 87})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[87].nom }}</span>
+                            <span class="symbole">{{ Elements[87].symbole }}</span>
+                            <span class="numero">{{ Elements[87].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[87].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[88] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[88].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 88})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[88].nom }}</span>
+                            <span class="symbole">{{ Elements[88].symbole }}</span>
+                            <span class="numero">{{ Elements[88].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[88].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Actinides != false %}
+            <td class="tdTable" style="background-color: {{ category[0].getColor() }};">
+                <div class="boxAtom text-center">
+                    <span class="nom">Actinides</span><br>
+                    <span class='numero numeroActinides'>89 - 103</span>
+                </div>
+            </td>
+        {% else %}
+            <td class="couleurTdVide">
+                {% endif %}
+
+
+                {% if Elements[104] is defined %}
+            <td class="tdTable" style="background-color: {{ Elements[104].ElementCategory.color }};">
+                <a href="{{path('app_read_element', {'id': 104})}}">
+                    <div class="boxAtom text-center" >
+                        <span class="nom">{{ Elements[104].nom }}</span>
+                        <span class="symbole">{{ Elements[104].symbole }}</span>
+                        <span class="numero">{{ Elements[104].numero }}</span>
+                        <span class="masseAtomique">{{ Elements[104].masseAtomique|round(2, 'ceil') }}</span>
+                    </div>
+                </a>
+            </td>
+        {% else %}
+            <td class="tdTable couleurTdVide">
+                <div class="boxAtom text-center"></div>
+            </td>
+            {% endif %}
+            {% if Elements[105] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[105].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 105})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[105].nom }}</span>
+                            <span class="symbole">{{ Elements[105].symbole }}</span>
+                            <span class="numero">{{ Elements[105].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[105].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[106] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[106].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 106})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[106].nom }}</span>
+                            <span class="symbole">{{ Elements[106].symbole }}</span>
+                            <span class="numero">{{ Elements[106].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[106].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[107] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[107].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 107})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[107].nom }}</span>
+                            <span class="symbole">{{ Elements[107].symbole }}</span>
+                            <span class="numero">{{ Elements[107].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[107].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[108] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[108].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 108})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[108].nom }}</span>
+                            <span class="symbole">{{ Elements[108].symbole }}</span>
+                            <span class="numero">{{ Elements[108].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[108].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[109] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[109].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 109})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[109].nom }}</span>
+                            <span class="symbole">{{ Elements[109].symbole }}</span>
+                            <span class="numero">{{ Elements[109].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[109].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[110] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[110].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 110})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[110].nom }}</span>
+                            <span class="symbole">{{ Elements[110].symbole }}</span>
+                            <span class="numero">{{ Elements[110].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[110].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[111] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[111].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 111})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[111].nom }}</span>
+                            <span class="symbole">{{ Elements[111].symbole }}</span>
+                            <span class="numero">{{ Elements[111].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[111].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[112] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[112].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 112})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[112].nom }}</span>
+                            <span class="symbole">{{ Elements[112].symbole }}</span>
+                            <span class="numero">{{ Elements[112].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[112].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[113] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[113].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 113})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[113].nom }}</span>
+                            <span class="symbole">{{ Elements[113].symbole }}</span>
+                            <span class="numero">{{ Elements[113].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[113].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[114] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[114].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 114})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[114].nom }}</span>
+                            <span class="symbole">{{ Elements[114].symbole }}</span>
+                            <span class="numero">{{ Elements[114].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[114].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[115] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[115].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 115})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[115].nom }}</span>
+                            <span class="symbole">{{ Elements[115].symbole }}</span>
+                            <span class="numero">{{ Elements[115].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[115].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[116] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[116].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 116})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[116].nom }}</span>
+                            <span class="symbole">{{ Elements[116].symbole }}</span>
+                            <span class="numero">{{ Elements[116].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[116].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[117] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[117].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 117})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[117].nom }}</span>
+                            <span class="symbole">{{ Elements[117].symbole }}</span>
+                            <span class="numero">{{ Elements[117].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[117].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[118] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[118].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 118})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[118].nom }}</span>
+                            <span class="symbole">{{ Elements[118].symbole }}</span>
+                            <span class="numero">{{ Elements[118].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[118].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------ LIGNE 8 ---------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th></th>
+            <td colspan="3" rowspan="2" class="affichage ZoneLigne8">
+            </td>
+            {% if Elements[57] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[57].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 57})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[57].nom }}</span>
+                            <span class="symbole">{{ Elements[57].symbole }}</span>
+                            <span class="numero">{{ Elements[57].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[57].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[58] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[58].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 58})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[58].nom }}</span>
+                            <span class="symbole">{{ Elements[58].symbole }}</span>
+                            <span class="numero">{{ Elements[58].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[58].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[59] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[59].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 59})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[59].nom }}</span>
+                            <span class="symbole">{{ Elements[59].symbole }}</span>
+                            <span class="numero">{{ Elements[59].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[59].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[60] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[60].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 60})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[60].nom }}</span>
+                            <span class="symbole">{{ Elements[60].symbole }}</span>
+                            <span class="numero">{{ Elements[60].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[60].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[61] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[61].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 61})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[61].nom }}</span>
+                            <span class="symbole">{{ Elements[61].symbole }}</span>
+                            <span class="numero">{{ Elements[61].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[61].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[62] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[62].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 62})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[62].nom }}</span>
+                            <span class="symbole">{{ Elements[62].symbole }}</span>
+                            <span class="numero">{{ Elements[62].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[62].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[63] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[63].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 63})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[63].nom }}</span>
+                            <span class="symbole">{{ Elements[63].symbole }}</span>
+                            <span class="numero">{{ Elements[63].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[63].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[64] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[64].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 64})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[64].nom }}</span>
+                            <span class="symbole">{{ Elements[64].symbole }}</span>
+                            <span class="numero">{{ Elements[64].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[64].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[65] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[65].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 65})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[65].nom }}</span>
+                            <span class="symbole">{{ Elements[65].symbole }}</span>
+                            <span class="numero">{{ Elements[65].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[65].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[66] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[66].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 66})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[66].nom }}</span>
+                            <span class="symbole">{{ Elements[66].symbole }}</span>
+                            <span class="numero">{{ Elements[66].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[66].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[67] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[67].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 67})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[67].nom }}</span>
+                            <span class="symbole">{{ Elements[67].symbole }}</span>
+                            <span class="numero">{{ Elements[67].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[67].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[68] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[68].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 68})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[68].nom }}</span>
+                            <span class="symbole">{{ Elements[68].symbole }}</span>
+                            <span class="numero">{{ Elements[68].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[68].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[69] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[69].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 69})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[69].nom }}</span>
+                            <span class="symbole">{{ Elements[69].symbole }}</span>
+                            <span class="numero">{{ Elements[69].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[69].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[70] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[70].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 70})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[70].nom }}</span>
+                            <span class="symbole">{{ Elements[70].symbole }}</span>
+                            <span class="numero">{{ Elements[70].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[70].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[71] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[71].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 71})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[71].nom }}</span>
+                            <span class="symbole">{{ Elements[71].symbole }}</span>
+                            <span class="numero">{{ Elements[71].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[71].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+        </tr>
+        <!------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------- LIGNE 9 --------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------->
+        <tr>
+            <th></th>
+
+            {% if Elements[89] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[89].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 89})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[89].nom }}</span>
+                            <span class="symbole">{{ Elements[89].symbole }}</span>
+                            <span class="numero">{{ Elements[89].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[89].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[90] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[90].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 90})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[90].nom }}</span>
+                            <span class="symbole">{{ Elements[90].symbole }}</span>
+                            <span class="numero">{{ Elements[90].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[90].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[91] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[91].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 91})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[91].nom }}</span>
+                            <span class="symbole">{{ Elements[91].symbole }}</span>
+                            <span class="numero">{{ Elements[91].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[91].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[92] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[92].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 92})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[92].nom }}</span>
+                            <span class="symbole">{{ Elements[92].symbole }}</span>
+                            <span class="numero">{{ Elements[92].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[92].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[93] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[93].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 93})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[93].nom }}</span>
+                            <span class="symbole">{{ Elements[93].symbole }}</span>
+                            <span class="numero">{{ Elements[93].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[93].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[94] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[94].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 94})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[94].nom }}</span>
+                            <span class="symbole">{{ Elements[94].symbole }}</span>
+                            <span class="numero">{{ Elements[94].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[94].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[95] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[95].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 95})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[95].nom }}</span>
+                            <span class="symbole">{{ Elements[95].symbole }}</span>
+                            <span class="numero">{{ Elements[95].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[95].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[96] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[96].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 96})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[96].nom }}</span>
+                            <span class="symbole">{{ Elements[96].symbole }}</span>
+                            <span class="numero">{{ Elements[96].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[96].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[97] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[97].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 97})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[97].nom }}</span>
+                            <span class="symbole">{{ Elements[97].symbole }}</span>
+                            <span class="numero">{{ Elements[97].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[97].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[98] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[98].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 98})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[98].nom }}</span>
+                            <span class="symbole">{{ Elements[98].symbole }}</span>
+                            <span class="numero">{{ Elements[98].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[98].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[99] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[99].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 99})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[99].nom }}</span>
+                            <span class="symbole">{{ Elements[99].symbole }}</span>
+                            <span class="numero">{{ Elements[99].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[99].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[100] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[100].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 100})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[100].nom }}</span>
+                            <span class="symbole">{{ Elements[100].symbole }}</span>
+                            <span class="numero">{{ Elements[100].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[100].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[101] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[101].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 101})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[101].nom }}</span>
+                            <span class="symbole">{{ Elements[101].symbole }}</span>
+                            <span class="numero">{{ Elements[101].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[101].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[102] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[102].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 102})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[102].nom }}</span>
+                            <span class="symbole">{{ Elements[102].symbole }}</span>
+                            <span class="numero">{{ Elements[102].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[102].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+            {% if Elements[103] is defined %}
+                <td class="tdTable" style="background-color: {{ Elements[103].ElementCategory.color }};">
+                    <a href="{{path('app_read_element', {'id': 103})}}">
+                        <div class="boxAtom text-center" >
+                            <span class="nom">{{ Elements[103].nom }}</span>
+                            <span class="symbole">{{ Elements[103].symbole }}</span>
+                            <span class="numero">{{ Elements[103].numero }}</span>
+                            <span class="masseAtomique">{{ Elements[103].masseAtomique|round(2, 'ceil') }}</span>
+                        </div>
+                    </a>
+                </td>
+            {% else %}
+                <td class="tdTable couleurTdVide">
+                    <div class="boxAtom text-center"></div>
+                </td>
+            {% endif %}
+        </tr>
+    </table>
+</div>

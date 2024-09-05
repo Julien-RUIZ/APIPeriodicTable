@@ -43,17 +43,16 @@ class ElementType extends AbstractType
             ->add('elementGroupe', EntityType::class, [
                 'class' => ElementGroupe::class,
                 'choice_label' => function (ElementGroupe $elementGroupe) {
-                    return $elementGroupe->getName() . ' ( Numéro du groupe : ' . $elementGroupe->getId() . ')';
+                    return $elementGroupe->getName();
                 },
             ])
-            ->add('infoGroupe', IntegerType::class, [
-                'help'=>'Récupérer le numéro du groupe sur le champ précédant',
+            ->add('groupeVertical', IntegerType::class, [
                 'label'=>'Numéro du groupe (Ligne verticale)',
                 'attr' => [
                     'max' => 10,  // Remplacez 100 par la valeur maximale souhaitée
                 ],
             ])
-            ->add('infoPeriode', IntegerType::class, [
+            ->add('periodeHorizontal', IntegerType::class, [
                 'label'=>'Numéro de la période (Ligne horizontale)',
                 'attr' => [
                     'max' => 7,  // Remplacez 100 par la valeur maximale souhaitée
@@ -134,9 +133,9 @@ class ElementType extends AbstractType
                     'maxlength' => 255,  // Limite de caractères
                 ]
             ])
-            ->add('electronegativite', IntegerType::class,[
+            ->add('electronegativite', TextType::class,[
                 'attr' => [
-                    'min' => 0,
+                    'maxlength' => 20,  // Limite de caractères
                 ]
             ])
             ->add('pointDeFusion', TextType::class, [

@@ -30,7 +30,7 @@ class RepositoryTest extends KernelTestCase
             [ElementDefinitionsRepository::class, 15, 'Erreur du ElementDefinitionsRepository'],
             [ElementCategoryRepository::class, 10, 'Erreur du ElementCategoryRepository'],
             [ElementGroupeRepository::class, 9, 'Erreur du ElementGroupeRepository'],
-            [ApiDocumentationRepository::class, 1, 'Erreur du ApiDocumentationRepository'],
+            [ApiDocumentationRepository::class, 3, 'Erreur du ApiDocumentationRepository'],
         ];
     }
 }

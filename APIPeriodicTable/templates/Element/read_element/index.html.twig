@@ -1,6 +1,4 @@
 {% extends 'base.html.twig' %}
-
-
 {% block body %}
 <section class="readAtom">
     <article>
@@ -9,145 +7,48 @@
             <p class="my-5">{{ elements.infoElement}}</p>
             <table class="table">
                 <tbody>
-                <tr>
-                    <th class="col-8" scope="row">L'année de découverte</th>
-                    <td>{{ elements.decouverteAnnee }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Localisation de la découverte</th>
-                    {% if elements.decouvertePays is empty%}
-                        <td>NC</td>
-                    {% else %}
-                        <td>{{ elements.decouvertePays }}</td>
-                    {% endif %}
-                </tr>
-                <tr>
-                    <th scope="row">Découverte par</th>
-                    {% if elements.decouverteNoms is empty%}
-                        <td>NC</td>
-                    {% else %}
-                        <td>{{ elements.decouverteNoms }}</td>
-                    {% endif %}
-                </tr>
-                <tr>
-                    <th scope="row">Symbole chimique</th>
-                    <td>{{ elements.symbole }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Numéro atomique</th>
-                    <td>{{ elements.numero }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Masse atomique <span class="infosup">?</span> </th>
-                    <td>{{ elements.masseAtomique }}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[4].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Categorie</th>
-                    <td>{{ elements.elementCategory.getName() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Groupe</th>
-                    <td>{{ elements.elementGroupe.getName() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Masse volumique <span class="infosup">?</span> </th>
-                    <td>{{ elements.MasseVolumique }}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[1].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">CAS <span class="infosup">?</span> </th>
-                    <td>{{ elements.cas}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[2].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">EINECS <span class="infosup">?</span> </th>
-                    <td>{{ elements.einecs}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[3].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Rayon atomique <span class="infosup">?</span> </th>
-                    <td>{{ elements.RayonAtomique}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[5].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Rayon de covalence <span class="infosup">?</span> </th>
-                    <td>{{ elements.RayonDeCovalence}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[6].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Rayon de Van Der Waals <span class="infosup">?</span> </th>
-                    <td>{{ elements.RayonDeVanDerWaals}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[7].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Electron <span class="infosup">?</span> </th>
-                    <td>{{ elements.electron}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[8].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Configuration électronique <span class="infosup">?</span> </th>
-                    <td>{{ elements.configurationElectronique}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[9].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Etat d'oxydation <span class="infosup">?</span> </th>
-                    <td>{{ elements.etatOxydation}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[10].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Électronégativité<span class="infosup">?</span> </th>
-                    <td>{{ elements.electronegativite}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[11].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Point de Fusion<span class="infosup">?</span> </th>
-                    <td>{{ elements.pointDeFusion}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[12].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Point d'ébullition<span class="infosup">?</span> </th>
-                    <td>{{ elements.pointDEbullition}}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ listeDefinition[13].getDefinition() }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Radioactivité<span class="infosup">?</span> </th>
-                    {% if elements.radioactif == true %}
-                        <td>Oui</td>
-                    {% else %}
-                        <td>Non</td>
-                    {% endif %}
+                {% set elementCategory = 'elementCategory' %}
+                {% set elementGroupe = 'elementGroupe' %}
 
-                </tr>
+                {% for propertiesElement in propertiesElements %}
+                    {% set variable = propertiesElement %}
+                    {% if propertiesElement != elementCategory and propertiesElement != elementGroupe %}
+                        <tr>
+                            <th scope="row" class="col-6">
+                                {% if listeDefinition[variable] is defined  %}
+                                    {{ listeDefinition[variable].getName()}}
+                                {% else %}
+                                {{ propertiesElement}}
+                                {% endif %}
+                                <span class="infosup">?</span>
+                            </th>
+                            <td>
+                                {{ attribute(elements, variable) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                {% if listeDefinition[variable] is defined  %}
+                                    {{ listeDefinition[variable].getDefinition() }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                    {% if propertiesElement == elementCategory %}
+                        <tr>
+                            <th scope="row">Categorie</th>
+                            <td>{{ elements.elementCategory.getName() }}</td>
+                        </tr>
+                    {% endif %}
+                    {% if propertiesElement == elementGroupe %}
+                        <tr>
+                            <th scope="row">Groupe</th>
+                            <td>{{ elements.elementGroupe.getName() }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
                 </tbody>
             </table>
-
         </div>
     </article>
 </section>

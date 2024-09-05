@@ -51,7 +51,7 @@ class Element
         maxMessage: '{{ limit }} characters max',
     )]
     #[Assert\Regex(pattern: '/^\d+$/', message: 'Le champ doit contenir uniquement des chiffres.')]
-    private ?string $infoGroupe = null;
+    private ?string $GroupeVertical = null;
 
     #[ORM\Column(length: 10)]
     #[Groups(['ApiElementTotal'])]
@@ -60,7 +60,7 @@ class Element
         maxMessage: '{{ limit }} characters max',
     )]
    #[Assert\Regex(pattern: '/^\d+$/', message: 'Le champ doit contenir uniquement des chiffres.')]
-    private ?string $infoPeriode = null;
+    private ?string $PeriodeHorizontal = null;
 
     #[ORM\Column(length: 100)]
     #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
@@ -227,26 +227,26 @@ class Element
         return $this;
     }
 
-    public function getInfoGroupe(): ?string
+    public function getGroupeVertical(): ?string
     {
-        return $this->infoGroupe;
+        return $this->GroupeVertical;
     }
 
-    public function setInfoGroupe(string $infoGroupe): static
+    public function setGroupeVertical(string $GroupeVertical): static
     {
-        $this->infoGroupe = $infoGroupe;
+        $this->GroupeVertical = $GroupeVertical;
 
         return $this;
     }
 
-    public function getInfoPeriode(): ?string
+    public function getPeriodeHorizontal(): ?string
     {
-        return $this->infoPeriode;
+        return $this->PeriodeHorizontal;
     }
 
-    public function setInfoPeriode(string $infoPeriode): static
+    public function setPeriodeHorizontal(string $PeriodeHorizontal): static
     {
-        $this->infoPeriode = $infoPeriode;
+        $this->PeriodeHorizontal = $PeriodeHorizontal;
 
         return $this;
     }

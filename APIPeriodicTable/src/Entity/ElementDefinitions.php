@@ -21,6 +21,9 @@ class ElementDefinitions
     #[ORM\Column(length: 1000)]
     private ?string $definition = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $namePropertyElement = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +49,18 @@ class ElementDefinitions
     public function setDefinition(string $definition): static
     {
         $this->definition = $definition;
+
+        return $this;
+    }
+
+    public function getNamePropertyElement(): ?string
+    {
+        return $this->namePropertyElement;
+    }
+
+    public function setNamePropertyElement(string $namePropertyElement): static
+    {
+        $this->namePropertyElement = $namePropertyElement;
 
         return $this;
     }

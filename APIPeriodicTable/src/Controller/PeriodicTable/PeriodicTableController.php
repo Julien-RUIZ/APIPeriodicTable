@@ -17,7 +17,7 @@ class PeriodicTableController extends AbstractController
     {
     }
 
-    #[Route('/tableau/{param}/{value}', name: 'app_tableau', requirements: ['param' => '\w+', 'value' => '\d+'], defaults: ['param' => null, 'value' => null])]
+    #[Route('/tableau/{param}={value}', name: 'app_tableau', requirements: ['param' => '\w+', 'value' => '\d+'], defaults: ['param' => null, 'value' => null])]
     public function index(Request $request, ElementRepository $atomeRepository, ElementHelperInterface $elementHelper, ElementCategoryRepository $categoryRepository): Response
     {
         $category = $categoryRepository->findAll();

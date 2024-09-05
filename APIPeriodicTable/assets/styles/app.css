@@ -48,6 +48,9 @@
 .filter{
     color: #af8503 !important;
 }
+.affichage{
+    border: 1px solid black;
+}
 
 .blocButton{
     padding-left: 15px;
@@ -155,6 +158,14 @@ button a{
     font-size: inherit;
 }
 
+.ButtonFilter{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.ButtonFilter .ButtonName{
+    max-width: 90px;
+}
 
 /* Styles pour écrans larges (plus de 1800px) */
 @media (min-width: 1800px) {
