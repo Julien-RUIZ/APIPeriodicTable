@@ -1,6 +1,6 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Tableau de Mendeleïev</a>
+<nav class="BlocMenu navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" href="{{ path('app_home') }}">Tableau de Mendeleïev</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,7 +15,7 @@
             </li>
             {% if app.user is not null %}
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_read_api_documentation') }}">Documentation API</a>
+                <a class="nav-link {% if app.request.attributes.get('_route') == 'app_read_api_documentation' %} active {% endif %} " href="{{ path('app_read_api_documentation') }}">Documentation API</a>
             </li>
             {% endif %}
         </ul>
@@ -32,7 +32,7 @@
                 {% if is_granted("ROLE_ADMIN") %}
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_admin') }}">Admin</a>
+                            <a class="nav-link  {% if app.request.attributes.get('_route') == 'app_admin' %} active {% endif %}" href="{{ path('app_admin') }}">Admin</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Profil</a>
@@ -52,6 +52,5 @@
                     </ul>
                 {% endif %}
         {% endif %}
-
     </div>
 </nav>

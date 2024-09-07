@@ -43,15 +43,25 @@
 /*-----------------------------------*/
 /*-----------------------------------*/
 .active{
-    color: #af8503 !important;
+    color: white !important;
 }
 .filter{
-    color: #af8503 !important;
+    color: white !important;
 }
 .affichage{
     border: 1px solid black;
 }
-
+h1, h2, h3, h4{
+    color: #003366;
+    text-align: center;
+    margin: 10px 0 20px 0;
+    font-family: fangsong;
+}
+h5, h6{
+    color: #003366;
+    margin: 10px 0 20px 0;
+    font-family: fangsong;
+}
 .blocButton{
     padding-left: 15px;
 }
@@ -130,7 +140,8 @@ button a{
     color: black;
 }
 .adminTable a:hover, .adminCategory a:hover, .adminGroup a:hover{
-    background-color: #cccccc;
+    background-color: #003366;
+    color: #FFA500;
 }
 
 .supprCata{
@@ -166,7 +177,32 @@ button a{
 .ButtonFilter .ButtonName{
     max-width: 90px;
 }
+.BlocMenu{
+    padding: 10px;
+}
 
+.navbar a{
+    color: #FFA500;
+}
+.navbar-nav .nav-link.active{
+    color: #FFFFFF ;
+}
+
+.nav-item :hover, .navbar .navbar-brand:hover{
+    color: #FFFFFF !important;
+}
+.navbar{
+    background-color: #003366;
+    color: #FFA500;
+}
+footer {
+    background-color: #003366;
+    color: #FFA500;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
 /* Styles pour écrans larges (plus de 1800px) */
 @media (min-width: 1800px) {
     .boxAtom {

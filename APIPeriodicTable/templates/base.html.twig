@@ -1,11 +1,11 @@
 
     {% include 'partials/header.html.twig' %}
-    <body>
-    <div class="container-fluid">
-        {% include 'partials/navbar.html.twig' %}
-    </div>
 
+    <body class="d-flex flex-column min-vh-100">
+    {% include 'partials/navbar.html.twig' %}
+    <div class="container-fluid flex-grow-1">
         {% block body %}{% endblock %}
-    </body>
+    </div>
     {% include 'partials/footer.html.twig' %}
+    </body>
 
