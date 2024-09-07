@@ -29,7 +29,7 @@
                         <tr>
                             <td colspan="2">
                                 {% if listeDefinition[variable] is defined  %}
-                                    {{ listeDefinition[variable].getDefinition() }}
+                                    {{ listeDefinition[variable].getDefinition() | nl2br }}
                                 {% endif %}
                             </td>
                         </tr>

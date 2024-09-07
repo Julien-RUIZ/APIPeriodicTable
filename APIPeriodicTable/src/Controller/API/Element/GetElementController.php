@@ -3,6 +3,7 @@
 namespace App\Controller\API\Element;
 
 use App\Entity\Element;
+use App\Exception\NotFoundException;
 use App\Repository\ElementRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -26,6 +27,9 @@ class GetElementController extends AbstractController
     {
         $donnees = $elementRepository->findBy(['id'=>$id]);
         $elements = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
+        if (empty($donnees)){
+            throw new NotFoundException();
+        }
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
 
@@ -40,7 +44,6 @@ class GetElementController extends AbstractController
         }
         $params = array_combine($param,$valeur);
         $donnees = $elementRepository->findBy($params);
-
         $elements = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }

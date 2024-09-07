@@ -22,7 +22,6 @@ class ReadElementController extends AbstractController
         foreach ($definition as $value){
             $listeDefinition[$value->getNamePropertyElement()] = $value;
         }
-        //dd($propertiesElement, $element, $listeDefinition);
         return $this->render('Element/read_element/index.html.twig', [
             'elements' => $element, 'listeDefinition'=> $listeDefinition, 'propertiesElements'=>$propertiesElement
         ]);
