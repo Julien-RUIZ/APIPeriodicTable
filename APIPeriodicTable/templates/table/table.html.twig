@@ -13,9 +13,26 @@
     <table class="Element">
         <thead>
             <tr>
-                <th></th>
+                <th>
+                    <div class="thTable">
+                        <a href="{{ path('app_tableau') }}">
+                            <div class="boxAtom ElementThHorizontal">
+                                <div class="NbGroupVertical"> All </div>
+                            </div>
+                        </a>
+                    </div>
+                </th>
                 {% for label, value in {1:'(IA)', 2:'(IIA)', 3:'(IIIB)',4:'(IVB)', 5:'(VB)', 6:'(VIB)', 7: '(VIIB)', 8:'(VIIIB)', 9:'(VIIIB)', 10:'(VIIIB)', 11:'(IB)', 12:'(IIB)', 13:'(IIIA)', 14:'(IVA)', 15:'(VA)', 16:'(VIA)', 17:'(VIIA)', 18:'(VIIIA)' }%}
-                    <th>{{ label}} <br> <span>{{ value }}</span></th>
+                    <th>
+                        <div class="thTable">
+                            <a href="{{ path('app_tableau', {'param': 'GroupeVertical', 'value': label}) }}">
+                                <div class="boxAtom ElementThHorizontal">
+                                    <div class="NbGroupVertical"> {{ label}}</div>
+                                    <div class="RomainGroupVertical"> {{ value }}</div>
+                                </div>
+                            </a>
+                        </div>
+                    </th>
                 {% endfor %}
             </tr>
         </thead>
@@ -23,14 +40,22 @@
         {% for y  in 1..9 %}
         <tbody>
         <tr>
-            <th scope="row">{% if y<=7 %} {{ y }}{% endif %}</th>
+            <th scope="row">
+                {% if y<=7 %}
+                    <a href="{{ path('app_tableau', {'param': 'PeriodeHorizontal', 'value': y}) }}">
+                        <div class="thTable">
+                            <div class="boxAtom">{{ y }}</div>
+                        </div>
+                    </a>
+                {% endif %}
+            </th>
             {% for x  in 1..18 %}
 
                 {% set key = x ~ ',' ~ y %}
                 {% set id = mapping[key] ?? null %}
 
                 {% if y==1 and  x>1 and x<18 or y==2 and  x>2 and x<13 or y==3 and  x>2 and x<13 or y==8 and  x>=1 and x<4 or y==9 and  x>=1 and x<4  %}
-                    <td class="tdTable " style="background-color: #cccccc">
+                    <td class="tdTable" style="background-color: #cccccc">
                         <div class="boxAtom text-center"></div>
                     </td>
                 {% elseif y==6 and  x==3 %} {#---------------------------------- Lanthanides #}

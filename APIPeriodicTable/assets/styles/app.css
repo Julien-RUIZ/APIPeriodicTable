@@ -1,52 +1,9 @@
-/*-----------------------------------*/
-/*------Repère couleur--------------*/
-/*-----------------------------------*/
-.actinide{
-    background-color: red;
-}
-/*-----------------------------------*/
-.gazNoble{
-    background-color: deepskyblue;
-}
-/*-----------------------------------*/
-.halogene{
-    background-color: darkviolet;
-}
-/*-----------------------------------*/
-.lanthanide{
-    background-color: hotpink;
-}
-/*-----------------------------------*/
-.metalAlcalin{
-    background-color: orange;
-}
-/*-----------------------------------*/
-.metalAlcalinoTerreux{
-    background-color: rgb(188,105,18);
-}
-/*-----------------------------------*/
-.metalDeTransition{
-    background-color: rgb(175, 161, 0);
-}
-/*-----------------------------------*/
-.metalloide{
-    background-color: burlywood;
-}
-/*-----------------------------------*/
-.metalPauvre{
-    background-color: greenyellow;
-}
-/*-----------------------------------*/
-.nonMetal{
-    background-color: limegreen;
-}
-/*-----------------------------------*/
-/*-----------------------------------*/
+
 .active{
     color: white !important;
 }
 .filter{
-    color: white !important;
+    color: #FFA500 !important;
 }
 .affichage{
     border: 1px solid black;
@@ -62,8 +19,8 @@ h5, h6{
     margin: 10px 0 20px 0;
     font-family: fangsong;
 }
-.blocButton{
-    padding-left: 15px;
+.blocPresentation{
+    margin: 0 0 0 52px;
 }
 
 .Element{
@@ -76,12 +33,19 @@ h5, h6{
     height: 88px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-.tdTable{
+.tdTable, .thTable{
     border-width: 1px 3px 3px 1px;
     border-style: solid;
     border-color: black;
     text-align: center;
+}
+.thTable:hover{
+    border-color: #FFA500;
+}
+.ElementThHorizontal{
+
 }
 td .nom, td .masseAtomique{
     font-size: x-small;
@@ -95,16 +59,14 @@ td .symbole{
 td .numero{
     font-size: 15px;
 }
-td a{
+td a, .appli th a{
     text-decoration: none;
     color: black;
 }
-.boxAtom {
-    width: 73px ;
-    height: 88px;
-    display: flex;
-    flex-direction: column;
+.appli th a:hover{
+    color: #003366;
 }
+
 button a{
     text-decoration: none;
     color: white;
@@ -169,18 +131,10 @@ button a{
     font-size: inherit;
 }
 
-.ButtonFilter{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-.ButtonFilter .ButtonName{
-    max-width: 90px;
-}
+
 .BlocMenu{
     padding: 10px;
 }
-
 .navbar a{
     color: #FFA500;
 }
@@ -190,6 +144,14 @@ button a{
 
 .nav-item :hover, .navbar .navbar-brand:hover{
     color: #FFFFFF !important;
+}
+.navbar-brand{
+    border-color: #FFA500 !important;
+    border: 1px solid;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-width: 0;
+    padding-right: 25px;
 }
 .navbar{
     background-color: #003366;
@@ -202,6 +164,17 @@ footer {
     padding: 20px 0;
     bottom: 0;
     width: 100%;
+}
+#api_documentation_submit, #element_submit, #element_category_submit, #element_group_submit, #element_definition_submit, #Button_login, #registration_form_submit{
+    background-color: darkgray;
+    border-color: darkgray;
+}
+#api_documentation_submit:hover, #element_submit:hover, #element_category_submit:hover, #element_group_submit:hover, #element_definition_submit:hover, #Button_login:hover, #registration_form_submit:hover{
+    background-color: #003366;
+    color: #FFA500;
+}
+.blocChapitre td:hover{
+    Border: 2px solid #FFA500;
 }
 /* Styles pour écrans larges (plus de 1800px) */
 @media (min-width: 1800px) {
@@ -290,7 +263,7 @@ footer {
     td .nom{
         font-size: 6px;
     }
-    td .masseAtomique, .numeroLanthanides, .numeroActinides{
+    td .masseAtomique, .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
         display: none;
     }
     td .symbole{
@@ -314,7 +287,7 @@ footer {
     td .nom{
         font-size: 6px;
     }
-    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides{
+    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
         display: none;
     }
     td .symbole{
@@ -339,7 +312,7 @@ footer {
     .tdTable{
         height: 52px;
     }
-    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides{
+    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
         display: none;
     }
     td .symbole{
@@ -363,7 +336,7 @@ footer {
     .tdTable{
         height: 46px;
     }
-    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides{
+    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
         display: none;
     }
     td .symbole{

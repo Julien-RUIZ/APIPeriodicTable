@@ -19,6 +19,9 @@ class ApiDocumentationType extends AbstractType
             ->add('Title', TextType::class,[
                 'label'=>'Titre'
             ])
+            ->add('buttonTitle', TextType::class, [
+                'label'=>'Titre du bouton'
+            ])
             ->add('Description', TextareaType::class)
             ->add('Endpoint1', TextType::class, [
                 'required'=>false,

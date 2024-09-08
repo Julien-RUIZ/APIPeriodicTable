@@ -45,6 +45,9 @@ class ApiDocumentation
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Endpoint3 = null;
 
+    #[ORM\Column(length: 20)]
+    private ?string $ButtonTitle = null;
+
 
     public function getId(): ?int
     {
@@ -167,6 +170,18 @@ class ApiDocumentation
     public function setEndpoint3(?string $Endpoint3): static
     {
         $this->Endpoint3 = $Endpoint3;
+
+        return $this;
+    }
+
+    public function getButtonTitle(): ?string
+    {
+        return $this->ButtonTitle;
+    }
+
+    public function setButtonTitle(string $ButtonTitle): static
+    {
+        $this->ButtonTitle = $ButtonTitle;
 
         return $this;
     }

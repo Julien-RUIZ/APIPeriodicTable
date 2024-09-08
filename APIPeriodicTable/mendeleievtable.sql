@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 05 sep. 2024 à 06:46
+-- Généré le : dim. 08 sep. 2024 à 09:41
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `api_documentation` (
   `endpoint1` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `endpoint2` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `endpoint3` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `button_title` varchar(20) COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
@@ -47,10 +48,10 @@ CREATE TABLE IF NOT EXISTS `api_documentation` (
 -- Déchargement des données de la table `api_documentation`
 --
 
-INSERT INTO `api_documentation` (`id`, `title`, `description`, `example_request1`, `example_request2`, `example_request3`, `example_response`, `attributes`, `endpoint1`, `endpoint2`, `endpoint3`) VALUES
-(3, 'Introduction', 'L\'API des Éléments Périodiques est une interface conçue pour fournir des informations complètes et à jour sur les éléments chimiques du tableau périodique. Cette API permet aux développeurs d\'accéder facilement à des données précises concernant les éléments chimiques, telles que le numéro atomique, le symbole, la masse atomique, les propriétés physiques et chimiques, ainsi que d\'autres caractéristiques essentielles.\n\nQue vous travailliez sur une application éducative, scientifique, ou que vous ayez besoin d\'intégrer des informations sur les éléments chimiques dans vos projets, notre API simplifie l\'accès à ces données tout en garantissant leur exactitude et leur fiabilité.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'Toutes les informations par élément', 'Nous allons pouvoir récupérer toutes les informations importantes pour chaque élément. Il ne vous suffit que d\'utiliser la requête et le verbe.', 'GET - http://127.0.0.1:8000/api/elements', NULL, NULL, '[\n	{\n		\"nom\": \"Hydrogène\",\n		\"slug\": \"hydrogene\",\n		\"electron\": \"1\",\n		\"numero\": 1,\n		\"symbole\": \"H\",\n		\"infoGroupe\": \"1\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.00008988 g\\/cm³\",\n		\"cas\": \"12385-13-6\",\n		\"einecs\": \"231-595-7\",\n		\"masseAtomique\": \"1.008\",\n		\"rayonAtomique\": \"53 pm\",\n		\"rayonDeCovalence\": \"31 pm\",\n		\"rayonDeVanDerWaals\": \"120 pm\",\n		\"configurationElectronique\": \"1s¹\",\n		\"etatOxydation\": \"-1, +1\",\n		\"decouverteAnnee\": \"1766\",\n		\"decouverteNoms\": \"Henry Cavendish\",\n		\"decouvertePays\": \"Grande-Bretagne\",\n		\"electronegativite\": \"2.20\",\n		\"pointDeFusion\": \"-259.16\",\n		\"pointDEbullition\": \"-252.87\",\n		\"Radioactif\": false,\n		\"elementCategory\": {\n			\"name\": \"Non métal\"\n		},\n		\"elementGroupe\": {\n			\"name\": \"Alcalins\",\n			\"groupN\": \"Groupe1\"\n		}\n	},\n	{\n		\"nom\": \"Hélium\",\n		\"slug\": \"helium\",\n		\"electron\": \"2\",\n		\"numero\": 2,\n		\"symbole\": \"He\",\n		\"infoGroupe\": \"18\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.0001786 g\\/cm³\",\n		\"cas\": \"7440-59-7\",', NULL, 'api/elements', NULL, NULL),
-(6, 'Recherche d\'éléments par paramètres', 'Avec cette recherche, vous allez pouvoir retirer les éléments que vous souhaitez en fonction de paramètres passés. Vous aurez toutes les informations des éléments qui la caractérise. Pour cela, vous pouvez passer un ou plusieurs paramètres avec leurs valeurs. Vous devez cependant respecter une écriture comme indiqué Dans les Endpoints et les requêtes.', 'GET : http://Mendeleîev/api/elements/search?infoGroupe=1', 'GET : http://Mendeleîev/api/elements/search?infoGroupe=1&Radioactif=0', NULL, NULL, NULL, '/api/elements/search?infoGroupe={infoGroupe}', '/api/elements/search?infoGroupe={infoGroupe}&Radioactif={Radioactif}', NULL);
+INSERT INTO `api_documentation` (`id`, `title`, `description`, `example_request1`, `example_request2`, `example_request3`, `example_response`, `attributes`, `endpoint1`, `endpoint2`, `endpoint3`, `button_title`) VALUES
+(3, 'Introduction', 'L\'API des Éléments Périodiques est une interface conçue pour fournir des informations complètes et à jour sur les éléments chimiques du tableau périodique. Cette API permet aux développeurs d\'accéder facilement à des données précises concernant les éléments chimiques, telles que le numéro atomique, le symbole, la masse atomique, les propriétés physiques et chimiques, ainsi que d\'autres caractéristiques essentielles.\n\nQue vous travailliez sur une application éducative, scientifique, ou que vous ayez besoin d\'intégrer des informations sur les éléments chimiques dans vos projets, notre API simplifie l\'accès à ces données tout en garantissant leur exactitude et leur fiabilité.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Introduction'),
+(4, 'Toutes les informations par élément', 'Nous allons pouvoir récupérer toutes les informations importantes pour chaque élément. Il ne vous suffit que d\'utiliser la requête et le verbe.\n1/ Endpoint1 permet la récupération de tous les éléments\n2/  Endpoint2 permet la récupération d\'un seul élément\nAttention à l\'écriture d\'élément au singulier ou au pluriel en fonction des besoins. Les requêtes respectives vous indique l\'écriture à suivre.', 'GET - /api/elements', 'GET - /api/element/1 - exemple avec l\'Hydrogène, numéro atomique 1', NULL, '[\n	{\n		\"nom\": \"Hydrogène\",\n		\"slug\": \"hydrogene\",\n		\"electron\": \"1\",\n		\"numero\": 1,\n		\"symbole\": \"H\",\n		\"infoGroupe\": \"1\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.00008988 g\\/cm³\",\n		\"cas\": \"12385-13-6\",\n		\"einecs\": \"231-595-7\",\n		\"masseAtomique\": \"1.008\",\n		\"rayonAtomique\": \"53 pm\",\n		\"rayonDeCovalence\": \"31 pm\",\n		\"rayonDeVanDerWaals\": \"120 pm\",\n		\"configurationElectronique\": \"1s¹\",\n		\"etatOxydation\": \"-1, +1\",\n		\"decouverteAnnee\": \"1766\",\n		\"decouverteNoms\": \"Henry Cavendish\",\n		\"decouvertePays\": \"Grande-Bretagne\",\n		\"electronegativite\": \"2.20\",\n		\"pointDeFusion\": \"-259.16\",\n		\"pointDEbullition\": \"-252.87\",\n		\"Radioactif\": false,\n		\"elementCategory\": {\n			\"name\": \"Non métal\"\n		},\n		\"elementGroupe\": {\n			\"name\": \"Alcalins\",\n			\"groupN\": \"Groupe1\"\n		}\n	},\n	{\n		\"nom\": \"Hélium\",\n		\"slug\": \"helium\",\n		\"electron\": \"2\",\n		\"numero\": 2,\n		\"symbole\": \"He\",\n		\"infoGroupe\": \"18\",\n		\"infoPeriode\": \"1\",\n		\"masseVolumique\": \"0.0001786 g\\/cm³\",\n		\"cas\": \"7440-59-7\",', NULL, 'api/elements', 'api/element/{id} - l\'id étant le numéro atomique de l\'éléments a rechercher.', NULL, 'Les éléments'),
+(6, 'Recherche d\'éléments par paramètres', 'Avec cette recherche, vous allez pouvoir retirer les éléments que vous souhaitez en fonction de paramètres passés. Vous aurez toutes les informations des éléments qui la caractérise. Pour cela, vous pouvez passer un ou plusieurs paramètres avec leurs valeurs. Vous devez cependant respecter une écriture comme indiqué Dans les Endpoints et les requêtes.', 'GET : /api/elements/search?GroupeVertical=1', 'GET : /api/elements/search?GroupeVertical=1&Radioactif=0', NULL, NULL, NULL, '/api/elements/search?GroupeVertical={GroupeVertical}', '/api/elements/search?GroupeVertical={GroupeVertical}&Radioactif={Radioactif}', NULL, 'Par paramètres');
 
 -- --------------------------------------------------------
 
@@ -65,14 +66,6 @@ CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
   `execution_time` int DEFAULT NULL,
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
-
---
--- Déchargement des données de la table `doctrine_migration_versions`
---
-
-INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20240904060702', '2024-09-04 06:07:07', 29),
-('DoctrineMigrations\\Version20240904133043', '2024-09-04 13:30:52', 28);
 
 -- --------------------------------------------------------
 
@@ -280,7 +273,7 @@ DROP TABLE IF EXISTS `element_definitions`;
 CREATE TABLE IF NOT EXISTS `element_definitions` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `definition` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `definition` varchar(1000) COLLATE utf8mb3_unicode_ci NOT NULL,
   `name_property_element` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -304,8 +297,8 @@ INSERT INTO `element_definitions` (`id`, `name`, `definition`, `name_property_el
 (12, 'Point de Fusion', 'C\'est la température à laquelle la phase solide d\'une substance se transforme en phase liquide sous une pression atmosphérique standard (généralement 1 atmosphère ou 101,3 kPa). À ce point, les solides et les liquides coexistent en équilibre.', 'pointDeFusion'),
 (13, 'Point d\'Ébullition', 'C\'est la température à laquelle la pression de vapeur du liquide devient égale à la pression atmosphérique extérieure, permettant au liquide de se transformer en vapeur. À cette température, des bulles de vapeur se forment dans tout le liquide et montent à la surface pour s\'échapper', 'pointDEbullition'),
 (14, 'Symbole chimique', 'Le symbole chimique d\'un élément est une abréviation ou un code utilisé pour représenter un élément chimique spécifique dans le tableau périodique. Ce symbole est généralement composé d\'une ou deux lettres, où la première lettre est toujours en majuscule et la seconde en minuscule (si elle existe). Par exemple, le symbole de l\'hydrogène est H, celui de l\'oxygène est O, et celui du fer est Fe.', 'symbole'),
-(15, 'Numéro atomique', 'Le numéro atomique d\'un élément, noté généralement par la lettre \r\n?\r\nZ, est le nombre de protons présents dans le noyau de chaque atome de cet élément. C\'est une caractéristique fondamentale qui détermine l\'identité de l\'élément et sa position dans le tableau périodique. Par exemple, l\'élément hydrogène a un numéro atomique de 1, ce qui signifie qu\'il possède un proton dans son noyau. Le numéro atomique détermine également la charge positive du noyau et, dans un atome neutre, il est égal au nom', 'numero'),
-(18, 'Nom', NULL, 'nom');
+(15, 'Numéro atomique', 'Le numéro atomique d\'un élément, noté généralement par la lettre Z, est le nombre de protons présents dans le noyau de chaque atome de cet élément. C\'est une caractéristique fondamentale qui détermine l\'identité de l\'élément et sa position dans le tableau périodique. Par exemple, l\'élément hydrogène à un numéro atomique de 1, ce qui signifie qu\'il possède un proton dans son noyau. Le numéro atomique détermine également la charge positive du noyau et, dans un atome neutre, il est égal au nom.', 'numero'),
+(18, 'Nom', '', 'nom');
 
 -- --------------------------------------------------------
 
