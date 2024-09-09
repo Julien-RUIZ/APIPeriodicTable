@@ -16,20 +16,15 @@ class ElementRepository extends ServiceEntityRepository
         parent::__construct($registry, Element::class);
     }
 
-    public function nameIdAtome(){
-        return $this->createQueryBuilder('a')
-            ->select('a.id', 'a.nom')
+    public function ListeElements($page, $limit ){
+        return $this->createQueryBuilder('e')
+            ->setFirstResult(($page-1)*$limit)
+            ->setMaxResults($limit)
             ->getQuery()
             ->getResult()
             ;
     }
-    public function AttributesAtome(){
-        return $this->createQueryBuilder('a')
-            ->select('a.id', 'a.nom')
-            ->getQuery()
-            ->getResult()
-            ;
-    }
+
 
     //    /**
     //     * @return Element[] Returns an array of Element objects
