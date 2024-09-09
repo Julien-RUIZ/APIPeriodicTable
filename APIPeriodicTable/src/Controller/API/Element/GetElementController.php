@@ -18,6 +18,9 @@ class GetElementController extends AbstractController
     public function getAllElements(ElementRepository $elementRepository, SerializerInterface $serializer): Response
     {
         $donnees = $elementRepository->findAll();
+        if (empty($donnees)){
+            throw new NotFoundException();
+        }
         $elements = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
@@ -44,6 +47,9 @@ class GetElementController extends AbstractController
         }
         $params = array_combine($param,$valeur);
         $donnees = $elementRepository->findBy($params);
+        if (empty($donnees)){
+            throw new NotFoundException();
+        }
         $elements = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }

@@ -23,6 +23,13 @@ class ElementRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
+    public function AttributesAtome(){
+        return $this->createQueryBuilder('a')
+            ->select('a.id', 'a.nom')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
     //    /**
     //     * @return Element[] Returns an array of Element objects
