@@ -28,19 +28,19 @@ class GetElementController extends AbstractController
         $page = $query->get('page');
         $limit = $query->get('limit');
         $donnees = isset($page) && isset($limit) ? $elementRepository->ListeElements($page, $limit) : $elementRepository->findAll();
-
-        $idCache = "getElements-" . ($page ?? 'all') . "-" . ($limit ?? 'all');
-        $donnees = $cache->get($idCache,  function (ItemInterface $item) use ($donnees){
-            $item->tag("ElementCache");
-            return $donnees;
-        });
-
         $nbDonnee = count($elementRepository->findAll());
+
         if (empty($donnees) or (intval($page)*intval($limit))>$nbDonnee && (intval($page)*intval($limit))<!0){
             throw new NotFoundException();
         }
         $PaginatorInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
-        $elements = $serializer->serialize($PaginatorInfo, 'json', ['groups'=>'ApiElementTotal']);
+
+        $idCache = "getElements-" . ($page ?? 'all') . "-" . ($limit ?? 'all');
+        $elements = $cache->get($idCache,  function (ItemInterface $item) use ($PaginatorInfo, $serializer){
+            $item->tag("ElementCache");
+            return $serializer->serialize($PaginatorInfo, 'json', ['groups'=>'ApiElementTotal']);
+        });
+
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
 
