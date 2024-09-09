@@ -12,22 +12,35 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Contracts\Cache\ItemInterface;
+use Symfony\Contracts\Cache\TagAwareCacheInterface;
 
 class GetElementController extends AbstractController
 {
+    /**
+     * Endpoint : api/elements
+     * Endpoint : api/elements?page={n°page}&limit={limit}
+     */
     #[Route('api/elements', name: 'api_elements', methods: ['GET'])]
-    public function getAllElements(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService): Response
+    public function getAllElements(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, TagAwareCacheInterface $cache): Response
     {
         $query = $request->query;
         $page = $query->get('page');
         $limit = $query->get('limit');
         $donnees = isset($page) && isset($limit) ? $elementRepository->ListeElements($page, $limit) : $elementRepository->findAll();
+
+        $idCache = "getElements-" . ($page ?? 'all') . "-" . ($limit ?? 'all');
+        $donnees = $cache->get($idCache,  function (ItemInterface $item) use ($donnees){
+            $item->tag("ElementCache");
+            return $donnees;
+        });
+
         $nbDonnee = count($elementRepository->findAll());
         if (empty($donnees) or (intval($page)*intval($limit))>$nbDonnee && (intval($page)*intval($limit))<!0){
             throw new NotFoundException();
         }
-        $affichage = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
-        $elements = $serializer->serialize($affichage, 'json', ['groups'=>'ApiElementTotal']);
+        $PaginatorInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
+        $elements = $serializer->serialize($PaginatorInfo, 'json', ['groups'=>'ApiElementTotal']);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
 

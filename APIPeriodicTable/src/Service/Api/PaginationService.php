@@ -9,7 +9,7 @@ class PaginationService
         $page = intval($page);
         $limit = intval($limit);
         $nbtotal = intval($nbtotal);
-        $pageMax = $limit != null ? ceil($nbtotal/$limit) : null;
+        $pageMax = $limit != null ? intval(ceil($nbtotal/$limit)) : null;
         $Info = $page!=null && $limit!=null ? ['Numéro de la page'=>$page, 'Element par page'=>$limit, 'Page total'=>$pageMax, "Nombre d'élément max"=> $nbtotal] : ['Page total'=>1,"Nombre d'élément max"=> $nbtotal];
         return $Info;
     }
