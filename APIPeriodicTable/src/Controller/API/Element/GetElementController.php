@@ -23,12 +23,10 @@ class GetElementController extends AbstractController
         $limit = $query->get('limit');
         $donnees = isset($page) && isset($limit) ? $elementRepository->ListeElements($page, $limit) : $elementRepository->findAll();
         $nbDonnee = count($elementRepository->findAll());
-
         if (empty($donnees) or (intval($page)*intval($limit))>$nbDonnee && (intval($page)*intval($limit))<!0){
             throw new NotFoundException();
         }
-        $Infopage =  $paginationService->Pagination($page, $limit, $nbDonnee);
-        $affichage = ['data'=> $donnees, 'pagination'=>$Infopage];
+        $affichage = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
         $elements = $serializer->serialize($affichage, 'json', ['groups'=>'ApiElementTotal']);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
