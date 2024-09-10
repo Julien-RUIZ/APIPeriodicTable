@@ -16,7 +16,7 @@ class ElementRepository extends ServiceEntityRepository
         parent::__construct($registry, Element::class);
     }
 
-    public function ListeElements($page, $limit ){
+    public function ListeElements($page, $limit){
         return $this->createQueryBuilder('e')
             ->setFirstResult(($page-1)*$limit)
             ->setMaxResults($limit)

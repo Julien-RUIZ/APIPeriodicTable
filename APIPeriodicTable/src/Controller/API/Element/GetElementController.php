@@ -5,6 +5,7 @@ namespace App\Controller\API\Element;
 use App\Entity\Element;
 use App\Exception\NotFoundException;
 use App\Repository\ElementRepository;
+use App\Service\Api\CacheService;
 use App\Service\Api\PaginationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -22,9 +23,10 @@ class GetElementController extends AbstractController
      * Endpoint : api/elements?page={n°page}&limit={limit}
      */
     #[Route('api/elements', name: 'api_elements', methods: ['GET'])]
-    public function getAllElements(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, TagAwareCacheInterface $cache): Response
+    public function getAllElements(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
     {
         $query = $request->query;
+
         $page = $query->get('page');
         $limit = $query->get('limit');
         $donnees = isset($page) && isset($limit) ? $elementRepository->ListeElements($page, $limit) : $elementRepository->findAll();
@@ -33,17 +35,11 @@ class GetElementController extends AbstractController
         if (empty($donnees) or (intval($page)*intval($limit))>$nbDonnee && (intval($page)*intval($limit))<!0){
             throw new NotFoundException();
         }
-        $PaginatorInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
-
-        $idCache = "getElements-" . ($page ?? 'all') . "-" . ($limit ?? 'all');
-        $elements = $cache->get($idCache,  function (ItemInterface $item) use ($PaginatorInfo, $serializer){
-            $item->tag("ElementCache");
-            return $serializer->serialize($PaginatorInfo, 'json', ['groups'=>'ApiElementTotal']);
-        });
-
+        $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
+        $FinalInfo = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
+        $elements = $cacheService->CacheRequest($FinalInfo, $page, $limit, "getElements", "ElementCache");
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
-
 
 
     #[Route('api/element/{id}', name: 'api_element', requirements: ['id'=>'\d+'], methods: ['GET'])]
