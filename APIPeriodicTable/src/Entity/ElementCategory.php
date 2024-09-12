@@ -24,6 +24,7 @@ class ElementCategory
 
     #[ORM\Column(length: 255)]
     #[Assert\Regex(pattern: '/^[A-Za-zÀ-ÿ\s]+$/u', message: 'Le champ ne peut contenir que des lettres et des espaces.')]
+    #[Groups(['ApiElementTotal'])]
     private ?string $slug = null;
 
     #[ORM\Column(length: 255)]

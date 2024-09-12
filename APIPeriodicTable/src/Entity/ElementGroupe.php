@@ -23,7 +23,6 @@ class ElementGroupe
     private ?string $name = null;
 
     #[ORM\Column(length: 25)]
-    #[Groups(['ApiElementTotal'])]
     private ?string $groupN = null;
 
     #[ORM\Column(length: 1000)]
@@ -34,6 +33,10 @@ class ElementGroupe
      */
     #[ORM\OneToMany(targetEntity: Element::class, mappedBy: 'ElementGroupe')]
     private Collection $Elements;
+
+    #[ORM\Column(length: 255)]
+    #[Groups(['ApiElementTotal'])]
+    private ?string $slug = null;
 
     public function __construct()
     {
@@ -107,6 +110,18 @@ class ElementGroupe
                 $Elements->setElementGroupe(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }

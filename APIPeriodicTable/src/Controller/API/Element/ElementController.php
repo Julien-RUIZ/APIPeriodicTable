@@ -21,6 +21,8 @@ class ElementController extends AbstractController
      * Endpoint : api/elements?field={attribut1,attribut2,etc}
      * Endpoint : api/elements?page={n°page}&limit={limit}
      * Endpoint : api/elements?field={attribut1,attribut2,etc}&page={nbPage}&limit={nbLimit}
+     *  Attribute exception : elementCategory.name -> return categoryname
+     *  Attribute exception : elementGroupe.name -> return groupename
      */
     #[Route('api/elements', name: 'api_elements', methods: ['GET'])]
     public function getAllElements(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
@@ -64,6 +66,8 @@ class ElementController extends AbstractController
     /**
      * Endpoint : api/element/{id}
      * Endpoint : api/element/{id}?field={attribute1, attribute2, etc...}
+     * Attribute exception : elementCategory.name -> return categoryname
+     * Attribute exception : elementGroupe.name -> return groupename
      */
     #[Route('api/element/{id}', name: 'api_element', requirements: ['id'=>'\d+'], methods: ['GET'])]
     public function getElement(int $id,ElementRepository $elementRepository, SerializerInterface $serializer, Request $request, CacheService $cacheService): Response
@@ -85,26 +89,45 @@ class ElementController extends AbstractController
             throw new NotFoundException();
         }
         $infoElement = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
-        $elements = $elements = $cacheService->CacheRequest($infoElement, null, null, $NameIdCache, $NameItemTag);
+        $elements = $cacheService->CacheRequest($infoElement, null, null, $NameIdCache, $NameItemTag);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
 
 
+    /**
+     * api/elements/search?{param}={value}
+     * api/elements/search?{param}={value}&{param}={value}...
+     * api/elements/search?{param}={value}&{param}={value}...&page={npage}&limit={nlimite}
+     * Radioactif-> 0=false, 1=true
+     * For elementCategory and elementGroupe => use slug
+     */
     #[Route('/api/elements/search', name: 'api_element_search', requirements: ['nom'=>'/^[^<>]*$/'], methods: ['GET'])]
-    public function getElementByParamAndValue(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer): Response
+    public function getElementByParamAndValue(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService): Response
     {
+        $query = $request->query;
+        $page = $query->get('page');
+        $limit = $query->get('limit');
         $param=[];
         $valeur=[];
         foreach ($request->query as $key=>$value){
-            $param[] = $key;
-            $valeur[] = $value;
+            if ($key!='page' && $key!='limit'){
+                $param[] = $key;
+                $valeur[] = $value;
+            }
         }
         $params = array_combine($param,$valeur);
-        $donnees = $elementRepository->findBy($params);
+        if ($page=== null && $limit===null){
+            $donnees = $elementRepository->SearchElementsWhithParams($params);
+        }
+        if (isset($page) && isset($limit)){
+            $donnees = $elementRepository->SearchElementsWhithParamsAndPagination($params, $page, $limit);
+        }
         if (empty($donnees)){
             throw new NotFoundException();
         }
-        $elements = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
+        $nbDonnee=count($elementRepository->SearchElementsWhithParams($params));
+        $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
+        $elements = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
 }
