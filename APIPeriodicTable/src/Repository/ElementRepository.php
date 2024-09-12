@@ -26,6 +26,35 @@ class ElementRepository extends ServiceEntityRepository
     }
 
 
+    public function getElementsWithAttribut($attribut,  $id = null){
+        $attibuts = explode(',', $attribut);
+        $queryAttributs = array_map(function ($n){return 'e.'.$n; }, $attibuts);
+
+        $qb = $this->createQueryBuilder('e')
+            ->select($queryAttributs);
+        if ($id != null) {
+            $qb->where('e.id = :id')
+                ->setParameter('id', $id);
+        }
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getElementsWithAttributAndPagination($attribut, $page = null, $limit = null ,$id = null){
+        $attibuts = explode(',', $attribut);
+        $queryAttributs = array_map(function ($n){return 'e.'.$n; }, $attibuts);
+
+        $qb = $this->createQueryBuilder('e')
+            ->select($queryAttributs);
+        if ($id !== null) {
+            $qb->where('e.id = :id')
+                ->setParameter('id', $id);
+        }
+        if($page !== null and $limit !== null){
+            $qb->setFirstResult(($page-1)*$limit)
+                ->setMaxResults($limit);
+        }
+        return $qb->getQuery()->getResult();
+    }
     //    /**
     //     * @return Element[] Returns an array of Element objects
     //     */

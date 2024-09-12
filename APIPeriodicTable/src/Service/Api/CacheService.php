@@ -22,12 +22,7 @@ class CacheService
      */
     public function CacheRequest(string $data, ?int $page,?int $limit, string $NameIdCache, string $NameItemTag)
     {
-        if (!empty($page) and !empty($limit)){
-            $idCache = $NameIdCache."-" .$page. "-" . $limit;
-        }
-        if(empty($page) and empty($limit)){
-            $idCache = $NameIdCache.'all';
-        }
+        $idCache = $NameIdCache;
         return $this->cache->get($idCache,  function (ItemInterface $item) use ($data, $NameItemTag){
             $item->tag($NameItemTag);
             return $data;
