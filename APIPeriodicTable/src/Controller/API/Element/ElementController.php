@@ -2,7 +2,6 @@
 
 namespace App\Controller\API\Element;
 
-
 use App\Exception\NotFoundException;
 use App\Repository\ElementRepository;
 use App\Service\Api\CacheService;
@@ -88,6 +87,8 @@ class ElementController extends AbstractController
      * api/elements/search?{param}={value}
      * api/elements/search?{param}={value}&{param}={value}...
      * api/elements/search?{param}={value}&{param}={value}...&page={npage}&limit={nlimite}
+     * api/elements/search?{param}={value}&{param}={value}...field={attribut1,attribut2,etc}
+     * api/elements/search?{param}={value}&{param}={value}...field={attribut1,attribut2,etc}&page={npage}&limit={nlimite}
      * Radioactif-> 0=false, 1=true
      * For elementCategory and elementGroupe => use slug
      */
@@ -95,25 +96,28 @@ class ElementController extends AbstractController
     public function getElementByParamAndValue(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
     {
         $query = $request->query;
+        $field = $query->get('field');
         $page = $query->get('page');
         $limit = $query->get('limit');
         $param=[];
         $valeur=[];
         foreach ($request->query as $key=>$value){
-            if ($key!='page' && $key!='limit'){
+            if ($key!='page' && $key!='limit'&& $key!='field'){
                 $param[] = $key;
                 $valeur[] = $value;
             }
         }
         $params = array_combine($param,$valeur);
-        $donnees = $elementRepository->SearchElementsWhithParams($params, $page, $limit);
+        $donnees = $elementRepository->SearchElementsWhithParams($params,$field, $page, $limit);
         if (empty($donnees)){
             throw new NotFoundException();
         }
-        $cacheKey =implode('-',$param).'-'.implode('-',$valeur).'-'.$page.'-'.$limit;
+
+        $cacheKey =implode('-',$param).'-'.implode('-',$valeur).'-'.$page.'-'.$limit.'-'.$field;
         $NameIdCache= 'getElementByParamAndValue'.$cacheKey;
         $NameItemTag = $NameIdCache;
         $nbDonnee=count($elementRepository->SearchElementsWhithParams($params));
+
         $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
         $infoElement = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
         $elements = $cacheService->CacheRequest($infoElement, $page, $limit, $NameIdCache, $NameItemTag);

@@ -130,8 +130,6 @@ button a{
 .ExempleResponseAPIDOC:hover{
     font-size: inherit;
 }
-
-
 .BlocMenu{
     padding: 10px;
 }
@@ -176,6 +174,13 @@ footer {
 .blocChapitre td:hover{
     Border: 2px solid #FFA500;
 }
+
+.infoDocApi li{
+    margin: 20px;
+}
+
+
+
 /* Styles pour écrans larges (plus de 1800px) */
 @media (min-width: 1800px) {
     .boxAtom {

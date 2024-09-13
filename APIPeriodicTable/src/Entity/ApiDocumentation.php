@@ -21,29 +21,32 @@ class ApiDocumentation
     #[ORM\Column(length: 1000)]
     private ?string $Description = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $ExampleRequest1 = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $ExampleRequest2 = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $ExampleRequest3 = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $ExampleRequest4 = null;
 
     #[ORM\Column(length: 1000, nullable: true)]
     private ?string $ExampleResponse = null;
 
     #[ORM\Column(length: 1000, nullable: true)]
-    private ?string $Attributes = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
     private ?string $Endpoint1 = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $Endpoint2 = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $Endpoint3 = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $Endpoint4 = null;
 
     #[ORM\Column(length: 20)]
     private ?string $ButtonTitle = null;
@@ -126,14 +129,14 @@ class ApiDocumentation
         return $this;
     }
 
-    public function getAttributes(): ?string
+    public function getEndpoint4(): ?string
     {
-        return $this->Attributes;
+        return $this->Endpoint4;
     }
 
-    public function setAttributes(?string $Attributes): static
+    public function setEndpoint4(?string $Endpoint4): static
     {
-        $this->Attributes = $Attributes;
+        $this->Endpoint4 = $Endpoint4;
 
         return $this;
     }
@@ -182,6 +185,18 @@ class ApiDocumentation
     public function setButtonTitle(string $ButtonTitle): static
     {
         $this->ButtonTitle = $ButtonTitle;
+
+        return $this;
+    }
+
+    public function getExampleRequest4(): ?string
+    {
+        return $this->ExampleRequest4;
+    }
+
+    public function setExampleRequest4(string $ExampleRequest4): static
+    {
+        $this->ExampleRequest4 = $ExampleRequest4;
 
         return $this;
     }

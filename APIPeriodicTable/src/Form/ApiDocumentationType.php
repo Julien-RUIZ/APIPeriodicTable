@@ -23,34 +23,38 @@ class ApiDocumentationType extends AbstractType
                 'label'=>'Titre du bouton'
             ])
             ->add('Description', TextareaType::class)
-            ->add('Endpoint1', TextType::class, [
+
+            ->add('Endpoint1', TextareaType::class, [
                 'required'=>false,
             ])
-            ->add('Endpoint2', TextType::class, [
+            ->add('Endpoint2', TextareaType::class, [
                 'required'=>false,
             ])
-            ->add('Endpoint3', TextType::class, [
+            ->add('Endpoint3', TextareaType::class, [
                 'required'=>false,
             ])
-            ->add('ExampleRequest1', TextType::class, [
+            ->add('Endpoint4', TextareaType::class, [
+                'required'=>false,
+            ])
+            ->add('ExampleRequest1', TextareaType::class, [
                 'required'=>false,
                 'label'=>'Exemple de requête 1'
             ])
-            ->add('ExampleRequest2', TextType::class, [
+            ->add('ExampleRequest2', TextareaType::class, [
                 'required'=>false,
                 'label'=>'Exemple de requête 2'
             ])
-            ->add('ExampleRequest3', TextType::class, [
+            ->add('ExampleRequest3', TextareaType::class, [
                 'required'=>false,
                 'label'=>'Exemple de requête 3'
+            ])
+            ->add('ExampleRequest4', TextareaType::class, [
+                'required'=>false,
+                'label'=>'Exemple de requête 4'
             ])
             ->add('ExampleResponse', TextareaType::class, [
                 'required'=>false,
                 'label'=>'Exemple de réponse'
-            ])
-            ->add('Attributes', TextareaType::class, [
-                'required'=>false,
-                'label'=>'Les attributs'
             ])
             ->add('submit', SubmitType::class)
         ;

@@ -34,19 +34,19 @@
                                     <div class="infoDocApi">
                                         <p>{{ apiDoc.Description | nl2br }}</p>
                                     </div>
-
-
                                     {% if apiDoc.Endpoint1 is not empty  %}
                                         <div class="infoDocApi">
                                             <ul>
                                                 <h5>Endpoints :</h5>
-                                                <li>{{ apiDoc.Endpoint1 }}</li>
-
+                                                <li>{{ apiDoc.Endpoint1 | nl2br }}</li>
                                                 {% if apiDoc.Endpoint2 is not empty  %}
-                                                    <li>{{ apiDoc.Endpoint2 }}</li>
+                                                    <li>{{ apiDoc.Endpoint2  | nl2br}}</li>
                                                 {% endif %}
                                                 {% if apiDoc.Endpoint3 is not empty  %}
-                                                    <li>{{ apiDoc.Endpoint3 }}</li>
+                                                    <li>{{ apiDoc.Endpoint3  | nl2br}}</li>
+                                                {% endif %}
+                                                {% if apiDoc.Endpoint4 is not empty  %}
+                                                    <li>{{ apiDoc.Endpoint4  | nl2br}}</li>
                                                 {% endif %}
                                             </ul>
                                         </div>
@@ -56,12 +56,15 @@
                                         <div class="infoDocApi">
                                             <ul>
                                                     <h5>Exemple de requête :</h5>
-                                                    <li>{{ apiDoc.ExampleRequest1 }}</li>
+                                                    <li>{{ apiDoc.ExampleRequest1  | nl2br}}</li>
                                                 {% if apiDoc.ExampleRequest2 is not empty  %}
-                                                    <li>{{ apiDoc.ExampleRequest2 }}</li>
+                                                    <li>{{ apiDoc.ExampleRequest2 | nl2br }}</li>
                                                 {% endif %}
                                                 {% if apiDoc.ExampleRequest3 is not empty  %}
-                                                    <li>{{ apiDoc.ExampleRequest3 }}</li>
+                                                    <li>{{ apiDoc.ExampleRequest3  | nl2br}}</li>
+                                                {% endif %}
+                                                {% if apiDoc.ExampleRequest4 is not empty  %}
+                                                    <li>{{ apiDoc.ExampleRequest4  | nl2br}}</li>
                                                 {% endif %}
                                             </ul>
                                         </div>
@@ -71,13 +74,6 @@
                                         <div class="infoDocApi">
                                             <h5>Exemple de réponse : </h5>
                                             <p class="ExempleResponseAPIDOC" style="white-space: pre-wrap;">{{ apiDoc.ExampleResponse }}</p>
-                                        </div>
-                                    {% endif %}
-
-                                    {% if apiDoc.Attributes is not empty  %}
-                                        <div class="infoDocApi">
-                                            <h5>Définition des attributs : </h5>
-                                            <p>{{ apiDoc.Attributes | nl2br }}</p>
                                         </div>
                                     {% endif %}
                                 </td>

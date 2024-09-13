@@ -25,17 +25,19 @@ class ElementRepository extends ServiceEntityRepository
             return $qb->getQuery()->getResult();
     }
 
-    public function getElementsWithAttributAndPagination($attribut, $page = null, $limit = null ,$id = null){
-        $attibuts = explode(',', $attribut);
-        $queryAttributs = array_map(function ($n){
-            if ($n === "elementCategory.name"){return 'c.name AS categoryname';}
-            if ($n === "elementGroupe.name"){return 'g.name AS groupename';}
-            if ($n != "elementCategory.name" && $n != "elementGroupe.name"){return 'e.'.$n;}
-        }, $attibuts);
-        $qb = $this->createQueryBuilder('e')
-            ->select(implode(',', $queryAttributs))
-            ->leftJoin('e.elementCategory', 'c')
-            ->leftJoin('e.elementGroupe', 'g');
+    public function getElementsWithAttributAndPagination($field, $page = null, $limit = null ,$id = null){
+        $qb = $this->createQueryBuilder('e');
+        if($field!=null){
+            $fields = explode(',', $field);
+            $queryfields = array_map(function ($n){
+                if ($n === "elementCategory.name"){return 'c.name AS categoryname';}
+                if ($n === "elementGroupe.name"){return 'g.name AS groupename';}
+                if ($n != "elementCategory.name" && $n != "elementGroupe.name"){return 'e.'.$n;}
+            }, $fields);
+            $qb->select(implode(',', $queryfields))
+                ->leftJoin('e.elementCategory', 'c')
+                ->leftJoin('e.elementGroupe', 'g');
+        }
         if ($id !== null) {
             $qb->where('e.id = :id')
                 ->setParameter('id', $id);
@@ -65,8 +67,19 @@ class ElementRepository extends ServiceEntityRepository
         return $qb->getQuery()->getResult();
     }
 
-    public function SearchElementsWhithParams(array $param, $page=null, $limit=null){
+    public function SearchElementsWhithParams(array $param, $field=null, $page=null, $limit=null){
         $qb = $this->createQueryBuilder('e');
+
+        if($field!=null){
+            $fields = explode(',', $field);
+            $queryfields = array_map(function ($n){
+                if ($n === "elementCategory.name"){return 'ec.name AS categoryname';}
+                if ($n === "elementGroupe.name"){return 'eg.name AS groupename';}
+                if ($n != "elementCategory.name" && $n != "elementGroupe.name"){return 'e.'.$n;}
+            }, $fields);
+            $qb->select(implode(',', $queryfields));
+
+        }
             foreach ($param as $key=>$value){
                 if ($key==='elementCategory'){
                     $qb->leftJoin('e.elementCategory', 'ec')

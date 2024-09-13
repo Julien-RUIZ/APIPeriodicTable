@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 09 sep. 2024 à 08:04
+-- Généré le : ven. 13 sep. 2024 à 14:06
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -32,14 +32,15 @@ CREATE TABLE IF NOT EXISTS `api_documentation` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `description` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `example_request1` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `example_request2` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `example_request3` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `example_request1` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `example_request2` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `example_request3` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `example_request4` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `example_response` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `attributes` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `endpoint1` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `endpoint2` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `endpoint3` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `endpoint4` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `endpoint1` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `endpoint2` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `endpoint3` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `button_title` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -48,10 +49,10 @@ CREATE TABLE IF NOT EXISTS `api_documentation` (
 -- Déchargement des données de la table `api_documentation`
 --
 
-INSERT INTO `api_documentation` (`id`, `title`, `description`, `example_request1`, `example_request2`, `example_request3`, `example_response`, `attributes`, `endpoint1`, `endpoint2`, `endpoint3`, `button_title`) VALUES
-(3, 'Introduction', 'L\'API des Éléments Périodiques est une interface conçue pour fournir des informations complètes et à jour sur les éléments chimiques du tableau périodique. Cette API permet aux développeurs d\'accéder facilement à des données précises concernant les éléments chimiques, telles que le numéro atomique, le symbole, la masse atomique, les propriétés physiques et chimiques, ainsi que d\'autres caractéristiques essentielles.\n\nQue vous travailliez sur une application éducative, scientifique, ou que vous ayez besoin d\'intégrer des informations sur les éléments chimiques dans vos projets, notre API simplifie l\'accès à ces données tout en garantissant leur exactitude et leur fiabilité.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Introduction'),
-(7, 'Authentification et Accès', 'Les requêtes utilisant le verbe GET ne nécessitent aucune authentification. Bien que la documentation soit accessible avec une simple inscription gratuite, l\'accès aux données via des requêtes GET est libre de toute restriction ou contrôle.\n\nEn revanche, si vous souhaitez modifier les données des éléments ou les différentes définitions, une demande devra être effectuée depuis votre espace personnel. À ce stade, une clé API unique vous sera attribuée. Cette clé, valable pour une durée limitée, pourra être renouvelée au besoin. Dans ce cas, une seconde documentation, dédiée aux modifications, sera disponible dans la barre de menu pour guider les utilisateurs à travers ce processus.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Authentification et '),
-(8, 'La liste complète des éléments', '1/ Description : \nL\'utilisation de cette requête va vous permettre de récupérer l\'ensemble des données. Vous aurez ainsi, tous les éléments et leurs attributs associés.\n\n2/ Authentification et Accès :\nAucune authentification.\n\n3/ Gestion des Erreurs :\nAttention à bien respecter l\'écriture de l\'écriture de la requête. Si l\'écriture est correcte, si vous respectez le modèle indiqué ci-dessous par le Endpoint ou l\'exemple de Requête, vous aurez une réponse par le code status HTTP 200 OK. Dans le cas contraire, vous pouvez obtenir une réponse 404 Not Found, signalant que la ressource demandée n\'a pas été trouvée sur le serveur.', 'GET - /api/elements', NULL, NULL, NULL, NULL, 'api/elements', 'GET - /api/elements', NULL, 'Les éléments');
+INSERT INTO `api_documentation` (`id`, `title`, `description`, `example_request1`, `example_request2`, `example_request3`, `example_request4`, `example_response`, `endpoint4`, `endpoint1`, `endpoint2`, `endpoint3`, `button_title`) VALUES
+(3, 'Introduction', 'L\'API des Éléments Périodiques est une interface conçue pour fournir des informations complètes et à jour sur les éléments chimiques du tableau périodique. Cette API permet aux développeurs d\'accéder facilement à des données précises concernant les éléments chimiques, telles que le numéro atomique, le symbole, la masse atomique, les propriétés physiques et chimiques, ainsi que d\'autres caractéristiques essentielles.\n\nQue vous travailliez sur une application éducative, scientifique, ou que vous ayez besoin d\'intégrer des informations sur les éléments chimiques dans vos projets, notre API simplifie l\'accès à ces données tout en garantissant leur exactitude et leur fiabilité.', NULL, NULL, NULL, NULL, 'Voici le modèle d\'un élément avec toutes les données disponibles. Vous pouvez utiliser ce modèle afin de réaliser vos prochaines requêtes sur la suite de la documentation. \n\n[\n	{\n		\"nom\": \"Hydrogène\",\n		\"slug\": \"hydrogene\",\n		\"electron\": \"1\",\n		\"numero\": 1,\n		\"symbole\": \"H\",\n		\"GroupeVertical\": \"1\",\n		\"PeriodeHorizontal\": \"1\",\n		\"masseVolumique\": \"0.00008988 g\\/cm³\",\n		\"cas\": \"12385-13-6\",\n		\"einecs\": \"231-595-7\",\n		\"masseAtomique\": \"1.008\",\n		\"rayonAtomique\": \"53 pm\",\n		\"rayonDeCovalence\": \"38 pm\",\n		\"rayonDeVanDerWaals\": \"120 pm\",\n		\"configurationElectronique\": \"1s¹\",\n		\"etatOxydation\": \"-1, +1\",\n		\"decouverteAnnee\": \"1766\",\n		\"decouverteNoms\": \"Henry Cavendish\",\n		\"decouvertePays\": \"Grande-Bretagne\",\n		\"electronegativite\": \"2.20\",\n		\"pointDeFusion\": \"-259.16\",\n		\"pointDEbullition\": \"-252.87\",\n		\"Radioactif\": false,\n		\"elementCategory\": {\n			\"name\": \"Non métal\",\n			\"slug\": \"nonMetal\"\n		},\n		\"elementGroupe\": {\n			\"name\": \"Alcalins\",\n			\"slug\": \"alcalins\"\n		}\n	}\n]', NULL, NULL, NULL, NULL, 'Introduction'),
+(7, 'Authentification et Accès', 'Les requêtes utilisant le verbe GET ne nécessitent aucune authentification. Bien que la documentation soit accessible avec une simple inscription gratuite, l\'accès aux données via des requêtes GET est libre de toute restriction ou contrôle.\n\nEn revanche, si vous souhaitez modifier les données des éléments ou les différentes définitions, une demande devra être effectuée depuis votre espace personnel. À ce stade, une clé API unique vous sera attribuée. Cette clé, valable pour une durée limitée, pourra être renouvelée au besoin. Dans ce cas, une seconde documentation, dédiée aux modifications, sera disponible dans la barre de menu pour guider les utilisateurs à travers ce processus.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Authentification et '),
+(8, 'Tous les éléments', '1/ Description : \nRécupère tous les éléments. Il est possible de spécifier des attributs ou d\'utiliser la pagination.', 'GET - /api/elements', 'GET - /api/elements?field=nom\nGestion des erreurs : \nToutes erreurs telles qu\'une virgule en fin de ligne ou une erreur d\'écriture d\'un attribut entrainera une erreur 500.', 'GET - /api/elements?page=1&limit=6\nGestion des erreurs :\nToutes erreurs sur l\'intégration des deux variables entraineront une 404. À savoir que dans notre cas, nous aurons obligatoirement un maximum de 118 éléments. Donc il ne peut y avoir page=2&limit=118 ou page=1&limit=119 ou toutes autres exemples similaires.', 'GET - /api/elements?field=nom,id&page=1&limit=6', 'Exemple de requête 4 - GET - /api/elements?field=nom,id&page=1&limit=6\n\n{\n	\"data\": [\n		{\n			\"nom\": \"Hydrogène\",\n			\"id\": 1\n		},\n		{\n			\"nom\": \"Hélium\",\n			\"id\": 2\n		},\n		{\n			\"nom\": \"Lithium\",\n			\"id\": 3\n		},\n		{\n			\"nom\": \"Béryllium\",\n			\"id\": 4\n		},\n		{\n			\"nom\": \"Bore\",\n			\"id\": 5\n		},\n		{\n			\"nom\": \"Carbone\",\n			\"id\": 6\n		}\n	],\n	\"pagination\": {\n		\"Numéro de la page\": 1,\n		\"Element par page\": 6,\n		\"Page total\": 20,\n		\"Nombre d\'élément max\": 118\n	}\n}', 'api/elements?field={attribut1,attribut2,etc}&page={nbPage}&limit={nbLimit}\n- Tous les éléments du tableau périodique + choix des attributs à afficher + Indication numéro de page et limite élément par page', '/api/elements\n- Tous les éléments du tableau périodique.', 'api/elements?field={attribut1,attribut2,etc}\n- Tous les éléments du tableau périodique + choix des attributs à afficher\n- Pour afficher la catégorie ou le groupe, utiliser :\n *  elementCategory.name, sur le JSON, vous aurez pour nom categoryname\n *  elementGroupe.name, sur le JSON, vous aurez pour nom groupename', 'api/elements?page={n°page}&limit={limit}\n- Tous les éléments du tableau périodique + Indication numéro de page et limite élément par page', 'Tous les éléments');
 
 -- --------------------------------------------------------
 
@@ -310,6 +311,7 @@ DROP TABLE IF EXISTS `element_groupe`;
 CREATE TABLE IF NOT EXISTS `element_groupe` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `group_n` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `definition` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
@@ -319,16 +321,16 @@ CREATE TABLE IF NOT EXISTS `element_groupe` (
 -- Déchargement des données de la table `element_groupe`
 --
 
-INSERT INTO `element_groupe` (`id`, `name`, `group_n`, `definition`) VALUES
-(1, 'Alcalins', 'Groupe1', 'Les éléments du groupe 1 sont des métaux très réactifs avec un seul électron de valence. Ils réagissent fortement avec l\'eau pour former des bases fortes et des gaz d\'hydrogène. Ils sont mous et peuvent être coupés avec un couteau.'),
-(2, 'Alcalino-terreux', 'Groupe2', 'Les éléments du groupe 2 sont des métaux réactifs ayant deux électrons de valence. Ils sont plus durs que les alcalins et réagissent également avec l\'eau, mais moins violemment. Ils forment des oxydes et des hydroxydes.'),
-(3, 'Métaux de transition', 'Groupe3_12', 'Ces éléments sont caractérisés par leur capacité à adopter plusieurs états d\'oxydation et à former des complexes. Ils sont généralement de bons conducteurs électriques et thermiques et sont souvent utilisés dans l\'industrie et la fabrication de matériaux.'),
-(5, 'Groupe du Bore', 'Groupe13', 'Ce groupe comprend des métalloïdes et des métaux pauvres avec trois électrons de valence. Les éléments de ce groupe sont moins réactifs que les métaux alcalins ou alcalino-terreux, et sont souvent utilisés dans les matériaux de construction et l\'électronique.'),
-(6, 'Groupe du Carbone', 'Groupe14', 'Les éléments de ce groupe ont quatre électrons de valence et montrent une grande diversité dans leurs propriétés, allant des non-métaux (carbone) aux métaux (étain, plomb). Ils sont essentiels dans la chimie organique et la construction de semi-conducteurs.'),
-(7, 'Pnictogènes', 'Groupe15', 'Les éléments de ce groupe possèdent cinq électrons de valence. Ils forment des composés stables avec l\'oxygène et d\'autres éléments, et sont présents dans des molécules biologiquement importantes comme l\'ADN et les protéines.'),
-(8, 'Chalcogènes', 'Groupe16', 'Les éléments du groupe 16 ont six électrons de valence et sont souvent impliqués dans des réactions de réduction. Ils forment des oxydes et des composés avec des métaux pour créer des minéraux essentiels à la vie.'),
-(9, 'Halogènes', 'Groupe17', 'Les halogènes sont des éléments très réactifs avec sept électrons de valence, ce qui leur permet de réagir facilement avec les métaux pour former des sels. Ils sont également utilisés comme agents désinfectants et dans les lampes à haute intensité.'),
-(10, 'Gaz Nobles', 'Groupe18', 'Les gaz nobles sont chimiquement inertes en raison de leur couche d\'électrons complète. Ils sont utilisés dans les applications nécessitant un environnement non réactif, comme les éclairages, les lasers et les systèmes de refroidissement.');
+INSERT INTO `element_groupe` (`id`, `name`, `slug`, `group_n`, `definition`) VALUES
+(1, 'Alcalins', 'alcalins', 'Groupe1', 'Les éléments du groupe 1 sont des métaux très réactifs avec un seul électron de valence. Ils réagissent fortement avec l\'eau pour former des bases fortes et des gaz d\'hydrogène. Ils sont mous et peuvent être coupés avec un couteau.'),
+(2, 'Alcalino-terreux', 'alcalinoterreux', 'Groupe2', 'Les éléments du groupe 2 sont des métaux réactifs ayant deux électrons de valence. Ils sont plus durs que les alcalins et réagissent également avec l\'eau, mais moins violemment. Ils forment des oxydes et des hydroxydes.'),
+(3, 'Métaux de transition', 'metauxdetransition', 'Groupe3_12', 'Ces éléments sont caractérisés par leur capacité à adopter plusieurs états d\'oxydation et à former des complexes. Ils sont généralement de bons conducteurs électriques et thermiques et sont souvent utilisés dans l\'industrie et la fabrication de matériaux.'),
+(5, 'Groupe du Bore', 'groupedubore', 'Groupe13', 'Ce groupe comprend des métalloïdes et des métaux pauvres avec trois électrons de valence. Les éléments de ce groupe sont moins réactifs que les métaux alcalins ou alcalino-terreux, et sont souvent utilisés dans les matériaux de construction et l\'électronique.'),
+(6, 'Groupe du Carbone', 'groupeducarbonne', 'Groupe14', 'Les éléments de ce groupe ont quatre électrons de valence et montrent une grande diversité dans leurs propriétés, allant des non-métaux (carbone) aux métaux (étain, plomb). Ils sont essentiels dans la chimie organique et la construction de semi-conducteurs.'),
+(7, 'Pnictogènes', 'pnictogene', 'Groupe15', 'Les éléments de ce groupe possèdent cinq électrons de valence. Ils forment des composés stables avec l\'oxygène et d\'autres éléments, et sont présents dans des molécules biologiquement importantes comme l\'ADN et les protéines.'),
+(8, 'Chalcogènes', 'chalcogenes', 'Groupe16', 'Les éléments du groupe 16 ont six électrons de valence et sont souvent impliqués dans des réactions de réduction. Ils forment des oxydes et des composés avec des métaux pour créer des minéraux essentiels à la vie.'),
+(9, 'Halogènes', 'halogenes', 'Groupe17', 'Les halogènes sont des éléments très réactifs avec sept électrons de valence, ce qui leur permet de réagir facilement avec les métaux pour former des sels. Ils sont également utilisés comme agents désinfectants et dans les lampes à haute intensité.'),
+(10, 'Gaz Nobles', 'gaznoble', 'Groupe18', 'Les gaz nobles sont chimiquement inertes en raison de leur couche d\'électrons complète. Ils sont utilisés dans les applications nécessitant un environnement non réactif, comme les éclairages, les lasers et les systèmes de refroidissement.');
 
 -- --------------------------------------------------------
 
