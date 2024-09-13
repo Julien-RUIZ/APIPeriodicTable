@@ -36,13 +36,19 @@ h5, h6{
     justify-content: center;
 }
 .tdTable, .thTable{
-    border-width: 1px 3px 3px 1px;
+    border-width: 1px 4px 4px 1px;
     border-style: solid;
     border-color: black;
     text-align: center;
+    border-radius: 10%;
 }
+
 .thTable:hover{
     border-color: #FFA500;
+    transform: scale(1.15);
+}
+.tdTable:hover{
+    transform: scale(1.15);
 }
 .ElementThHorizontal{
 
@@ -178,7 +184,6 @@ footer {
 .infoDocApi li{
     margin: 20px;
 }
-
 
 
 /* Styles pour écrans larges (plus de 1800px) */
