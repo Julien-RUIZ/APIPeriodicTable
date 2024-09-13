@@ -16,13 +16,13 @@ class ElementRepository extends ServiceEntityRepository
         parent::__construct($registry, Element::class);
     }
 
-    public function ListeElements($page, $limit){
-        return $this->createQueryBuilder('e')
-            ->setFirstResult(($page-1)*$limit)
-            ->setMaxResults($limit)
-            ->getQuery()
-            ->getResult()
-            ;
+    public function ListeElements($page = null, $limit = null){
+        $qb = $this->createQueryBuilder('e');
+            if($page !== null and $limit !== null){
+                $qb->setFirstResult(($page-1)*$limit)
+                    ->setMaxResults($limit);
+            }
+            return $qb->getQuery()->getResult();
     }
 
     public function getElementsWithAttributAndPagination($attribut, $page = null, $limit = null ,$id = null){
@@ -65,7 +65,7 @@ class ElementRepository extends ServiceEntityRepository
         return $qb->getQuery()->getResult();
     }
 
-    public function SearchElementsWhithParams(array $param){
+    public function SearchElementsWhithParams(array $param, $page=null, $limit=null){
         $qb = $this->createQueryBuilder('e');
             foreach ($param as $key=>$value){
                 if ($key==='elementCategory'){
@@ -82,22 +82,14 @@ class ElementRepository extends ServiceEntityRepository
                     $qb->andwhere('e.'.$key.' = :'.$key)
                         ->setParameter($key, $value) ;
                 }
+                if($page !== null and $limit !== null){
+                    $qb->setFirstResult(($page-1)*$limit)
+                        ->setMaxResults($limit);
+                }
             }
         return $qb->getQuery()->getResult();
     }
 
-    public function SearchElementsWhithParamsAndPagination($param, $page=null, $limit=null){
-        $qb = $this->createQueryBuilder('e');
-        foreach ($param as $key=>$value){
-            $qb->andwhere('e.'.$key.' = :'.$key)
-                ->setParameter($key, $value) ;
-        }
-        if($page !== null and $limit !== null){
-            $qb->setFirstResult(($page-1)*$limit)
-                ->setMaxResults($limit);
-        }
-        return $qb->getQuery()->getResult();
-    }
 
 
     //    /**

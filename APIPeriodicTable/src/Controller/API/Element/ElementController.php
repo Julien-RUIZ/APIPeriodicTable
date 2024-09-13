@@ -33,23 +33,13 @@ class ElementController extends AbstractController
         $limit = $query->get('limit');
         $cacheKey = $field.'-'.$page.'-'.$limit;
 
-        if ($page===null && $limit===null && isset($field)){
-            $donnees = $elementRepository->getElementsWithAttribut($field);
-            $NameIdCache= 'getElementsWithAttributes'.$cacheKey;
-            $NameItemTag = $NameIdCache;
-        }
-        if (isset($page) && isset($limit) && isset($field)){
+        if ( isset($field)){
             $donnees = $elementRepository->getElementsWithAttributAndPagination($field , $page, $limit);
             $NameIdCache= 'getElementsWithAttributesAndPagination'.$cacheKey;
             $NameItemTag = $NameIdCache;
         }
-        if (isset($page) && isset($limit) && $field===null){
+        if ($field===null){
             $donnees = $elementRepository->ListeElements($page, $limit);
-            $NameIdCache= 'getElementsWithPagination'.$cacheKey;
-            $NameItemTag = $NameIdCache;
-        }
-        if ($page===null && $limit===null && $field===null){
-            $donnees = $elementRepository->findAll();
             $NameIdCache= 'getElements'.$cacheKey.'All';
             $NameItemTag = $NameIdCache;
         }
@@ -102,7 +92,7 @@ class ElementController extends AbstractController
      * For elementCategory and elementGroupe => use slug
      */
     #[Route('/api/elements/search', name: 'api_element_search', requirements: ['nom'=>'/^[^<>]*$/'], methods: ['GET'])]
-    public function getElementByParamAndValue(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService): Response
+    public function getElementByParamAndValue(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
     {
         $query = $request->query;
         $page = $query->get('page');
@@ -116,18 +106,17 @@ class ElementController extends AbstractController
             }
         }
         $params = array_combine($param,$valeur);
-        if ($page=== null && $limit===null){
-            $donnees = $elementRepository->SearchElementsWhithParams($params);
-        }
-        if (isset($page) && isset($limit)){
-            $donnees = $elementRepository->SearchElementsWhithParamsAndPagination($params, $page, $limit);
-        }
+        $donnees = $elementRepository->SearchElementsWhithParams($params, $page, $limit);
         if (empty($donnees)){
             throw new NotFoundException();
         }
+        $cacheKey =implode('-',$param).'-'.implode('-',$valeur).'-'.$page.'-'.$limit;
+        $NameIdCache= 'getElementByParamAndValue'.$cacheKey;
+        $NameItemTag = $NameIdCache;
         $nbDonnee=count($elementRepository->SearchElementsWhithParams($params));
         $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
-        $elements = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
+        $infoElement = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
+        $elements = $cacheService->CacheRequest($infoElement, $page, $limit, $NameIdCache, $NameItemTag);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
     }
 }
