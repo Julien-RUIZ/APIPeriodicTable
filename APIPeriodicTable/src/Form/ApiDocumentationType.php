@@ -52,6 +52,10 @@ class ApiDocumentationType extends AbstractType
                 'required'=>false,
                 'label'=>'Exemple de requête 4'
             ])
+            ->add('Error', TextareaType::class, [
+                'required'=>false,
+                'label'=>'Gestion des erreurs'
+            ])
             ->add('ExampleResponse', TextareaType::class, [
                 'required'=>false,
                 'label'=>'Exemple de réponse'

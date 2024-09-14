@@ -51,6 +51,9 @@ class ApiDocumentation
     #[ORM\Column(length: 20)]
     private ?string $ButtonTitle = null;
 
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $Error = null;
+
 
     public function getId(): ?int
     {
@@ -197,6 +200,18 @@ class ApiDocumentation
     public function setExampleRequest4(string $ExampleRequest4): static
     {
         $this->ExampleRequest4 = $ExampleRequest4;
+
+        return $this;
+    }
+
+    public function getError(): ?string
+    {
+        return $this->Error;
+    }
+
+    public function setError(?string $Error): static
+    {
+        $this->Error = $Error;
 
         return $this;
     }

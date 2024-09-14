@@ -69,6 +69,12 @@
                                             </ul>
                                         </div>
                                     {% endif %}
+                                    {% if apiDoc.Error is not empty  %}
+                                        <div class="infoDocApi">
+                                            <h5>Gestion des erreurs : </h5>
+                                            <p>{{ apiDoc.Error   | nl2br}}</p>
+                                        </div>
+                                    {% endif %}
 
                                     {% if apiDoc.ExampleResponse is not empty  %}
                                         <div class="infoDocApi">

@@ -2,6 +2,7 @@
 
 namespace App\Controller\API\Element;
 
+use App\Exception\InvalidPaginationParameterException;
 use App\Exception\NotFoundException;
 use App\Repository\ElementRepository;
 use App\Service\Api\CacheService;
@@ -31,7 +32,10 @@ class ElementController extends AbstractController
         $page = $query->get('page');
         $limit = $query->get('limit');
         $cacheKey = $field.'-'.$page.'-'.$limit;
-
+        $nbDonnee=118;
+        if ((intval($page)*intval($limit))>$nbDonnee or (intval($page)*intval($limit))<=0){
+            throw new NotFoundException("Number of elements exceeded depending on the page and limit variables");
+        }
         if ( isset($field)){
             $donnees = $elementRepository->getElementsWithAttributAndPagination($field , $page, $limit);
             $NameIdCache= 'getElementsWithAttributesAndPagination'.$cacheKey;
@@ -42,9 +46,8 @@ class ElementController extends AbstractController
             $NameIdCache= 'getElements'.$cacheKey.'All';
             $NameItemTag = $NameIdCache;
         }
-        $nbDonnee=118;
-        if (empty($donnees) or (intval($page)*intval($limit))>$nbDonnee && (intval($page)*intval($limit))<!0){
-            throw new NotFoundException();
+        if (empty($donnees)){
+            throw new NotFoundException('Aucune donnée trouvé');
         }
         $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
         $FinalInfo = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);

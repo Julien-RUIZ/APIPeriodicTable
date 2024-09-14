@@ -145,6 +145,25 @@
       <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/symfony/validator" />
       <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/dns" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/cache" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/byte-stream" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/amp" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/daverandom/libdns" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/kelunik/certificate" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/windows-registry" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/sync" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/socket" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/serialization" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/process" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/parser" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/http-client" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/http" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/league/uri-parser" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/amphp/hpack" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/APIPeriodicTable/vendor/league/uri" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
