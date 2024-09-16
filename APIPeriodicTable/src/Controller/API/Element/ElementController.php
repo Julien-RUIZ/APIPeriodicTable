@@ -30,6 +30,7 @@ class ElementController extends AbstractController
         $field = $query->get('field');
         $page = $query->get('page');
         $limit = $query->get('limit');
+        $errorService->ApiError(null, $field, $page, $limit, null);
         $cacheKey = $field.'-'.$page.'-'.$limit;
         $NameIdCache= 'getElementsWithAttributesAndPagination'.$cacheKey;
         $NameItemTag = $NameIdCache;
@@ -38,7 +39,6 @@ class ElementController extends AbstractController
         $nbDonnee=count($elementRepository->getElementsWithAttributAndPagination(null, $field , null, null, null));
 
         $errorService->ApiError($donnees, $field, $page, $limit, null);
-
         $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
         $FinalInfo = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
         $elements = $cacheService->CacheRequest($FinalInfo, $page, $limit, $NameIdCache, $NameItemTag);
@@ -57,7 +57,7 @@ class ElementController extends AbstractController
         $query = $request->query;
         $field = $query->get('field');
         $cacheKey = $field.'-'.$id;
-
+        $errorService->ApiError(null, $field, null, null, $id);
         if ($field === null){
             $donnees = $elementRepository->findBy(['id'=>$id]);
             $NameIdCache= 'getElementWithoutAttributes'.$cacheKey;
@@ -77,11 +77,11 @@ class ElementController extends AbstractController
 
 
     /**
-     * api/elements/search?{param}={value}
-     * api/elements/search?{param}={value}&{param}={value}...
-     * api/elements/search?{param}={value}&{param}={value}...&page={npage}&limit={nlimite}
-     * api/elements/search?{param}={value}&{param}={value}...field={attribut1,attribut2,etc}
-     * api/elements/search?{param}={value}&{param}={value}...field={attribut1,attribut2,etc}&page={npage}&limit={nlimite}
+     * Endpoint : api/elements/search?{param}={value}
+     * Endpoint : api/elements/search?{param}={value}&{param}={value}...
+     * Endpoint : api/elements/search?{param}={value}&{param}={value}...&page={npage}&limit={nlimite}
+     * Endpoint : api/elements/search?{param}={value}&{param}={value}...field={attribut1,attribut2,etc}
+     * Endpoint : api/elements/search?{param}={value}&{param}={value}...field={attribut1,attribut2,etc}&page={npage}&limit={nlimite}
      * Radioactif-> 0=false, 1=true
      * For elementCategory and elementGroupe => use slug
      */
@@ -94,7 +94,7 @@ class ElementController extends AbstractController
         $limit = $query->get('limit');
         $param=[];
         $valeur=[];
-
+        $errorService->ApiError(null, $field, $page, $limit, null);
         foreach ($request->query as $key=>$value){
             if ($key!='page' && $key!='limit'&& $key!='field'){
                 $param[] = $key;
@@ -110,7 +110,7 @@ class ElementController extends AbstractController
         $NameIdCache= 'getElementByParamAndValue'.$cacheKey;
         $NameItemTag = $NameIdCache;
 
-        $errorService->ApiError($donnees, $field, $page, $limit, null);
+        $errorService->ApiError($donnees, $field, null, null, null);
         $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
         $infoElement = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
         $elements = $cacheService->CacheRequest($infoElement, $page, $limit, $NameIdCache, $NameItemTag);
