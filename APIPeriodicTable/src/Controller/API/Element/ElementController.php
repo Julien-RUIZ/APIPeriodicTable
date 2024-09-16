@@ -2,10 +2,9 @@
 
 namespace App\Controller\API\Element;
 
-use App\Exception\InvalidPaginationParameterException;
-use App\Exception\NotFoundException;
 use App\Repository\ElementRepository;
 use App\Service\Api\CacheService;
+use App\Service\Api\ErrorService;
 use App\Service\Api\PaginationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -25,30 +24,21 @@ class ElementController extends AbstractController
      *  Attribute exception : elementGroupe.name -> return groupename
      */
     #[Route('api/elements', name: 'api_elements', methods: ['GET'])]
-    public function getAllElements(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
+    public function getAllElements(ErrorService $errorService, Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
     {
         $query = $request->query;
         $field = $query->get('field');
         $page = $query->get('page');
         $limit = $query->get('limit');
         $cacheKey = $field.'-'.$page.'-'.$limit;
-        $nbDonnee=118;
-        if ((intval($page)*intval($limit))>$nbDonnee or (intval($page)*intval($limit))<=0){
-            throw new NotFoundException("Number of elements exceeded depending on the page and limit variables");
-        }
-        if ( isset($field)){
-            $donnees = $elementRepository->getElementsWithAttributAndPagination($field , $page, $limit);
-            $NameIdCache= 'getElementsWithAttributesAndPagination'.$cacheKey;
-            $NameItemTag = $NameIdCache;
-        }
-        if ($field===null){
-            $donnees = $elementRepository->ListeElements($page, $limit);
-            $NameIdCache= 'getElements'.$cacheKey.'All';
-            $NameItemTag = $NameIdCache;
-        }
-        if (empty($donnees)){
-            throw new NotFoundException('Aucune donnée trouvé');
-        }
+        $NameIdCache= 'getElementsWithAttributesAndPagination'.$cacheKey;
+        $NameItemTag = $NameIdCache;
+
+        $donnees = $elementRepository->getElementsWithAttributAndPagination(null, $field , $page, $limit, null);
+        $nbDonnee=count($elementRepository->getElementsWithAttributAndPagination(null, $field , null, null, null));
+
+        $errorService->ApiError($donnees, $field, $page, $limit, null);
+
         $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
         $FinalInfo = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
         $elements = $cacheService->CacheRequest($FinalInfo, $page, $limit, $NameIdCache, $NameItemTag);
@@ -62,24 +52,24 @@ class ElementController extends AbstractController
      * Attribute exception : elementGroupe.name -> return groupename
      */
     #[Route('api/element/{id}', name: 'api_element', requirements: ['id'=>'\d+'], methods: ['GET'])]
-    public function getElement(int $id,ElementRepository $elementRepository, SerializerInterface $serializer, Request $request, CacheService $cacheService): Response
+    public function getElement(ErrorService $errorService, int $id,ElementRepository $elementRepository, SerializerInterface $serializer, Request $request, CacheService $cacheService): Response
     {
         $query = $request->query;
         $field = $query->get('field');
         $cacheKey = $field.'-'.$id;
+
         if ($field === null){
             $donnees = $elementRepository->findBy(['id'=>$id]);
             $NameIdCache= 'getElementWithoutAttributes'.$cacheKey;
             $NameItemTag = $NameIdCache;
         }
         if ($field !== null){
-            $donnees = $elementRepository->getElementsWithAttribut($field, $id);
+            $donnees = $elementRepository->getElementsWithAttributAndPagination(null, $field, null, null,  $id);
             $NameIdCache= 'getElementsWithAttributes'.$cacheKey;
             $NameItemTag = $NameIdCache;
         }
-        if (empty($donnees)){
-            throw new NotFoundException();
-        }
+
+        $errorService->ApiError($donnees, $field, null, null, $id);
         $infoElement = $serializer->serialize($donnees, 'json', ['groups'=>'ApiElementTotal']);
         $elements = $cacheService->CacheRequest($infoElement, null, null, $NameIdCache, $NameItemTag);
         return new JsonResponse($elements, Response::HTTP_OK, [], true);
@@ -96,7 +86,7 @@ class ElementController extends AbstractController
      * For elementCategory and elementGroupe => use slug
      */
     #[Route('/api/elements/search', name: 'api_element_search', requirements: ['nom'=>'/^[^<>]*$/'], methods: ['GET'])]
-    public function getElementByParamAndValue(Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
+    public function getElementByParamAndValue(ErrorService $errorService,Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
     {
         $query = $request->query;
         $field = $query->get('field');
@@ -104,6 +94,7 @@ class ElementController extends AbstractController
         $limit = $query->get('limit');
         $param=[];
         $valeur=[];
+
         foreach ($request->query as $key=>$value){
             if ($key!='page' && $key!='limit'&& $key!='field'){
                 $param[] = $key;
@@ -111,16 +102,15 @@ class ElementController extends AbstractController
             }
         }
         $params = array_combine($param,$valeur);
-        $donnees = $elementRepository->SearchElementsWhithParams($params,$field, $page, $limit);
-        if (empty($donnees)){
-            throw new NotFoundException();
-        }
+
+        $donnees = $elementRepository->getElementsWithAttributAndPagination($params,$field, $page, $limit, null);
+        $nbDonnee=count( $elementRepository->getElementsWithAttributAndPagination($params,$field, null, null, null));
 
         $cacheKey =implode('-',$param).'-'.implode('-',$valeur).'-'.$page.'-'.$limit.'-'.$field;
         $NameIdCache= 'getElementByParamAndValue'.$cacheKey;
         $NameItemTag = $NameIdCache;
-        $nbDonnee=count($elementRepository->SearchElementsWhithParams($params));
 
+        $errorService->ApiError($donnees, $field, $page, $limit, null);
         $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
         $infoElement = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
         $elements = $cacheService->CacheRequest($infoElement, $page, $limit, $NameIdCache, $NameItemTag);
