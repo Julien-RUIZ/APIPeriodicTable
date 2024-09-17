@@ -8,8 +8,11 @@ use App\Exception\NotFoundException;
 class ErrorService
 {
     public function ApiError($donnees=null, $field=null, $page=null, $limit=null, $id=null){
-        if (empty($donnees)){
-            throw new NotFoundException('Aucune donnée trouvé');
+
+        if (isset($donnees)){
+            if (empty($donnees)){
+                throw new NotFoundException('Aucune donnée trouvé');
+            }
         }
         if ($id>118){
             throw new BadRequestException("Incorrect or incomplete request");

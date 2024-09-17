@@ -30,6 +30,7 @@ class ElementController extends AbstractController
         $field = $query->get('field');
         $page = $query->get('page');
         $limit = $query->get('limit');
+
         $errorService->ApiError(null, $field, $page, $limit, null);
         $cacheKey = $field.'-'.$page.'-'.$limit;
         $NameIdCache= 'getElementsWithAttributesAndPagination'.$cacheKey;
@@ -39,6 +40,7 @@ class ElementController extends AbstractController
         $nbDonnee=count($elementRepository->getElementsWithAttributAndPagination(null, $field , null, null, null));
 
         $errorService->ApiError($donnees, $field, $page, $limit, null);
+
         $PaginatInfo = $paginationService->Pagination($page, $limit, $nbDonnee, $donnees);
         $FinalInfo = $serializer->serialize($PaginatInfo, 'json', ['groups'=>'ApiElementTotal']);
         $elements = $cacheService->CacheRequest($FinalInfo, $page, $limit, $NameIdCache, $NameItemTag);
