@@ -1,13 +1,4 @@
 
-.active{
-    color: white !important;
-}
-.filter{
-    color: #FFA500 !important;
-}
-.affichage{
-    border: 1px solid black;
-}
 h1, h2, h3, h4{
     color: #003366;
     text-align: center;
@@ -19,10 +10,48 @@ h5, h6{
     margin: 10px 0 20px 0;
     font-family: fangsong;
 }
+
+/*partials/navbar.html.twig*/
+.active{
+    color: white !important;
+}
+
+.filter{
+    color: #FFA500 !important;
+}
+
+.BlocMenu{
+    padding: 10px;
+}
+.navbar a{
+    color: #FFA500;
+}
+.navbar-nav .nav-link.active{
+    color: #FFFFFF ;
+}
+
+.nav-item :hover, .navbar .navbar-brand:hover{
+    color: #FFFFFF !important;
+}
+.navbar-brand{
+    border-color: #FFA500 !important;
+    border: 1px solid;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-width: 0;
+    padding-right: 25px;
+}
+.navbar{
+    background-color: #003366;
+    color: #FFA500;
+}
+
+/*table/index.html.twig*/
 .blocPresentation{
     margin: 0 0 0 52px;
 }
 
+/*table/table.html.twig*/
 .Element{
     border-collapse: separate;
     margin: auto;
@@ -50,9 +79,7 @@ h5, h6{
 .tdTable:hover{
     transform: scale(1.15);
 }
-.ElementThHorizontal{
 
-}
 td .nom, td .masseAtomique{
     font-size: x-small;
 }
@@ -86,10 +113,23 @@ button a{
     align-items: baseline;
     justify-content: space-around;
 }
+.ButtonRadioactif{
+    display: flex;
+    flex-direction: column;
+}
+.RadioactifYes:hover{
+    background-color: #B0413E;
+}
+.RadioactifNo:hover{
+    background-color: green;
+}
+/*Element/read_element/index.html.twig*/
 .infosup{
     border: 1px solid black;
     padding: 0 2px 0 2px;
 }
+
+/*admin/Element/adminTable.html.twig*/
 .cardAtom{
     width: 61px;
 }
@@ -112,17 +152,20 @@ button a{
     color: #FFA500;
 }
 
+/*admin/ApiDocumentation/update_api_documentation/index.html.twig*/
 .supprCata{
     display: flex;
     align-items: baseline;
     justify-content: space-around;
 }
-
+/*apiDocumentation/read_api_documentation/index.html.twig*/
 .blocChapitre{
     position: sticky;
     top: 20px;
 }
-
+.infoDocApi li{
+    margin: 20px;
+}
 .infoDocApi{
     background-color: ghostwhite;
     border: 1px solid black;
@@ -136,31 +179,11 @@ button a{
 .ExempleResponseAPIDOC:hover{
     font-size: inherit;
 }
-.BlocMenu{
-    padding: 10px;
-}
-.navbar a{
-    color: #FFA500;
-}
-.navbar-nav .nav-link.active{
-    color: #FFFFFF ;
+.blocChapitre td:hover{
+    Border: 2px solid #FFA500;
 }
 
-.nav-item :hover, .navbar .navbar-brand:hover{
-    color: #FFFFFF !important;
-}
-.navbar-brand{
-    border-color: #FFA500 !important;
-    border: 1px solid;
-    border-bottom-width: 0;
-    border-left-width: 0;
-    border-top-width: 0;
-    padding-right: 25px;
-}
-.navbar{
-    background-color: #003366;
-    color: #FFA500;
-}
+/*partials/footer.html.twig*/
 footer {
     background-color: #003366;
     color: #FFA500;
@@ -169,6 +192,32 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/*home/index.html.twig*/
+.EncartText {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex: 1;
+    min-width: 300px;
+}
+.EncartText h5 {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.BlocHome {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/*All buttons*/
 #api_documentation_submit, #element_submit, #element_category_submit, #element_group_submit, #element_definition_submit, #Button_login, #registration_form_submit{
     background-color: darkgray;
     border-color: darkgray;
@@ -177,15 +226,6 @@ footer {
     background-color: #003366;
     color: #FFA500;
 }
-.blocChapitre td:hover{
-    Border: 2px solid #FFA500;
-}
-
-.infoDocApi li{
-    margin: 20px;
-}
-
-
 /* Styles pour écrans larges (plus de 1800px) */
 @media (min-width: 1800px) {
     .boxAtom {
