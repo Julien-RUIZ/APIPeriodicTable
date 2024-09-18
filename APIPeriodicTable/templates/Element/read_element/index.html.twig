@@ -12,7 +12,7 @@
 
                 {% for propertiesElement in propertiesElements %}
                     {% set variable = propertiesElement %}
-                    {% if propertiesElement != elementCategory and propertiesElement != elementGroupe %}
+                    {% if propertiesElement != 'elementCategory' and propertiesElement != 'elementGroupe'%}
                         <tr>
                             <th scope="row" class="col-6">
                                 {% if listeDefinition[variable] is defined  %}
@@ -20,20 +20,21 @@
                                 {% else %}
                                 {{ propertiesElement}}
                                 {% endif %}
-                                <span class="infosup">?</span>
+                                {# <span class="infosup">?</span> #}
                             </th>
                             <td>
                                 {{ attribute(elements, variable) }}
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
-                                {% if listeDefinition[variable] is defined  %}
+                            {% if listeDefinition[variable] is defined  %}
+                                <td colspan="2">
                                     {{ listeDefinition[variable].getDefinition() | nl2br }}
-                                {% endif %}
-                            </td>
+                                </td>
+                            {% endif %}
                         </tr>
                     {% endif %}
+                    {# Liaison entre table #}
                     {% if propertiesElement == elementCategory %}
                         <tr>
                             <th scope="row">Categorie</th>

@@ -14,8 +14,15 @@
                 </article>
                 <article class="blocPresentation">
                     <h1 class="text-center mt-5">Tableau périodique des éléments</h1>
-
                         {% include 'table/presentation.html.twig' %}
+
+                        {% if def is not empty %}
+                            <div class="defPageTable">
+                                <h3>{{ def.name }}</h3>
+                                <p>{{ def.definition| nl2br }}  </p>
+                            </div>
+                        {% endif %}
+                    </div>
                 </article>
             </div>
         </div>

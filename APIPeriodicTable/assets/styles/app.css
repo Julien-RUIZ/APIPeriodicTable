@@ -50,6 +50,11 @@ h5, h6{
 .blocPresentation{
     margin: 0 0 0 52px;
 }
+.defPageTable{
+    border: 1px solid black;
+    background-color: #cccccc;
+    padding: 10px;
+}
 
 /*table/table.html.twig*/
 .Element{
