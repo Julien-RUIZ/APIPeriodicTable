@@ -113,16 +113,24 @@ button a{
     align-items: baseline;
     justify-content: space-around;
 }
+
+.Buttonname{
+    font-size: 15px;
+    font-weight: bold;
+}
 .ButtonRadioactif{
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
 }
 .RadioactifYes:hover{
-    background-color: #B0413E;
+    color: #B0413E;
+    font-weight: bold;
 }
 .RadioactifNo:hover{
-    background-color: green;
+    color: green;
+    font-weight: bold;
 }
+
 /*Element/read_element/index.html.twig*/
 .infosup{
     border: 1px solid black;

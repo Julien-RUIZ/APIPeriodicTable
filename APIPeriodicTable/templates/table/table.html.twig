@@ -39,86 +39,83 @@
         {% set id=1 %}
         {% for y  in 1..9 %}
         <tbody>
-        <tr>
-            <th scope="row">
-                {% if y<=7 %}
-                    <a href="{{ path('app_tableau', {'param': 'PeriodeHorizontal', 'value': y}) }}">
-                        <div class="thTable">
-                            <div class="boxAtom">{{ y }}</div>
-                        </div>
-                    </a>
-                {% endif %}
-            </th>
-            {% for x  in 1..18 %}
-
-                {% set key = x ~ ',' ~ y %}
-                {% set id = mapping[key] ?? null %}
-
-                {% if
-                    y==1 and  x>1 and x<4  or
-                    y==1 and  x>4 and x<18 or
-                    y==2 and  x>2 and x<13 or
-                    y==3 and  x>2 and x<13 or
-                    y==8 and  x>=1 and x<4 or
-                    y==9 and  x>=1 and x<4
-                %}
-                    <td class="tdTable" style="background-color: #cccccc">
-                        <div class="boxAtom text-center"></div>
-                    </td>
-                {% elseif y==1 and  x==4 %} {# ----------------------------Bouton radioactif #}
-                    <td class="tdTable" style="background-color: #FFFFFF">
-                        <span class="nom">Radioactif ?</span><br>
-                        <div class="ButtonRadioactif">
-                            <div class="RadioactifYes"><a href="{{ path('app_tableau', {'param': 'Radioactif', 'value': 1}) }}">oui</a></div>
-                            <div class="RadioactifNo"><a href="{{ path('app_tableau', {'param': 'Radioactif', 'value': 0}) }}">non</a></div>
-                        </div>
-                    </td>
-                {% elseif y==6 and  x==3 %} {#---------------------------------- Lanthanides #}
-                    {% if Lanthanides != false %}
-                        <td class="tdTable"  style="background-color: {{ category[3].getColor() }};">
-                            <div class="boxAtom text-center"  >
-                                <span class="nom">Lanthanides</span><br>
-                                <span class='numero numeroLanthanides'>57-71</span>
+            <tr>
+                <th scope="row">
+                    {% if y<=7 %}
+                        <a href="{{ path('app_tableau', {'param': 'PeriodeHorizontal', 'value': y}) }}">
+                            <div class="thTable">
+                                <div class="boxAtom">{{ y }}</div>
                             </div>
-                        </td>
-                    {% else %}
-                        <td class="tdTable couleurTdVide"></td>
+                        </a>
                     {% endif %}
-                {% elseif y==7 and  x==3 %}{#---------------------------------- Actinide #}
-                    {% if Actinides != false %}
-                        <td class="tdTable" style="background-color: {{ category[0].getColor() }};">
-                            <div class="boxAtom text-center">
-                                <span class="nom">Actinides</span><br>
-                                <span class='numero numeroActinides'>89-103</span>
-                            </div>
-                        </td>
-                    {% else %}
-                        <td class="tdTable couleurTdVide">
-                    {% endif %}
+                </th>
+                {% set sequence = (y == 1) ? [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] : range(1, 18) %}{# Pour le bouton radioactif avec colspan #}
+                {% for x in sequence %}
+                    {% set key = x ~ ',' ~ y %}
+                    {% set id = mapping[key] ?? null %}
 
-                {% else %}
-                    {% if Elements[id] is defined %}
-                        <td class="tdTable" style="background-color: {{ Elements[id].ElementCategory.color }};">
-                            <a href="{{path('app_read_element', {'id': id})}}">
-                                <div class="boxAtom text-center">
-                                    <span class="nom">{{ Elements[id].nom }}</span>
-                                    <span class="symbole">{{ Elements[id].symbole }}</span>
-                                    <span class="numero">{{ Elements[id].numero }}</span>
-                                    <span class="masseAtomique">{{ Elements[id].masseAtomique|round(2, 'ceil') }}</span>
-                                </div>
-                            </a>
-                        </td>
-
-                    {% else %}
-                        <td class="tdTable couleurTdVide">
+                    {% if
+                        y==1 and  x>1 and x<4  or y==1 and  x>4 and x<18 or
+                        y==2 and  x>2 and x<13 or
+                        y==3 and  x>2 and x<13 or
+                        y==8 and  x>=1 and x<4 or
+                        y==9 and  x>=1 and x<4
+                    %}
+                        <td class="tdTable" style="background-color: #cccccc">
                             <div class="boxAtom text-center"></div>
                         </td>
-                    {% endif %}
-                    {% set id = id+1 %}
-                {% endif %}
+                    {% elseif y==1 and  x==4 %} {# ----------------------------Bouton radioactif #}
+                        <td class="tdTable BlocRadioactif" style="background-color: #FFFFFF" colspan="2">
+                            <span class="Buttonname">Radioactif ?</span><br>
+                            <div class="ButtonRadioactif">
+                                <a href="{{ path('app_tableau', {'param': 'Radioactif', 'value': 1}) }}"><div class="RadioactifYes">oui</div></a>
+                                <a href="{{ path('app_tableau', {'param': 'Radioactif', 'value': 0}) }}"><div class="RadioactifNo">non</div></a>
+                            </div>
+                        </td>
+                    {% elseif y==6 and  x==3 %} {#---------------------------------- Lanthanides #}
+                        {% if Lanthanides != false %}
+                            <td class="tdTable"  style="background-color: {{ category[3].getColor() }};">
+                                <div class="boxAtom text-center"  >
+                                    <span class="nom">Lanthanides</span><br>
+                                    <span class='numero numeroLanthanides'>57-71</span>
+                                </div>
+                            </td>
+                        {% else %}
+                            <td class="tdTable couleurTdVide"></td>
+                        {% endif %}
+                    {% elseif y==7 and  x==3 %}{#---------------------------------- Actinide #}
+                        {% if Actinides != false %}
+                            <td class="tdTable" style="background-color: {{ category[0].getColor() }};">
+                                <div class="boxAtom text-center">
+                                    <span class="nom">Actinides</span><br>
+                                    <span class='numero numeroActinides'>89-103</span>
+                                </div>
+                            </td>
+                        {% else %}
+                            <td class="tdTable couleurTdVide">
+                        {% endif %}
 
-            {% endfor %}
-        </tr>
+                    {% else %}
+                        {% if Elements[id] is defined %}
+                            <td class="tdTable" style="background-color: {{ Elements[id].ElementCategory.color }};">
+                                <a href="{{path('app_read_element', {'id': id})}}">
+                                    <div class="boxAtom text-center">
+                                        <span class="nom">{{ Elements[id].nom }}</span>
+                                        <span class="symbole">{{ Elements[id].symbole }}</span>
+                                        <span class="numero">{{ Elements[id].numero }}</span>
+                                        <span class="masseAtomique">{{ Elements[id].masseAtomique|round(2, 'ceil') }}</span>
+                                    </div>
+                                </a>
+                            </td>
+                        {% else %}
+                            <td class="tdTable couleurTdVide">
+                                <div class="boxAtom text-center"></div>
+                            </td>
+                        {% endif %}
+                        {% set id = id+1 %}
+                    {% endif %}
+                {% endfor %}
+            </tr>
         </tbody>
         {% endfor %}
     </table>
