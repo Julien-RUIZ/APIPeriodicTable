@@ -50,10 +50,18 @@ h5, h6{
 .blocPresentation{
     margin: 0 0 0 52px;
 }
-.defPageTable{
-    border: 1px solid black;
-    background-color: #cccccc;
-    padding: 10px;
+.defPageTable h3, .defPageTable p{
+    color: #FFFFFF;
+    font-family: cursive;
+}
+.ElementTable{
+    background-image: url("images/black-1072366.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.blocPresentation h1, .blocPresentation p{
+    color: #FFFFFF;
+    font-family: cursive;
 }
 
 /*table/table.html.twig*/
@@ -76,12 +84,23 @@ h5, h6{
     text-align: center;
     border-radius: 10%;
 }
+.thTable{
+    background-color: #FFFFFF;
+}
+.BlocRadioactif{
+    background-color: #FFFFFF;
+    border-width: 1px 4px 4px 1px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    border-radius: 15%;
+}
 
 .thTable:hover{
     border-color: #FFA500;
     transform: scale(1.15);
 }
-.tdTable:hover{
+.tdTable:hover, .BlocRadioactif:hover{
     transform: scale(1.15);
 }
 
@@ -249,6 +268,11 @@ footer {
         display: flex;
         justify-content: space-around;
     }
+    .ElementTable{
+        background-image: url("/images/black-1072366_1920.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 @media (max-width: 1800px) and (min-width: 1600px) {
@@ -268,6 +292,11 @@ footer {
     .BlocTableauFiltre{
         display: flex;
         justify-content: space-around;
+    }
+    .ElementTable{
+        background-image: url("/images/black-1072366_1920.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
@@ -293,6 +322,11 @@ footer {
         display: flex;
         flex-direction: column;
     }
+    .ElementTable{
+        background-image: url("/images/black-1072366_1920.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 /* Styles pour écrans de taille tablette (de 768px à 1200px) */
@@ -312,6 +346,11 @@ footer {
     }
     td .numero{
         font-size: 15px;
+    }
+    .ElementTable{
+        background-image: url("/images/black-1072366_1920.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
@@ -338,6 +377,11 @@ footer {
     table th span{
         display: none;
     }
+    .ElementTable{
+        background-image: url("/images/black-1072366_1280.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 @media (max-width: 900px) and (min-width: 768px){
     .boxAtom {
@@ -361,6 +405,11 @@ footer {
     }
     table th span{
         display: none;
+    }
+    .ElementTable{
+        background-image: url("/images/black-1072366_1280.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
@@ -387,6 +436,11 @@ footer {
     table th span{
         display: none;
     }
+    .ElementTable{
+        background-image: url("/images/black-1072366_1280.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 @media (max-width: 600px){
@@ -410,5 +464,10 @@ footer {
     }
     table th span{
         display: none;
+    }
+    .ElementTable{
+        background-image: url("/images/black-1072366_1280.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }

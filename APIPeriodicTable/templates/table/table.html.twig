@@ -61,11 +61,11 @@
                         y==8 and  x>=1 and x<4 or
                         y==9 and  x>=1 and x<4
                     %}
-                        <td class="tdTable" style="background-color: #cccccc">
+                        <td class="tdTableEmpty" >
                             <div class="boxAtom text-center"></div>
                         </td>
                     {% elseif y==1 and  x==4 %} {# ----------------------------Bouton radioactif #}
-                        <td class="tdTable BlocRadioactif" style="background-color: #FFFFFF" colspan="2">
+                        <td class=" BlocRadioactif" style="background-color: #FFFFFF" colspan="2">
                             <span class="Buttonname">Radioactif ?</span><br>
                             <div class="ButtonRadioactif">
                                 <a href="{{ path('app_tableau', {'param': 'Radioactif', 'value': 1}) }}"><div class="RadioactifYes">oui</div></a>
