@@ -45,6 +45,16 @@ h5, h6{
     background-color: #003366;
     color: #FFA500;
 }
+/*partials/headband.html.twig*/
+.headbandHome, .headbandDocApi{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 230px;
+}
+.headbandHome{
+    background-image: url("/images/1920recadre.jpg");
+}
+
 
 /*table/index.html.twig*/
 .blocPresentation{
@@ -55,13 +65,18 @@ h5, h6{
     font-family: cursive;
 }
 .ElementTable{
-    background-image: url("images/black-1072366.jpg");
+    background-image: url("/images/black-1072366_1920.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .blocPresentation h1, .blocPresentation p{
     color: #FFFFFF;
     font-family: cursive;
+}
+.separation{
+    border: 2px solid white;
+    width: 200px;
+    margin: auto;
 }
 
 /*table/table.html.twig*/
@@ -214,6 +229,9 @@ button a{
 .blocChapitre td:hover{
     Border: 2px solid #FFA500;
 }
+.BlocDocApi{
+    margin: 100px 0 0 0 ;
+}
 
 /*partials/footer.html.twig*/
 footer {
@@ -268,11 +286,6 @@ footer {
         display: flex;
         justify-content: space-around;
     }
-    .ElementTable{
-        background-image: url("/images/black-1072366_1920.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
 }
 
 @media (max-width: 1800px) and (min-width: 1600px) {
@@ -292,11 +305,6 @@ footer {
     .BlocTableauFiltre{
         display: flex;
         justify-content: space-around;
-    }
-    .ElementTable{
-        background-image: url("/images/black-1072366_1920.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 }
 
@@ -322,11 +330,6 @@ footer {
         display: flex;
         flex-direction: column;
     }
-    .ElementTable{
-        background-image: url("/images/black-1072366_1920.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
 }
 
 /* Styles pour écrans de taille tablette (de 768px à 1200px) */
@@ -346,11 +349,6 @@ footer {
     }
     td .numero{
         font-size: 15px;
-    }
-    .ElementTable{
-        background-image: url("/images/black-1072366_1920.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 }
 
@@ -377,11 +375,6 @@ footer {
     table th span{
         display: none;
     }
-    .ElementTable{
-        background-image: url("/images/black-1072366_1280.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
 }
 @media (max-width: 900px) and (min-width: 768px){
     .boxAtom {
@@ -405,11 +398,6 @@ footer {
     }
     table th span{
         display: none;
-    }
-    .ElementTable{
-        background-image: url("/images/black-1072366_1280.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 }
 
@@ -436,11 +424,6 @@ footer {
     table th span{
         display: none;
     }
-    .ElementTable{
-        background-image: url("/images/black-1072366_1280.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
 }
 
 @media (max-width: 600px){
@@ -464,10 +447,5 @@ footer {
     }
     table th span{
         display: none;
-    }
-    .ElementTable{
-        background-image: url("/images/black-1072366_1280.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 }

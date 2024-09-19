@@ -1,4 +1,4 @@
-{% extends 'baseTable.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Hello TableauController!{% endblock %}
 
@@ -27,7 +27,8 @@
                     </div>
 
                         {% if def is not empty %}
-                            <div class="defPageTable">
+                            <div class="separation mt-5"></div>
+                            <div class="defPageTable mt-5">
                                 <h3>{{ def.name }}</h3>
                                 <p>{{ def.definition| nl2br }}  </p>
                             </div>
