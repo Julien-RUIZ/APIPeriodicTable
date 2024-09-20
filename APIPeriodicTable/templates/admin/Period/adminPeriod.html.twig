@@ -1,0 +1,23 @@
+<article class="adminGroup">
+    <h5>Périodes.</h5>
+    <div class="my-2 groupCard">
+        {% for Period in Periods %}
+            <div class="card cardCat my-1 mx-1">
+                <a href="{{ path('app_update_period', {id: Period.id}) }}" >
+                    <div class="card-body">
+                        <div class="CardSymbole text-center">{{ Period.name }}</div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+        {% if is_granted('ROLE_SUPER_ADMIN')%}
+            <div class="card cardCat my-1 mx-1">
+                <a href="{{ path('app_create_period') }}" >
+                    <div class="card-body">
+                        <div class="CardSymbole text-center">+</div>
+                    </div>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</article>

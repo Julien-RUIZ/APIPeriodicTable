@@ -15,29 +15,9 @@ class ElementCategoryRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, ElementCategory::class);
     }
-
-    //    /**
-    //     * @return ElementCategory[] Returns an array of ElementCategory objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('a.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?ElementCategory
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    public function getAdminInfo(){
+        $qb = $this->createQueryBuilder('c')
+            ->select('c.name', 'c.id');
+        return $qb->getQuery()->getResult();
+    }
 }

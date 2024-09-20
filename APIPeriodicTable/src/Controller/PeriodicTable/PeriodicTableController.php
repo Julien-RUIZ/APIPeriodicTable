@@ -6,6 +6,7 @@ use App\Interface\ElementHelperInterface;
 use App\Repository\ElementCategoryRepository;
 use App\Repository\ElementDefinitionsRepository;
 use App\Repository\ElementGroupeRepository;
+use App\Repository\ElementPeriodRepository;
 use App\Repository\ElementRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +16,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class PeriodicTableController extends AbstractController
 {
 
-    public function __construct(private readonly ElementGroupeRepository $groupeRepository ,private readonly ElementDefinitionsRepository $definitionsRepository,private array $ListeElements=[], private array $Elements=[], private array $listefamily=[], private int $Lanthanides=1,  private int $Actinides=1)
+    public function __construct(private readonly ElementPeriodRepository $periodRepository,private readonly ElementGroupeRepository $groupeRepository ,private readonly ElementDefinitionsRepository $definitionsRepository,private array $ListeElements=[], private array $Elements=[], private array $listefamily=[], private int $Lanthanides=1,  private int $Actinides=1)
     {
     }
 
@@ -54,12 +55,14 @@ class PeriodicTableController extends AbstractController
     private function definitionParam($param, $value){
         if ($param == 'GroupeVertical'){
             if ($value >= 3 and $value<=12 ){
-                $def = $this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12']);
+                $def = ['definition'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
             }else{
-                $def = $this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value]);
+                $def = ['definition'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
             }
+        }elseif ($param == 'PeriodeHorizontal'){
+            $def=['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
         }else{
-            $def= $this->definitionsRepository->findOneBy(['name'=>$param]);
+            $def=['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param])];
         }
         return $def;
     }

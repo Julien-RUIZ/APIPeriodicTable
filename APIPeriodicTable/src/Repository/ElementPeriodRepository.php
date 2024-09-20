@@ -2,23 +2,24 @@
 
 namespace App\Repository;
 
-use App\Entity\ElementGroupe;
+use App\Entity\ElementPeriod;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<ElementGroupe>
+ * @extends ServiceEntityRepository<ElementPeriod>
  */
-class ElementGroupeRepository extends ServiceEntityRepository
+class ElementPeriodRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ElementGroupe::class);
+        parent::__construct($registry, ElementPeriod::class);
     }
 
     public function getAdminInfo(){
-        $qb = $this->createQueryBuilder('g')
-            ->select('g.name', 'g.id');
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.name', 'p.id');
         return $qb->getQuery()->getResult();
     }
+
 }

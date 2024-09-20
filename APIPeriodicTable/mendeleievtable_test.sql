@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 18 sep. 2024 à 15:03
+-- Généré le : ven. 20 sep. 2024 à 14:37
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -280,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `element_definitions` (
   `definition` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `name_property_element` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Déchargement des données de la table `element_definitions`
@@ -303,7 +303,8 @@ INSERT INTO `element_definitions` (`id`, `name`, `definition`, `name_property_el
 (14, 'Symbole chimique', 'Le symbole chimique d\'un élément est une abréviation ou un code utilisé pour représenter un élément chimique spécifique dans le tableau périodique. Ce symbole est généralement composé d\'une ou deux lettres, où la première lettre est toujours en majuscule et la seconde en minuscule (si elle existe). Par exemple, le symbole de l\'hydrogène est H, celui de l\'oxygène est O, et celui du fer est Fe.', 'symbole'),
 (15, 'Numéro atomique', 'Le numéro atomique d\'un élément, noté généralement par la lettre Z, est le nombre de protons présents dans le noyau de chaque atome de cet élément. C\'est une caractéristique fondamentale qui détermine l\'identité de l\'élément et sa position dans le tableau périodique. Par exemple, l\'élément hydrogène à un numéro atomique de 1, ce qui signifie qu\'il possède un proton dans son noyau. Le numéro atomique détermine également la charge positive du noyau et, dans un atome neutre, il est égal au nom.', 'numero'),
 (18, 'Nom', 'mijuhkljhvygboi', 'nom'),
-(19, 'Radioactif', 'Un élément radioactif est un élément dont les noyaux atomiques sont instables. Ces noyaux se désintègrent spontanément au fil du temps, émettant des radiations sous forme de particules ou d\'énergie. Ce processus est appelé radioactivité.\r\n\r\nLes éléments radioactifs peuvent émettre trois types principaux de rayonnements :\r\nRayonnement alpha (α) : particules composées de deux protons et deux neutrons.\r\nRayonnement bêta (β) : particules, électrons ou positrons.\r\nRayonnement gamma (γ) : rayonnement électromagnétique de haute énergie.\r\n\r\nLa radioactivité est une propriété naturelle de certains éléments, notamment ceux ayant un nombre élevé de protons et de neutrons dans leur noyau, comme l\'uranium (U), le plutonium (Pu), ou le radium (Ra). Ces éléments sont situés principalement en bas du tableau périodique dans les actinides et les éléments transuraniens.', 'Radioactif');
+(19, 'Radioactif', 'Un élément radioactif est un élément dont les noyaux atomiques sont instables. Ces noyaux se désintègrent spontanément au fil du temps, émettant des radiations sous forme de particules ou d\'énergie. Ce processus est appelé radioactivité.\r\n\r\nLes éléments radioactifs peuvent émettre trois types principaux de rayonnements :\r\nRayonnement alpha (α) : particules composées de deux protons et deux neutrons.\r\nRayonnement bêta (β) : particules, électrons ou positrons.\r\nRayonnement gamma (γ) : rayonnement électromagnétique de haute énergie.\r\n\r\nLa radioactivité est une propriété naturelle de certains éléments, notamment ceux ayant un nombre élevé de protons et de neutrons dans leur noyau, comme l\'uranium (U), le plutonium (Pu), ou le radium (Ra). Ces éléments sont situés principalement en bas du tableau périodique dans les actinides et les éléments transuraniens.', 'Radioactif'),
+(20, 'PeriodeHorizontal', 'Il indique combien de couches d\'électrons entourent le noyau d\'un atome. Par exemple, les éléments de la 1ère période ont une seule couche d\'électrons (comme l\'hydrogène et l\'hélium), tandis que ceux de la 7e période en ont sept.\r\n\r\nLes propriétés chimiques des éléments varient de manière régulière le long d\'une période. \r\nLes éléments sur la gauche (métaux alcalins) sont plus réactifs.\r\nVers la droite de la période, on retrouve les métaux de transition, puis les non-métaux et les gaz nobles.\r\nVariation des propriétés : En se déplaçant de gauche à droite au sein d\'une période, le rayon atomique diminue, tandis que l\'électronégativité et l\'énergie d\'ionisation augmentent.\r\n\r\nExemple :\r\nPériode 2 : Elle inclut des éléments comme le lithium (Li), le carbone (C), l\'oxygène (O), et le néon (Ne). Tous ces éléments possèdent deux couches d\'électrons.\r\nEn résumé, une période regroupe les éléments avec le même nombre de couches électroniques, mais leurs propriétés chimiques changent au fur et à', 'PeriodeHorizontal');
 
 -- --------------------------------------------------------
 
@@ -335,6 +336,33 @@ INSERT INTO `element_groupe` (`id`, `name`, `slug`, `group_n`, `definition`) VAL
 (8, 'Chalcogènes', 'chalcogenes', 'Groupe16', 'Les éléments du groupe 16 ont six électrons de valence et sont souvent impliqués dans des réactions de réduction. Ils forment des oxydes et des composés avec des métaux pour créer des minéraux essentiels à la vie.'),
 (9, 'Halogènes', 'halogenes', 'Groupe17', 'Les halogènes sont des éléments très réactifs avec sept électrons de valence, ce qui leur permet de réagir facilement avec les métaux pour former des sels. Ils sont également utilisés comme agents désinfectants et dans les lampes à haute intensité.'),
 (10, 'Gaz Nobles', 'gaznoble', 'Groupe18', 'Les gaz nobles sont chimiquement inertes en raison de leur couche d\'électrons complète. Ils sont utilisés dans les applications nécessitant un environnement non réactif, comme les éclairages, les lasers et les systèmes de refroidissement.');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `element_period`
+--
+
+DROP TABLE IF EXISTS `element_period`;
+CREATE TABLE IF NOT EXISTS `element_period` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `definition` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Déchargement des données de la table `element_period`
+--
+
+INSERT INTO `element_period` (`id`, `name`, `definition`) VALUES
+(1, 'Période 1', 'Éléments : Hydrogène (H), Hélium (He)Caractéristiques : La première période ne contient que deux éléments. L\'hydrogène, un non-métal, est le plus léger de tous les éléments, et l\'hélium est un gaz noble. Les atomes de ces éléments possèdent une seule couche d\'électrons. L\'hélium, grâce à sa stabilité (deux électrons dans sa couche externe), est chimiquement inerte.'),
+(2, 'Période 2', 'Éléments : Lithium (Li), Béryllium (Be), Bore (B), Carbone (C), Azote (N), Oxygène (O), Fluor (F), Néon (Ne)\n\nCaractéristiques : Les éléments de cette période possèdent deux couches d\'électrons. On y trouve des métaux (lithium, béryllium), des métalloïdes (bore), des non-métaux (carbone, azote, oxygène, fluor) et un gaz noble (néon). Les propriétés varient fortement d\'un élément à l\'autre, allant de métaux réactifs à des non-métaux et un gaz inerte (néon).'),
+(3, 'Période 3', 'Éléments : Sodium (Na), Magnésium (Mg), Aluminium (Al), Silicium (Si), Phosphore (P), Soufre (S), Chlore (Cl), Argon (Ar)\r\n\r\nCaractéristiques : Les atomes de la période 3 ont trois couches d\'électrons. Cette période inclut des métaux réactifs comme le sodium et le magnésium, ainsi que des métalloïdes comme le silicium, utilisé dans les semi-conducteurs. Le chlore est un halogène réactif, tandis que l\'argon est un gaz noble inerte.'),
+(4, 'Période 4', 'Éléments : Potassium (K), Calcium (Ca), Scandium (Sc), Titane (Ti), Vanadium (V), Chrome (Cr), Manganèse (Mn), Fer (Fe), Cobalt (Co), Nickel (Ni), Cuivre (Cu), Zinc (Zn), Gallium (Ga), Germanium (Ge), Arsenic (As), Sélénium (Se), Brome (Br), Krypton (Kr)\r\n\r\nCaractéristiques : Cette période contient des métaux alcalins et alcalino-terreux, ainsi que des métaux de transition (Scandium à Zinc) avec diverses applications industrielles. Le fer, le cobalt et le nickel sont des métaux ferromagnétiques. Les non-métaux incluent le brome, un halogène, et le krypton, un gaz noble.'),
+(5, 'Période 5', 'Éléments : Rubidium (Rb), Strontium (Sr), Yttrium (Y), Zirconium (Zr), Niobium (Nb), Molybdène (Mo), Technétium (Tc), Ruthénium (Ru), Rhodium (Rh), Palladium (Pd), Argent (Ag), Cadmium (Cd), Indium (In), Étain (Sn), Antimoine (Sb), Tellure (Te), Iode (I), Xénon (Xe)\r\n\r\nCaractéristiques : Les éléments de cette période possèdent cinq couches d\'électrons. On y trouve des métaux réactifs comme le rubidium, ainsi que des métaux précieux comme l\'argent et le palladium. L\'étain et l\'antimoine sont importants en électronique, tandis que le xénon est un gaz noble utilisé dans les lampes et la médecine.'),
+(6, 'Période 6', 'Éléments : Césium (Cs), Baryum (Ba), Lanthanides (La - Lu), Hafnium (Hf), Tantale (Ta), Tungstène (W), Rhénium (Re), Osmium (Os), Iridium (Ir), Platine (Pt), Or (Au), Mercure (Hg), Thallium (Tl), Plomb (Pb), Bismuth (Bi), Polonium (Po), Astate (At), Radon (Rn)\r\n\r\nCaractéristiques : Cette période est la plus longue, contenant les lanthanides (ou terres rares) et plusieurs éléments lourds. Le césium et le baryum sont des métaux très réactifs. Les lanthanides sont cruciaux pour la fabrication de technologies modernes comme les aimants et les écrans. L\'or et le platine sont des métaux précieux, et le mercure est le seul métal liquide à température ambiante. Le radon est un gaz noble radioactif.'),
+(7, 'Période 7', 'Éléments : Francium (Fr), Radium (Ra), Actinides (Ac - Lr), Rutherfordium (Rf), Dubnium (Db), Seaborgium (Sg), Bohrium (Bh), Hassium (Hs), Meitnérium (Mt), Darmstadtium (Ds), Roentgenium (Rg), Copernicium (Cn), Nihonium (Nh), Flérovium (Fl), Moscovium (Mc), Livermorium (Lv), Tennessine (Ts), Oganesson (Og)\r\n\r\nCaractéristiques : La période 7 contient des éléments radioactifs, notamment les actinides. Le francium et le radium sont des métaux alcalins très instables. Les actinides incluent des éléments comme l\'uranium et le plutonium, utilisés dans l\'énergie nucléaire. Les éléments au-delà de l\'uranium sont des éléments synthétiques, produits en laboratoire.');
 
 -- --------------------------------------------------------
 

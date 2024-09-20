@@ -16,28 +16,9 @@ class ElementDefinitionsRepository extends ServiceEntityRepository
         parent::__construct($registry, ElementDefinitions::class);
     }
 
-    //    /**
-    //     * @return ElementDefinitions[] Returns an array of ElementDefinitions objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('a.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?ElementDefinitions
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    public function getAdminInfo(){
+        $qb = $this->createQueryBuilder('d')
+            ->select('d.name', 'd.id');
+        return $qb->getQuery()->getResult();
+    }
 }

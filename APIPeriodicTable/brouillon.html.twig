@@ -27,21 +27,15 @@
                             </p>
                         </div>
                     {% endif %}
-                        {% if def is not empty %}
-
-                            <div class="defPageTable mt-5">
-                                <h1>{{ def['definition'].name }}</h1>
-                                    {% if def['definition'].groupN is defined %}
-                                        <p class="text-center">{{ def['definition'].groupN }}  </p>
-                                    {% endif %}
-                                <p>{{ def['definition'].definition| nl2br }}  </p>
-                                    {% if def['periode'] is defined %}
-                                        <div class="separation my-3"></div>
-                                        <h2>{{ def['periode'].name }}</h2>
-                                        <p>{{ def['periode'].definition| nl2br }}  </p>
-                                    {% endif %}
-                            </div>
-                        {% endif %}
+                    {% if def is not empty %}
+                        <div class="defPageTable mt-5">
+                            <h2>{{ def.name }}</h2>
+                            {% if def.groupN is defined %}
+                                <p class="text-center">{{ def.groupN }}  </p>
+                            {% endif %}
+                            <p>{{ def.definition| nl2br }}  </p>
+                        </div>
+                    {% endif %}
                 </article>
             </div>
         </div>

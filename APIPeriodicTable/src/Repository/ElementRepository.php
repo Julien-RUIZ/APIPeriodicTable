@@ -16,6 +16,17 @@ class ElementRepository extends ServiceEntityRepository
         parent::__construct($registry, Element::class);
     }
 
+    public function getAdminInfo(){
+        $qb = $this->createQueryBuilder('e')
+        ->select('e.symbole', 'e.id');
+        return $qb->getQuery()->getResult();
+    }
+    public function getTableInfo(){
+        $qb = $this->createQueryBuilder('e')
+            ->select('e.symbole', 'e.id', 'e.nom', 'e.masseAtomique', 'e.numero');
+        return $qb->getQuery()->getResult();
+    }
+
     public function getElementsWithAttributAndPagination(array $param=null, $field=null, $page = null, $limit = null ,$id = null){
         $qb = $this->createQueryBuilder('e');
         if($field!=null){

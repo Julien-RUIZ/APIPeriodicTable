@@ -16,28 +16,9 @@ class ApiDocumentationRepository extends ServiceEntityRepository
         parent::__construct($registry, ApiDocumentation::class);
     }
 
-    //    /**
-    //     * @return ApiDocumentation[] Returns an array of ApiDocumentation objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('a.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?ApiDocumentation
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    public function getAdminInfo(){
+        $qb = $this->createQueryBuilder('da')
+            ->select('da.ButtonTitle', 'da.id');
+        return $qb->getQuery()->getResult();
+    }
 }
