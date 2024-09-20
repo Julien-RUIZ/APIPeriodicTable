@@ -5,6 +5,7 @@ namespace App\Controller\PeriodicTable;
 use App\Interface\ElementHelperInterface;
 use App\Repository\ElementCategoryRepository;
 use App\Repository\ElementDefinitionsRepository;
+use App\Repository\ElementGroupeRepository;
 use App\Repository\ElementRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,12 +15,12 @@ use Symfony\Component\Routing\Attribute\Route;
 class PeriodicTableController extends AbstractController
 {
 
-    public function __construct(private array $ListeElements=[], private array $Elements=[], private array $listefamily=[], private int $Lanthanides=1,  private int $Actinides=1)
+    public function __construct(private readonly ElementGroupeRepository $groupeRepository ,private readonly ElementDefinitionsRepository $definitionsRepository,private array $ListeElements=[], private array $Elements=[], private array $listefamily=[], private int $Lanthanides=1,  private int $Actinides=1)
     {
     }
 
     #[Route('/tableau/{param}={value}', name: 'app_tableau', requirements: ['param' => '\w+', 'value' => '\d+'], defaults: ['param' => null, 'value' => null])]
-    public function index(ElementDefinitionsRepository $definitionsRepository, Request $request, ElementRepository $elementRepository, ElementHelperInterface $elementHelper, ElementCategoryRepository $categoryRepository): Response
+    public function index( Request $request, ElementRepository $elementRepository, ElementHelperInterface $elementHelper, ElementCategoryRepository $categoryRepository): Response
     {
         $category = $categoryRepository->findAll();
         $param = $request->attributes->get('param');
@@ -35,11 +36,7 @@ class PeriodicTableController extends AbstractController
         }
         if ($param !== null && $value !== null){
 
-            $def= $definitionsRepository->findOneBy(['name'=>$param]);
-
-
-
-
+            $def= $this->definitionParam($param, $value);
             $this->ListeElements = $elementRepository->findBy([$param=>$value]);
             foreach ($this->ListeElements as $value){
                 $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
@@ -52,4 +49,19 @@ class PeriodicTableController extends AbstractController
             'Elements' => $this->Elements, 'Lanthanides'=>$this->Lanthanides, 'Actinides'=>$this->Actinides, 'category'=>$category, 'def'=>$def
         ]);
     }
+
+
+    private function definitionParam($param, $value){
+        if ($param == 'GroupeVertical'){
+            if ($value >= 3 and $value<=12 ){
+                $def = $this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12']);
+            }else{
+                $def = $this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value]);
+            }
+        }else{
+            $def= $this->definitionsRepository->findOneBy(['name'=>$param]);
+        }
+        return $def;
+    }
+
 }

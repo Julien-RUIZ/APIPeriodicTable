@@ -45,15 +45,6 @@ h5, h6{
     background-color: #003366;
     color: #FFA500;
 }
-/*partials/headband.html.twig*/
-.headbandHome, .headbandDocApi{
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 230px;
-}
-.headbandHome{
-    background-image: url("/images/1920recadre.jpg");
-}
 
 
 /*table/index.html.twig*/
@@ -69,7 +60,7 @@ h5, h6{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.blocPresentation h1, .blocPresentation p{
+.blocPresentation h1, .blocPresentation p, .blocPresentation h2{
     color: #FFFFFF;
     font-family: cursive;
 }
@@ -93,14 +84,25 @@ h5, h6{
     justify-content: center;
 }
 .tdTable, .thTable{
-    border-width: 1px 4px 4px 1px;
+    border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: black;
     text-align: center;
     border-radius: 10%;
+    -webkit-box-shadow: 5px 5px 11px 5px rgba(0,0,0,0.54), inset -1px -1px 8px -1px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: 5px 5px 9px 2px rgba(0, 0, 0, 0.54), inset -1px -1px 7px -1px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .thTable{
     background-color: #FFFFFF;
+}
+.tdTableEmpty{
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    border-radius: 10%;
+    -webkit-box-shadow: 0 0 0 -30px rgba(0,0,0,0);
+    box-shadow: 0 0 0 -30px rgba(0,0,0,0);
 }
 .BlocRadioactif{
     background-color: #FFFFFF;
@@ -109,6 +111,8 @@ h5, h6{
     border-color: black;
     text-align: center;
     border-radius: 15%;
+    -webkit-box-shadow: 5px 5px 11px 5px rgba(0,0,0,0.54), inset -1px -1px 8px -1px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: 5px 5px 9px 2px rgba(0, 0, 0, 0.54), inset -1px -1px 7px -1px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .thTable:hover{
@@ -242,23 +246,29 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/*partials/headband.html.twig*/
+.headbandHome{
+    background-image: url("/images/1920recadre.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7em;
+
+}
 
 /*home/index.html.twig*/
 .EncartText {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    flex: 1;
-    min-width: 300px;
+    width: 600px;
+    height: 300px;
+    opacity: 0.9;
 }
-.EncartText h5 {
-    font-size: 1.5rem;
-    color: #3498db;
-    margin-bottom: 15px;
-    text-align: center;
-}
+
 
 .BlocHome {
     display: flex;

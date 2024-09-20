@@ -61,7 +61,7 @@
                         y==8 and  x>=1 and x<4 or
                         y==9 and  x>=1 and x<4
                     %}
-                        <td class="tdTableEmpty" >
+                        <td >
                             <div class="boxAtom text-center"></div>
                         </td>
                     {% elseif y==1 and  x==4 %} {# ----------------------------Bouton radioactif #}
@@ -81,7 +81,7 @@
                                 </div>
                             </td>
                         {% else %}
-                            <td class="tdTable couleurTdVide"></td>
+                            <td class="tdTableEmpty couleurTdVide"></td>
                         {% endif %}
                     {% elseif y==7 and  x==3 %}{#---------------------------------- Actinide #}
                         {% if Actinides != false %}
@@ -92,7 +92,7 @@
                                 </div>
                             </td>
                         {% else %}
-                            <td class="tdTable couleurTdVide">
+                            <td class="tdTableEmpty couleurTdVide">
                         {% endif %}
 
                     {% else %}
@@ -108,7 +108,7 @@
                                 </a>
                             </td>
                         {% else %}
-                            <td class="tdTable couleurTdVide">
+                            <td class="tdTableEmpty couleurTdVide">
                                 <div class="boxAtom text-center"></div>
                             </td>
                         {% endif %}

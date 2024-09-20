@@ -10,7 +10,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class ReadApiDocumentationController extends AbstractController
 {
-    #[Route('/read/api/documentation', name: 'app_read_api_documentation')]
+    #[Route('/read/documentation', name: 'app_read_api_documentation')]
     #[IsGranted('ROLE_USER')]
     public function index(ApiDocumentationRepository $documentationRepository): Response
     {
