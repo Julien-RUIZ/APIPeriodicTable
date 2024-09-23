@@ -295,6 +295,11 @@ footer {
         display: flex;
         justify-content: space-around;
     }
+    .EncartText {
+        
+        width: 511px;
+
+    }
 }
 
 @media (max-width: 1800px) and (min-width: 1600px) {
