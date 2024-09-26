@@ -2,17 +2,15 @@
 
 . Projet en cours : Mise en place d'une plateforme de partage d'informations sur le tableau périodique des éléments.
 
-. Visualisation du tableau périodique avec différents filtres interactifs.
+. Visualisation : Mise en évidence du tableau périodique avec différents filtres interactifs.
 
-. Affichage détaillé des données et des descriptions spécifiques pour chaque élément.
+. Détails des éléments : Affichage complet des données et descriptions spécifiques pour chaque élément.
 
-. Back-office utilisateur permettant l'accès aux données via une API documentée.
+. Back-office utilisateur : Accès aux données via une API documentée, avec modification des données sous approbation préalable.
 
-. Back-office utilisateur pour la modification des données, accessible uniquement sur approbation préalable.
+. Back-office administrateur : Gestion complète du système et des utilisateurs.
 
-. Back-office administrateur pour la gestion complète du système et des utilisateurs.
+. Mise en place de l'API : Requêtes GET, gestion des erreurs, pagination et mise en cache
 
-. Mise en place de l'API avec les requêtes GET, gestion des erreurs, pagination, et cache.
-
-Le reste est en cours de réalisation.
+De nouvelles fonctionnalités et améliorations sont en cours de développement.
 

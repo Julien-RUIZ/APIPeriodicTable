@@ -264,7 +264,8 @@ footer {
     border-radius: 10px;
     padding: 20px;
     width: 600px;
-    height: 300px;
+
+    min-height: 300 px;
     opacity: 0.9;
 }
 
@@ -296,9 +297,7 @@ footer {
         justify-content: space-around;
     }
     .EncartText {
-        
         width: 511px;
-
     }
 }
 
@@ -363,6 +362,9 @@ footer {
     }
     td .numero{
         font-size: 15px;
+    }
+    .EncartText {
+        width: 296px;
     }
 }
 
