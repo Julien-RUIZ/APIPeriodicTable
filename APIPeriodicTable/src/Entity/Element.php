@@ -51,7 +51,7 @@ class Element
         maxMessage: '{{ limit }} characters max',
     )]
     #[Assert\Regex(pattern: '/^\d+$/', message: 'Le champ doit contenir uniquement des chiffres.')]
-    private ?string $GroupeVertical = null;
+    private ?string $groupeVertical = null;
 
     #[ORM\Column(length: 10)]
     #[Groups(['ApiElementTotal'])]
@@ -60,7 +60,7 @@ class Element
         maxMessage: '{{ limit }} characters max',
     )]
    #[Assert\Regex(pattern: '/^\d+$/', message: 'Le champ doit contenir uniquement des chiffres.')]
-    private ?string $PeriodeHorizontal = null;
+    private ?string $periodeHorizontal = null;
 
     #[ORM\Column(length: 100)]
     #[Assert\Length(max: 100, maxMessage: 'Max length of {{ limit }} characters')]
@@ -149,7 +149,7 @@ class Element
 
     #[ORM\Column]
     #[Groups(['ApiElementTotal'])]
-    private ?bool $Radioactif = null;
+    private ?bool $radioactif = null;
 
     #[ORM\Column(length: 255)]
     private ?string $infoElement = null;
@@ -227,26 +227,26 @@ class Element
         return $this;
     }
 
-    public function getGroupeVertical(): ?string
+    public function getgroupeVertical(): ?string
     {
-        return $this->GroupeVertical;
+        return $this->groupeVertical;
     }
 
-    public function setGroupeVertical(string $GroupeVertical): static
+    public function setgroupeVertical(string $groupeVertical): static
     {
-        $this->GroupeVertical = $GroupeVertical;
+        $this->groupeVertical = $groupeVertical;
 
         return $this;
     }
 
-    public function getPeriodeHorizontal(): ?string
+    public function getperiodeHorizontal(): ?string
     {
-        return $this->PeriodeHorizontal;
+        return $this->periodeHorizontal;
     }
 
-    public function setPeriodeHorizontal(string $PeriodeHorizontal): static
+    public function setperiodeHorizontal(string $periodeHorizontal): static
     {
-        $this->PeriodeHorizontal = $PeriodeHorizontal;
+        $this->periodeHorizontal = $periodeHorizontal;
 
         return $this;
     }
@@ -431,14 +431,14 @@ class Element
         return $this;
     }
 
-    public function isRadioactif(): ?bool
+    public function isradioactif(): ?bool
     {
-        return $this->Radioactif;
+        return $this->radioactif;
     }
 
-    public function setRadioactif(bool $Radioactif): static
+    public function setradioactif(bool $radioactif): static
     {
-        $this->Radioactif = $Radioactif;
+        $this->radioactif = $radioactif;
 
         return $this;
     }

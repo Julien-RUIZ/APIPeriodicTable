@@ -9,6 +9,7 @@
     '4,8': 57, '5,8': 58, '6,8': 59, '7,8': 60, '8,8': 61, '9,8': 62, '10,8': 63, '11,8': 64, '12,8': 65, '13,8': 66, '14,8': 67, '15,8': 68, '16,8': 69, '17,8': 70, '18,8': 71,
     '4,9': 89, '5,9': 90, '6,9': 91, '7,9': 92, '8,9': 93, '9,9': 94, '10,9': 95, '11,9': 96, '12,9': 97, '13,9': 98, '14,9': 99, '15,9': 100, '16,9': 101, '17,9': 102, '18,9': 103,
 } %}
+
 <div class="appli">
     <table class="Element" id="TableOfElement">
         <thead>
@@ -25,7 +26,7 @@
                 {% for label, value in {1:'(IA)', 2:'(IIA)', 3:'(IIIB)',4:'(IVB)', 5:'(VB)', 6:'(VIB)', 7: '(VIIB)', 8:'(VIIIB)', 9:'(VIIIB)', 10:'(VIIIB)', 11:'(IB)', 12:'(IIB)', 13:'(IIIA)', 14:'(IVA)', 15:'(VA)', 16:'(VIA)', 17:'(VIIA)', 18:'(VIIIA)' }%}
                     <th>
                         <div class="thTable">
-                            <a href="{{ path('app_tableau', {'param': 'GroupeVertical', 'value': label}) }}">
+                            <a href="{{ path('app_tableau', {'param': 'groupeVertical', 'value': label}) }}">
                                 <div class="boxAtom ElementThHorizontal">
                                     <div class="NbGroupVertical"> {{ label}}</div>
                                     <div class="RomainGroupVertical"> {{ value }}</div>
@@ -42,20 +43,25 @@
             <tr>
                 <th scope="row">
                     {% if y<=7 %}
-                        <a href="{{ path('app_tableau', {'param': 'PeriodeHorizontal', 'value': y}) }}">
+                        <a href="{{ path('app_tableau', {'param': 'periodeHorizontal', 'value': y}) }}">
                             <div class="thTable">
                                 <div class="boxAtom">{{ y }}</div>
                             </div>
                         </a>
                     {% endif %}
                 </th>
-                {% set sequence = (y == 1) ? [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] : range(1, 18) %}{# Pour le bouton radioactif avec colspan #}
+                {% if y==1 %}
+                    {% set sequence = [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] %}
+                {% else%}
+                    {% set sequence = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] %}
+                {% endif %}
+
                 {% for x in sequence %}
                     {% set key = x ~ ',' ~ y %}
                     {% set id = mapping[key] ?? null %}
 
                     {% if
-                        y==1 and  x>1 and x<4  or y==1 and  x>4 and x<18 or
+                        y==1 and  x>1 and x<3  or y==1 and  x>3 and x<18 or
                         y==2 and  x>2 and x<13 or
                         y==3 and  x>2 and x<13 or
                         y==8 and  x>=1 and x<4 or
@@ -64,14 +70,15 @@
                         <td >
                             <div class="boxAtom text-center"></div>
                         </td>
-                    {% elseif y==1 and  x==4 %} {# ----------------------------Bouton radioactif #}
-                        <td class=" BlocRadioactif" style="background-color: #FFFFFF" colspan="2">
+                    {% elseif y==1 and x==3 %} {# ----------------------------Bouton radioactif #}
+                        <td class=" BlocRadioactif" style="background-color: #FFFFFF" colspan="2" rowspan="2">
                             <span class="Buttonname">Radioactif ?</span><br>
                             <div class="ButtonRadioactif">
-                                <a href="{{ path('app_tableau', {'param': 'Radioactif', 'value': 1}) }}"><div class="RadioactifYes">oui</div></a>
-                                <a href="{{ path('app_tableau', {'param': 'Radioactif', 'value': 0}) }}"><div class="RadioactifNo">non</div></a>
+                                <a href="{{ path('app_tableau', {'param': 'radioactif', 'value': 1}) }}"><div class="RadioactifYes">oui</div></a>
+                                <a href="{{ path('app_tableau', {'param': 'radioactif', 'value': 0}) }}"><div class="RadioactifNo">non</div></a>
                             </div>
                         </td>
+
                     {% elseif y==6 and  x==3 %} {#---------------------------------- Lanthanides #}
                         {% if Lanthanides != false %}
                             <td class="tdTable"  style="background-color: {{ category[3].getColor() }};">

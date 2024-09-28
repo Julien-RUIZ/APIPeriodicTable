@@ -16,7 +16,15 @@ use Symfony\Component\Routing\Attribute\Route;
 class PeriodicTableController extends AbstractController
 {
 
-    public function __construct(private readonly ElementPeriodRepository $periodRepository,private readonly ElementGroupeRepository $groupeRepository ,private readonly ElementDefinitionsRepository $definitionsRepository,private array $ListeElements=[], private array $Elements=[], private array $listefamily=[], private int $Lanthanides=1,  private int $Actinides=1)
+    public function __construct(private readonly ElementPeriodRepository $periodRepository,
+                                private readonly ElementGroupeRepository $groupeRepository ,
+                                private readonly ElementDefinitionsRepository $definitionsRepository,
+                                private readonly ElementCategoryRepository $categoryRepository,
+                                private array $ListeElements=[],
+                                private array $Elements=[],
+                                private array $listefamily=[],
+                                private int $Lanthanides=1,
+                                private int $Actinides=1)
     {
     }
 
@@ -36,8 +44,8 @@ class PeriodicTableController extends AbstractController
             }
         }
         if ($param !== null && $value !== null){
-
             $def= $this->definitionParam($param, $value);
+
             $this->ListeElements = $elementRepository->findBy([$param=>$value]);
             foreach ($this->ListeElements as $value){
                 $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
@@ -53,15 +61,17 @@ class PeriodicTableController extends AbstractController
 
 
     private function definitionParam($param, $value){
-        if ($param == 'GroupeVertical'){
+        if ($param == 'groupeVertical'){
             if ($value >= 3 and $value<=12 ){
-                $def = ['definition'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
+                $def = ['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
             }else{
-                $def = ['definition'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
+                $def = ['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
             }
-        }elseif ($param == 'PeriodeHorizontal'){
+        }elseif ($param == 'periodeHorizontal'){
             $def=['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
-        }else{
+        }elseif ($param == 'elementCategory'){
+            $def=['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'category'=> $this->categoryRepository->findOneBy(['id'=>$value])];
+        } else{
             $def=['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param])];
         }
         return $def;

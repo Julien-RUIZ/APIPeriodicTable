@@ -245,18 +245,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
-/*partials/headband.html.twig*/
-.headbandHome{
-    background-image: url("/images/1920recadre.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 7em;
 
-}
 
 /*home/index.html.twig*/
 .EncartText {
@@ -264,16 +253,18 @@ footer {
     border-radius: 10px;
     padding: 20px;
     width: 600px;
-
-    min-height: 300 px;
+    height: 300px;
     opacity: 0.9;
 }
-
-
-.BlocHome {
+.headbandHome{
+    background-image: url("/images/1920recadre.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 7em;
     flex-wrap: wrap;
 }
 
@@ -297,7 +288,11 @@ footer {
         justify-content: space-around;
     }
     .EncartText {
-        width: 511px;
+        width: 569px;
+        height: 300px;
+    }
+    .headbandHome{
+        height: 500px;
     }
 }
 
@@ -319,9 +314,16 @@ footer {
         display: flex;
         justify-content: space-around;
     }
+    .EncartText {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 480px;
+        min-height: 300px;
+        opacity: 0.9;
+    }
 }
 
-/* Styles pour écrans moyens (de 1200px à 1800px) */
 @media (max-width: 1600px) and (min-width: 1300px) {
     .boxAtom {
         width: 63px;
@@ -343,9 +345,12 @@ footer {
         display: flex;
         flex-direction: column;
     }
+    .EncartText {
+        max-width: 400px;
+        height: 345px;
+    }
 }
 
-/* Styles pour écrans de taille tablette (de 768px à 1200px) */
 @media (max-width: 1300px) and (min-width: 1000px){
     .boxAtom {
         width: 47px;
@@ -364,7 +369,11 @@ footer {
         font-size: 15px;
     }
     .EncartText {
-        width: 296px;
+        width: 285px;
+        height: 480px;
+    }
+    .headbandHome{
+        height: 550px;
     }
 }
 
@@ -391,6 +400,13 @@ footer {
     table th span{
         display: none;
     }
+    .EncartText {
+        width: 255px;
+        height: 508px;
+    }
+    .headbandHome{
+        height: 590px;
+    }
 }
 @media (max-width: 900px) and (min-width: 768px){
     .boxAtom {
@@ -415,9 +431,19 @@ footer {
     table th span{
         display: none;
     }
+    .EncartText {
+        width: 600px;
+        height: 250px;
+    }
+    .headbandHome{
+        height: 814px;
+        display: flex;
+        margin-top: 7em;
+        align-content: space-around;
+    }
 }
 
-/* Styles pour petits écrans (moins de 768px) */
+
 @media (max-width: 768px) and (min-width: 600px){
     .boxAtom {
         width: 24px;
@@ -439,6 +465,26 @@ footer {
     }
     table th span{
         display: none;
+    }
+    .EncartText {
+        width: 600px;
+        height: 250px;
+    }
+    .headbandHome{
+        height: 814px;
+        display: flex;
+        margin-top: 7em;
+        align-content: space-around;
+    }
+    .EncartText {
+        width: 459px;
+        height: 297px;
+    }
+    .headbandHome{
+        height: 1014px;
+        display: flex;
+        margin-top: 7em;
+        align-content: space-around;
     }
 }
 
@@ -463,5 +509,15 @@ footer {
     }
     table th span{
         display: none;
+    }
+    .EncartText {
+        width: 459px;
+        height: 297px;
+    }
+    .headbandHome{
+        height: 1014px;
+        display: flex;
+        margin-top: 7em;
+        align-content: space-around;
     }
 }
