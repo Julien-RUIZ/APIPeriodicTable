@@ -277,7 +277,12 @@ footer {
     background-color: #003366;
     color: #FFA500;
 }
-/* Styles pour écrans larges (plus de 1800px) */
+.ColorSelection{
+    background-color: #003366;
+    color: #FFA500;
+}
+
+/* ------------------------------------------------------------------------------- */
 @media (min-width: 1800px) {
     .boxAtom {
         width: 65px ;

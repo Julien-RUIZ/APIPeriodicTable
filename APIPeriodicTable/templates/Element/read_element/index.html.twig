@@ -1,50 +1,72 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    {#  "listeDefinition" :  C'est la table des définitions avec pour clé la colonne "name_property_element", le nom exact des colonne de la table élément  #}
+    {#  "infoElement" :  C'est le retour de toutes les informations d'un élément  #}
 <section class="readAtom">
     <article>
         <div class="container">
-            <h1 class="text-center my-5">{{ elements.nom}} </h1>
-            <p class="my-5">{{ elements.infoElement}}</p>
+            <h1 class="text-center my-5">{{ infoElement.nom}} </h1>
+            <p class="my-5">{{ infoElement.infoElement}}</p>
             <table class="table">
                 <tbody>
-                {% set elementCategory = 'elementCategory' %}
-                {% set elementGroupe = 'elementGroupe' %}
-
+    {# propertiesElements est la liste des attributs (colonne) de la table élément.   #}
                 {% for propertiesElement in propertiesElements %}
-                    {% set variable = propertiesElement %}
-                    {% if propertiesElement != 'elementCategory' and propertiesElement != 'elementGroupe'%}
+                    {% set elementColumn = propertiesElement %}
+
+                    {% if propertiesElement != 'elementCategory' and propertiesElement != 'elementGroupe'%}{# Les deux sont des jointure et donc seront traitées par la suite#}
                         <tr>
                             <th scope="row" class="col-6">
-                                {% if listeDefinition[variable] is defined  %}
-                                    {{ listeDefinition[variable].getName()}}
+                                {% if listeDefinition[elementColumn] is defined  %}
+                                    {{ listeDefinition[elementColumn].getName()}}
                                 {% else %}
-                                {{ propertiesElement}}
+                                {{ propertiesElement|capitalize }}
                                 {% endif %}
-                                {# <span class="infosup">?</span> #}
                             </th>
                             <td>
-                                {{ attribute(elements, variable) }}
+                                {{ attribute(infoElement, elementColumn) }}
+                            </td>
+                            <td >
+                                {% if listeDefinition[elementColumn] is defined  %}
+                                        <button class="show-info" data-target="definition-{{elementColumn}}">info</button>
+                                {% endif %}
                             </td>
                         </tr>
                         <tr>
-                            {% if listeDefinition[variable] is defined  %}
-                                <td colspan="2">
-                                    {{ listeDefinition[variable].getDefinition() | nl2br }}
+                            {% if listeDefinition[elementColumn] is defined  %}
+                                <td colspan="2" id="definition-{{elementColumn}}" class="definitionAttributs" style="display: none;">
+                                    {{ listeDefinition[elementColumn].getDefinition() | nl2br }}
                                 </td>
                             {% endif %}
                         </tr>
                     {% endif %}
-                    {# Liaison entre table #}
-                    {% if propertiesElement == elementCategory %}
+
+{# propertiesElement est soit  elementCategory ou elementGroupe, gestion a l'écart car jointure  #}
+                    {% if propertiesElement == 'elementCategory' or propertiesElement == 'elementGroupe' %}
                         <tr>
-                            <th scope="row">Categorie</th>
-                            <td>{{ elements.elementCategory.getName() }}</td>
+                            <th scope="row" class="col-6">
+                                {% if listeDefinition[propertiesElement] is defined  %}
+                                    {{ listeDefinition[propertiesElement].getName()}}
+                                {% else %}
+                                    {{ propertiesElement|capitalize}}
+                                {% endif %}
+                            </th>
+                            {% if propertiesElement == 'elementCategory' %}
+                                <td>{{ infoElement.elementCategory.getName() }}</td>
+                            {% elseif propertiesElement == 'elementGroupe' %}
+                                <td>{{ infoElement.elementGroupe.getName() }}</td>
+                            {% endif %}
+                            <td >
+                                {% if listeDefinition[elementColumn] is defined  %}
+                                    <button class="show-info" data-target="definition-{{elementColumn}}">info</button>
+                                {% endif %}
+                            </td>
                         </tr>
-                    {% endif %}
-                    {% if propertiesElement == elementGroupe %}
                         <tr>
-                            <th scope="row">Groupe</th>
-                            <td>{{ elements.elementGroupe.getName() }}</td>
+                            {% if listeDefinition[elementColumn] is defined  %}
+                                <td colspan="2" id="definition-{{elementColumn}}" class="definitionAttributs" style="display: none;">
+                                    {{ listeDefinition[elementColumn].getDefinition() | nl2br }}
+                                </td>
+                            {% endif %}
                         </tr>
                     {% endif %}
                 {% endfor %}

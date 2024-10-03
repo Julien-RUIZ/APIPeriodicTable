@@ -23,7 +23,7 @@ class ReadElementController extends AbstractController
             $listeDefinition[$value->getNamePropertyElement()] = $value;
         }
         return $this->render('Element/read_element/index.html.twig', [
-            'elements' => $element, 'listeDefinition'=> $listeDefinition, 'propertiesElements'=>$propertiesElement
+            'infoElement' => $element, 'listeDefinition'=> $listeDefinition, 'propertiesElements'=>$propertiesElement
         ]);
     }
 }

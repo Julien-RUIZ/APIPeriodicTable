@@ -59,20 +59,19 @@ class PeriodicTableController extends AbstractController
         ]);
     }
 
-
     private function definitionParam($param, $value){
         if ($param == 'groupeVertical'){
             if ($value >= 3 and $value<=12 ){
-                $def = ['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
+                $def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
             }else{
-                $def = ['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
+                $def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
             }
         }elseif ($param == 'periodeHorizontal'){
-            $def=['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
+            $def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
         }elseif ($param == 'elementCategory'){
-            $def=['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param]),'category'=> $this->categoryRepository->findOneBy(['id'=>$value])];
+            $def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'category'=> $this->categoryRepository->findOneBy(['id'=>$value])];
         } else{
-            $def=['definition'=>$this->definitionsRepository->findOneBy(['name'=>$param])];
+            $def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param])];
         }
         return $def;
     }

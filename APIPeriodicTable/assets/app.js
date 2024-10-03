@@ -6,5 +6,13 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
+import { ButtonDefElement } from './Js/ElementPage.js';
+document.addEventListener('DOMContentLoaded', function() {
+    ButtonDefElement();
+});
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+
+
+
+
+
