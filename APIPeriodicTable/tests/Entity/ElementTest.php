@@ -68,10 +68,7 @@ class ElementTest extends KernelTestCase
         $this->TestElement($this->element->setConfigurationElectronique('[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶ 5f¹⁴ 6d¹⁰ 7s² 7p⁶ 5f¹⁴'), 0, 'Error testValidateConfElectro');
     }
     public function testValidatePointDEbullition(){
-        $this->TestElement($this->element->setPointDEbullition('11 °C'), 0, 'Error testValidatePointDEbullition' );
-    }
-    public function testErrorPointDEbullition(){
-        $this->TestElement($this->element->setPointDEbullition('<11 °C'), 1, 'Error testErrorPointDEbullition' );
+        $this->TestElement($this->element->setPointDEbullition('11'), 0, 'Error testValidatePointDEbullition' );
     }
 
     public function testValidateEtatOxydation(){

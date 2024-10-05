@@ -15,13 +15,11 @@ class Element
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 13, nullable: true)]
-    #[Assert\Regex(pattern: '/^[a-zA-Zàâçéèêëîïôûùüÿñæœ\s\'-]+$/', message: 'Le champ doit contenir uniquement des lettres avec espaces, apostrophes et des tirets.' )]
+    #[ORM\Column(length: 15, nullable: true)]
     #[Groups(['ApiElementTotal'])]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 13, nullable: true)]
-    #[Assert\Regex(pattern: '/^[a-zA-Zàâçéèêëîïôûùüÿñæœ\s\'-]+$/', message: 'Le champ doit contenir uniquement des lettres avec espaces, apostrophes et des tirets.' )]
+    #[ORM\Column(length: 15, nullable: true)]
     #[Groups(['ApiElementTotal'])]
     private ?string $slug = null;
 
@@ -93,7 +91,6 @@ class Element
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[a-zA-Z0-9\s-()±]+$/', message: 'Le champ doit contenir uniquement des lettres, des chiffres, des espaces, des tirets, des parenthèses et le caractère ±.')]
     #[Groups(['ApiElementTotal'])]
     private ?string $rayonDeCovalence = null;
 
@@ -137,13 +134,11 @@ class Element
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[+-]?\d{1,3}(?: \d{3})*(?:,\d+)?\s*°\s*C$/')]
     #[Groups(['ApiElementTotal'])]
     private ?string $pointDeFusion = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Length(max: 20, maxMessage: 'Max length of {{ limit }} characters')]
-    #[Assert\Regex(pattern: '/^[+-]?\d{1,3}(?: \d{3})*(?:,\d+)?\s*°\s*C$/', message: 'Le champ doit contenir un nombre entier ou décimal, avec des espaces pour les milliers, suivi de "° C".')]
     #[Groups(['ApiElementTotal'])]
     private ?string $pointDEbullition = null;
 

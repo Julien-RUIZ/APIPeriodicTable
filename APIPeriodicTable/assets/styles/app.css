@@ -160,10 +160,7 @@ button a{
     font-size: 15px;
     font-weight: bold;
 }
-.ButtonRadioactif{
-    display: flex;
-    justify-content: space-around;
-}
+
 .RadioactifYes:hover{
     color: #B0413E;
     font-weight: bold;
@@ -171,6 +168,15 @@ button a{
 .RadioactifNo:hover{
     color: green;
     font-weight: bold;
+}
+.ElementTooltip, .SelectionSpace{
+    color: #FFFFFF;
+    font-family: cursive;
+    font-size: 1.5em;
+}
+.Radioactifspace{
+    display: flex;
+    justify-content: space-around;
 }
 
 /*Element/read_element/index.html.twig*/

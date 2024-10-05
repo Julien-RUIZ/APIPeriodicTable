@@ -6,9 +6,13 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
+import { Tooltip , ButtonSelectionSpace} from './Js/TablePage.js';
 import { ButtonDefElement } from './Js/ElementPage.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     ButtonDefElement();
+    Tooltip();
+    ButtonSelectionSpace();
 });
 
 

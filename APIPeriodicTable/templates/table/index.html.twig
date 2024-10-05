@@ -31,7 +31,8 @@
                             <div class="defPageTable mt-5">
 
                                 {% if def['definition'] is not null %}
-                                <h1>{{ def['definition'].name }}</h1>
+                                <h1>{{ def['definition'].name }} : {% if def['radioactif'] is defined %}{{ def['radioactif'] }}{% endif %}</h1>
+
                                 <p>{{ def['definition'].definition| nl2br }}  </p>
                                 {% endif %}
 

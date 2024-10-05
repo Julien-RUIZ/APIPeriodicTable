@@ -23,6 +23,7 @@ class PeriodicTableController extends AbstractController
                                 private array $ListeElements=[],
                                 private array $Elements=[],
                                 private array $listefamily=[],
+                                private array $def=[],
                                 private int $Lanthanides=1,
                                 private int $Actinides=1)
     {
@@ -34,7 +35,7 @@ class PeriodicTableController extends AbstractController
         $category = $categoryRepository->findAll();
         $param = $request->attributes->get('param');
         $value = $request->attributes->get('value');
-        $def=[];
+        
 
         if ($param === null && $value === null){
             $this->ListeElements = $elementRepository->findAll();
@@ -44,8 +45,10 @@ class PeriodicTableController extends AbstractController
             }
         }
         if ($param !== null && $value !== null){
-            $def= $this->definitionParam($param, $value);
-
+            $this->def= $this->definitionParam($param, $value);
+            if ($param == 'elementCategory' or $param == 'elementGroupe'){
+                $this->ListeElements = $elementRepository->findBy([$param=>'Gaze noble']);
+            }
             $this->ListeElements = $elementRepository->findBy([$param=>$value]);
             foreach ($this->ListeElements as $value){
                 $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());
@@ -55,25 +58,31 @@ class PeriodicTableController extends AbstractController
         $this->Lanthanides = array_search('Lanthanides', $this->listefamily);
         $this->Actinides = array_search('Actinides', $this->listefamily);
         return $this->render('table/index.html.twig', [
-            'Elements' => $this->Elements, 'Lanthanides'=>$this->Lanthanides, 'Actinides'=>$this->Actinides, 'category'=>$category, 'def'=>$def
+            'Elements' => $this->Elements, 'Lanthanides'=>$this->Lanthanides, 'Actinides'=>$this->Actinides, 'category'=>$category, 'def'=>$this->def
         ]);
     }
 
     private function definitionParam($param, $value){
         if ($param == 'groupeVertical'){
             if ($value >= 3 and $value<=12 ){
-                $def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
+                $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
             }else{
-                $def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
+                $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
             }
         }elseif ($param == 'periodeHorizontal'){
-            $def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
+            $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
         }elseif ($param == 'elementCategory'){
-            $def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'category'=> $this->categoryRepository->findOneBy(['id'=>$value])];
+            $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'category'=> $this->categoryRepository->findOneBy(['id'=>$value])];
+        }elseif ($param == 'radioactif'){
+            if ($value == 1 ){
+                $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'radioactif'=> 'Oui'];
+            }else{
+                $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'radioactif'=> 'Non'];
+            }
         } else{
-            $def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param])];
+            $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param])];
         }
-        return $def;
+        return $this->def;
     }
 
 }
