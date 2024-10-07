@@ -104,7 +104,7 @@ h5, h6{
     -webkit-box-shadow: 0 0 0 -30px rgba(0,0,0,0);
     box-shadow: 0 0 0 -30px rgba(0,0,0,0);
 }
-.BlocRadioactif{
+.BlocRadioactif, .BlocCatégories{
     background-color: #FFFFFF;
     border-width: 1px 4px 4px 1px;
     border-style: solid;
@@ -118,7 +118,7 @@ h5, h6{
     border-color: #FFA500;
     transform: scale(1.15);
 }
-.tdTable:hover, .BlocRadioactif:hover{
+.tdTable:hover, .BlocRadioactif:hover, .BlocCatégories:hover{
     transform: scale(1.15);
 }
 
@@ -178,6 +178,21 @@ button a{
     display: flex;
     justify-content: space-around;
 }
+.CategoryListe1,.CategoryListe2 {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    font-size: 11px;
+}
+
+.CategoryListe1 a:hover, .CategoryListe2 a:hover{
+    text-decoration: underline white;
+}
+.CategoryListe1 a, .CategoryListe2 a{
+    margin-right: 15px;
+}
+
+
 
 /*Element/read_element/index.html.twig*/
 .infosup{

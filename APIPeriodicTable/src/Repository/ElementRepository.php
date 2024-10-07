@@ -16,8 +16,6 @@ class ElementRepository extends ServiceEntityRepository
         parent::__construct($registry, Element::class);
     }
 
-
-
     public function getAdminInfo(){
         $qb = $this->createQueryBuilder('e')
         ->select('e.symbole', 'e.id');

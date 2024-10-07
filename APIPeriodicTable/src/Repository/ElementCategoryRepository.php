@@ -20,4 +20,5 @@ class ElementCategoryRepository extends ServiceEntityRepository
             ->select('c.name', 'c.id');
         return $qb->getQuery()->getResult();
     }
+
 }

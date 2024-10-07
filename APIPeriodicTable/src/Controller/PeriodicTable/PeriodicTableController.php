@@ -30,12 +30,14 @@ class PeriodicTableController extends AbstractController
     }
 
     #[Route('/tableau/{param}={value}', name: 'app_tableau', requirements: ['param' => '\w+', 'value' => '\d+'], defaults: ['param' => null, 'value' => null])]
-    public function index( Request $request, ElementRepository $elementRepository, ElementHelperInterface $elementHelper, ElementCategoryRepository $categoryRepository): Response
+    public function index( Request $request,
+                           ElementRepository $elementRepository,
+                           ElementHelperInterface $elementHelper,
+                           ElementCategoryRepository $categoryRepository): Response
     {
         $category = $categoryRepository->findAll();
         $param = $request->attributes->get('param');
         $value = $request->attributes->get('value');
-        
 
         if ($param === null && $value === null){
             $this->ListeElements = $elementRepository->findAll();
@@ -46,9 +48,6 @@ class PeriodicTableController extends AbstractController
         }
         if ($param !== null && $value !== null){
             $this->def= $this->definitionParam($param, $value);
-            if ($param == 'elementCategory' or $param == 'elementGroupe'){
-                $this->ListeElements = $elementRepository->findBy([$param=>'Gaze noble']);
-            }
             $this->ListeElements = $elementRepository->findBy([$param=>$value]);
             foreach ($this->ListeElements as $value){
                 $this->listefamily[] = $elementHelper->LanthanidesActinides($value->getId());

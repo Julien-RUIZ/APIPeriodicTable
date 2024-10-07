@@ -51,8 +51,10 @@
                     {% endif %}
                 </th>
                 {% if y==1 %}
-                    {% set sequence = [1, 2, 3,5, 6, 7, 8, 9, 10, 11, 12, 13, 18] %}{# Retirer les colspans supplémentaires : exemple radioactif x=3 +4 et 5, retirer 4 et 5 #}
+                    {% set sequence = [1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 18] %}{# Retirer les colspans supplémentaires : exemple radioactif x=4 et catégory x=6 #}
                 {% elseif y==2 %}
+                    {% set sequence = [1, 2, 3, 13, 14, 15, 16, 17, 18] %}{# Retirer les colspans supplémentaires : 4, 5, 6, 7, 8, 9, 10, 11, 12 #}
+                {% elseif y==3 %}
                     {% set sequence = [1, 2, 3, 13, 14, 15, 16, 17, 18] %}{# Retirer les colspans supplémentaires : 4, 5, 6, 7, 8, 9, 10, 11, 12 #}
                 {% else%}
                     {% set sequence = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] %}{# Créer une nouvelle pour un autre y #}
@@ -64,8 +66,7 @@
 
                     {# Les x sont vides et non utilisés  #}
                     {% if
-                        y==1 and x in [2, 5, 6, 7, 8, 9, 10, 11, 12] or
-                        y==3 and x in [3, 4, 5, 6, 7, 8, 9, 10, 11, 12] or
+                        y==1 and x in [2, 7, 8, 9, 10, 11, 12] or
                         y==8 and x in [1, 2, 3] or
                         y==9 and x in [1, 2, 3]
                     %}<td><div class="boxAtom text-center"></div></td>
@@ -78,15 +79,40 @@
                                     <a href="{{ path('app_tableau', {'param': 'radioactif', 'value': 0}) }}"><div class="RadioactifNo SelectionSpace">Non</div></a>
                                 </div>
                             </div>
-
+                            <div class="row">
+                                <div class=" CategoryListe1"  style="display: none;">
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 1}) }}"><div class=" SelectionSpace">Actinide, </div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 2}) }}"><div class=" SelectionSpace">Gaze noble, </div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 3}) }}"><div class=" SelectionSpace">Halogène, </div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 4}) }}"><div class=" SelectionSpace">Lanthanide, </div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 5}) }}"><div class=" SelectionSpace">Métal alcalin, </div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 6}) }}"><div class=" SelectionSpace">Métal alcalino terreux, </div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 7}) }}"><div class=" SelectionSpace">Métal de transition,</div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 8}) }}"><div class=" SelectionSpace">Métalloide,</div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 9}) }}"><div class=" SelectionSpace">Métal pauvre,</div></a>
+                                    <a href="{{ path('app_tableau', {'param': 'elementCategory', 'value': 10}) }}"><div class=" SelectionSpace">Non métal.</div></a>
+                                </div>
+                            </div>
                         </td>
-                    {% elseif y==1 and x in [13, 14, 15, 16, 17] %} {# -----------Espace nom element -> retirer  14, 15, 16, 17 de la sequence y==1 + des x vides#}
+                    {% elseif y==3 and x in [3, 4, 5, 6, 7, 8, 9, 10, 11, 12] %} {# Espace de selection 2 voir pour utilisation en responsive#}
+                        <td colspan="10" class="bob">
+                            <div class="row">
+                                <div class=" CategoryListe2" style="display: none;" >
+                                    {# TODO : voir pour un affichage en fonction média en js #}
+                                </div>
+                            </div>
+                        </td>
+                    {% elseif y==1 and x in [13, 14, 15, 16, 17] %} {# --------Espace d'affichage du nom element -> retirer  14, 15, 16, 17 de la sequence y==1 + des x vides#}
                         <td colspan="5">
                             <p class="ElementTooltip"></p>
                         </td>
                     {% elseif y==1 and x in [3, 4] %} {# ----------------------Bouton radioactif -> retirer 4  de la sequence y==1 + des x vides#}
-                        <td class=" BlocRadioactif" style="background-color: #FFFFFF" colspan="2">
+                        <td class="ButtonFilterTable BlocRadioactif" style="background-color: #FFFFFF" colspan="2">
                             <span class="Buttonname">Radioactif ?</span><br>
+                        </td>
+                    {% elseif y==1 and x in [5, 6] %} {# ----------------------Bouton catégories -> retirer 6  de la sequence y==1 + des x vides#}
+                        <td class="ButtonFilterTable BlocCatégories" style="background-color: #FFFFFF" colspan="2">
+                            <span class="Buttonname">Les catégories</span><br>
                         </td>
                     {% elseif y==6 and x in [3] %} {#---------------------------------- Lanthanides #}
                         {% if Lanthanides != false %}
@@ -110,8 +136,7 @@
                         {% else %}
                             <td class="tdTableEmpty couleurTdVide">
                         {% endif %}
-
-                    {% else %}
+                    {% else %}{#---------------------------------- Tous les éléments #}
                         {% if Elements[id] is defined %}
                             <td class="tdTable" style="background-color: {{ Elements[id].ElementCategory.color }};">
                                 <a href="{{path('app_read_element', {'id': id})}}">
