@@ -15,47 +15,30 @@ export function ButtonSelectionSpace(){
     Buttonfilter.forEach(ButtonFilterTable=>{
         ButtonFilterTable.addEventListener('click', function (e) {
             console.log(e.currentTarget)
-            if (e.currentTarget.classList.contains('BlocRadioactif')){
-                const ButtonActionRadioactif = document.querySelector('.Radioactifspace')
-                if (ButtonActionRadioactif.style.display === 'none')
-                    ButtonActionRadioactif.style.display='inherit'
-                else {
-                    ButtonActionRadioactif.style.display='none'
-                }
-            }else if(e.currentTarget.classList.contains('BlocCatégories')){
-                const ButtonActionCategory = document.querySelector('.CategoryListe1')
-                if (ButtonActionCategory.style.display === 'none')
-                    ButtonActionCategory.style.display='inherit'
-                else {
-                    ButtonActionCategory.style.display='none'
-                }
+            const ButtonActionRadioactif = document.querySelector('.Radioactifspace')
+            const ButtonActionCategory = document.querySelector('.CategoryList1')
+            const ButtonActionState = document.querySelector('.ChemicalStateList')
+
+            if (e.currentTarget.classList.contains('BlocRadioactif') && ButtonActionRadioactif.style.display === 'none'){
+                ButtonActionRadioactif.style.display='inherit'
+                ButtonActionCategory.style.display='none'
+                ButtonActionState.style.display='none'
+            }else if (e.currentTarget.classList.contains('BlocRadioactif') && ButtonActionRadioactif.style.display === 'inherit') {
+                    ButtonActionRadioactif.style.display = 'none'
             }
-        })
-    })
-}
-
-
-
-
-export function ButtonSelectionSpace2(){
-    const Buttonfilter = document.querySelectorAll('.ButtonFilterTable')
-    Buttonfilter.forEach(ButtonFilterTable=>{
-        ButtonFilterTable.addEventListener('click', function (e) {
-            console.log(e.currentTarget)
-            if (e.currentTarget.classList.contains('BlocRadioactif')){
-                const ButtonActionRadioactif = document.querySelector('.Radioactifspace')
-                if (ButtonActionRadioactif.style.display === 'none')
-                    ButtonActionRadioactif.style.display='inherit'
-                else {
-                    ButtonActionRadioactif.style.display='none'
-                }
-            }else if(e.currentTarget.classList.contains('BlocCatégories')){
-                const ButtonActionCategory = document.querySelector('.CategoryListe1')
-                if (ButtonActionCategory.style.display === 'none')
-                    ButtonActionCategory.style.display='inherit'
-                else {
-                    ButtonActionCategory.style.display='none'
-                }
+            if(e.currentTarget.classList.contains('BlocCatégories') && ButtonActionCategory.style.display === 'none'){
+                ButtonActionCategory.style.display='inherit'
+                ButtonActionState.style.display='none'
+                ButtonActionRadioactif.style.display='none'
+            }else if (e.currentTarget.classList.contains('BlocCatégories') && ButtonActionCategory.style.display === 'inherit') {
+                ButtonActionCategory.style.display = 'none'
+            }
+            if(e.currentTarget.classList.contains('BlocChemicalState') && ButtonActionState.style.display === 'none'){
+                ButtonActionState.style.display='inherit'
+                ButtonActionCategory.style.display='none'
+                ButtonActionRadioactif.style.display='none'
+            }else if(e.currentTarget.classList.contains('BlocChemicalState') && ButtonActionState.style.display === 'inherit'){
+                ButtonActionState.style.display='none'
             }
         })
     })

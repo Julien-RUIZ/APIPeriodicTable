@@ -157,6 +157,9 @@ class Element
     #[Groups(['ApiElementTotal'])]
     private ?ElementGroupe $elementGroupe = null;
 
+    #[ORM\Column(length: 50)]
+    private ?string $ChemicalState = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -470,6 +473,18 @@ class Element
     public function setElementGroupe(?ElementGroupe $elementGroupe): static
     {
         $this->elementGroupe = $elementGroupe;
+
+        return $this;
+    }
+
+    public function getChemicalState(): ?string
+    {
+        return $this->ChemicalState;
+    }
+
+    public function setChemicalState(string $ChemicalState): static
+    {
+        $this->ChemicalState = $ChemicalState;
 
         return $this;
     }

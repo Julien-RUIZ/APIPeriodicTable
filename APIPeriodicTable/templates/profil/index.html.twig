@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+    <section>
+        <div class="container BlocProfil">
+            <article>
+                <h1 class="text-center my-5">Espace personnel</h1>
+                <div class="row BlocPersonalInfo">
+                    <h5 class="text-center my-2">Données personnelles</h5>
+                    <div><strong>Nom : </strong>{{ user.username }}</div>
+                    <div><strong>E-mail : </strong>{{ user.email}}</div>
+                </div>
+            </article>
+            <article>
+                <div class="row BlocUpdateUser">
+                    <h5 class="text-center my-2">Mise a jour des données</h5>
+                    {{ form(form) }}
+                </div>
+            </article>
+        </div>
+    </section>
+{% endblock %}

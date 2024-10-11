@@ -31,7 +31,10 @@
                             <div class="defPageTable mt-5">
 
                                 {% if def['definition'] is not null %}
-                                <h1>{{ def['definition'].name }} {% if def['radioactif'] is defined %}{{ def['radioactif'] }}{% endif %}</h1>
+                                <h1>{{ def['definition'].name }}
+                                    {% if def['radioactif'] is defined %}{{ def['radioactif'] }}{% endif %}
+                                    {% if def['chemicalState'] is defined %}: {{ def['chemicalState'] | capitalize }}{% endif %}
+                                </h1>
 
                                 <p>{{ def['definition'].definition| nl2br }}  </p>
                                 {% endif %}
@@ -46,8 +49,6 @@
                                     <h2>{{ def[var].name }}</h2>
                                     <p>{{ def[var].definition| nl2br }}  </p>
                                 {% endif %}
-
-
                             </div>
                         {% endif %}
                 </article>

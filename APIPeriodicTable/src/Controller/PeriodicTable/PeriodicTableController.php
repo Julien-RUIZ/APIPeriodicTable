@@ -29,7 +29,7 @@ class PeriodicTableController extends AbstractController
     {
     }
 
-    #[Route('/tableau/{param}={value}', name: 'app_tableau', requirements: ['param' => '\w+', 'value' => '\d+'], defaults: ['param' => null, 'value' => null])]
+    #[Route('/tableau/{param}={value}', name: 'app_tableau', requirements: ['param' => '\w+'], defaults: ['param' => null, 'value' => null])]
     public function index( Request $request,
                            ElementRepository $elementRepository,
                            ElementHelperInterface $elementHelper,
@@ -68,6 +68,8 @@ class PeriodicTableController extends AbstractController
             }else{
                 $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
             }
+        }elseif ($param == 'ChemicalState'){
+            $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'chemicalState'=> $value];
         }elseif ($param == 'periodeHorizontal'){
             $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
         }elseif ($param == 'elementCategory'){

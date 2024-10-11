@@ -35,7 +35,7 @@
                             <a class="nav-link  {% if app.request.attributes.get('_route') == 'app_admin' %} active {% endif %}" href="{{ path('app_admin') }}">Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Profil</a>
+                            <a class="nav-link  {% if app.request.attributes.get('_route') == 'app_profil' %} active {% endif %}" href="{{ path('app_profil') }}">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
