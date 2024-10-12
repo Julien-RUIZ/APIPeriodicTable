@@ -26,7 +26,6 @@ class CreateElementController extends AbstractController
             $this->addFlash('success', "La création de l'élément est réalisée avec succès.");
             return $this->redirectToRoute('app_admin');
         }
-
         return $this->render('admin/Element/create_element/index.html.twig', [
             'form' => $form,
         ]);

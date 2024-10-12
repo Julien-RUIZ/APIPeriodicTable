@@ -17,7 +17,6 @@ class DeleteGroupController extends AbstractController
     {
         $entityManager->remove($elementGroupe);
         $entityManager->flush();
-
         $this->addFlash('success', "La suppression du groupe est réalisée avec succès.");
         return $this->redirectToRoute('app_admin');
     }

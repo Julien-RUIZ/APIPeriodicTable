@@ -17,7 +17,6 @@ class UpdateElementController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function index(Request $request, Element $element, EntityManagerInterface $entityManager): Response
     {
-
         $form = $this->createForm(ElementType::class, $element);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
@@ -25,7 +24,6 @@ class UpdateElementController extends AbstractController
             $this->addFlash('success', "La mise à jour de l'atome est réalisée avec succès.");
             return $this->redirectToRoute('app_admin');
         }
-
         return $this->render('admin/Element/update_element/index.html.twig', [
             'form' => $form,
         ]);

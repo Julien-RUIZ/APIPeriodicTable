@@ -24,7 +24,6 @@ class UpdateApiDocumentationController extends AbstractController
             $this->addFlash('success', "La mise à jour de la documentation est réalisée avec succès.");
             return $this->redirectToRoute('app_admin');
         }
-
         return $this->render('admin/ApiDocumentation/update_api_documentation/index.html.twig', [
             'form' => $form,
         ]);

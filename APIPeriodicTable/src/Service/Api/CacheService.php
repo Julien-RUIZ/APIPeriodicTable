@@ -5,6 +5,9 @@ namespace App\Service\Api;
 use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\Cache\TagAwareCacheInterface;
 
+/**
+ * This will allow us to manage the cache when using the API.
+ */
 class CacheService
 {
     public function __construct(private readonly TagAwareCacheInterface $cache)

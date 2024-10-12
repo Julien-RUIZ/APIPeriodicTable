@@ -24,7 +24,6 @@ class UpdateCategoryController extends AbstractController
             $this->addFlash('success', "La mise à jour de la catégorie est réalisée avec succès.");
             return $this->redirectToRoute('app_admin');
         }
-
         return $this->render('admin/Category/update_category/index.html.twig', [
             'form' => $form,
         ]);

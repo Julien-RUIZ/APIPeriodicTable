@@ -26,7 +26,6 @@ class CreatePeriodController extends AbstractController
             $this->addFlash('success', "La création de la période est réalisée avec succès.");
             return $this->redirectToRoute('app_admin');
         }
-
         return $this->render('admin/Period/create_period/index.html.twig', [
             'form' => $form,
         ]);

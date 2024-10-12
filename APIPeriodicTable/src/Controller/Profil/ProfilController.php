@@ -22,15 +22,13 @@ class ProfilController extends AbstractController
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
-
-
           $userData = $request->request->all('user');
             $password = $userData['password'];
             $user->setPassword($hasher->hashPassword($user, $password));
             $entityManager->flush();
+            $this->addFlash('success', "La modification des données est réalisée avec succès.");
+            return $this->redirectToRoute('app_profil');
         }
-
-
         return $this->render('profil/index.html.twig', [
             'user'=>$user, 'form'=>$form
         ]);

@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Service\Api;
-
+/**
+ * Allow management of the number of elements on a page and display it on a Json result.
+ */
 class PaginationService
 {
     public function InfoPagination($page, $limit, $nbtotal):array

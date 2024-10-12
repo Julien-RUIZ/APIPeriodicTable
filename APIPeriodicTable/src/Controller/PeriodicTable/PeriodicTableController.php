@@ -61,6 +61,12 @@ class PeriodicTableController extends AbstractController
         ]);
     }
 
+    /**
+     * @param $param
+     * @param $value
+     * @return array
+     * Creation of a definition method for retrieving information based on parameters
+     */
     private function definitionParam($param, $value){
         if ($param == 'groupeVertical'){
             if ($value >= 3 and $value<=12 ){

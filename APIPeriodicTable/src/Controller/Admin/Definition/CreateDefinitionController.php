@@ -26,7 +26,6 @@ class CreateDefinitionController extends AbstractController
             $this->addFlash('success', "La création de la définition est réalisée avec succès.");
             return $this->redirectToRoute('app_admin');
         }
-
         return $this->render('admin/Definition/create_definition/index.html.twig', [
             'form' => $form,
         ]);

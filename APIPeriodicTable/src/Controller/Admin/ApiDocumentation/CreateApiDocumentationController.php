@@ -26,7 +26,6 @@ class CreateApiDocumentationController extends AbstractController
             $this->addFlash('success', 'La création de votre documentation est réalisée avec succés.');
             return $this->redirectToRoute('app_admin');
         }
-
         return $this->render('admin/ApiDocumentation/create_api_documentation/index.html.twig', [
             'form' => $form
         ]);

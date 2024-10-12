@@ -26,7 +26,6 @@ class CreateGroupController extends AbstractController
             $this->addFlash('success', "La création du groupe est réalisée avec succès.");
             return $this->redirectToRoute('app_admin');
         }
-
         return $this->render('admin/Group/create_group/index.html.twig', [
             'form' => $form,
         ]);
