@@ -15,8 +15,8 @@ class AppFixtures extends Fixture
 
     /**
      * php bin/console doctrine:fixtures:load --append
-     * Ne pas faire de suppression de la bdd avant utilisation de la commande afin d'éviter de perdre toutes les données des éléments. Utiliser la commande ci-dessus.
-     * Do not delete the database before using the command to avoid losing all the element data. Use the command above.
+     * Ne pas faire de suppression de la bdd avant utilisation de la commande afin d'éviter de perdre toutes les données des éléments. Cependant, vider le contenu de la table user et utiliser la commande ci-dessus.
+     * Do not delete the database before using the command to avoid losing all the element data. However, empty the contents of the user table and use the command above.
      */
     public function load(ObjectManager $manager): void
     {

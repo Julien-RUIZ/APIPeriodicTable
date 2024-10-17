@@ -68,26 +68,27 @@ class PeriodicTableController extends AbstractController
      * Creation of a definition method for retrieving information based on parameters
      */
     private function definitionParam($param, $value){
+        $def = $this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]);
         if ($param == 'groupeVertical'){
             if ($value >= 3 and $value<=12 ){
-                $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
+                $this->def = ['definition'=>$def,'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe3_12'])];
             }else{
-                $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
+                $this->def = ['definition'=>$def,'groupe'=>$this->groupeRepository->findOneBy(['groupN'=>'Groupe'.$value])];
             }
         }elseif ($param == 'ChemicalState'){
-            $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'chemicalState'=> $value];
+            $this->def=['definition'=>$def,'chemicalState'=> $value];
         }elseif ($param == 'periodeHorizontal'){
-            $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
+            $this->def=['definition'=>$def,'periode'=> $this->periodRepository->findOneBy(['id'=>$value])];
         }elseif ($param == 'elementCategory'){
-            $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'category'=> $this->categoryRepository->findOneBy(['id'=>$value])];
+            $this->def=['definition'=>$def,'category'=> $this->categoryRepository->findOneBy(['id'=>$value])];
         }elseif ($param == 'radioactif'){
             if ($value == 1 ){
-                $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'radioactif'=> 'Oui'];
+                $this->def = ['definition'=>$def,'radioactif'=> 'Oui'];
             }else{
-                $this->def = ['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param]),'radioactif'=> 'Non'];
+                $this->def = ['definition'=>$def,'radioactif'=> 'Non'];
             }
         } else{
-            $this->def=['definition'=>$this->definitionsRepository->findOneBy(['namePropertyElement'=>$param])];
+            $this->def=['definition'=>$def];
         }
         return $this->def;
     }
