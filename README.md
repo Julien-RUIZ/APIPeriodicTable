@@ -9,7 +9,7 @@
 
 - Back-office administrateur : Accès aux fonctionnalités utilisateur avec, en plus, la possibilité de modifier les éléments et les définitions.
 
-- Back-office super_administrateur : Gestion complète du système et des utilisateurs.  
+- Back-office super_administrateur : Gestion complète du système et des utilisateurs dont la mise à jour en masse des données en fonction d'une caractéristique spécifique.
 
 - Mise en place de l'API : Requêtes GET, gestion des erreurs, pagination et mise en cache.
 

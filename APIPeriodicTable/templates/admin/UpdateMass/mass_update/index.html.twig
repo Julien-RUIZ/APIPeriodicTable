@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MassUpdate{% endblock %}
+
+{% block body %}
+    <section>
+        <article>
+            <div class="container">
+                <h1 class="text-center my-5">Mise à jour : {{ param }}</h1>
+                <p>Pour effectuer la mise à jour des données, veuillez utiliser le format standard de tableau. Cela permettra de lier l'ID de l'élément à sa valeur correspondante.</p>
+                <p>[idElément => valeur, idElément => valeur ...]</p>
+                {{ form(form) }}
+            </div>
+        </article>
+    </section>
+{% endblock %}

@@ -8,6 +8,10 @@
             <h1 class="text-center my-5">Administration des données du tableau</h1>
             {% include 'admin/Element/adminTable.html.twig' %}
             <hr class="my-5">
+            {% if is_granted('ROLE_SUPER_ADMIN')%}
+                {% include 'admin/UpdateMass/adminMassUpdate.html.twig' %}
+                <hr class="my-5">
+            {% endif %}
             {% include 'admin/Category/adminCat.html.twig' %}
             <hr class="my-5">
             {% include 'admin/Period/adminPeriod.html.twig' %}

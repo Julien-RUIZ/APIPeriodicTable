@@ -15,6 +15,7 @@ class ReadElementController extends AbstractController
     {
         $reflect = new \ReflectionClass($element);
         $properties = $reflect->getProperties();
+
         $definition = $definitionsRepository->findAll();
         foreach ($properties as $property) {
             $propertiesElement[] = $property->getName();

@@ -215,11 +215,11 @@ button a{
     display: flex;
     flex-wrap: wrap;
 }
-.adminTable a, .adminCategory a, .adminGroup a{
+.adminTable a, .adminCategory a, .adminGroup a, .adminMassUpdate a, .adminApiDoc a, .adminDef a, .adminPeriod a{
     text-decoration: none;
     color: black;
 }
-.adminTable a:hover, .adminCategory a:hover, .adminGroup a:hover{
+.adminTable a:hover, .adminCategory a:hover, .adminGroup a:hover, .adminMassUpdate a:hover, .adminApiDoc a:hover, .adminDef a:hover, .adminPeriod a:hover{
     background-color: #003366;
     color: #FFA500;
 }

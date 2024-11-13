@@ -1,0 +1,16 @@
+<article class="adminMassUpdate">
+    <h5>Mise à jour en masse.</h5>
+    <div class="my-2 groupCard">
+        {% for Propertie in Properties %}
+            {% if Propertie.name != 'id' and Propertie.name != 'nom' and Propertie.name != 'slug' %}
+                <div class="card cardCat my-1 mx-1">
+                    <a href="{{ path('app_mass_update', {'param':Propertie.name}) }}" class="LinkAdminAtom">
+                        <div class="card-body">
+                            <div class="CardSymbole text-center">{{ Propertie.name }}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</article>

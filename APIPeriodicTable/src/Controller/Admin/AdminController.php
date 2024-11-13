@@ -20,8 +20,17 @@ class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'app_admin')]
     #[IsGranted('ROLE_ADMIN')]
-    public function index(ElementPeriodRepository $periodRepository,ElementRepository $elementRepository, ElementCategoryRepository $categoryRepository, ElementGroupeRepository $groupeRepository, ElementDefinitionsRepository $definitionsRepository, ApiDocumentationRepository $documentationRepository): Response
+    public function index(ElementPeriodRepository $periodRepository,
+                          ElementRepository $elementRepository,
+                          ElementCategoryRepository $categoryRepository,
+                          ElementGroupeRepository $groupeRepository,
+                          ElementDefinitionsRepository $definitionsRepository,
+                          ApiDocumentationRepository $documentationRepository): Response
     {
+        $element = $elementRepository->find(id: 1);
+        $reflect = new \ReflectionClass($element);
+        $properties = $reflect->getProperties();
+
         $Elements = $elementRepository->getAdminInfo();
         $Category = $categoryRepository->getAdminInfo();
         $Period = $periodRepository->getAdminInfo();
@@ -29,8 +38,9 @@ class AdminController extends AbstractController
         $Definitions = $definitionsRepository->getAdminInfo();
         $ApiDoc = $documentationRepository->getAdminInfo();
 
+
         return $this->render('admin/index.html.twig', [
-            'Elements' => $Elements, 'Category'=>$Category, 'Groups'=>$Groups, 'Definitions'=>$Definitions, 'ApiDocs'=>$ApiDoc, 'Periods'=> $Period
+            'Properties'=>$properties, 'Elements' => $Elements, 'Category'=>$Category, 'Groups'=>$Groups, 'Definitions'=>$Definitions, 'ApiDocs'=>$ApiDoc, 'Periods'=> $Period
         ]);
     }
 }
