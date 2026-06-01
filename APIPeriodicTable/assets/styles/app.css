@@ -1,14 +1,28 @@
 
-h1, h2, h3, h4{
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
     color: #003366;
     text-align: center;
     margin: 10px 0 20px 0;
-    font-family: fangsong;
+    font-family: 'Cinzel', serif;
+}
+h2, h3, h4 {
+    color: #003366;
+    margin: 10px 0 20px 0;
+    font-family: 'Cinzel', serif;
 }
 h5, h6{
     color: #003366;
     margin: 10px 0 20px 0;
-    font-family: fangsong;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.Background {
+    background: #f4f6fb;
 }
 
 /*partials/navbar.html.twig*/
@@ -40,6 +54,9 @@ h5, h6{
     border-left-width: 0;
     border-top-width: 0;
     padding-right: 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 .navbar{
     background-color: #003366;
@@ -48,6 +65,10 @@ h5, h6{
 
 
 /*table/index.html.twig*/
+.tableau {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 .blocPresentation{
     margin: 0 0 0 52px;
 }
@@ -196,6 +217,114 @@ button a{
 
 
 /*Element/read_element/index.html.twig*/
+.element-hero {
+    background: #f0f2f8;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 50px 80px;
+    min-height: 220px;
+    border-bottom: 2px solid #e0e6f0;
+}
+.element-card-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 3px solid;
+    border-radius: 8px;
+    padding: 20px 30px;
+    min-width: 140px;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.hero-number {
+    font-size: 1rem;
+    color: #666;
+    font-family: 'Lato', sans-serif;
+    align-self: flex-start;
+}
+.hero-symbol {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 5px 0;
+}
+.hero-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #003366;
+    letter-spacing: 1px;
+}
+.hero-category {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 6px;
+    font-style: italic;
+}
+.element-hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    max-width: 700px;
+}
+.element-props-container {
+    padding: 40px 20px;
+    max-width: 900px;
+}
+.element-table {
+    border-collapse: collapse;
+}
+.element-table .data-row th {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #003366;
+    border: none;
+    border-bottom: 1px solid #e0e6f0;
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+.element-table .data-row td {
+    border: none;
+    border-bottom: 1px solid #e0e6f0;
+    padding: 12px 16px;
+    color: #333;
+    vertical-align: middle;
+}
+.element-table .data-row:hover th,
+.element-table .data-row:hover td {
+    background-color: #eaf0ff;
+}
+.btn-info-element {
+    background-color: #003366;
+    color: #FFA500;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 0.78rem;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+.btn-info-element:hover, .btn-info-element.ColorSelection {
+    background-color: #FFA500;
+    color: #003366;
+}
+.def-row td {
+    border: none;
+    padding: 0;
+}
+.definitionAttributs {
+    background-color: #f0f4ff;
+    border-left: 4px solid #003366 !important;
+    padding: 14px 20px !important;
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.65;
+}
 .infosup{
     border: 1px solid black;
     padding: 0 2px 0 2px;
@@ -270,26 +399,99 @@ footer {
 
 
 /*home/index.html.twig*/
+#titleHome {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+}
+#titleHome::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #FFA500;
+    border-radius: 2px;
+}
+#textHome {
+    line-height: 1.7;
+    color: #444;
+}
+.encart-text-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.encart-hero-content {
+    padding: 35px 40px;
+}
+.encart-hero {
+    min-height: 400px;
+}
 .EncartText {
     background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    width: 600px;
-    height: 300px;
-    opacity: 0.9;
-    -webkit-box-shadow: 11px 11px 13px 4px rgba(0,0,0,0.28);
-    box-shadow: 11px 11px 13px 4px rgba(0,0,0,0.28);
+    padding: 0;
+    flex: 1;
+    min-height: 300px;
 }
-.headbandHome{
-    background-image: url("/images/1920recadre.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
+.encart-row .EncartText {
+    width: auto;
+    height: auto;
+}
+.EncartText h5 {
+    background-color: #003366;
+    color: #FFA500 !important;
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+.EncartText p {
+    padding: 15px 20px 0 20px;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.65;
+}
+.encarts-container {
+    padding: 40px 60px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 7em;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 40px;
+}
+.encart-row {
+    display: flex;
+    align-items: stretch;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: 11px 11px 13px 4px rgba(0,0,0,0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.encart-row:hover {
+    transform: translateY(-7px);
+    box-shadow: 14px 20px 26px 6px rgba(0,0,0,0.38);
+}
+.encart-row-reverse {
+    flex-direction: row-reverse;
+}
+.encart-image {
+    flex: 1;
+    overflow: hidden;
+    min-height: 300px;
+}
+.encart-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /*All buttons*/
@@ -324,14 +526,6 @@ footer {
         display: flex;
         justify-content: space-around;
     }
-    .EncartText {
-        width: 569px;
-        height: 300px;
-
-    }
-    .headbandHome{
-        height: 500px;
-    }
 }
 
 @media (max-width: 1800px) and (min-width: 1600px) {
@@ -351,14 +545,6 @@ footer {
     .BlocTableauFiltre{
         display: flex;
         justify-content: space-around;
-    }
-    .EncartText {
-        background-color: white;
-        border-radius: 10px;
-        padding: 20px;
-        max-width: 480px;
-        min-height: 300px;
-        opacity: 0.9;
     }
 }
 
@@ -383,10 +569,6 @@ footer {
         display: flex;
         flex-direction: column;
     }
-    .EncartText {
-        max-width: 400px;
-        height: 345px;
-    }
 }
 
 @media (max-width: 1300px) and (min-width: 1000px){
@@ -405,13 +587,6 @@ footer {
     }
     td .numero{
         font-size: 15px;
-    }
-    .EncartText {
-        width: 285px;
-        height: 480px;
-    }
-    .headbandHome{
-        height: 550px;
     }
 }
 
@@ -438,27 +613,20 @@ footer {
     table th span{
         display: none;
     }
-    .EncartText {
-        width: 255px;
-        height: 508px;
-    }
-    .headbandHome{
-        height: 590px;
-    }
 }
 @media (max-width: 900px) and (min-width: 768px){
     .boxAtom {
-        width: 33px;
-        height: 47px;
+        width: 55px;
+        height: 68px;
     }
     .tdTable{
-        height: 63px;
+        height: 68px;
+    }
+    td .masseAtomique , .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
+        display: none;
     }
     td .nom{
-        font-size: 6px;
-    }
-    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
-        display: none;
+        font-size: 9px;
     }
     td .symbole{
         font-size: 17px;
@@ -469,93 +637,132 @@ footer {
     table th span{
         display: none;
     }
-    .EncartText {
-        width: 600px;
-        height: 250px;
-    }
-    .headbandHome{
-        height: 814px;
-        display: flex;
-        margin-top: 7em;
-        align-content: space-around;
-    }
 }
 
 
+@media (max-width: 992px) {
+    .encart-row, .encart-row-reverse {
+        flex-direction: column;
+    }
+    .encarts-container {
+        padding: 25px 20px;
+        gap: 25px;
+    }
+    .encart-image {
+        min-height: 220px;
+    }
+    .encart-hero {
+        min-height: auto;
+    }
+    .encart-hero-content {
+        padding: 25px 20px;
+    }
+    .element-hero {
+        padding: 35px 30px;
+        gap: 30px;
+    }
+    .element-props-container {
+        padding: 25px 10px;
+    }
+    .BlocTableauFiltre {
+        flex-direction: column;
+    }
+    .tableau {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+    .appli {
+        justify-content: flex-start;
+    }
+    .blocPresentation {
+        margin: 20px 0 0 0;
+    }
+    .tableau::-webkit-scrollbar {
+        height: 12px;
+    }
+    .tableau::-webkit-scrollbar-track {
+        background: #e0e6f0;
+        border-radius: 6px;
+    }
+    .tableau::-webkit-scrollbar-thumb {
+        background-color: #003366;
+        border-radius: 6px;
+        border: 2px solid #e0e6f0;
+    }
+}
+
 @media (max-width: 768px) and (min-width: 600px){
     .boxAtom {
-        width: 24px;
-        height: 35px;
+        width: 52px;
+        height: 65px;
         display: flex;
         justify-content: center;
     }
     .tdTable{
-        height: 52px;
+        height: 65px;
     }
-    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
+    td .nom, td .masseAtomique, .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
+        display: none;
+    }
+    td .symbole{
+        font-size: 16px;
+    }
+    td .numero{
+        font-size: 12px;
+    }
+    table th span{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .encart-row, .encart-row-reverse {
+        flex-direction: column;
+    }
+    .encarts-container {
+        padding: 15px 10px;
+        gap: 20px;
+    }
+    .element-hero {
+        flex-direction: column;
+        padding: 25px 15px;
+        gap: 20px;
+        text-align: center;
+    }
+    .hero-number {
+        align-self: center;
+    }
+    .hero-symbol {
+        font-size: 3rem;
+    }
+    .element-props-container {
+        padding: 15px 5px;
+    }
+    .element-table .data-row th,
+    .element-table .data-row td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+    .boxAtom {
+        width: 50px;
+        height: 62px;
+        display: flex;
+        justify-content: center;
+    }
+    .tdTable{
+        height: 62px;
+    }
+    td .nom, td .masseAtomique, .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
         display: none;
     }
     td .symbole{
         font-size: 15px;
     }
     td .numero{
-        font-size: 13px;
-    }
-    table th span{
-        display: none;
-    }
-    .EncartText {
-        width: 600px;
-        height: 250px;
-    }
-    .headbandHome{
-        height: 814px;
-        display: flex;
-        margin-top: 7em;
-        align-content: space-around;
-    }
-    .EncartText {
-        width: 459px;
-        height: 297px;
-    }
-    .headbandHome{
-        height: 1014px;
-        display: flex;
-        margin-top: 7em;
-        align-content: space-around;
-    }
-}
-
-@media (max-width: 600px){
-    .boxAtom {
-        width: 20px;
-        height: 33px;
-        display: flex;
-        justify-content: center;
-    }
-    .tdTable{
-        height: 46px;
-    }
-    td .nom, td .masseAtomique , .numeroLanthanides, .numeroActinides, .RomainGroupVertical{
-        display: none;
-    }
-    td .symbole{
-        font-size: 12px;
-    }
-    td .numero{
         font-size: 11px;
     }
     table th span{
         display: none;
-    }
-    .EncartText {
-        width: 459px;
-        height: 297px;
-    }
-    .headbandHome{
-        height: 1014px;
-        display: flex;
-        margin-top: 7em;
-        align-content: space-around;
     }
 }

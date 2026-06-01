@@ -4,18 +4,26 @@
 
 {% block body %}
 <section class="homepage">
-    <div class="container">
+    <div class="encarts-container">
 
-        <h1 class="text-center mt-5 " id="titleHome">Présentation...</h1>
-
-        <div class="mt-5" id="textHome" >
-            <p> Ce site n'a pas pour objectif d'être un site éducatif ni de proposer un design impressionnant. Son but principal est de permettre la mise à jour et la
-                centralisation des données des éléments. De plus, grâce à son API, il sera possible d'accéder et de mettre à jour ces données depuis n'importe quel site, application ou logiciel.</p>
-            <p>Pour accéder à la documentation de l'API et récupérer les données, il vous faudra d'abord vous inscrire sur le site. L'inscription est gratuite, et la récupération des données ne nécessite
-                aucune authentification spécifique.  </p>
+        <div class="encart-row encart-hero">
+            <div class="EncartText encart-text-hero">
+                <div class="encart-hero-content">
+                    <h1 id="titleHome">Tableau Périodique des Éléments</h1>
+                    <div id="textHome">
+                        <p>Ce site n'a pas pour objectif d'être un site éducatif ni de proposer un design impressionnant. Son but principal est de permettre la mise à jour et la
+                            centralisation des données des éléments. De plus, grâce à son API, il sera possible d'accéder et de mettre à jour ces données depuis n'importe quel site, application ou logiciel.</p>
+                        <p>Pour accéder à la documentation de l'API et récupérer les données, il vous faudra d'abord vous inscrire sur le site. L'inscription est gratuite, et la récupération des données ne nécessite
+                            aucune authentification spécifique.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="encart-image">
+                <img src="{{ asset('images/img-hero.jpg') }}" alt="Tableau Périodique des Éléments">
+            </div>
         </div>
-    </div>
-      <div class="headbandHome">
+
+        <div class="encart-row">
             <div class="EncartText">
                 <h5 class="Dscience">Données scientifiques</h5>
                 <p>
@@ -25,14 +33,26 @@
                     résultats directement sur le tableau.
                 </p>
             </div>
+            <div class="encart-image">
+                <img src="{{ asset('images/img-science.jpg') }}" alt="Données scientifiques">
+            </div>
+        </div>
+
+        <div class="encart-row encart-row-reverse">
             <div class="EncartText">
-                <h5>Mise a jour des données</h5>
+                <h5>Mise à jour des données</h5>
                 <p>
                     La mise à jour pourra être effectuée de deux façons différentes, sous réserve de l'accord préalable
                     du webmaster. La première option consiste à utiliser un formulaire, qui vous permettra de modifier
                     presque toutes les informations relatives aux éléments. La seconde option passe par l'API.
                 </p>
             </div>
+            <div class="encart-image">
+                <img src="{{ asset('images/img-update.jpg') }}" alt="Mise à jour des données">
+            </div>
+        </div>
+
+        <div class="encart-row">
             <div class="EncartText">
                 <h5>API</h5>
                 <p>
@@ -43,6 +63,11 @@
                     de les mettre à jour par la suite.
                 </p>
             </div>
+            <div class="encart-image">
+                <img src="{{ asset('images/img-api.jpg') }}" alt="API">
+            </div>
         </div>
+
+    </div>
 </section>
 {% endblock %}

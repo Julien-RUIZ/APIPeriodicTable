@@ -3,78 +3,86 @@
     {#  "listeDefinition" :  C'est la table des définitions avec pour clé la colonne "name_property_element", le nom exact des colonne de la table élément  #}
     {#  "infoElement" :  C'est le retour de toutes les informations d'un élément  #}
 <section class="readAtom">
-    <article>
-        <div class="container">
-            <h1 class="text-center my-5">{{ infoElement.nom}} </h1>
-            <p class="my-5">{{ infoElement.infoElement}}</p>
-            <table class="table">
-                <tbody>
-    {# propertiesElements est la liste des attributs (colonne) de la table élément.   #}
+
+    <div class="element-hero">
+        <div class="element-card-hero" style="border-color: {{ infoElement.elementCategory.color }};">
+            <span class="hero-number">{{ infoElement.numero }}</span>
+            <span class="hero-symbol" style="color: {{ infoElement.elementCategory.color }};">{{ infoElement.symbole }}</span>
+            <span class="hero-name">{{ infoElement.nom }}</span>
+            <span class="hero-category">{{ infoElement.elementCategory.getName() }}</span>
+        </div>
+        <div class="element-hero-desc">
+            <p>{{ infoElement.infoElement }}</p>
+        </div>
+    </div>
+
+    <div class="container element-props-container">
+        <table class="table element-table">
+            <tbody>
+    {# propertiesElements est la liste des attributs (colonne) de la table élément. #}
                 {% for propertiesElement in propertiesElements %}
                     {% set elementColumn = propertiesElement %}
 
-                    {% if propertiesElement != 'elementCategory' and propertiesElement != 'elementGroupe'%}{# Les deux sont des jointure et donc seront traitées par la suite#}
-                        <tr>
-                            <th scope="row" class="col-6">
-                                {% if listeDefinition[elementColumn] is defined  %}
-                                    {{ listeDefinition[elementColumn].getName()}}
+                    {% if propertiesElement != 'elementCategory' and propertiesElement != 'elementGroupe' %}
+                        <tr class="data-row">
+                            <th scope="row" class="col-5">
+                                {% if listeDefinition[elementColumn] is defined %}
+                                    {{ listeDefinition[elementColumn].getName() }}
                                 {% else %}
-                                {{ propertiesElement|capitalize }}
+                                    {{ propertiesElement|capitalize }}
                                 {% endif %}
                             </th>
-                            <td>
+                            <td class="col-6">
                                 {{ attribute(infoElement, elementColumn) }}
                             </td>
-                            <td >
-                                {% if listeDefinition[elementColumn] is defined  %}
-                                        <button class="show-info" data-target="definition-{{elementColumn}}">info</button>
+                            <td class="col-1 text-end">
+                                {% if listeDefinition[elementColumn] is defined %}
+                                    <button class="show-info btn-info-element" data-target="definition-{{elementColumn}}">Info</button>
                                 {% endif %}
                             </td>
                         </tr>
-                        <tr>
-                            {% if listeDefinition[elementColumn] is defined  %}
-                                <td colspan="2" id="definition-{{elementColumn}}" class="definitionAttributs" style="display: none;">
-                                    {{ listeDefinition[elementColumn].getDefinition() | nl2br }}
-                                </td>
-                            {% endif %}
+                        {% if listeDefinition[elementColumn] is defined %}
+                        <tr class="def-row">
+                            <td colspan="3" id="definition-{{elementColumn}}" class="definitionAttributs" style="display: none;">
+                                {{ listeDefinition[elementColumn].getDefinition() | nl2br }}
+                            </td>
                         </tr>
+                        {% endif %}
                     {% endif %}
 
-{# propertiesElement est soit  elementCategory ou elementGroupe, gestion a l'écart car jointure  #}
+    {# propertiesElement est soit elementCategory ou elementGroupe, gestion à l'écart car jointure #}
                     {% if propertiesElement == 'elementCategory' or propertiesElement == 'elementGroupe' %}
-                        <tr>
-                            <th scope="row" class="col-6">
-                                {% if listeDefinition[propertiesElement] is defined  %}
-                                    {{ listeDefinition[propertiesElement].getName()}}
+                        <tr class="data-row">
+                            <th scope="row" class="col-5">
+                                {% if listeDefinition[propertiesElement] is defined %}
+                                    {{ listeDefinition[propertiesElement].getName() }}
                                 {% else %}
-                                    {{ propertiesElement|capitalize}}
+                                    {{ propertiesElement|capitalize }}
                                 {% endif %}
                             </th>
                             {% if propertiesElement == 'elementCategory' %}
-                                <td>{{ infoElement.elementCategory.getName() }}</td>
+                                <td class="col-6">{{ infoElement.elementCategory.getName() }}</td>
                             {% elseif propertiesElement == 'elementGroupe' %}
-                                <td>{{ infoElement.elementGroupe.getName() }}</td>
+                                <td class="col-6">{{ infoElement.elementGroupe.getName() }}</td>
                             {% endif %}
-                            <td >
-                                {% if listeDefinition[elementColumn] is defined  %}
-                                    <button class="show-info" data-target="definition-{{elementColumn}}">info</button>
+                            <td class="col-1 text-end">
+                                {% if listeDefinition[elementColumn] is defined %}
+                                    <button class="show-info btn-info-element" data-target="definition-{{elementColumn}}">Info</button>
                                 {% endif %}
                             </td>
                         </tr>
-                        <tr>
-                            {% if listeDefinition[elementColumn] is defined  %}
-                                <td colspan="2" id="definition-{{elementColumn}}" class="definitionAttributs" style="display: none;">
-                                    {{ listeDefinition[elementColumn].getDefinition() | nl2br }}
-                                </td>
-                            {% endif %}
+                        {% if listeDefinition[elementColumn] is defined %}
+                        <tr class="def-row">
+                            <td colspan="3" id="definition-{{elementColumn}}" class="definitionAttributs" style="display: none;">
+                                {{ listeDefinition[elementColumn].getDefinition() | nl2br }}
+                            </td>
                         </tr>
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </article>
+            </tbody>
+        </table>
+    </div>
+
 </section>
-
-
 {% endblock %}

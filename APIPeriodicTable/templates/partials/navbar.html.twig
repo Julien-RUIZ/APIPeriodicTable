@@ -1,7 +1,7 @@
 
-<nav class="BlocMenu navbar navbar-expand-lg navbar-light ">
+<nav class="BlocMenu navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="{{ path('app_home') }}">Tableau de Mendeleïev</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -35,7 +35,7 @@
                             <a class="nav-link  {% if app.request.attributes.get('_route') == 'app_admin' %} active {% endif %}" href="{{ path('app_admin') }}">Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  {% if app.request.attributes.get('_route') == 'app_profil' %} active {% endif %}" href="{{ path('app_profil') }}">Profile</a>
+                            <a class="nav-link  {% if app.request.attributes.get('_route') == 'app_profil' %} active {% endif %}" href="{{ path('app_profil') }}">Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
@@ -44,7 +44,7 @@
                 {% elseif is_granted("ROLE_USER") %}
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Profil</a>
+                            <a class="nav-link {% if app.request.attributes.get('_route') == 'app_profil' %} active {% endif %}" href="{{ path('app_profil') }}">Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
