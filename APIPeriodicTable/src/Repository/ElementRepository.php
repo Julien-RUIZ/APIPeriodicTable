@@ -51,6 +51,7 @@ class ElementRepository extends ServiceEntityRepository
                         ->andwhere('eg.slug = :'.$key);
                 }
                 if ($key!=='elementCategory' && $key!=='elementGroupe'){
+                    // TODO: risque injection SQL - valider $key avec une whitelist des colonnes autorisées avant de l'injecter dans la requête
                     $qb->andwhere('e.'.$key.' = :'.$key)
                         ->setParameter($key, $value) ;
                 }

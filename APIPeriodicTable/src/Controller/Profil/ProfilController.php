@@ -23,6 +23,7 @@ class ProfilController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
           $userData = $request->request->all('user');
+            // TODO: valider que $password n'est pas vide avant de hasher - un mot de passe vide sera accepté silencieusement
             $password = $userData['password'];
             $user->setPassword($hasher->hashPassword($user, $password));
             $entityManager->flush();

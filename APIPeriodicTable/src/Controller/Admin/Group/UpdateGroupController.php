@@ -21,6 +21,7 @@ class UpdateGroupController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $entityManager->flush();
+            // TODO: message incomplet - "La mise à jour du est réalisée" manque le nom de l'entité (ex: "du groupe")
             $this->addFlash('success', "La mise à jour du est réalisée avec succès.");
             return $this->redirectToRoute('app_admin');
         }

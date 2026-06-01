@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class DeletePeriodController extends AbstractController
 {
+    // TODO: sécurité - route non protégée, ajouter #[IsGranted('ROLE_ADMIN')] comme les autres controllers de suppression
     #[Route('/delete/period/{id}', name: 'app_delete_period', requirements:['id'=>'\d+'])]
     public function index(ElementPeriod $elementPeriod, EntityManagerInterface $entityManager): Response
     {
