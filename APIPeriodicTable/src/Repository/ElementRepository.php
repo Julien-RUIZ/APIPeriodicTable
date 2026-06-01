@@ -74,7 +74,8 @@ class ElementRepository extends ServiceEntityRepository
         return $qb->getQuery()->getResult();
     }
 
-    public function UpdateAllElementsWithoutAParam($param, $values){
+    public function UpdateAllElementsWithoutAParam($param, $values): void
+    {
         foreach ($values as $IdElement => $value){
             $qb = $this->createQueryBuilder('e')
                 ->update()
@@ -82,10 +83,8 @@ class ElementRepository extends ServiceEntityRepository
                 ->where('e.id = :IdElement')
                 ->setParameter('value', $value)
                 ->setParameter('IdElement', $IdElement);
-            return $qb->getQuery()->getResult();
+            $qb->getQuery()->execute();
         }
-
-
     }
 
 
