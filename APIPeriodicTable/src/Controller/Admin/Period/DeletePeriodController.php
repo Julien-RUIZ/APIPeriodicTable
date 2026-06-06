@@ -7,10 +7,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class DeletePeriodController extends AbstractController
 {
-    // TODO: sécurité - route non protégée, ajouter #[IsGranted('ROLE_ADMIN')] comme les autres controllers de suppression
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/delete/period/{id}', name: 'app_delete_period', requirements:['id'=>'\d+'])]
     public function index(ElementPeriod $elementPeriod, EntityManagerInterface $entityManager): Response
     {

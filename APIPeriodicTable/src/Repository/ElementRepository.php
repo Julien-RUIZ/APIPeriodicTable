@@ -51,7 +51,10 @@ class ElementRepository extends ServiceEntityRepository
                         ->andwhere('eg.slug = :'.$key);
                 }
                 if ($key!=='elementCategory' && $key!=='elementGroupe'){
-                    // TODO: risque injection SQL - valider $key avec une whitelist des colonnes autorisées avant de l'injecter dans la requête
+                    $allowedColumns = ['id', 'nom', 'slug', 'electron', 'numero', 'symbole', 'groupeVertical', 'periodeHorizontal', 'masseVolumique', 'cas', 'einecs', 'masseAtomique', 'rayonAtomique', 'rayonDeCovalence', 'rayonDeVanDerWaals', 'configurationElectronique', 'etatOxydation', 'decouverteAnnee', 'decouverteNoms', 'decouvertePays', 'electronegativite', 'pointDeFusion', 'pointDEbullition', 'radioactif', 'infoElement', 'ChemicalState'];
+                    if (!in_array($key, $allowedColumns, true)) {
+                        throw new \InvalidArgumentException("Colonne de filtre non autorisée : $key");
+                    }
                     $qb->andwhere('e.'.$key.' = :'.$key)
                         ->setParameter($key, $value) ;
                 }

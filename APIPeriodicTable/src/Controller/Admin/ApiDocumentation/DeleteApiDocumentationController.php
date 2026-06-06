@@ -17,8 +17,7 @@ class DeleteApiDocumentationController extends AbstractController
     {
         $entityManager->remove($apiDocumentation);
         $entityManager->flush();
-        // TODO: message incorrect - copier/coller depuis DeleteCategory, remplacer "catégorie" par "documentation"
-        $this->addFlash('success', "La suppression de la catégorie est réalisée avec succès.");
+        $this->addFlash('success', "La suppression de la documentation est réalisée avec succès.");
         return $this->redirectToRoute('app_admin');
     }
 }
