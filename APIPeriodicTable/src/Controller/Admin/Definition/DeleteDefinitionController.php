@@ -5,16 +5,20 @@ namespace App\Controller\Admin\Definition;
 use App\Entity\ElementDefinitions;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class DeleteDefinitionController extends AbstractController
 {
-    #[Route('/delete/definition/{id}', name: 'app_delete_definition', requirements:  ['id'=>'\d+'])]
+    #[Route('/delete/definition/{id}', name: 'app_delete_definition', requirements: ['id'=>'\d+'], methods: ['POST'])]
     #[IsGranted('ROLE_SUPER_ADMIN')]
-    public function index(ElementDefinitions $elementDefinitions, EntityManagerInterface $entityManager): Response
+    public function index(ElementDefinitions $elementDefinitions, EntityManagerInterface $entityManager, Request $request): Response
     {
+        if (!$this->isCsrfTokenValid('delete-definition-' . $elementDefinitions->getId(), $request->request->get('_token'))) {
+            throw $this->createAccessDeniedException('Token CSRF invalide.');
+        }
         $entityManager->remove($elementDefinitions);
         $entityManager->flush();
         $this->addFlash('success', "La suppression de la définition est réalisée avec succès.");

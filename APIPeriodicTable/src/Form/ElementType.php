@@ -156,6 +156,14 @@ class ElementType extends AbstractType
                     'Non' => 0,
                 ],
             ])
+            ->add('ChemicalState', ChoiceType::class, [
+                'label' => 'État chimique',
+                'choices' => [
+                    'Gazeux' => 'Gazeux',
+                    'Liquide' => 'Liquide',
+                    'Solide' => 'Solide',
+                ],
+            ])
 
             ->add('submit', SubmitType::class)
         ;
