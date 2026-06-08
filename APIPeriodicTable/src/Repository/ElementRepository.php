@@ -80,6 +80,11 @@ class ElementRepository extends ServiceEntityRepository
 
     public function UpdateAllElementsWithoutAParam($param, $values): void
     {
+        $allowedColumns = ['nom', 'electron', 'numero', 'symbole', 'groupeVertical', 'periodeHorizontal', 'masseVolumique', 'cas', 'einecs', 'masseAtomique', 'rayonAtomique', 'rayonDeCovalence', 'rayonDeVanDerWaals', 'configurationElectronique', 'etatOxydation', 'decouverteAnnee', 'decouverteNoms', 'decouvertePays', 'electronegativite', 'pointDeFusion', 'pointDEbullition', 'radioactif', 'infoElement', 'ChemicalState'];
+        if (!in_array($param, $allowedColumns, true)) {
+            throw new \InvalidArgumentException("Colonne de mise à jour non autorisée : $param");
+        }
+
         foreach ($values as $IdElement => $value){
             $qb = $this->createQueryBuilder('e')
                 ->update()

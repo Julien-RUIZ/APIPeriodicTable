@@ -30,7 +30,14 @@ class MassUpdateController extends AbstractController
                 ]);
             }
 
-            $elementRepository->UpdateAllElementsWithoutAParam($param, $value);
+            try {
+                $elementRepository->UpdateAllElementsWithoutAParam($param, $value);
+            } catch (\InvalidArgumentException $exception) {
+                $this->addFlash('error', $exception->getMessage());
+                return $this->render('admin/UpdateMass/mass_update/index.html.twig', [
+                    'param' => $param, 'form' => $form
+                ]);
+            }
             $this->addFlash('success', "La modification des valeurs pour la colonne ".$param." est réalisée avec succès. ");
             return $this->redirectToRoute('app_admin');
         }

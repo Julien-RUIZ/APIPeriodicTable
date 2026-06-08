@@ -12,7 +12,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class DeletePeriodController extends AbstractController
 {
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_SUPER_ADMIN')]
     #[Route('/delete/period/{id}', name: 'app_delete_period', requirements: ['id'=>'\d+'], methods: ['POST'])]
     public function index(ElementPeriod $elementPeriod, EntityManagerInterface $entityManager, Request $request): Response
     {

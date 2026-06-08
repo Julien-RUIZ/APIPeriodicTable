@@ -33,9 +33,9 @@ class GetElementsErrorTest extends WebTestCase
             ['GET', '/api/elements?page=1&limit=200', Response::HTTP_BAD_REQUEST, 'erreur sur /api/elements?page=1&limit=200'],
             ['GET', '/api/elements?field=', Response::HTTP_BAD_REQUEST, 'erreur sur /api/elements?field='],
 
-            ['GET', '/api/elements/search?GroupeVertical=', Response::HTTP_NOT_FOUND, 'erreur sur /api/elements/search?GroupeVertical='],
-            ['GET', '/api/elements/search?GroupeVertical=1&page=1&limit=', Response::HTTP_BAD_REQUEST, 'erreur sur /api/elements/search?GroupeVertical=1&page=1&limit='],
-            ['GET', '/api/elements/search?GroupeVertical=1&page=1&limit=2&field=', Response::HTTP_BAD_REQUEST, 'erreur sur /api/elements/search?GroupeVertical=1&page=1&limit=2&field='],
+            ['GET', '/api/elements/search?groupeVertical=', Response::HTTP_NOT_FOUND, 'erreur sur /api/elements/search?groupeVertical='],
+            ['GET', '/api/elements/search?groupeVertical=1&page=1&limit=', Response::HTTP_BAD_REQUEST, 'erreur sur /api/elements/search?groupeVertical=1&page=1&limit='],
+            ['GET', '/api/elements/search?groupeVertical=1&page=1&limit=2&field=', Response::HTTP_BAD_REQUEST, 'erreur sur /api/elements/search?groupeVertical=1&page=1&limit=2&field='],
         ];
     }
 }

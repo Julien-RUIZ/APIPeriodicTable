@@ -16,6 +16,7 @@ class Element
     private ?int $id = null;
 
     #[ORM\Column(length: 15, nullable: true)]
+    #[Assert\Regex(pattern: '/^[^<>]*$/', message: 'Le champ ne doit pas contenir les caractères < ou >.')]
     #[Groups(['ApiElementTotal'])]
     private ?string $nom = null;
 
@@ -482,7 +483,7 @@ class Element
         return $this->ChemicalState;
     }
 
-    public function setChemicalState(string $ChemicalState): static
+    public function setChemicalState(?string $ChemicalState): static
     {
         $this->ChemicalState = $ChemicalState;
 

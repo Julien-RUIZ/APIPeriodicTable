@@ -27,10 +27,10 @@ class RepositoryTest extends KernelTestCase
         return [
             [UserRepository::class, 3, 'Erreur du UserRepository'],
             [ElementRepository::class, 118, 'Erreur du ElementRepository'],
-            [ElementDefinitionsRepository::class, 15, 'Erreur du ElementDefinitionsRepository'],
+            [ElementDefinitionsRepository::class, 21, 'Erreur du ElementDefinitionsRepository'],
             [ElementCategoryRepository::class, 10, 'Erreur du ElementCategoryRepository'],
             [ElementGroupeRepository::class, 9, 'Erreur du ElementGroupeRepository'],
-            [ApiDocumentationRepository::class, 3, 'Erreur du ApiDocumentationRepository'],
+            [ApiDocumentationRepository::class, 5, 'Erreur du ApiDocumentationRepository'],
         ];
     }
 }

@@ -36,7 +36,7 @@ class ElementCategory
     /**
      * @var Collection<int, Element>
      */
-    #[ORM\OneToMany(targetEntity: Element::class, mappedBy: 'ElementCategory')]
+    #[ORM\OneToMany(targetEntity: Element::class, mappedBy: 'elementCategory')]
     private Collection $Elements;
 
     public function __construct()

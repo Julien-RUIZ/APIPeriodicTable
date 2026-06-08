@@ -2,6 +2,7 @@
 
 namespace App\Controller\API\Element;
 
+use App\Exception\BadRequestException;
 use App\Repository\ElementRepository;
 use App\Service\Api\CacheService;
 use App\Service\Api\ErrorService;
@@ -87,7 +88,7 @@ class ElementController extends AbstractController
      * Radioactif-> 0=false, 1=true
      * For elementCategory and elementGroupe => use slug
      */
-    #[Route('/api/elements/search', name: 'api_element_search', requirements: ['nom'=>'/^[^<>]*$/'], methods: ['GET'])]
+    #[Route('/api/elements/search', name: 'api_element_search', methods: ['GET'])]
     public function getElementByParamAndValue(ErrorService $errorService,Request $request, ElementRepository $elementRepository, SerializerInterface $serializer, PaginationService $paginationService, CacheService $cacheService): Response
     {
         $query = $request->query;
@@ -105,8 +106,12 @@ class ElementController extends AbstractController
         }
         $params = array_combine($param,$valeur);
 
-        $donnees = $elementRepository->getElementsWithAttributAndPagination($params,$field, $page, $limit, null);
-        $nbDonnee=count( $elementRepository->getElementsWithAttributAndPagination($params,$field, null, null, null));
+        try {
+            $donnees = $elementRepository->getElementsWithAttributAndPagination($params,$field, $page, $limit, null);
+            $nbDonnee=count( $elementRepository->getElementsWithAttributAndPagination($params,$field, null, null, null));
+        } catch (\InvalidArgumentException $exception) {
+            throw new BadRequestException($exception->getMessage());
+        }
 
         $cacheKey =implode('-',$param).'-'.implode('-',$valeur).'-'.$page.'-'.$limit.'-'.$field;
         $NameIdCache= 'getElementByParamAndValue'.$cacheKey;

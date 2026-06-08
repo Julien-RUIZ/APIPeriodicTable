@@ -31,7 +31,7 @@ class ElementGroupe
     /**
      * @var Collection<int, Element>
      */
-    #[ORM\OneToMany(targetEntity: Element::class, mappedBy: 'ElementGroupe')]
+    #[ORM\OneToMany(targetEntity: Element::class, mappedBy: 'elementGroupe')]
     private Collection $Elements;
 
     #[ORM\Column(length: 255)]

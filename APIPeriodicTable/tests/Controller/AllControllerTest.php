@@ -90,20 +90,20 @@ class AllControllerTest extends WebTestCase
             ['user2', '/create/api/documentation', null, null, Response::HTTP_FORBIDDEN, 'Form error /create/api/documentation with ROLE_USER'],
             [ null  , '/create/api/documentation', null, null,  Response::HTTP_FOUND, 'Form error /create/api/documentation without Role'],
 
-            ['user0', '/', 'h1', "Présentation...", Response::HTTP_OK, 'Page error / with ROLE_SUPER_ADMIN'],
-            ['user1', '/', 'h1', "Présentation...", Response::HTTP_OK, 'Page error / with ROLE_ADMIN'],
-            ['user2', '/', 'h1', "Présentation...", Response::HTTP_OK, 'Page error / with ROLE_USER'],
-            [ null  , '/', 'h1', "Présentation...", Response::HTTP_OK, 'Page error / without Role'],
+            ['user0', '/', 'h1', "Tableau Périodique des Éléments", Response::HTTP_OK, 'Page error / with ROLE_SUPER_ADMIN'],
+            ['user1', '/', 'h1', "Tableau Périodique des Éléments", Response::HTTP_OK, 'Page error / with ROLE_ADMIN'],
+            ['user2', '/', 'h1', "Tableau Périodique des Éléments", Response::HTTP_OK, 'Page error / with ROLE_USER'],
+            [ null  , '/', 'h1', "Tableau Périodique des Éléments", Response::HTTP_OK, 'Page error / without Role'],
 
             ['user0', '/tableau', 'h1', "Tableau périodique des éléments", Response::HTTP_OK, 'Page error /tableau with ROLE_SUPER_ADMIN'],
             ['user1', '/tableau', 'h1', "Tableau périodique des éléments", Response::HTTP_OK, 'Page error /tableau with ROLE_ADMIN'],
             ['user2', '/tableau', 'h1', "Tableau périodique des éléments", Response::HTTP_OK, 'Page error /tableau with ROLE_USER'],
             [ null  , '/tableau', 'h1', "Tableau périodique des éléments", Response::HTTP_OK, 'Page error /tableau without Role'],
 
-            ['user0', '/read/element/1', 'h1', "Hydrogène", Response::HTTP_OK, 'Page error /read/element with ROLE_SUPER_ADMIN'],
-            ['user1', '/read/element/1', 'h1', "Hydrogène", Response::HTTP_OK, 'Page error /read/element with ROLE_ADMIN'],
-            ['user2', '/read/element/1', 'h1', "Hydrogène", Response::HTTP_OK, 'Page error /read/element with ROLE_USER'],
-            [ null  , '/read/element/1', 'h1', "Hydrogène", Response::HTTP_OK, 'Page error /read/element without Role'],
+            ['user0', '/read/element/1', '.hero-name', "Hydrogène", Response::HTTP_OK, 'Page error /read/element with ROLE_SUPER_ADMIN'],
+            ['user1', '/read/element/1', '.hero-name', "Hydrogène", Response::HTTP_OK, 'Page error /read/element with ROLE_ADMIN'],
+            ['user2', '/read/element/1', '.hero-name', "Hydrogène", Response::HTTP_OK, 'Page error /read/element with ROLE_USER'],
+            [ null  , '/read/element/1', '.hero-name', "Hydrogène", Response::HTTP_OK, 'Page error /read/element without Role'],
         ];
     }
 
